@@ -21,11 +21,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] }, colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} }, boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'} } } };
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: {600:'#2e6ad6',700:'#2554aa'} },
+          boxShadow: { smooth:'0 10px 25px rgba(0,0,0,0.08)'}
+        }
+      }
+    };
   </script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-white text-slate-800 antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1000] bg-white text-slate-900 rounded px-3 py-2 shadow">Skip to content</a>
 
 <!-- Header -->
 <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200" role="banner">
@@ -38,7 +47,6 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium" aria-label="Primary">
         <a href="products.html" class="hover:text-brand-600">Products</a>
         <a href="services.html" class="hover:text-brand-600">Services</a>
-        <!-- Mark current page with aria-current and a subtle style -->
         <a href="about.html" aria-current="page" class="text-brand-700">About</a>
         <a href="app.html" class="hover:text-brand-600">App</a>
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
@@ -58,70 +66,65 @@
       <a href="services.html" class="block">Services</a>
       <a href="about.html" aria-current="page" class="block font-semibold text-brand-700">About</a>
       <a href="app.html" class="block">App</a>
-      <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
+      <a href="contact.html" class="block">Contact</a>
     </div>
   </div>
 </header>
 
 <main id="main" class="min-h-[70vh]" role="main">
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid md:grid-cols-12 gap-12 items-start">
-      <div class="md:col-span-7 lg:col-span-8 xl:col-span-8">
-        <h1 class="text-4xl font-extrabold">About Elite Rackz</h1>
-        <p class="mt-4 text-slate-700 max-w-3xl">Elite Rackz is dedicated to delivering engineered solutions that enhance warehouse safety, efficiency, and long-term reliability. We specialize in pallet rack repair, guarding systems, and a full range of warehouse protection products designed to safeguard both operations and personnel. Every solution is developed with precision engineering and is backed by a comprehensive lifetime warranty, ensuring enduring value and confidence for our customers.</p>
+  <!-- Page intro -->
+  <section class="border-b border-slate-200 bg-white/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h1 class="text-4xl font-extrabold tracking-tight">About Elite Rackz</h1>
+      <p class="mt-4 text-slate-700 max-w-3xl leading-relaxed">
+        Elite Rackz is dedicated to delivering engineered solutions that enhance warehouse safety, efficiency, and long-term reliability.
+        We specialize in pallet rack repair, guarding systems, and a full range of warehouse protection products designed to safeguard both
+        operations and personnel. Every solution is developed with precision engineering and is backed by a comprehensive lifetime warranty,
+        ensuring enduring value and confidence for our customers.
+      </p>
+    </div>
+  </section>
 
-        <!-- Leadership card with optional headshot slot -->
-        <div class="mt-8 p-6 border border-slate-200 rounded-2xl">
+  <!-- Content grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-12 gap-10 lg:gap-12 items-start">
+      <!-- Left column -->
+      <div class="md:col-span-7 lg:col-span-8 xl:col-span-8 space-y-8">
+
+        <!-- Leadership -->
+        <article class="p-6 border border-slate-200 rounded-2xl shadow-sm bg-white">
           <h2 class="text-2xl font-bold">Leadership</h2>
           <div class="mt-4 flex items-start gap-4">
-            <!-- If you have a CEO photo, drop it into assets/images/ceo.jpg -->
+            <!-- CEO photo with graceful fallback -->
             <div class="relative">
-            <div class="w-20 h-20 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0">
-              <img src="assets/images/ceo.jpg" alt="David Enriquez, CEO of Elite Rackz" class="w-full h-full object-cover" loading="lazy" onerror="this.closest('.relative').querySelector('[data-ceo-ph]').classList.remove('hidden'); this.parentElement.style.display='none';">
+              <div class="w-20 h-20 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0">
+                <img src="assets/images/ceo.jpg" alt="David Enriquez, CEO of Elite Rackz" class="w-full h-full object-cover" loading="lazy"
+                     onerror="this.closest('.relative').querySelector('[data-ceo-ph]').classList.remove('hidden'); this.parentElement.style.display='none';">
+              </div>
+              <div data-ceo-ph class="hidden w-20 h-20 rounded-full bg-slate-200 ring-1 ring-slate-200 flex items-center justify-center shrink-0" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
+                  <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/>
+                </svg>
+              </div>
             </div>
-            <!-- Circular placeholder appears if image is missing -->
-            <div data-ceo-ph class="hidden w-20 h-20 rounded-full bg-slate-200 ring-1 ring-slate-200 flex items-center justify-center shrink-0" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
-                <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/>
-              </svg>
+
+            <div class="flex-1">
+              <p class="text-slate-900 font-semibold">David Enriquez, CEO</p>
+              <div class="mt-2 text-slate-700 leading-relaxed space-y-3">
+                <p>David Enriquez brings over 20 years of hands-on experience in the warehouse racking and repair industry. Over two decades, he has designed, installed, and managed countless repair and safety solutions for facilities across North America. Mentored by some of the best in the industry, David’s approach combines engineered precision with real-world practicality, always centered on safety and long-term performance.</p>
+                <p>To expand capabilities and serve customers end-to-end, David recently acquired FBS Group, Inc.—a respected provider of warehouse equipment solutions. This strategic step strengthens Elite Rackz’ supply, installation, and service offering while reinforcing the company’s commitment to quality and speed.</p>
+                <p>Beyond the job site, David is a devoted family man with a wonderful wife and children. He leads with humility, accountability, and a constant drive to improve—<i>always striving for greatness.</i></p>
+              </div>
             </div>
           </div>
-            
-           <div class="flex-1">
-  <p class="text-slate-900 font-semibold">David Enriquez, CEO</p>
-  <div class="mt-2 text-slate-600 leading-relaxed space-y-3">
-    <p>David Enriquez brings over 20 years of hands-on experience in the warehouse racking and repair industry. Over two decades, he has designed, installed, and managed countless repair and safety solutions for facilities across North America. Mentored by some of the best in the industry, David’s approach combines engineered precision with real-world practicality, always centered on safety and long-term performance.</p>
+        </article>
 
-    <p>To expand capabilities and serve customers end-to-end, David recently acquired FBS Group, Inc.—a respected provider of warehouse equipment solutions. This strategic step strengthens Elite Rackz’s supply, installation, and service offering while reinforcing the company’s commitment to quality and speed.</p>
-
-    <p>Beyond the job site, David is a devoted family man with a wonderful wife and children. He leads with humility, accountability, and a constant drive to improve—<i>always striving for greatness.</i></p>
-  </div>
-</div>
-
-        
-
-      </div>
-
-      <aside class="md:col-span-5 lg:col-span-4 xl:col-span-4 space-y-4 md:sticky md:top-24 lg:top-28 max-w-xs w-full justify-self-end md:pl-6">
-        <div class="p-4 border border-slate-200 rounded-xl shadow-sm">
-          <h3 class="text-base font-semibold tracking-wide text-slate-800">Certifications &amp; Insurance</h3>
-          <ul class="mt-2 space-y-1 text-slate-700 text-sm list-disc pl-5">
-            <li>PE‑stamped calculations available</li>
-            <li>Fully insured installers</li>
-            <li>OSHA‑focused safety plans</li>
-          </ul>
-        </div>
-        <div class="p-4 border border-slate-200 rounded-xl shadow-sm">
-          <h3 class="text-base font-semibold tracking-wide text-slate-800">Coverage</h3>
-          <p class="mt-2 text-slate-700 text-sm">Nationwide projects; based in the Midwest.</p>
-        </div>
-      </aside>
-
-      <!-- Wide transition banner spanning the grid -->
-      <figure class="md:col-span-12">
-        <div class="relative rounded-2xl border border-slate-200 ring-1 ring-slate-200/50 overflow-hidden bg-white">
-          <img src="assets/images/fbs-is-now-elite.jpg" alt="FBS Group, Inc. is now Elite Rackz" class="block w-full h-auto object-contain mx-auto max-h-[520px]" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-          <!-- Placeholder shows when the image isn't present -->
+        <!-- Wide banner -->
+        <figure class="rounded-2xl border border-slate-200 ring-1 ring-slate-200/50 overflow-hidden bg-white">
+          <img src="assets/images/fbs-is-now-elite.jpg" alt="FBS Group, Inc. is now Elite Rackz"
+               class="block w-full h-auto object-contain mx-auto max-h-[520px]" loading="lazy"
+               onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+          <!-- Placeholder -->
           <div class="hidden w-full flex items-center justify-center bg-slate-100 text-slate-500" style="aspect-ratio: 21 / 9;">
             <div class="text-center p-8">
               <div class="text-sm font-semibold tracking-wide">Wide image placeholder</div>
@@ -129,13 +132,31 @@
               <div class="text-xs">Centered and responsive (21:9 recommended)</div>
             </div>
           </div>
-        </div>
-      </figure>
+        </figure>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="md:col-span-5 lg:col-span-4 xl:col-span-4 md:sticky md:top-24 lg:top-28 space-y-4 max-w-xl md:max-w-none w-full justify-self-end" aria-label="Additional information">
+        <section class="p-5 border border-slate-200 rounded-xl shadow-sm bg-white">
+          <h3 class="text-base font-semibold tracking-wide text-slate-800">Certifications &amp; Insurance</h3>
+          <ul class="mt-3 space-y-1.5 text-slate-700 text-sm list-disc pl-5">
+            <li>PE-stamped calculations available</li>
+            <li>Fully insured installers</li>
+            <li>OSHA-focused safety plans</li>
+          </ul>
+        </section>
+
+        <section class="p-5 border border-slate-200 rounded-xl shadow-sm bg-white">
+          <h3 class="text-base font-semibold tracking-wide text-slate-800">Coverage</h3>
+          <p class="mt-2 text-slate-700 text-sm">Nationwide projects; based in the Midwest.</p>
+        </section>
+      </aside>
     </div>
   </section>
 </main>
 
-<footer class="mt-24 border-t border-slate-200" role="contentinfo">
+<footer class="mt-10 border-t border-slate-200" role="contentinfo">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
     <div>
       <div class="flex items-center gap-3 mb-4">

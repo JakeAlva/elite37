@@ -52,7 +52,13 @@
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
       </nav>
       <!-- Accessible mobile menu button -->
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300" aria-controls="mobileMenu" aria-expanded="false">
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+      >
         <span class="sr-only">Open menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -60,7 +66,7 @@
       </button>
     </div>
   </div>
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200" role="navigation" aria-label="Mobile">
+  <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200" role="navigation" aria-label="Mobile">
     <div class="px-4 py-3 space-y-2 text-sm">
       <a href="products.html" class="block">Products</a>
       <a href="services.html" class="block">Services</a>
@@ -176,7 +182,7 @@
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
-        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936</a></li>
+        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936)</a></li>
         <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
       </ul>
     </div>
@@ -193,21 +199,37 @@
   </div>
 </footer>
 
-<!-- Small, dependency-free mobile menu script; feel free to keep it or move to assets/js/main.js -->
+<!-- Mobile menu logic: robust & self-contained -->
 <script>
-  (function(){
-    const btn = document.getElementById('mobileMenuBtn');
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn  = document.getElementById('mobileMenuBtn');
     const menu = document.getElementById('mobileMenu');
-    if(!btn || !menu) return;
+    if (!btn || !menu) return;
+
+    const closeMenu = () => {
+      btn.setAttribute('aria-expanded', 'false');
+      menu.classList.add('hidden');
+    };
+
     btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!isOpen));
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
       menu.classList.toggle('hidden');
     });
-  })();
+
+    // Close when a link in the mobile menu is tapped
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a[href]')) closeMenu();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  });
 </script>
 
-<!-- If you already have site JS, you can keep this too -->
-<script src="assets/js/main.js"></script>
+<!-- Keep site JS; defer ensures it runs after DOM is parsed -->
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

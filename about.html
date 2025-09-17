@@ -7,9 +7,9 @@
   <meta name="description" content="Elite Rackz delivers engineered pallet rack repair and guarding solutions with lifetime warranty and stamped calculations.">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
-  <link rel="canonical" href="https://example.com/about.html">
+  <link rel="canonical" href="https://example.com/about.html"><!-- TODO: set real canonical URL -->
 
-  
+  <!-- Open Graph / Twitter for richer shares -->
   <meta property="og:title" content="About — Elite Rackz">
   <meta property="og:description" content="Engineered pallet rack repair and guarding with lifetime warranty.">
   <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
 </head>
 <body class="bg-white text-slate-800 antialiased">
 
-
+<!-- Header -->
 <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200" role="banner">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
@@ -38,12 +38,12 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium" aria-label="Primary">
         <a href="products.html" class="hover:text-brand-600">Products</a>
         <a href="services.html" class="hover:text-brand-600">Services</a>
-        
+        <!-- Mark current page with aria-current and a subtle style -->
         <a href="about.html" aria-current="page" class="text-brand-700">About</a>
         <a href="app.html" class="hover:text-brand-600">App</a>
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
       </nav>
-      
+      <!-- Accessible mobile menu button -->
       <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300" aria-controls="mobileMenu" aria-expanded="false">
         <span class="sr-only">Open menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -70,20 +70,22 @@
         <h1 class="text-4xl font-extrabold">About Elite Rackz</h1>
         <p class="mt-4 text-slate-700 max-w-3xl">Elite Rackz is dedicated to delivering engineered solutions that enhance warehouse safety, efficiency, and long-term reliability. We specialize in pallet rack repair, guarding systems, and a full range of warehouse protection products designed to safeguard both operations and personnel. Every solution is developed with precision engineering and is backed by a comprehensive lifetime warranty, ensuring enduring value and confidence for our customers.</p>
 
-  
+        <!-- Leadership card with optional headshot slot -->
         <div class="mt-8 p-6 border border-slate-200 rounded-2xl">
           <h2 class="text-2xl font-bold">Leadership</h2>
           <div class="mt-4 flex items-start gap-4">
-          
+            <!-- If you have a CEO photo, drop it into assets/images/ceo.jpg -->
             <div class="relative">
-              <img src="assets/images/ceo.jpg" alt="David Enriquez, CEO of Elite Rackz" class="w-20 h-20 rounded-full object-cover ring-1 ring-slate-200" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-             
-              <div class="w-20 h-20 rounded-full bg-slate-200 hidden items-center justify-center ring-1 ring-slate-200" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
-                  <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/>
-                </svg>
-              </div>
+            <div class="w-20 h-20 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0">
+              <img src="assets/images/ceo.jpg" alt="David Enriquez, CEO of Elite Rackz" class="w-full h-full object-cover" loading="lazy" onerror="this.closest('.relative').querySelector('[data-ceo-ph]').classList.remove('hidden'); this.parentElement.style.display='none';">
             </div>
+            <!-- Circular placeholder appears if image is missing -->
+            <div data-ceo-ph class="hidden w-20 h-20 rounded-full bg-slate-200 ring-1 ring-slate-200 flex items-center justify-center shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
+                <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/>
+              </svg>
+            </div>
+          </div>
             <div>
               <p class="text-slate-900 font-semibold">David Enriquez, Chief Executive Officer</p>
               <p class="mt-1 text-slate-600">Leads with a safety‑first mindset and a passion for efficient, code‑compliant repairs. Focused on engineered solutions, stamped calculations, and lifetime‑warranty products.</p>
@@ -108,11 +110,11 @@
         </div>
       </aside>
 
-
+      <!-- Wide transition banner spanning the grid -->
       <figure class="md:col-span-12">
         <div class="relative rounded-2xl border border-slate-200 ring-1 ring-slate-200/50 overflow-hidden bg-white">
           <img src="assets/images/fbs-is-now-elite.jpg" alt="FBS Group, Inc. is now Elite Rackz" class="block w-full h-auto object-contain mx-auto max-h-[520px]" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-       
+          <!-- Placeholder shows when the image isn't present -->
           <div class="hidden w-full flex items-center justify-center bg-slate-100 text-slate-500" style="aspect-ratio: 21 / 9;">
             <div class="text-center p-8">
               <div class="text-sm font-semibold tracking-wide">Wide image placeholder</div>
@@ -166,6 +168,7 @@
   </div>
 </footer>
 
+<!-- Small, dependency-free mobile menu script; feel free to keep it or move to assets/js/main.js -->
 <script>
   (function(){
     const btn = document.getElementById('mobileMenuBtn');
@@ -179,6 +182,7 @@
   })();
 </script>
 
+<!-- If you already have site JS, you can keep this too -->
 <script src="assets/js/main.js"></script>
 </body>
 </html>

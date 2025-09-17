@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/images/logo.png" type="image/png">
   <link rel="canonical" href="https://example.com/about.html"><!-- TODO: set real canonical URL -->
 
-  <!-- Open Graph / Twitter for richer shares -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="About — Elite Rackz">
   <meta property="og:description" content="Engineered pallet rack repair and guarding with lifetime warranty.">
   <meta property="og:type" content="website">
@@ -51,14 +51,13 @@
         <a href="app.html" class="hover:text-brand-600">App</a>
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
       </nav>
-      <!-- Accessible mobile menu button -->
+      <!-- Mobile menu button -->
       <button
         id="mobileMenuBtn"
         type="button"
         class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300"
         aria-controls="mobileMenu"
-        aria-expanded="false"
-      >
+        aria-expanded="false">
         <span class="sr-only">Open menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -182,7 +181,7 @@
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
-        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936)</a></li>
+        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936</a></li><!-- fixed extra ) -->
         <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
       </ul>
     </div>
@@ -199,25 +198,41 @@
   </div>
 </footer>
 
-<!-- Mobile menu logic: robust & self-contained -->
+<!-- Robust mobile menu: blocks duplicate handlers, works even if main.js also listens -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const btn  = document.getElementById('mobileMenuBtn');
     const menu = document.getElementById('mobileMenu');
     if (!btn || !menu) return;
 
+    // Ensure a known initial state
+    menu.classList.add('hidden');
+    btn.setAttribute('aria-expanded', 'false');
+
+    const openMenu = () => {
+      btn.setAttribute('aria-expanded', 'true');
+      menu.classList.remove('hidden');
+    };
     const closeMenu = () => {
       btn.setAttribute('aria-expanded', 'false');
       menu.classList.add('hidden');
     };
+    const toggleMenu = () => (btn.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu());
 
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      menu.classList.toggle('hidden');
-    });
+    // Capture phase + stop propagation to prevent double-toggle from other scripts
+    const onClickCapture = (e) => {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      e.stopPropagation();
+      toggleMenu();
+    };
+    // Guard against binding twice
+    if (!btn.dataset.bound) {
+      btn.addEventListener('click', onClickCapture, true); // useCapture = true
+      btn.dataset.bound = '1';
+    }
 
-    // Close when a link in the mobile menu is tapped
+    // Close when a mobile link is tapped
     menu.addEventListener('click', (e) => {
       if (e.target.closest('a[href]')) closeMenu();
     });
@@ -226,10 +241,15 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
+
+    // Reset on resize to desktop to avoid odd states
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
   });
 </script>
 
-<!-- Keep site JS; defer ensures it runs after DOM is parsed -->
+<!-- Keep site JS; defer so it runs after DOM is parsed -->
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>

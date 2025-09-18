@@ -62,16 +62,42 @@
       <h2 class="text-2xl font-bold mt-8">Install & Project Management</h2>
       <p class="text-slate-600">Night or day installs, phased to minimize disruption. We coordinate safety, permits, and disposal. Also, our installers are qualified members of the ISNetworld<sup>&reg;</sup> contractor network, ensuring compliance with industry-leading safety and reliability standards.</p>
     </div>
-    <div class="border border-slate-200 rounded-2xl p-6">
-      <h3 class="text-xl font-semibold">What you get</h3>
-      <ul class="mt-4 space-y-3 text-slate-700">
-        <li>• Detailed survey report (PDF)</li>
-        <li>• Stamped engineering package</li>
-        <li>• Warranty certificate</li>
-        <li>• Completion sign-off and care guide</li>
-      </ul>
-      <a href="contact.html" class="mt-6 inline-flex items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">Schedule a site visit</a>
+
+    <!-- Right column: original card + new badge card stacked, identical sizing -->
+    <div class="flex flex-col gap-6">
+      <div class="border border-slate-200 rounded-2xl p-6">
+        <h3 class="text-xl font-semibold">What you get</h3>
+        <ul class="mt-4 space-y-3 text-slate-700">
+          <li>• Detailed survey report (PDF)</li>
+          <li>• Stamped engineering package</li>
+          <li>• Warranty certificate</li>
+          <li>• Completion sign-off and care guide</li>
+        </ul>
+        <a href="contact.html" class="mt-6 inline-flex items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">Schedule a site visit</a>
+      </div>
+
+      <!-- NEW: same-size box directly underneath -->
+      <div class="border border-slate-200 rounded-2xl p-6">
+        <h3 class="text-xl font-semibold">ISNetworld<sup>&reg;</sup> Member Contractor</h3>
+        <div class="mt-4 flex items-center justify-center">
+          <img
+            src="assets/images/isn-member-contractor.png"
+            alt="ISNetworld Member Contractor badge"
+            class="w-full max-w-[360px] md:max-w-[440px] h-auto object-contain"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+          >
+          <!-- Placeholder if image not present yet -->
+          <div class="hidden w-full max-w-[440px] aspect-square rounded-xl border-2 border-dashed border-slate-300 text-slate-500 grid place-items-center text-center p-6">
+            <div>
+              <p class="font-medium">Badge image placeholder</p>
+              <p class="text-sm mt-1">Save your image as <code>assets/images/isn-member-contractor.png</code> and refresh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 

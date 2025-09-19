@@ -15,6 +15,28 @@
     tailwind.config = { theme: { extend: { fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] }, colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} }, boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'} } } };
   </script>
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Structured data: Organization (helps Google pick your logo) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Elite Rackz",
+    "url": "https://eliterackz.com/",
+    "logo": "https://eliterackz.com/assets/images/logo.png"
+  }
+  </script>
+
+  <!-- Structured data: WebSite (helps Google pick your site name) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Elite Rackz",
+    "alternateName": "Elite Rackz — Rack Repair & Guarding",
+    "url": "https://eliterackz.com/"
+  }
+  </script>
 </head>
 <body class="bg-white text-slate-800 antialiased">
 

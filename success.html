@@ -8,19 +8,18 @@
   <script>
     tailwind.config = { theme: { extend: { colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} } } } };
   </script>
+  <!-- (Optional) Preload logos to avoid flicker -->
+  <link rel="preload" as="image" href="assets/images/logo.png">
+  <link rel="preload" as="image" href="assets/images/fair%20byte-logo.png">
 </head>
 <body class="min-h-screen flex flex-col bg-white text-slate-800">
 
   <!-- Centered main content -->
   <div class="flex-1 grid place-items-center">
     <main class="max-w-lg mx-auto p-8 text-center">
-
-      <!-- Logo placeholder (no borders). Replace with your <img> when ready -->
+      <!-- Elite Rackz logo -->
       <div class="h-12 mb-6 flex items-center justify-center">
-        <!-- Example when you have the file:
-        <img src="assets/images/logo.png" alt="Elite Rackz" class="h-12 w-auto">
-        -->
-        <span class="sr-only">Elite Rackz logo placeholder</span>
+        <img src="assets/images/logo.png?v=1" alt="Elite Rackz" class="h-12 w-auto" loading="eager" decoding="async">
       </div>
 
       <h1 class="text-3xl font-extrabold">Thanks — we got your message.</h1>
@@ -31,11 +30,9 @@
 
   <!-- Bottom footer with small, readable credit -->
   <footer class="pb-6 text-center">
-    <p class="text-xs sm:text-sm text-slate-500">
-      Powered By: <span class="opacity-80">(fairbyte logo placeholder)</span>
-      <!-- When you have the logo, swap the placeholder for:
-      <img src="assets/images/fairbyte-logo.png" alt="Fairbyte" class="inline h-4 w-auto align-[-2px] opacity-80">
-      -->
+    <p class="text-xs sm:text-sm text-slate-500 flex items-center justify-center gap-2">
+      <span>Powered By:</span>
+      <img src="assets/images/fair%20byte-logo.png?v=1" alt="Fairbyte" class="h-4 sm:h-5 w-auto opacity-80 align-[-2px]" loading="lazy" decoding="async">
     </p>
   </footer>
 

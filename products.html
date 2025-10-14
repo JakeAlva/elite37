@@ -144,5 +144,92 @@
       <div class="p-6">
         <h3 class="font-semibold">Column Guards</h3>
         <p class="text-sm text-slate-600 mt-1">Low-profile, high-strength protection for uprights and posts.</p>
-        <a href="c
+        <a href="column-guards.html" class="mt-4 inline-flex text-brand-700 font-medium">See Details →</a>
+      </div>
+    </div>
 
+  </div>
+</section>
+
+<footer class="mt-24 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        <span class="font-extrabold tracking-tight text-slate-900">Elite <span class="text-brand-600">Rackz</span></span>
+      </div>
+      <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Explore</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="products.html" class="hover:text-brand-600">Products</a></li>
+        <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
+        <li><a href="about.html" class="hover:text-brand-600">About</a></li>
+        <li><a href="app.html" class="hover:text-brand-600">App</a></li>
+        <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Contact</h3>
+      <ul class="space-y-2 text-sm">
+        <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
+        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936</a></li>
+        <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Legal</h3>
+      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+    </div>
+  </div>
+  <div class="border-t border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-center gap-3 text-sm text-slate-600">
+      <span>This site was created by:</span>
+      <img src="assets/images/creator-logo.png" alt="JA Web Services" class="h-6 w-auto opacity-90">
+    </div>
+  </div>
+</footer>
+
+<!-- ONLY mobile menu + scoped Column Guards carousel; does not touch your main.js -->
+<script>
+  // Mobile menu
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+  // Scoped Column Guards carousel (uses .cg-* classes only)
+  (function(){
+    const root = document.getElementById('cgCarousel');
+    if (!root) return;
+    const slides = root.querySelectorAll('.cg-slide');
+    const prev = root.querySelector('.cg-prev');
+    const next = root.querySelector('.cg-next');
+    const dotsWrap = root.querySelector('.cg-dots');
+    let i = 0;
+
+    function render(){
+      slides.forEach((s, idx)=>{
+        s.style.opacity = idx===i ? '1' : '0';
+        s.style.transition = 'opacity 250ms ease';
+        s.style.pointerEvents = idx===i ? 'auto' : 'none';
+      });
+      if (dotsWrap){
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, idx)=>{
+          const b = document.createElement('button');
+          b.className = 'h-1.5 w-4 rounded-full ' + (idx===i ? 'bg-slate-800' : 'bg-slate-300');
+          b.addEventListener('click',()=>{ i = idx; render(); });
+          dotsWrap.appendChild(b);
+        });
+      }
+    }
+    if (prev) prev.addEventListener('click', ()=>{ i = (i-1+slides.length)%slides.length; render(); });
+    if (next) next.addEventListener('click', ()=>{ i = (i+1)%slides.length; render(); });
+    slides.forEach(s=> s.style.opacity='0');
+    render();
+  })();
+</script>
+
+</body>
+</html>

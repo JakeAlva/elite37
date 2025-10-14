@@ -61,17 +61,17 @@
   <h1 class="text-4xl font-extrabold">Products</h1>
   <p class="mt-3 text-slate-600 max-w-3xl">Engineered rack repair kits and guarding systems. All backed by a lifetime warranty and stamped engineering.</p>
 
+  <!-- Repair Kits (UNCHANGED structure so existing main.js keeps working) -->
   <h2 id="repair" class="mt-12 text-2xl font-bold">Rack Repair Kits</h2>
   <div class="mt-6 grid md:grid-cols-3 gap-8">
-    <!-- Existing carousels unchanged -->
     <div class="border border-slate-200 rounded-2xl overflow-hidden hover:shadow-smooth transition">
-      <div id="rkAcarousel" class="relative bg-white" data-carousel>
-        <div class="relative h-48 bg-white">
-          <img src="assets/images/repairA/slide-01.jpg" alt="EZ Double Leg Repair Kit" class="cg-slide absolute inset-0 w-full h-full object-contain p-2" />
+      <div id="rkAcarousel" class="relative bg-white">
+        <div id="rkAWrap" class="relative h-48 bg-white">
+          <img src="assets/images/repairA/slide-01.jpg" alt="EZ Double Leg Repair Kit" class="absolute inset-0 w-full h-full object-contain p-2">
         </div>
-        <button type="button" aria-label="Previous" class="cg-prev absolute left-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">‹</button>
-        <button type="button" aria-label="Next" class="cg-next absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">›</button>
-        <div class="cg-dots absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1"></div>
+        <button type="button" aria-label="Previous" class="prev absolute left-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">‹</button>
+        <button type="button" aria-label="Next" class="next absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">›</button>
+        <div class="dots absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1"></div>
       </div>
       <div class="p-6">
         <h3 class="font-semibold">EZ Double Leg Repair Kits</h3>
@@ -81,13 +81,13 @@
     </div>
 
     <div class="border border-slate-200 rounded-2xl overflow-hidden hover:shadow-smooth transition">
-      <div id="rkBcarousel" class="relative bg-white" data-carousel>
-        <div class="relative h-48 bg-white">
-          <img src="assets/images/repairB/slide-01.jpg" alt="EZ Single Leg Repair Kit" class="cg-slide absolute inset-0 w-full h-full object-contain p-2" />
+      <div id="rkBcarousel" class="relative bg-white">
+        <div id="rkBWrap" class="relative h-48 bg-white">
+          <img src="assets/images/repairB/slide-01.jpg" alt="EZ Single Leg Repair Kit" class="absolute inset-0 w-full h-full object-contain p-2">
         </div>
-        <button type="button" aria-label="Previous" class="cg-prev absolute left-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">‹</button>
-        <button type="button" aria-label="Next" class="cg-next absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">›</button>
-        <div class="cg-dots absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1"></div>
+        <button type="button" aria-label="Previous" class="prev absolute left-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">‹</button>
+        <button type="button" aria-label="Next" class="next absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">›</button>
+        <div class="dots absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1"></div>
       </div>
       <div class="p-6">
         <h3 class="font-semibold">EZ Single Leg Repair Kits</h3>
@@ -97,13 +97,13 @@
     </div>
 
     <div class="border border-slate-200 rounded-2xl overflow-hidden hover:shadow-smooth transition">
-      <div id="rkCcarousel" class="relative bg-white" data-carousel>
-        <div class="relative h-48 bg-white">
-          <img src="assets/images/repairC/slide-01.jpg" alt="EZ Roll-Form Repair Kit" class="cg-slide absolute inset-0 w-full h-full object-contain p-2" />
+      <div id="rkCcarousel" class="relative bg-white">
+        <div id="rkCWrap" class="relative h-48 bg-white">
+          <img src="assets/images/repairC/slide-01.jpg" alt="EZ Roll-Form Repair Kit" class="absolute inset-0 w-full h-full object-contain p-2">
         </div>
-        <button type="button" aria-label="Previous" class="cg-prev absolute left-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">‹</button>
-        <button type="button" aria-label="Next" class="cg-next absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">›</button>
-        <div class="cg-dots absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1"></div>
+        <button type="button" aria-label="Previous" class="prev absolute left-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">‹</button>
+        <button type="button" aria-label="Next" class="next absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">›</button>
+        <div class="dots absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1"></div>
       </div>
       <div class="p-6">
         <h3 class="font-semibold">EZ Roll-Form Repair Kits</h3>
@@ -118,39 +118,36 @@
   <h2 id="guarding" class="text-2xl font-bold">Guarding & Protection</h2>
   <div class="mt-6 grid md:grid-cols-2 gap-8">
 
-    <div class="border border-slate-200 rounded-2xl overflow-hidden hover:shadow-smooth transition">
-      <div class="w-full h-56 bg-white flex items-center justify-center">
+  <div class="border border-slate-200 rounded-2xl overflow-hidden hover:shadow-smooth transition">
+    <div class="w-full h-56 bg-white flex items-center justify-center">
       <img src="assets/images/guarding-eoa.jpg" class="max-h-full max-w-full object-contain p-2" alt="End-of-Aisle Guards">
     </div>
     <div class="p-6">
-        <h3 class="font-semibold">End-of-Aisle Guards</h3>
-        <p class="text-sm text-slate-600 mt-1">Deflect and absorb pallet jack and forklift impacts.</p>
-        <a href="end-of-aisle-guards.html" class="mt-4 inline-flex text-brand-700 font-medium">See Details →</a>
-      </div>
+      <h3 class="font-semibold">End-of-Aisle Guards</h3>
+      <p class="text-sm text-slate-600 mt-1">Deflect and absorb pallet jack and forklift impacts.</p>
+      <a href="end-of-aisle-guards.html" class="mt-4 inline-flex text-brand-700 font-medium">See Details →</a>
     </div>
-
-    <!-- UPDATED: Column Guards card now with a 2-image carousel (existing + uploaded photo) -->
-    <div class="border border-slate-200 rounded-2xl overflow-hidden hover:shadow-smooth transition">
-      <div class="w-full h-56 bg-white relative" id="columnGuardsCarousel">
-        <div class="relative h-full">
-          <!-- Slide 1: existing marketing image -->
-          <img src="assets/images/guarding-column.jpg" class="cg-slide absolute inset-0 w-full h-full object-contain p-2" alt="Column Guards — studio render">
-          <!-- Slide 2: NEW uploaded photo. Place your file at assets/images/column-guards/user-IMG_1518.png -->
-          <img src="assets/images/column-guards/user-IMG_1518.png" class="cg-slide absolute inset-0 w-full h-full object-contain p-2" alt="Column Guards — real product photo">
-        </div>
-        <button type="button" aria-label="Previous" class="cg-prev absolute left-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">‹</button>
-        <button type="button" aria-label="Next" class="cg-next absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">›</button>
-        <div class="cg-dots absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1"></div>
-      </div>
-      <div class="p-6">
-        <h3 class="font-semibold">Column Guards</h3>
-        <p class="text-sm text-slate-600 mt-1">Low-profile, high-strength protection for uprights and posts.</p>
-        <a href="column-guards.html" class="mt-4 inline-flex text-brand-700 font-medium">See Details →</a>
-      </div>
-    </div>
-
   </div>
-</section>
+
+  <!-- Column Guards: add a 2-image carousel but isolated so the rest of the site is untouched -->
+  <div class="border border-slate-200 rounded-2xl overflow-hidden hover:shadow-smooth transition">
+    <div class="w-full h-56 bg-white relative" id="cgCarousel">
+      <div class="relative h-full">
+        <img src="assets/images/guarding-column.jpg" class="cg-slide absolute inset-0 w-full h-full object-contain p-2" alt="Column Guards render">
+        <img src="assets/images/column-guards/IMG_1518.png" class="cg-slide absolute inset-0 w-full h-full object-contain p-2" alt="Column Guards product photo">
+      </div>
+      <button type="button" aria-label="Previous" class="cg-prev absolute left-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">‹</button>
+      <button type="button" aria-label="Next" class="cg-next absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-1 shadow">›</button>
+      <div class="cg-dots absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1"></div>
+    </div>
+    <div class="p-6">
+      <h3 class="font-semibold">Column Guards</h3>
+      <p class="text-sm text-slate-600 mt-1">Low-profile, high-strength protection for uprights and posts.</p>
+      <a href="column-guards.html" class="mt-4 inline-flex text-brand-700 font-medium">See Details →</a>
+    </div>
+  </div>
+
+</div></section>
 
 <footer class="mt-24 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
@@ -192,16 +189,15 @@
   </div>
 </footer>
 
-<!-- Minimal JS: mobile menu + lightweight carousel for any [data-carousel] blocks -->
 <script>
-  // Mobile menu only
+  // Mobile menu only (leave your existing main.js to handle rk* carousels)
   const btn = document.getElementById('mobileMenuBtn');
   const menu = document.getElementById('mobileMenu');
   if (btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-  // Tiny, scoped carousel *only* for Column Guards
+  // Tiny, isolated carousel for Column Guards only — does not touch rk* or anything in main.js
   (function(){
-    const root = document.getElementById('columnGuardsCarousel');
+    const root = document.getElementById('cgCarousel');
     if (!root) return;
     const slides = root.querySelectorAll('.cg-slide');
     const prev = root.querySelector('.cg-prev');
@@ -210,21 +206,22 @@
     let i = 0;
     function render(){
       slides.forEach((s, idx)=>{
-        s.style.opacity = idx===i? '1':'0';
+        s.style.opacity = idx===i ? '1' : '0';
         s.style.transition = 'opacity 250ms ease';
+        s.style.pointerEvents = idx===i ? 'auto' : 'none';
       });
       if (dotsWrap){
-        dotsWrap.innerHTML='';
+        dotsWrap.innerHTML = '';
         slides.forEach((_, idx)=>{
-          const b=document.createElement('button');
-          b.className = 'h-1.5 w-4 rounded-full ' + (idx===i? 'bg-slate-800':'bg-slate-300');
-          b.addEventListener('click',()=>{ i=idx; render(); });
+          const b = document.createElement('button');
+          b.className = 'h-1.5 w-4 rounded-full ' + (idx===i ? 'bg-slate-800' : 'bg-slate-300');
+          b.addEventListener('click',()=>{ i = idx; render(); });
           dotsWrap.appendChild(b);
         });
       }
     }
-    if (prev) prev.addEventListener('click', ()=>{ i=(i-1+slides.length)%slides.length; render(); });
-    if (next) next.addEventListener('click', ()=>{ i=(i+1)%slides.length; render(); });
+    if (prev) prev.addEventListener('click', ()=>{ i = (i-1+slides.length)%slides.length; render(); });
+    if (next) next.addEventListener('click', ()=>{ i = (i+1)%slides.length; render(); });
     slides.forEach(s=> s.style.opacity='0');
     render();
   })();

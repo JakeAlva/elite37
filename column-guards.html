@@ -12,7 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] }, colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} }, boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'} } } };
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] },
+          colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} },
+          boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'}
+        }
+      }
+    };
   </script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -55,7 +63,8 @@
   <h1 class="text-4xl font-extrabold">Column Guards</h1>
   <p class="mt-3 text-slate-600 max-w-3xl">Explore our column guard families. Click “See More” on any item to reveal full details and specifications.</p>
 
-  <div class="mt-8 grid md:grid-cols-2 gap-8">
+  <!-- 3-up grid -->
+  <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     <!-- Card 1: EZ Guard Shield -->
     <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-smooth transition bg-white">
       <div class="w-full h-56 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
@@ -66,19 +75,24 @@
       <div class="mt-4">
         <button type="button" class="js-see-more inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800" data-target="shield-details">See More</button>
       </div>
-      <div id="shield-details" class="mt-4 hidden"><h3 class="text-sm font-semibold text-slate-900">Long Description</h3><p class="mt-1 text-slate-700">The EZ Guard Shield is a bolted protective guard that may be installed anywhere on the column to prevent damage from forklifts or product impact.<br><br>Made with robust 1/4” steel in variable customizable lengths. Great at shielding column from accidental forklift truck counterbalance weights and overhead guard collision.</p><h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3><ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
-  <li><strong>RACK SYSTEM:</strong> All</li>
-  <li><strong>CATEGORY:</strong> Protection / Reinforcement</li>
-  <li><strong>STEEL GAUGE:</strong> Rugged 1/4″ steel</li>
-  <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
-  <li><strong>STYLE:</strong> Bolt Style</li>
-  <li><strong>LENGTH:</strong> Standard 12”, 18” or 24” (Custom lengths available)</li>
-  <li><strong>WIDTH:</strong> All</li>
-  <li><strong>HARDWARE:</strong> Two grade 5 fasteners Included</li>
-  <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
-  <li><strong>PUNCH:</strong> Universally compatible with all punch styles</li>
-  <li><strong>CUSTOMIZABLE:</strong> Yes</li>
-</ul></div>
+      <div id="shield-details" class="mt-4 hidden">
+        <h3 class="text-sm font-semibold text-slate-900">Long Description</h3>
+        <p class="mt-1 text-slate-700">The EZ Guard Shield is a bolted protective guard that may be installed anywhere on the column to prevent damage from forklifts or product impact.<br><br>Made with robust 1/4” steel in variable customizable lengths. Great at shielding column from accidental forklift truck counterbalance weights and overhead guard collision.</p>
+        <h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3>
+        <ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
+          <li><strong>RACK SYSTEM:</strong> All</li>
+          <li><strong>CATEGORY:</strong> Protection / Reinforcement</li>
+          <li><strong>STEEL GAUGE:</strong> Rugged 1/4″ steel</li>
+          <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
+          <li><strong>STYLE:</strong> Bolt Style</li>
+          <li><strong>LENGTH:</strong> Standard 12”, 18” or 24” (Custom lengths available)</li>
+          <li><strong>WIDTH:</strong> All</li>
+          <li><strong>HARDWARE:</strong> Two grade 5 fasteners Included</li>
+          <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
+          <li><strong>PUNCH:</strong> Universally compatible with all punch styles</li>
+          <li><strong>CUSTOMIZABLE:</strong> Yes</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Card 2: EZ Guard V-Nose -->
@@ -91,21 +105,85 @@
       <div class="mt-4">
         <button type="button" class="js-see-more inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800" data-target="vnose-details">See More</button>
       </div>
-      <div id="vnose-details" class="mt-4 hidden"><h3 class="text-sm font-semibold text-slate-900">Long Description</h3><p class="mt-1 text-slate-700">The EZ Guard V-Nose is a pallet rack guard that protects racks from outrigger damage. The standard 4″ high 3/8″ thick steel guard uses a 3/4″ internal anchor that ensures ultimate impact resistance. The anchor fastens this guard to the floor rather than to the column. Thus transferring impact energy to the guard rather than the column. Designed to prevent column twisting with single anchored footplates.<br><br>The 3/8″ thick footplate can be set flush or below the guard sufficiently to accommodate various footplate dimensions. Highly customizable, the EZ Guard column protector may be designed to accept various column widths and setbacks. It is not a flimsy wrap around boot, bolted angle or other gimmick. It is a heavy-duty steel column guard that will protect your pallet racks from costly future damage.</p><h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3><ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
-  <li><strong>RACK SYSTEM:</strong> All</li>
-  <li><strong>CATEGORY:</strong> Protection</li>
-  <li><strong>STEEL GAUGE:</strong> Rugged 3/8” throughout</li>
-  <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
-  <li><strong>STYLE:</strong> Single Anchor</li>
-  <li><strong>HEIGHT:</strong> Standard 4″</li>
-  <li><strong>NUMBER OF ANCHORS:</strong> 1 internal 3/4″ X 7″ anchor included</li>
-  <li><strong>ANCHOR DIMS:</strong> 3/4” x 7” for high impact resistance and minimal twisting</li>
-  <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
-  <li><strong>PUNCH:</strong> Universally compatible with all punch styles</li>
-  <li><strong>CUSTOMIZABLE:</strong> Yes</li>
-  <li><strong>FOAM PLUG:</strong> Optional foam plug eliminates the trash build-ups</li>
-  <li><strong>WARRANTY DESCRIPTION:</strong> Mac Rak offers a Lifetime Warranty for all our products against defects in manufacturing or material workmanship.</li>
-</ul></div>
+      <div id="vnose-details" class="mt-4 hidden">
+        <h3 class="text-sm font-semibold text-slate-900">Long Description</h3>
+        <p class="mt-1 text-slate-700">The EZ Guard V-Nose is a pallet rack guard that protects racks from outrigger damage. The standard 4″ high 3/8″ thick steel guard uses a 3/4″ internal anchor that ensures ultimate impact resistance. The anchor fastens this guard to the floor rather than to the column. Thus transferring impact energy to the guard rather than the column. Designed to prevent column twisting with single anchored footplates.<br><br>The 3/8″ thick footplate can be set flush or below the guard sufficiently to accommodate various footplate dimensions. Highly customizable, the EZ Guard column protector may be designed to accept various column widths and setbacks. It is not a flimsy wrap around boot, bolted angle or other gimmick. It is a heavy-duty steel column guard that will protect your pallet racks from costly future damage.</p>
+        <h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3>
+        <ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
+          <li><strong>RACK SYSTEM:</strong> All</li>
+          <li><strong>CATEGORY:</strong> Protection</li>
+          <li><strong>STEEL GAUGE:</strong> Rugged 3/8” throughout</li>
+          <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
+          <li><strong>STYLE:</strong> Single Anchor</li>
+          <li><strong>HEIGHT:</strong> Standard 4″</li>
+          <li><strong>NUMBER OF ANCHORS:</strong> 1 internal 3/4″ X 7″ anchor included</li>
+          <li><strong>ANCHOR DIMS:</strong> 3/4” x 7” for high impact resistance and minimal twisting</li>
+          <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
+          <li><strong>PUNCH:</strong> Universally compatible with all punch styles</li>
+          <li><strong>CUSTOMIZABLE:</strong> Yes</li>
+          <li><strong>FOAM PLUG:</strong> Optional foam plug eliminates the trash build-ups</li>
+          <li><strong>WARRANTY DESCRIPTION:</strong> Mac Rak offers a Lifetime Warranty for all our products against defects in manufacturing or material workmanship.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Card 3: EZ Guard Pro (with carousel) -->
+    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-smooth transition bg-white">
+      <div
+        class="w-full h-56 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100"
+        data-carousel
+        data-images='[
+          "assets/images/IMG_1518.png",
+          "assets/images/IMG_1515.jpg",
+          "assets/images/IMG_1511.jpg",
+          "assets/images/IMG_1510.jpg"
+        ]'>
+        <img alt="EZ Guard Pro" class="max-w-full max-h-full object-contain p-2 transition-opacity duration-500 opacity-100">
+      </div>
+
+      <h2 class="text-xl font-semibold mt-4">EZ Guard Pro</h2>
+      <p class="mt-2 text-slate-700">Long description and full specifications are available below. Use the “See More” button to expand.</p>
+
+      <div class="mt-4">
+        <button type="button"
+                class="js-see-more inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800"
+                data-target="pro-details">See More</button>
+      </div>
+
+      <div id="pro-details" class="mt-4 hidden">
+        <h3 class="text-sm font-semibold text-slate-900">Long Description</h3>
+        <p class="mt-1 text-slate-700">
+          The EZ Guard PRO is a dual purpose repair and high impact outrigger protector. It provides ultimate impact protection
+          for the most vulnerable frame section, the bottom 12″ of the front column. This is a high impact deflecting kit.
+        </p>
+        <p class="mt-3 text-slate-700">
+          Laser focused, addresses the largest single catagory of column damage with the most effective solution. Does not require
+          replacing undamaged factory bracing. Accommodate beam levels 20” or higher. It is not a wraparound post protector or
+          plastic gimmick. This engineered kit becomes part of the post and prevents twisting. It is available in protruding and
+          non-protruding versions.
+        </p>
+
+        <h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3>
+        <ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
+          <li><strong>RACK SYSTEM:</strong> All</li>
+          <li><strong>CATEGORY:</strong> Repair and protection</li>
+          <li><strong>STEEL GAUGE:</strong> 1/4″ &amp; 3/8″ Steel</li>
+          <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
+          <li><strong>STYLE:</strong> Bolted</li>
+          <li><strong>SEAT HEIGHT:</strong> Standard 4″, 6″ or 8″</li>
+          <li><strong>NUMBER OF ANCHORS:</strong> Two 3/4″ × 7″</li>
+          <li><strong>ANCHOR DIMS:</strong> 3/4” × 7” for high impact resistance and minimal twisting</li>
+          <li><strong>FOOTPLATE DIMS:</strong> ⅜” 4” × 12” Standard</li>
+          <li><strong>COLOR:</strong> Any standard rack color powder coat finish*</li>
+          <li><strong>PUNCH:</strong> Non-punched</li>
+          <li><strong>PROTECTOR TYPE:</strong> Standard non-protruding</li>
+          <li><strong>CUSTOMIZABLE:</strong> Standard front or side bolt connection</li>
+          <li><strong>WARRANTY DESCRIPTION:</strong> Limited Lifetime Impact Warranty</li>
+        </ul>
+        <p class="mt-2 text-xs text-slate-500">
+          * Available powder coat paint colors are common industry-standard colors. Exact match is not guaranteed.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -149,9 +227,11 @@
     </div>
   </div>
 </footer>
+
 <script src="assets/js/main.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  // See More / See Less toggle (idempotent)
   document.querySelectorAll('.js-see-more').forEach(function (btn) {
     if (btn.dataset.bound === '1') return;
     btn.dataset.bound = '1';
@@ -161,7 +241,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!target) return;
       var isHidden = target.classList ? target.classList.contains('hidden') : (getComputedStyle(target).display === 'none');
       if (target.classList) target.classList.toggle('hidden');
-      // Fallback to inline display if Tailwind's .hidden isn't present
       if (isHidden) {
         target.style.display = 'block';
         btn.textContent = 'See Less';
@@ -172,6 +251,29 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.setAttribute('aria-expanded', 'false');
       }
     });
+  });
+
+  // Lightweight fade carousel for any container with [data-carousel]
+  document.querySelectorAll('[data-carousel]').forEach(function (wrap) {
+    if (wrap.dataset.bound === '1') return;
+    wrap.dataset.bound = '1';
+
+    const imgEl = wrap.querySelector('img');
+    let imgs = [];
+    try { imgs = JSON.parse(wrap.getAttribute('data-images')) || []; } catch(e) {}
+    if (!imgs.length || !imgEl) return;
+
+    let i = 0;
+    imgEl.src = imgs[0];
+
+    setInterval(function () {
+      i = (i + 1) % imgs.length;
+      imgEl.style.opacity = '0';
+      setTimeout(function () {
+        imgEl.src = imgs[i];
+        imgEl.onload = function () { imgEl.style.opacity = '1'; };
+      }, 200);
+    }, 3000);
   });
 });
 </script>

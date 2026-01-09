@@ -4,37 +4,249 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thanks — Elite Rackz</title>
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Thanks — we received your request. Elite Rackz will follow up shortly with next steps.">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} } } } };
   </script>
-  <!-- (Optional) Preload logos to avoid flicker -->
+
   <link rel="preload" as="image" href="assets/images/logo.png">
   <link rel="preload" as="image" href="assets/images/fair%20byte-logo.png">
 </head>
-<body class="min-h-screen flex flex-col bg-white text-slate-800">
 
-  <!-- Centered main content -->
-  <div class="flex-1 grid place-items-center">
-    <main class="max-w-lg mx-auto p-8 text-center">
-      <!-- Elite Rackz logo -->
-      <div class="h-12 mb-6 flex items-center justify-center">
-        <img src="assets/images/logo.png?v=1" alt="Elite Rackz" class="h-12 w-auto" loading="eager" decoding="async">
-      </div>
+<body class="min-h-screen flex flex-col bg-white text-slate-800 overflow-x-hidden">
 
-      <h1 class="text-3xl font-extrabold">Thanks — we got your message.</h1>
-      <p class="mt-3 text-slate-600">Our team will reach out shortly.</p>
-      <a href="index.html" class="inline-block mt-8 px-5 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700">Back to Home</a>
+  <div class="flex-1 grid place-items-center px-4">
+    <main class="w-full max-w-xl mx-auto">
+
+      <section class="relative rounded-3xl border border-slate-200 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] p-8 sm:p-10
+                      opacity-0 translate-y-3 transition-all duration-500 ease-out"
+               id="successCard">
+
+        <div class="h-12 mb-5 flex items-center justify-center">
+          <img src="assets/images/logo.png?v=1" alt="Elite Rackz" class="h-12 w-auto" loading="eager" decoding="async">
+        </div>
+
+        <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 border border-emerald-200
+                    scale-95 opacity-0 transition-all duration-500 ease-out"
+             id="checkWrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/>
+          </svg>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-center">
+          Thanks — we got your request.
+        </h1>
+        <p class="mt-3 text-slate-600 text-center">
+          We’ll follow up shortly. If you have photos, they can speed up quoting.
+        </p>
+
+        <div class="mt-6 grid gap-3 sm:grid-cols-3 text-center">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+            <div class="text-xs font-semibold text-slate-600">Typical response</div>
+            <div class="text-sm font-extrabold text-slate-900"><1 Day</div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+            <div class="text-xs font-semibold text-slate-600">Privacy</div>
+            <div class="text-sm font-extrabold text-slate-900">We don’t share data</div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+            <div class="text-xs font-semibold text-slate-600">Built for speed</div>
+            <div class="text-sm font-extrabold text-slate-900">Engineered quotes</div>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
+          <h2 class="text-sm font-extrabold text-slate-900 tracking-tight">What happens next</h2>
+          <ol class="mt-3 space-y-3 text-sm text-slate-700">
+            <li class="flex gap-3">
+              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-slate-50 font-extrabold">1</span>
+              <span>We review your details and confirm scope (if anything is unclear).</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-slate-50 font-extrabold">2</span>
+              <span>We recommend the right repair/guarding approach and timeline.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-slate-50 font-extrabold">3</span>
+              <span>You receive a clear quote with scheduling options.</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <h3 class="text-sm font-extrabold text-slate-900 tracking-tight">Want to speed things up?</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            If you can, have these ready — it helps us quote faster:
+          </p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-700">
+            <li>• Facility location (City/State)</li>
+            <li>• Rack type (teardrop / structural) and upright sizes if known</li>
+            <li>• Approximate quantity of damaged uprights / guarding needed</li>
+            <li>• Photos of damage areas (wide + close-up)</li>
+          </ul>
+
+          <div class="mt-4 flex flex-col sm:flex-row gap-3">
+            <!-- FIXED: number stays on one line -->
+            <a href="tel:+17089802936"
+               class="inline-flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-extrabold whitespace-nowrap"
+               data-track="phone_click"
+               aria-label="Call Elite Rackz now at (708) 980-2936">
+              <span>Call Now:</span>
+              <span class="tracking-tight tabular-nums">(708) 980-2936</span>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   class="h-5 w-5 flex-shrink-0"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="2">
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2
+                         19.79 19.79 0 0 1-8.63-3.07
+                         19.5 19.5 0 0 1-6-6
+                         19.79 19.79 0 0 1-3.07-8.67
+                         A2 2 0 0 1 4.11 2h3
+                         a2 2 0 0 1 2 1.72
+                         c.12.86.31 1.7.57 2.5
+                         a2 2 0 0 1-.45 2.11
+                         L8.09 9.91a16 16 0 0 0 6 6
+                         l1.58-1.14a2 2 0 0 1 2.11-.45
+                         c.8.26 1.64.45 2.5.57
+                         A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </a>
+
+            <a href="mailto:David@eliterackz.com?subject=Photos%20for%20Quote%20%E2%80%94%20Elite%20Rackz&body=Hi%20Elite%20Rackz%2C%0A%0AHere%20are%20photos%20for%20my%20quote%20request.%20Facility%20location%3A%20_____%20(City%2C%20State)%0ARack%20type%3A%20_____ %0AApprox.%20damaged%20uprights%2Fguarding%3A%20_____%0A%0AThanks%2C%0A"
+               class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 font-semibold"
+               aria-label="Email photos for your quote request">
+              Email Photos (Optional)
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="m22 6-10 7L2 6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <a href="index.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700 font-extrabold shadow-smooth">
+            Back to Home
+          </a>
+        </div>
+
+        <p class="mt-5 text-center text-xs text-slate-500">
+          If you don’t hear back, check spam or call us directly — we’ll take care of it.
+        </p>
+      </section>
+
     </main>
   </div>
 
-  <!-- Bottom footer with small, readable credit -->
   <footer class="pb-6 text-center">
     <p class="text-xs sm:text-sm text-slate-500 flex items-center justify-center gap-2">
       <span>Powered By:</span>
       <img src="assets/images/fair%20byte-logo.png?v=1" alt="Fairbyte" class="h-4 sm:h-5 w-auto opacity-80 align-[-2px]" loading="lazy" decoding="async">
     </p>
   </footer>
+
+  <script>
+    // Entrance animation
+    const card = document.getElementById('successCard');
+    const check = document.getElementById('checkWrap');
+    requestAnimationFrame(() => {
+      card.classList.remove('opacity-0', 'translate-y-3');
+      card.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        check.classList.remove('opacity-0', 'scale-95');
+        check.classList.add('opacity-100', 'scale-100');
+      }, 140);
+    });
+
+    // Confetti burst (tasteful, short)
+    (function confettiBurst(){
+      const durationMs = 850;
+      const end = Date.now() + durationMs;
+      const colors = ['#2e6ad6', '#2554aa', '#10b981', '#ffffff'];
+
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+
+      const canvas = document.createElement('canvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      canvas.style.position = 'fixed';
+      canvas.style.inset = '0';
+      canvas.style.pointerEvents = 'none';
+      canvas.style.zIndex = '60';
+      document.body.appendChild(canvas);
+
+      const ctx = canvas.getContext('2d');
+      const pieces = Array.from({length: 120}).map(() => ({
+        x: canvas.width * 0.5,
+        y: canvas.height * 0.25,
+        vx: (Math.random() - 0.5) * 10,
+        vy: Math.random() * -8 - 6,
+        r: Math.random() * 6 + 3,
+        rot: Math.random() * Math.PI,
+        vr: (Math.random() - 0.5) * 0.2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        alpha: 1
+      }));
+
+      function tick() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach(p => {
+          p.vy += 0.32;
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.vr;
+          p.alpha *= 0.985;
+
+          ctx.save();
+          ctx.globalAlpha = p.alpha;
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r);
+          ctx.restore();
+        });
+
+        if (Date.now() < end) requestAnimationFrame(tick);
+        else canvas.remove();
+      }
+      tick();
+    })();
+  </script>
+
+  <!-- Optional: phone-click tracking hook (see instructions below) -->
+  <script>
+    // This fires a tracking event whenever a "tel:" link with data-track="phone_click" is tapped.
+    document.addEventListener('click', function(e){
+      const a = e.target.closest && e.target.closest('a[data-track="phone_click"]');
+      if (!a) return;
+
+      // GA4 event (if gtag is installed on your site)
+      if (typeof gtag === 'function') {
+        gtag('event', 'phone_click', {
+          event_category: 'engagement',
+          event_label: a.getAttribute('href') || '(tel)',
+          value: 1
+        });
+      }
+
+      // If you use dataLayer / GTM, also push:
+      if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+        window.dataLayer.push({
+          event: 'phone_click',
+          phone: a.getAttribute('href') || ''
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>

@@ -4,14 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — Elite Rackz</title>
-  <meta name="description" content="Elite Rackz delivers engineered pallet rack repair and guarding solutions with lifetime warranty and stamped calculations.">
+  <meta name="description" content="Elite Rackz designs and manufactures engineered pallet rack repair and guarding solutions—built for compliance, durability, and long-term performance.">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
-  <link rel="canonical" href="https://example.com/about.html"><!-- TODO: set real canonical URL -->
+  <!-- TODO: set real canonical URL -->
+  <link rel="canonical" href="https://example.com/about.html">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="About — Elite Rackz">
-  <meta property="og:description" content="Engineered pallet rack repair and guarding with lifetime warranty.">
+  <meta property="og:description" content="Engineered pallet rack repair and guarding with lifetime warranty options and stamped engineering.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/logo.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -31,8 +33,22 @@
       }
     };
   </script>
+
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Scroll reveal (match rest of site) -->
+  <style>
+    .reveal{opacity:0;transform:translateY(14px);filter:blur(6px);transition:opacity 650ms ease,transform 650ms ease,filter 650ms ease;will-change:opacity,transform,filter}
+    .reveal.in-view{opacity:1;transform:translateY(0);filter:blur(0)}
+    .reveal-delay-1{transition-delay:80ms}
+    .reveal-delay-2{transition-delay:160ms}
+    .reveal-delay-3{transition-delay:240ms}
+    @media (prefers-reduced-motion: reduce){
+      .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+    }
+  </style>
 </head>
+
 <body class="bg-white text-slate-800 antialiased">
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1000] bg-white text-slate-900 rounded px-3 py-2 shadow">Skip to content</a>
 
@@ -44,13 +60,17 @@
         <img src="assets/images/logo.png" alt="Elite Rackz logo" class="h-8 w-auto" loading="eager">
         <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">SMART STORAGE. NO COMPROMISE. ELITE RACKZ.</span>
       </a>
+
+      <!-- UPDATED: Blog added before Contact (no NEW badge) -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium" aria-label="Primary">
         <a href="products.html" class="hover:text-brand-600">Products</a>
         <a href="services.html" class="hover:text-brand-600">Services</a>
         <a href="about.html" aria-current="page" class="text-brand-700">About</a>
         <a href="app.html" class="hover:text-brand-600">App</a>
+        <a href="blog/index.html" class="hover:text-brand-600">Blog</a>
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
       </nav>
+
       <!-- Mobile menu button -->
       <button
         id="mobileMenuBtn"
@@ -65,42 +85,110 @@
       </button>
     </div>
   </div>
+
+  <!-- UPDATED: Blog added to mobile menu -->
   <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200" role="navigation" aria-label="Mobile">
     <div class="px-4 py-3 space-y-2 text-sm">
       <a href="products.html" class="block">Products</a>
       <a href="services.html" class="block">Services</a>
       <a href="about.html" aria-current="page" class="block font-semibold text-brand-700">About</a>
       <a href="app.html" class="block">App</a>
-      <a href="contact.html" class="block">Contact</a>
+      <a href="blog/index.html" class="block">Blog</a>
+      <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
     </div>
   </div>
 </header>
 
 <main id="main" class="min-h-[70vh]" role="main">
-  <!-- Page intro -->
-  <section class="border-b border-slate-200 bg-white/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h1 class="text-4xl font-extrabold tracking-tight">About Elite Rackz</h1>
-      <p class="mt-4 text-slate-700 max-w-3xl leading-relaxed">
-        Elite Rackz is a premier provider of engineered pallet rack repair and guarding solutions, delivering products that exceed the highest standards of safety, durability, and compliance. Backed by a lifetime impact warranty and engineer-stamped drawings, our solutions are trusted by warehouses and distribution centers nationwide to protect employees, safeguard assets, and extend the life of critical infrastructure. Formerly operating as FBS Group, Inc., Elite Rackz builds on a proven legacy of innovation while advancing with a sharper focus on next-generation rack repair systems and guarding products that offer superior protection, simplified installation, and unmatched performance. Guided by our commitment to “Smart Storage. No Compromise.,” we provide not only engineered products but also long-term peace of mind—ensuring that our customers operate with confidence, efficiency, and safety in every aspect of their storage environment.
-      </p>
+
+  <!-- REFRESHED HERO (matches rest of site) -->
+  <section class="bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="reveal flex items-center justify-between gap-6 flex-wrap">
+        <div class="text-sm text-slate-500">
+          <a class="hover:text-slate-700" href="index.html">Home</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-700 font-semibold">About</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-black/5">
+          <span class="text-[11px] font-extrabold tracking-wide text-slate-900">MADE IN THE USA</span>
+        </div>
+      </div>
+
+      <div class="mt-6 grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-8">
+          <h1 class="reveal reveal-delay-1 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            About Elite Rackz
+          </h1>
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600 max-w-3xl leading-relaxed">
+            Elite Rackz delivers engineered pallet rack repair and guarding solutions designed for real-world impacts, compliance needs,
+            and long-term performance. Our approach combines manufacturing control, engineering support, and field-proven installation
+            methods—so facilities can protect people, assets, and uptime.
+          </p>
+
+          <div class="reveal reveal-delay-3 mt-7 flex flex-wrap gap-2">
+            <span class="inline-flex items-center px-3 py-2 rounded-xl bg-white ring-1 ring-slate-200 text-sm font-semibold text-slate-800">
+              Engineering-backed solutions
+            </span>
+            <span class="inline-flex items-center px-3 py-2 rounded-xl bg-white ring-1 ring-slate-200 text-sm font-semibold text-slate-800">
+              Documentation for approvals
+            </span>
+            <span class="inline-flex items-center px-3 py-2 rounded-xl bg-white ring-1 ring-slate-200 text-sm font-semibold text-slate-800">
+              Built for high-impact environments
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 reveal reveal-delay-2">
+          <div class="rounded-2xl bg-white ring-1 ring-black/10 shadow-smooth p-6">
+            <div class="text-xs text-slate-500">At a glance</div>
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <div class="rounded-xl bg-slate-50 ring-1 ring-black/5 p-4">
+                <div class="text-xs text-slate-500">Focus</div>
+                <div class="font-extrabold text-slate-900">Repair + Guarding</div>
+              </div>
+              <div class="rounded-xl bg-slate-50 ring-1 ring-black/5 p-4">
+                <div class="text-xs text-slate-500">Support</div>
+                <div class="font-extrabold text-slate-900">Engineering</div>
+              </div>
+              <div class="rounded-xl bg-slate-50 ring-1 ring-black/5 p-4">
+                <div class="text-xs text-slate-500">Coverage</div>
+                <div class="font-extrabold text-slate-900">Nationwide</div>
+              </div>
+              <div class="rounded-xl bg-slate-50 ring-1 ring-black/5 p-4">
+                <div class="text-xs text-slate-500">Goal</div>
+                <div class="font-extrabold text-slate-900">Reduce downtime</div>
+              </div>
+            </div>
+
+            <a href="blog/index.html" class="mt-6 inline-flex items-center text-brand-700 font-semibold hover:underline">
+              Read the Rack Repair Library →
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Content grid -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <div class="grid md:grid-cols-12 gap-10 lg:gap-12 items-start">
+
       <!-- Left column -->
       <div class="md:col-span-7 lg:col-span-8 xl:col-span-8 space-y-8">
 
-        <!-- Leadership -->
-        <article class="p-6 border border-slate-200 rounded-2xl shadow-sm bg-white">
-          <h2 class="text-2xl font-bold">Leadership</h2>
-          <div class="mt-4 flex items-start gap-4">
-            <!-- CEO photo with graceful fallback -->
+        <!-- Leadership (refreshed card style) -->
+        <article class="reveal p-6 border border-slate-200 rounded-2xl shadow-smooth bg-white">
+          <h2 class="text-2xl font-extrabold">Leadership</h2>
+          <div class="mt-5 flex items-start gap-4">
             <div class="relative">
-              <div class="w-20 h-20 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0">
-                <img src="assets/images/ceo.jpg" alt="David Enriquez, CEO of Elite Rackz" class="w-full h-full object-cover" loading="lazy"
+              <div class="w-20 h-20 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0 bg-slate-50">
+                <img src="assets/images/ceo.jpg"
+                     alt="David Enriquez, CEO of Elite Rackz"
+                     class="w-full h-full object-cover"
+                     loading="lazy"
                      onerror="this.closest('.relative').querySelector('[data-ceo-ph]').classList.remove('hidden'); this.parentElement.style.display='none';">
               </div>
               <div data-ceo-ph class="hidden w-20 h-20 rounded-full bg-slate-200 ring-1 ring-slate-200 flex items-center justify-center shrink-0" aria-hidden="true">
@@ -111,22 +199,30 @@
             </div>
 
             <div class="flex-1">
-              <p class="text-slate-900 font-semibold">David Enriquez, CEO</p>
-              <div class="mt-2 text-slate-700 leading-relaxed space-y-3">
-                <p>David Enriquez brings over 20 years of hands-on experience in the warehouse racking and repair industry. Over two decades, he has designed, installed, and managed countless repair and safety solutions for facilities across North America. Mentored by some of the best in the industry, David’s approach combines engineered precision with real-world practicality, always centered on safety and long-term performance.</p>
-                <p>To expand capabilities and serve customers end-to-end, David recently acquired FBS Group, Inc.—a respected provider of warehouse equipment solutions. This strategic step strengthens Elite Rackz’ supply, installation, and service offering while reinforcing the company’s commitment to quality and speed.</p>
-                <p>Beyond the job site, David is a devoted family man with a wonderful wife and children. He leads with humility, accountability, and a constant drive to improve—<i>always striving for greatness.</i></p>
+              <p class="text-slate-900 font-extrabold">David Enriquez, CEO</p>
+              <div class="mt-3 text-slate-700 leading-relaxed space-y-3">
+                <p>
+                  David Enriquez brings over 20 years of hands-on experience in the warehouse racking and repair industry. His approach combines
+                  engineered precision with real-world practicality—always centered on safety and long-term performance.
+                </p>
+                <p>
+                  To expand capabilities and serve customers end-to-end, David acquired FBS Group, Inc., strengthening Elite Rackz’ supply,
+                  installation, and service offering while reinforcing the company’s commitment to quality and speed.
+                </p>
+                <p>
+                  Beyond the job site, David is a devoted family man. He leads with humility, accountability, and a constant drive to improve—
+                  <i>always striving for greatness.</i>
+                </p>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- Wide banner -->
-        <figure class="rounded-2xl border border-slate-200 ring-1 ring-slate-200/50 overflow-hidden bg-white">
+        <!-- Wide banner (kept, but framed like other pages) -->
+        <figure class="reveal rounded-2xl border border-slate-200 ring-1 ring-slate-200/50 overflow-hidden bg-white shadow-smooth">
           <img src="assets/images/fbs-is-now-elite.jpg" alt="FBS Group, Inc. is now Elite Rackz"
                class="block w-full h-auto object-contain mx-auto max-h-[520px]" loading="lazy"
                onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-          <!-- Placeholder -->
           <div class="hidden w-full flex items-center justify-center bg-slate-100 text-slate-500" style="aspect-ratio: 21 / 9;">
             <div class="text-center p-8">
               <div class="text-sm font-semibold tracking-wide">Wide image placeholder</div>
@@ -138,24 +234,38 @@
 
       </div>
 
-      <!-- Sidebar -->
+      <!-- Sidebar (refreshed to match site) -->
       <aside class="md:col-span-5 lg:col-span-4 xl:col-span-4 md:sticky md:top-24 lg:top-28 space-y-4 max-w-xl md:max-w-none w-full justify-self-end" aria-label="Additional information">
-        <section class="p-5 border border-slate-200 rounded-xl shadow-sm bg-white">
-          <h3 class="text-base font-semibold tracking-wide text-slate-800">Certifications &amp; Insurance</h3>
-          <ul class="mt-3 space-y-1.5 text-slate-700 text-sm list-disc pl-5">
+
+        <section class="reveal p-6 border border-slate-200 rounded-2xl shadow-smooth bg-white">
+          <h3 class="text-base font-extrabold tracking-wide text-slate-900">Certifications &amp; Insurance</h3>
+          <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-5">
             <li>PE-stamped calculations available</li>
             <li>Fully insured installers</li>
             <li>OSHA-focused safety plans</li>
           </ul>
         </section>
 
-        <section class="p-5 border border-slate-200 rounded-xl shadow-sm bg-white">
-          <h3 class="text-base font-semibold tracking-wide text-slate-800">Coverage</h3>
+        <section class="reveal reveal-delay-1 p-6 border border-slate-200 rounded-2xl shadow-smooth bg-white">
+          <h3 class="text-base font-extrabold tracking-wide text-slate-900">Coverage</h3>
           <p class="mt-2 text-slate-700 text-sm">Nationwide projects; based in the Midwest.</p>
         </section>
+
+        <section class="reveal reveal-delay-2 p-6 rounded-2xl bg-slate-950 text-white shadow-smooth ring-1 ring-white/10">
+          <div class="text-xs text-white/70">Learn more</div>
+          <div class="mt-2 font-extrabold text-xl">Rack Repair Library</div>
+          <p class="mt-2 text-sm text-white/75">
+            Browse our engineering-first blog posts designed for warehouse and safety teams.
+          </p>
+          <a href="blog/index.html" class="mt-5 inline-flex w-full justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
+            Visit the Blog
+          </a>
+        </section>
+
       </aside>
     </div>
   </section>
+
 </main>
 
 <footer class="mt-10 border-t border-slate-200" role="contentinfo">
@@ -167,6 +277,8 @@
       </div>
       <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
     </div>
+
+    <!-- UPDATED: Blog in footer Explore -->
     <div>
       <h3 class="text-sm font-semibold mb-3">Explore</h3>
       <ul class="space-y-2 text-sm">
@@ -174,22 +286,26 @@
         <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
         <li><a href="about.html" aria-current="page" class="text-brand-700">About</a></li>
         <li><a href="app.html" class="hover:text-brand-600">App</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
         <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
       </ul>
     </div>
+
     <div>
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
-        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936</a></li><!-- fixed extra ) -->
+        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936</a></li>
         <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
       </ul>
     </div>
+
     <div>
       <h3 class="text-sm font-semibold mb-3">Legal</h3>
       <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
     </div>
   </div>
+
   <div class="border-t border-slate-200/70">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-center gap-3 text-sm text-slate-600">
       <span>This site was created by:</span>
@@ -198,58 +314,27 @@
   </div>
 </footer>
 
-<!-- Robust mobile menu: blocks duplicate handlers, works even if main.js also listens -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn  = document.getElementById('mobileMenuBtn');
-    const menu = document.getElementById('mobileMenu');
-    if (!btn || !menu) return;
-
-    // Ensure a known initial state
-    menu.classList.add('hidden');
-    btn.setAttribute('aria-expanded', 'false');
-
-    const openMenu = () => {
-      btn.setAttribute('aria-expanded', 'true');
-      menu.classList.remove('hidden');
-    };
-    const closeMenu = () => {
-      btn.setAttribute('aria-expanded', 'false');
-      menu.classList.add('hidden');
-    };
-    const toggleMenu = () => (btn.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu());
-
-    // Capture phase + stop propagation to prevent double-toggle from other scripts
-    const onClickCapture = (e) => {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      e.stopPropagation();
-      toggleMenu();
-    };
-    // Guard against binding twice
-    if (!btn.dataset.bound) {
-      btn.addEventListener('click', onClickCapture, true); // useCapture = true
-      btn.dataset.bound = '1';
-    }
-
-    // Close when a mobile link is tapped
-    menu.addEventListener('click', (e) => {
-      if (e.target.closest('a[href]')) closeMenu();
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    // Reset on resize to desktop to avoid odd states
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768) closeMenu();
-    });
-  });
-</script>
-
-<!-- Keep site JS; defer so it runs after DOM is parsed -->
 <script src="assets/js/main.js" defer></script>
+
+<!-- Scroll reveal JS -->
+<script>
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(el => el.classList.add("in-view"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+
+    items.forEach(el => io.observe(el));
+  })();
+</script>
 </body>
 </html>

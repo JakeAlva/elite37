@@ -80,7 +80,6 @@
   </div>
 </header>
 
-<!-- Blog hero -->
 <section class="bg-slate-50 border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <div class="max-w-3xl">
@@ -98,7 +97,6 @@
       </p>
     </div>
 
-    <!-- Search + filters -->
     <div class="reveal reveal-delay-2 mt-8 grid gap-3 md:grid-cols-12 items-center">
       <div class="md:col-span-6">
         <div class="relative">
@@ -113,6 +111,7 @@
         <button class="filter-btn px-3 py-2 rounded-xl text-sm font-semibold bg-white ring-1 ring-slate-200 hover:bg-slate-100" data-tag="engineering">Engineering</button>
         <button class="filter-btn px-3 py-2 rounded-xl text-sm font-semibold bg-white ring-1 ring-slate-200 hover:bg-slate-100" data-tag="safety">Safety</button>
         <button class="filter-btn px-3 py-2 rounded-xl text-sm font-semibold bg-white ring-1 ring-slate-200 hover:bg-slate-100" data-tag="operations">Operations</button>
+        <button class="filter-btn px-3 py-2 rounded-xl text-sm font-semibold bg-white ring-1 ring-slate-200 hover:bg-slate-100" data-tag="emergency">Emergency</button>
       </div>
     </div>
   </div>
@@ -121,7 +120,6 @@
 <section class="py-14 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Featured row -->
     <div class="reveal grid gap-8 lg:grid-cols-12 items-stretch">
       <a href="./rack-repair-vs-replacement.html"
          class="lg:col-span-8 rounded-2xl overflow-hidden border border-slate-200 shadow-smooth bg-white hover:shadow-lg transition">
@@ -143,24 +141,41 @@
       </a>
 
       <div class="lg:col-span-4 rounded-2xl border border-slate-200 shadow-smooth bg-white p-7">
-        <h3 class="text-xl font-extrabold text-slate-900">What we publish</h3>
+        <h3 class="text-xl font-extrabold text-slate-900">Start here</h3>
         <p class="mt-2 text-sm text-slate-600">
-          Clear, useful guides. Not fluff. Not hype. Written for real warehouse and distribution teams.
+          Three practical guides to help your team move from “we found damage” to “we have a compliant plan.”
         </p>
 
-        <div class="mt-6 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-5">
-          <div class="text-xs text-slate-500">Explore next</div>
-          <div class="mt-1 font-extrabold text-slate-900">Identify upright damage</div>
-          <p class="mt-2 text-sm text-slate-600">How to spot damage patterns and what to document so decisions don’t stall.</p>
-          <a href="./how-to-identify-rack-damage.html"
-             class="mt-4 inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
-            Read the guide
+        <div class="mt-5 space-y-3">
+          <a href="./how-to-identify-rack-damage.html" class="block rounded-xl bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5 p-4">
+            <div class="text-xs font-extrabold text-slate-500">SAFETY</div>
+            <div class="mt-1 font-extrabold text-slate-900">Identify upright damage</div>
+            <div class="mt-1 text-sm text-slate-600">Patterns to look for + what to document.</div>
           </a>
+
+          <a href="./forklift-damage-to-pallet-racks.html" class="block rounded-xl bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5 p-4">
+            <div class="text-xs font-extrabold text-slate-500">EMERGENCY</div>
+            <div class="mt-1 font-extrabold text-slate-900">Forklift impact response</div>
+            <div class="mt-1 text-sm text-slate-600">Immediate steps + risk triage.</div>
+          </a>
+        </div>
+
+        <div class="mt-6 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-5">
+          <div class="text-xs text-slate-500">Explore more</div>
+          <div class="mt-1 font-extrabold text-slate-900">Products & services</div>
+          <p class="mt-2 text-sm text-slate-600">If you’re researching options, these outline how Elite Rackz works.</p>
+          <div class="mt-4 flex flex-col gap-2">
+            <a href="../products.html" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
+              View products
+            </a>
+            <a href="../services.html" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50">
+              View services
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Latest -->
     <div class="mt-14">
       <div class="flex items-end justify-between gap-4 flex-wrap">
         <h2 class="reveal text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">Latest</h2>
@@ -168,14 +183,6 @@
       </div>
 
       <div class="reveal reveal-delay-2 mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="blogGrid"></div>
-
-      <!-- non-salesy footer note -->
-      <div class="reveal reveal-delay-2 mt-10 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-6">
-        <div class="text-sm font-extrabold text-slate-900">Publishing plan</div>
-        <p class="mt-2 text-sm text-slate-600">
-          Next topics: forklift impact response, inspection checklists, guarding strategy, and engineered repair kit selection.
-        </p>
-      </div>
     </div>
 
   </div>
@@ -219,7 +226,7 @@
 <script src="../assets/js/main.js"></script>
 
 <script>
-  // Only include posts that exist as real files right now:
+  // IMPORTANT: These URLs must exist as real files in /blog/
   const BLOG_POSTS = [
     {
       title: "Rack Repair vs Rack Replacement",
@@ -236,6 +243,14 @@
       date: "2026-03-03",
       readTime: "7 min",
       excerpt: "Common upright damage patterns, what to document, and how to move from discovery to a compliant plan quickly."
+    },
+    {
+      title: "Forklift Damage to Pallet Racks",
+      url: "./forklift-damage-to-pallet-racks.html",
+      tag: "emergency",
+      date: "2026-03-03",
+      readTime: "6 min",
+      excerpt: "Immediate response steps, risk triage, and what to document after a forklift impact."
     }
   ];
 
@@ -254,7 +269,8 @@
     const map = {
       safety: "Safety",
       engineering: "Engineering",
-      operations: "Operations"
+      operations: "Operations",
+      emergency: "Emergency"
     };
     return map[tag] || "Article";
   }
@@ -301,13 +317,11 @@
   });
 
   search.addEventListener("input", render);
-
   document.querySelector('.filter-btn[data-tag="all"]').classList.add("bg-slate-900","text-white","ring-slate-900");
   render();
 </script>
 
 <script>
-  // Scroll reveal
   (function () {
     const items = document.querySelectorAll(".reveal");
     if (!("IntersectionObserver" in window) || !items.length) {

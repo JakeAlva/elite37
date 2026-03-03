@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rack Repair vs Rack Replacement — Cost, Safety, Downtime | Elite Rackz Blog</title>
+  <meta name="description" content="A practical decision framework for rack repair vs replacement—cost, compliance, downtime, risk, and when engineered repair kits make sense.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] },
+        colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} },
+        boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'}
+      } }
+    };
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- Article schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Rack Repair vs Rack Replacement — Cost, Safety, Downtime",
+    "author": [{"@type":"Organization","name":"Elite Rackz"}],
+    "publisher": {"@type":"Organization","name":"Elite Rackz","logo":{"@type":"ImageObject","url":"https://eliterackz.com/assets/images/logo.png"}},
+    "datePublished": "2026-03-03",
+    "dateModified": "2026-03-03",
+    "mainEntityOfPage": {"@type":"WebPage","@id":"https://eliterackz.com/blog/rack-repair-vs-replacement.html"}
+  }
+  </script>
+
+  <style>
+    /* Reading progress bar */
+    #progressBar { width: 0%; }
+
+    /* Premium prose tweaks (keeps Tailwind-only sites looking like a publication) */
+    .prose-er h2 { scroll-margin-top: 96px; }
+    .prose-er a { text-decoration: none; }
+    .prose-er a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body class="bg-white text-slate-800 antialiased">
+
+<!-- Reading progress -->
+<div class="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-transparent">
+  <div id="progressBar" class="h-full bg-brand-600"></div>
+</div>
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../index.html" class="flex items-center gap-3">
+        <img src="../assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">
+          SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="../products.html" class="hover:text-brand-600">Products</a>
+        <a href="../services.html" class="hover:text-brand-600">Services</a>
+        <a href="../about.html" class="hover:text-brand-600">About</a>
+        <a href="../app.html" class="hover:text-brand-600">App</a>
+        <a href="./index.html" class="text-brand-700">Blog</a>
+        <a href="../contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
+      </nav>
+
+      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300">
+        <span class="sr-only">Open menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
+    <div class="px-4 py-3 space-y-2 text-sm">
+      <a href="../products.html" class="block">Products</a>
+      <a href="../services.html" class="block">Services</a>
+      <a href="../about.html" class="block">About</a>
+      <a href="../app.html" class="block">App</a>
+      <a href="./index.html" class="block font-semibold text-brand-700">Blog</a>
+      <a href="../contact.html" class="block font-semibold text-brand-700">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- Article hero -->
+<section class="border-b border-slate-200 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="max-w-4xl">
+      <nav class="text-sm text-slate-500">
+        <a class="hover:text-slate-700" href="../index.html">Home</a>
+        <span class="mx-2">/</span>
+        <a class="hover:text-slate-700" href="./index.html">Blog</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-700 font-semibold">Rack Repair vs Replacement</span>
+      </nav>
+
+      <div class="mt-6 flex flex-wrap items-center gap-2">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white text-slate-700 text-xs font-extrabold ring-1 ring-slate-200">
+          ENGINEERING
+        </span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white text-slate-700 text-xs font-extrabold ring-1 ring-slate-200">
+          SAFETY
+        </span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white text-slate-700 text-xs font-extrabold ring-1 ring-slate-200">
+          OPERATIONS
+        </span>
+      </div>
+
+      <h1 class="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        Rack Repair vs Rack Replacement
+      </h1>
+      <p class="mt-4 text-lg text-slate-600">
+        A practical decision framework for warehouse leaders: cost, risk, compliance, and downtime—plus when engineered repair
+        is the smarter path than full replacement.
+      </p>
+
+      <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+        <span class="font-semibold text-slate-700">Elite Rackz</span>
+        <span>•</span>
+        <time datetime="2026-03-03">Mar 3, 2026</time>
+        <span>•</span>
+        <span>7 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="grid lg:grid-cols-12 gap-10 items-start">
+
+    <!-- Main article -->
+    <article class="lg:col-span-8">
+      <!-- Key takeaway -->
+      <div class="rounded-2xl bg-slate-950 text-white p-7 shadow-smooth ring-1 ring-white/10">
+        <p class="text-xs font-extrabold tracking-wide text-white/70">BOTTOM LINE</p>
+        <p class="mt-2 text-lg font-semibold text-white/90">
+          If the rack’s <span class="text-white font-extrabold">configuration is stable</span> and damage is localized, engineered repair
+          can restore integrity with far less downtime than full replacement. If damage is widespread, load needs change, or the rack is obsolete,
+          replacement can be the cleaner long-term move.
+        </p>
+        <div class="mt-5 flex flex-col sm:flex-row gap-3">
+          <a href="../contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+            Request a Quote
+          </a>
+          <a href="../products.html" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
+            View Products
+          </a>
+        </div>
+      </div>
+
+      <!-- TOC (mobile-friendly) -->
+      <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="text-lg font-extrabold text-slate-900">In this guide</h2>
+          <span class="text-xs text-slate-500">Jump to section</span>
+        </div>
+        <div class="mt-4 grid sm:grid-cols-2 gap-2 text-sm">
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#when-repair-makes-sense">When repair makes sense</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#when-replacement-makes-sense">When replacement makes sense</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#cost-downtime">Cost & downtime reality</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#decision-matrix">Decision matrix</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#what-to-document">What to document</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <!-- Prose -->
+      <div class="prose-er mt-10 prose prose-slate max-w-none">
+        <h2 id="when-repair-makes-sense">When rack repair makes sense</h2>
+        <p>
+          Rack repair is often the better choice when damage is <strong>localized</strong> (typically specific uprights or impact zones),
+          and your facility’s layout and load requirements aren’t changing. The goal is to restore structural performance without the disruption
+          of tearing down entire aisles.
+        </p>
+
+        <div class="not-prose my-7 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-6">
+          <div class="text-sm font-extrabold text-slate-900">Repair is usually best when:</div>
+          <ul class="mt-3 grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">Damage is limited to a few uprights or bays</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">You want minimal downtime / phased work</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">You need engineered documentation for internal approval</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">Replacing would require unloading and full tear-downs</li>
+          </ul>
+        </div>
+
+        <h2 id="when-replacement-makes-sense">When rack replacement makes sense</h2>
+        <p>
+          Replacement becomes the cleaner path when rack condition is broadly compromised, your operating requirements have changed,
+          or the rack type is obsolete and parts are no longer practical. Replacement can also make sense when you’re already planning a re-layout,
+          moving locations, or changing load profiles.
+        </p>
+
+        <blockquote>
+          Replacement is less about “new is better” and more about whether the <strong>system</strong> still matches your facility’s present needs.
+        </blockquote>
+
+        <h2 id="cost-downtime">Cost & downtime reality</h2>
+        <p>
+          On paper, replacement can look straightforward. In real facilities, the hidden cost is typically disruption: unloading, staging inventory,
+          scheduling longer shutdown windows, and coordinating removal/disposal. Repair can often be phased around operations.
+        </p>
+
+        <!-- Comparison table -->
+        <div class="not-prose my-8 overflow-hidden rounded-2xl border border-slate-200 shadow-smooth bg-white">
+          <div class="px-6 py-4 bg-slate-50 border-b border-slate-200">
+            <h3 class="text-base font-extrabold text-slate-900">Repair vs Replacement (high-level comparison)</h3>
+            <p class="mt-1 text-sm text-slate-600">Actual results depend on damage scope, access, and scheduling constraints.</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-sm">
+              <thead class="bg-white">
+                <tr class="text-left text-slate-600">
+                  <th class="px-6 py-3 font-semibold">Factor</th>
+                  <th class="px-6 py-3 font-semibold">Engineered Repair</th>
+                  <th class="px-6 py-3 font-semibold">Full Replacement</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-slate-900">Downtime</td>
+                  <td class="px-6 py-4 text-slate-700">Often phased; fewer full shutdown windows</td>
+                  <td class="px-6 py-4 text-slate-700">Usually larger shutdown/staging requirements</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-slate-900">Scope</td>
+                  <td class="px-6 py-4 text-slate-700">Targeted to damaged areas</td>
+                  <td class="px-6 py-4 text-slate-700">Entire aisle/bay system rebuilt</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-slate-900">Compliance & docs</td>
+                  <td class="px-6 py-4 text-slate-700">Engineering package can support approvals</td>
+                  <td class="px-6 py-4 text-slate-700">New system docs vary by vendor/spec</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-slate-900">Cost drivers</td>
+                  <td class="px-6 py-4 text-slate-700">Damage extent, access, install windows</td>
+                  <td class="px-6 py-4 text-slate-700">Material + demo + staging + longer labor</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 font-semibold text-slate-900">Best for</td>
+                  <td class="px-6 py-4 text-slate-700">Localized damage, stable layout</td>
+                  <td class="px-6 py-4 text-slate-700">Widespread issues or re-layout plans</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2 id="decision-matrix">Decision matrix</h2>
+        <p>
+          Use this as a practical rule of thumb. It’s not a substitute for engineering review—but it helps you triage quickly.
+        </p>
+
+        <div class="not-prose my-7 grid md:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
+            <div class="text-xs font-extrabold tracking-wide text-slate-500">LEAN REPAIR</div>
+            <ul class="mt-3 space-y-2 text-sm text-slate-700">
+              <li>• Damage is limited to specific uprights/bays</li>
+              <li>• Rack design still matches operations</li>
+              <li>• You need minimal disruption</li>
+              <li>• Fast stabilization is required</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
+            <div class="text-xs font-extrabold tracking-wide text-slate-500">LEAN REPLACEMENT</div>
+            <ul class="mt-3 space-y-2 text-sm text-slate-700">
+              <li>• Damage is widespread across aisles</li>
+              <li>• You’re reconfiguring layout/load profiles</li>
+              <li>• Rack type is obsolete / parts are problematic</li>
+              <li>• Existing system no longer fits the facility</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="what-to-document">What to document before you decide</h2>
+        <p>
+          Whether you choose repair or replacement, documentation speeds approvals and reduces back-and-forth. At minimum:
+        </p>
+
+        <ul>
+          <li><strong>Photos</strong> of each damaged location (multiple angles)</li>
+          <li><strong>Bay and aisle references</strong> so repairs can be mapped</li>
+          <li><strong>Upright profile</strong> (depth, style, hole pattern)</li>
+          <li><strong>Beam elevations</strong> and critical clearances</li>
+          <li><strong>Operational constraints</strong> (shutdown windows, phased work)</li>
+        </ul>
+
+        <div class="not-prose my-8 rounded-2xl bg-brand-600/10 ring-1 ring-brand-600/25 p-6">
+          <div class="font-extrabold text-slate-900">Pro tip</div>
+          <p class="mt-2 text-sm text-slate-700">
+            If your priority is speed, include your desired timeline and label urgent requests clearly. It helps teams triage faster.
+          </p>
+        </div>
+
+        <h2 id="faq">FAQ</h2>
+
+        <!-- FAQ accordion -->
+        <div class="not-prose mt-6 space-y-3" id="faqWrap">
+          <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
+            <summary class="cursor-pointer font-semibold text-slate-900">Is repair “code compliant” compared to replacement?</summary>
+            <p class="mt-3 text-sm text-slate-600">
+              It can be, depending on the repair strategy and documentation. Engineering review and proper installation are what matter—
+              not simply whether the steel is “new.”
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
+            <summary class="cursor-pointer font-semibold text-slate-900">Does replacement always increase load capacity?</summary>
+            <p class="mt-3 text-sm text-slate-600">
+              Not necessarily. Capacity depends on the full system design, configuration, and installation. If load needs are changing,
+              replacement may be the right path—but it should be engineered to your requirements.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
+            <summary class="cursor-pointer font-semibold text-slate-900">What usually causes recurring rack damage?</summary>
+            <p class="mt-3 text-sm text-slate-600">
+              High-traffic forklift zones, tight aisle clearances, and unprotected uprights are common contributors. Guarding and
+              operational adjustments reduce repeat impacts.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- CTA (end) -->
+      <section class="mt-12 rounded-2xl bg-slate-950 text-white p-7 shadow-smooth ring-1 ring-white/10">
+        <h2 class="text-2xl font-extrabold tracking-tight">Want an engineered recommendation?</h2>
+        <p class="mt-2 text-white/75">
+          Share photos and scope. We’ll recommend the fastest compliant path and what it takes to minimize disruption.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="../contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+            Request a Quote
+          </a>
+          <a href="../services.html" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
+            See Services
+          </a>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+        <div class="text-xs font-extrabold tracking-wide text-slate-500">QUICK LINKS</div>
+        <div class="mt-3 grid gap-2 text-sm">
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#when-repair-makes-sense">When repair makes sense</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#when-replacement-makes-sense">When replacement makes sense</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#cost-downtime">Cost & downtime</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#decision-matrix">Decision matrix</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#what-to-document">What to document</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-slate-50 ring-1 ring-black/5 p-6">
+        <div class="text-xs text-slate-500">Need help now?</div>
+        <div class="mt-1 text-xl font-extrabold text-slate-900">Request a Quote</div>
+        <p class="mt-2 text-sm text-slate-600">Send photos + scope. We’ll recommend a repair vs replacement path.</p>
+        <a href="../contact.html#contact" class="mt-4 inline-flex w-full justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+          Get a Quote
+        </a>
+      </div>
+
+      <!-- Related: ONLY link to what exists (so no 404) -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+        <div class="text-xs font-extrabold tracking-wide text-slate-500">RELATED</div>
+        <div class="mt-3 space-y-3">
+          <a class="block rounded-xl p-4 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="./index.html">
+            <div class="text-xs text-slate-500 font-extrabold">BLOG HOME</div>
+            <div class="mt-1 font-extrabold text-slate-900">Browse all articles</div>
+            <div class="mt-1 text-sm text-slate-600">See what’s new and what’s next.</div>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="mt-24 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="../assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        <span class="font-extrabold tracking-tight text-slate-900">Elite <span class="text-brand-600">Rackz</span></span>
+      </div>
+      <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Explore</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="../products.html" class="hover:text-brand-600">Products</a></li>
+        <li><a href="../services.html" class="hover:text-brand-600">Services</a></li>
+        <li><a href="../about.html" class="hover:text-brand-600">About</a></li>
+        <li><a href="../app.html" class="hover:text-brand-600">App</a></li>
+        <li><a href="./index.html" class="hover:text-brand-600">Blog</a></li>
+        <li><a href="../contact.html" class="hover:text-brand-600">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Contact</h3>
+      <ul class="space-y-2 text-sm">
+        <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
+        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936</a></li>
+        <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Legal</h3>
+      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+
+<script>
+  // progress bar
+  (function () {
+    const bar = document.getElementById("progressBar");
+    function onScroll() {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+      const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      bar.style.width = pct + "%";
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+</body>
+</html>

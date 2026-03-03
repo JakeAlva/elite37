@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rack Repair vs Rack Replacement — Cost, Safety, Downtime | Elite Rackz Blog</title>
-  <meta name="description" content="A practical decision framework for rack repair vs replacement—cost, compliance, downtime, risk, and when engineered repair kits make sense.">
+  <meta name="description" content="A practical decision framework for rack repair vs replacement—downtime, risk, documentation, and when engineered repair can be the smarter path.">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
 
@@ -43,7 +43,7 @@
     /* Reading progress bar */
     #progressBar { width: 0%; }
 
-    /* Premium prose tweaks (keeps Tailwind-only sites looking like a publication) */
+    /* Prose polish */
     .prose-er h2 { scroll-margin-top: 96px; }
     .prose-er a { text-decoration: none; }
     .prose-er a:hover { text-decoration: underline; }
@@ -125,8 +125,8 @@
         Rack Repair vs Rack Replacement
       </h1>
       <p class="mt-4 text-lg text-slate-600">
-        A practical decision framework for warehouse leaders: cost, risk, compliance, and downtime—plus when engineered repair
-        is the smarter path than full replacement.
+        A decision framework for warehouse leaders: evaluate downtime, risk, documentation, and long-term fit—then choose the path that restores safety
+        with the least disruption.
       </p>
 
       <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
@@ -145,81 +145,80 @@
 
     <!-- Main article -->
     <article class="lg:col-span-8">
-      <!-- Key takeaway -->
-      <div class="rounded-2xl bg-slate-950 text-white p-7 shadow-smooth ring-1 ring-white/10">
-        <p class="text-xs font-extrabold tracking-wide text-white/70">BOTTOM LINE</p>
-        <p class="mt-2 text-lg font-semibold text-white/90">
-          If the rack’s <span class="text-white font-extrabold">configuration is stable</span> and damage is localized, engineered repair
-          can restore integrity with far less downtime than full replacement. If damage is widespread, load needs change, or the rack is obsolete,
-          replacement can be the cleaner long-term move.
+
+      <!-- Key takeaway (no CTA buttons) -->
+      <div class="rounded-2xl bg-white border border-slate-200 p-7 shadow-smooth">
+        <p class="text-xs font-extrabold tracking-wide text-slate-500">SUMMARY</p>
+        <p class="mt-2 text-lg font-semibold text-slate-900">
+          The best choice is usually the one that restores <span class="font-extrabold">structural integrity</span> and reduces <span class="font-extrabold">liability</span>
+          with the least operational disruption. Localized damage + stable layout often points to engineered repair. Widespread damage, redesign needs,
+          or obsolete systems may point to replacement.
         </p>
-        <div class="mt-5 flex flex-col sm:flex-row gap-3">
-          <a href="../contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-            Request a Quote
-          </a>
-          <a href="../products.html" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
-            View Products
-          </a>
-        </div>
       </div>
 
-      <!-- TOC (mobile-friendly) -->
+      <!-- TOC -->
       <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
         <div class="flex items-center justify-between gap-4">
           <h2 class="text-lg font-extrabold text-slate-900">In this guide</h2>
           <span class="text-xs text-slate-500">Jump to section</span>
         </div>
         <div class="mt-4 grid sm:grid-cols-2 gap-2 text-sm">
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#when-repair-makes-sense">When repair makes sense</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#when-replacement-makes-sense">When replacement makes sense</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#cost-downtime">Cost & downtime reality</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#decision-matrix">Decision matrix</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#what-to-document">What to document</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#decision-first">Start with the right question</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#repair">When repair makes sense</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#replacement">When replacement makes sense</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#downtime">Downtime & total cost</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#matrix">Decision matrix</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#documentation">What to document</a>
           <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#faq">FAQ</a>
         </div>
       </div>
 
       <!-- Prose -->
       <div class="prose-er mt-10 prose prose-slate max-w-none">
-        <h2 id="when-repair-makes-sense">When rack repair makes sense</h2>
+        <h2 id="decision-first">Start with the right question</h2>
         <p>
-          Rack repair is often the better choice when damage is <strong>localized</strong> (typically specific uprights or impact zones),
-          and your facility’s layout and load requirements aren’t changing. The goal is to restore structural performance without the disruption
-          of tearing down entire aisles.
+          Most teams start with: “Which option is cheaper?” A better starting point is:
+          <strong>Which option restores a safe, compliant system faster—without creating new downtime or risk?</strong>
+          In real facilities, total cost is heavily influenced by disruption: unloading, staging, tear-down windows, and operational bottlenecks.
+        </p>
+
+        <h2 id="repair">When rack repair usually makes sense</h2>
+        <p>
+          Repair is often the better choice when damage is localized and your facility doesn’t need a re-layout. The goal is to reinforce damaged members,
+          restore structural performance, and keep operations moving.
         </p>
 
         <div class="not-prose my-7 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-6">
-          <div class="text-sm font-extrabold text-slate-900">Repair is usually best when:</div>
+          <div class="text-sm font-extrabold text-slate-900">Repair is typically a strong fit when:</div>
           <ul class="mt-3 grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">Damage is limited to a few uprights or bays</li>
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">You want minimal downtime / phased work</li>
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">You need engineered documentation for internal approval</li>
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">Replacing would require unloading and full tear-downs</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">Damage is limited to specific uprights/bays</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">The rack layout and load profile remain stable</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">You need minimal disruption / phased work</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4">Approvals require engineering documentation</li>
           </ul>
         </div>
 
-        <h2 id="when-replacement-makes-sense">When rack replacement makes sense</h2>
+        <h2 id="replacement">When replacement is the cleaner call</h2>
         <p>
-          Replacement becomes the cleaner path when rack condition is broadly compromised, your operating requirements have changed,
-          or the rack type is obsolete and parts are no longer practical. Replacement can also make sense when you’re already planning a re-layout,
-          moving locations, or changing load profiles.
+          Replacement becomes the clearer move when the system no longer matches your operation, or damage is widespread. It can also make sense when you’re
+          already planning changes: re-slotting, different pallet weights, new clearances, or a full reconfiguration.
         </p>
 
         <blockquote>
-          Replacement is less about “new is better” and more about whether the <strong>system</strong> still matches your facility’s present needs.
+          Replacement is less about “new is better” and more about whether the <strong>system still fits</strong> your facility’s needs.
         </blockquote>
 
-        <h2 id="cost-downtime">Cost & downtime reality</h2>
+        <h2 id="downtime">Downtime & total cost</h2>
         <p>
-          On paper, replacement can look straightforward. In real facilities, the hidden cost is typically disruption: unloading, staging inventory,
-          scheduling longer shutdown windows, and coordinating removal/disposal. Repair can often be phased around operations.
+          The hidden cost of replacement is usually disruption: unloading product, longer shutdown windows, and staging labor. Repair can often be performed
+          in phases and targeted to damaged areas, which reduces total downtime.
         </p>
 
         <!-- Comparison table -->
         <div class="not-prose my-8 overflow-hidden rounded-2xl border border-slate-200 shadow-smooth bg-white">
           <div class="px-6 py-4 bg-slate-50 border-b border-slate-200">
             <h3 class="text-base font-extrabold text-slate-900">Repair vs Replacement (high-level comparison)</h3>
-            <p class="mt-1 text-sm text-slate-600">Actual results depend on damage scope, access, and scheduling constraints.</p>
+            <p class="mt-1 text-sm text-slate-600">Outcomes depend on damage scope, access, and scheduling constraints.</p>
           </div>
           <div class="overflow-x-auto">
             <table class="min-w-full text-sm">
@@ -227,7 +226,7 @@
                 <tr class="text-left text-slate-600">
                   <th class="px-6 py-3 font-semibold">Factor</th>
                   <th class="px-6 py-3 font-semibold">Engineered Repair</th>
-                  <th class="px-6 py-3 font-semibold">Full Replacement</th>
+                  <th class="px-6 py-3 font-semibold">Replacement</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-200">
@@ -238,155 +237,124 @@
                 </tr>
                 <tr>
                   <td class="px-6 py-4 font-semibold text-slate-900">Scope</td>
-                  <td class="px-6 py-4 text-slate-700">Targeted to damaged areas</td>
-                  <td class="px-6 py-4 text-slate-700">Entire aisle/bay system rebuilt</td>
+                  <td class="px-6 py-4 text-slate-700">Targeted reinforcement of damaged areas</td>
+                  <td class="px-6 py-4 text-slate-700">Entire bay/aisle rebuilt</td>
                 </tr>
                 <tr>
-                  <td class="px-6 py-4 font-semibold text-slate-900">Compliance & docs</td>
-                  <td class="px-6 py-4 text-slate-700">Engineering package can support approvals</td>
-                  <td class="px-6 py-4 text-slate-700">New system docs vary by vendor/spec</td>
-                </tr>
-                <tr>
-                  <td class="px-6 py-4 font-semibold text-slate-900">Cost drivers</td>
-                  <td class="px-6 py-4 text-slate-700">Damage extent, access, install windows</td>
-                  <td class="px-6 py-4 text-slate-700">Material + demo + staging + longer labor</td>
+                  <td class="px-6 py-4 font-semibold text-slate-900">Approvals</td>
+                  <td class="px-6 py-4 text-slate-700">Engineering package can support internal review</td>
+                  <td class="px-6 py-4 text-slate-700">Depends on vendor/spec and project scope</td>
                 </tr>
                 <tr>
                   <td class="px-6 py-4 font-semibold text-slate-900">Best for</td>
-                  <td class="px-6 py-4 text-slate-700">Localized damage, stable layout</td>
-                  <td class="px-6 py-4 text-slate-700">Widespread issues or re-layout plans</td>
+                  <td class="px-6 py-4 text-slate-700">Localized damage + stable operation</td>
+                  <td class="px-6 py-4 text-slate-700">Re-layout, widespread issues, obsolete systems</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <h2 id="decision-matrix">Decision matrix</h2>
+        <h2 id="matrix">Decision matrix</h2>
         <p>
-          Use this as a practical rule of thumb. It’s not a substitute for engineering review—but it helps you triage quickly.
+          Use this as a practical triage tool. It’s not a substitute for engineering review—but it helps you identify the likely direction quickly.
         </p>
 
         <div class="not-prose my-7 grid md:grid-cols-2 gap-4">
           <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
             <div class="text-xs font-extrabold tracking-wide text-slate-500">LEAN REPAIR</div>
             <ul class="mt-3 space-y-2 text-sm text-slate-700">
-              <li>• Damage is limited to specific uprights/bays</li>
-              <li>• Rack design still matches operations</li>
-              <li>• You need minimal disruption</li>
-              <li>• Fast stabilization is required</li>
+              <li>• Localized damage to select uprights/bays</li>
+              <li>• Minimal downtime required</li>
+              <li>• Existing layout remains</li>
+              <li>• Approvals need documentation</li>
             </ul>
           </div>
           <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
             <div class="text-xs font-extrabold tracking-wide text-slate-500">LEAN REPLACEMENT</div>
             <ul class="mt-3 space-y-2 text-sm text-slate-700">
-              <li>• Damage is widespread across aisles</li>
-              <li>• You’re reconfiguring layout/load profiles</li>
-              <li>• Rack type is obsolete / parts are problematic</li>
-              <li>• Existing system no longer fits the facility</li>
+              <li>• Widespread issues across aisles</li>
+              <li>• Re-layout or new load profiles planned</li>
+              <li>• Obsolete system or incompatible parts</li>
+              <li>• Full rebuild aligns with facility goals</li>
             </ul>
           </div>
         </div>
 
-        <h2 id="what-to-document">What to document before you decide</h2>
+        <h2 id="documentation">What to document before deciding</h2>
         <p>
-          Whether you choose repair or replacement, documentation speeds approvals and reduces back-and-forth. At minimum:
+          Documentation is what prevents stalls and helps you move quickly—regardless of the direction you choose. At minimum:
         </p>
 
         <ul>
-          <li><strong>Photos</strong> of each damaged location (multiple angles)</li>
-          <li><strong>Bay and aisle references</strong> so repairs can be mapped</li>
-          <li><strong>Upright profile</strong> (depth, style, hole pattern)</li>
-          <li><strong>Beam elevations</strong> and critical clearances</li>
-          <li><strong>Operational constraints</strong> (shutdown windows, phased work)</li>
+          <li><strong>Photos</strong> (wide + close) of each damaged location</li>
+          <li><strong>Bay/aisle references</strong> (simple map is fine)</li>
+          <li><strong>Upright profile</strong> (depth/style/hole pattern)</li>
+          <li><strong>Beam elevations</strong> and impacted levels</li>
+          <li><strong>Constraints</strong> (shutdown windows, phased work)</li>
         </ul>
-
-        <div class="not-prose my-8 rounded-2xl bg-brand-600/10 ring-1 ring-brand-600/25 p-6">
-          <div class="font-extrabold text-slate-900">Pro tip</div>
-          <p class="mt-2 text-sm text-slate-700">
-            If your priority is speed, include your desired timeline and label urgent requests clearly. It helps teams triage faster.
-          </p>
-        </div>
 
         <h2 id="faq">FAQ</h2>
 
-        <!-- FAQ accordion -->
-        <div class="not-prose mt-6 space-y-3" id="faqWrap">
+        <div class="not-prose mt-6 space-y-3">
           <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
-            <summary class="cursor-pointer font-semibold text-slate-900">Is repair “code compliant” compared to replacement?</summary>
+            <summary class="cursor-pointer font-semibold text-slate-900">Is rack repair “compliant” compared to replacement?</summary>
             <p class="mt-3 text-sm text-slate-600">
-              It can be, depending on the repair strategy and documentation. Engineering review and proper installation are what matter—
-              not simply whether the steel is “new.”
+              It can be, depending on the repair strategy and documentation. Engineering review and correct installation are what matter—not simply whether steel is new.
             </p>
           </details>
 
           <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
-            <summary class="cursor-pointer font-semibold text-slate-900">Does replacement always increase load capacity?</summary>
+            <summary class="cursor-pointer font-semibold text-slate-900">Does replacement automatically increase capacity?</summary>
             <p class="mt-3 text-sm text-slate-600">
-              Not necessarily. Capacity depends on the full system design, configuration, and installation. If load needs are changing,
-              replacement may be the right path—but it should be engineered to your requirements.
+              Not automatically. Capacity depends on full system design and configuration. If capacity needs change, the project should be engineered to those requirements.
             </p>
           </details>
 
           <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
-            <summary class="cursor-pointer font-semibold text-slate-900">What usually causes recurring rack damage?</summary>
+            <summary class="cursor-pointer font-semibold text-slate-900">What causes repeat damage?</summary>
             <p class="mt-3 text-sm text-slate-600">
-              High-traffic forklift zones, tight aisle clearances, and unprotected uprights are common contributors. Guarding and
-              operational adjustments reduce repeat impacts.
+              High-traffic zones, tight aisles, and unprotected uprights. Guarding + traffic pattern improvements reduce repeat impacts.
             </p>
           </details>
         </div>
       </div>
 
-      <!-- CTA (end) -->
-      <section class="mt-12 rounded-2xl bg-slate-950 text-white p-7 shadow-smooth ring-1 ring-white/10">
-        <h2 class="text-2xl font-extrabold tracking-tight">Want an engineered recommendation?</h2>
-        <p class="mt-2 text-white/75">
-          Share photos and scope. We’ll recommend the fastest compliant path and what it takes to minimize disruption.
+      <!-- Single, non-pushy contact link (BOTTOM ONLY) -->
+      <section class="mt-14 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-7">
+        <h2 class="text-xl font-extrabold text-slate-900">Want a second set of eyes?</h2>
+        <p class="mt-2 text-sm text-slate-600">
+          If you want a quick, engineered perspective on whether repair or replacement is the better path for your facility, send photos and scope.
         </p>
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="../contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-            Request a Quote
-          </a>
-          <a href="../services.html" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
-            See Services
-          </a>
-        </div>
+        <a href="../contact.html#contact" class="mt-5 inline-flex items-center gap-2 text-brand-700 font-extrabold hover:underline">
+          Send photos for a quick review →
+        </a>
       </section>
     </article>
 
-    <!-- Sidebar -->
+    <!-- Sidebar (NO contact link; informational only) -->
     <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
       <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
         <div class="text-xs font-extrabold tracking-wide text-slate-500">QUICK LINKS</div>
         <div class="mt-3 grid gap-2 text-sm">
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#when-repair-makes-sense">When repair makes sense</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#when-replacement-makes-sense">When replacement makes sense</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#cost-downtime">Cost & downtime</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#decision-matrix">Decision matrix</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#what-to-document">What to document</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#decision-first">Start with the right question</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#repair">When repair makes sense</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#replacement">When replacement makes sense</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#downtime">Downtime & total cost</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#matrix">Decision matrix</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#documentation">What to document</a>
           <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#faq">FAQ</a>
         </div>
       </div>
 
-      <div class="rounded-2xl bg-slate-50 ring-1 ring-black/5 p-6">
-        <div class="text-xs text-slate-500">Need help now?</div>
-        <div class="mt-1 text-xl font-extrabold text-slate-900">Request a Quote</div>
-        <p class="mt-2 text-sm text-slate-600">Send photos + scope. We’ll recommend a repair vs replacement path.</p>
-        <a href="../contact.html#contact" class="mt-4 inline-flex w-full justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-          Get a Quote
-        </a>
-      </div>
-
-      <!-- Related: ONLY link to what exists (so no 404) -->
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+      <div class="rounded-2xl bg-white border border-slate-200 p-6 shadow-smooth">
         <div class="text-xs font-extrabold tracking-wide text-slate-500">RELATED</div>
-        <div class="mt-3 space-y-3">
-          <a class="block rounded-xl p-4 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="./index.html">
-            <div class="text-xs text-slate-500 font-extrabold">BLOG HOME</div>
-            <div class="mt-1 font-extrabold text-slate-900">Browse all articles</div>
-            <div class="mt-1 text-sm text-slate-600">See what’s new and what’s next.</div>
-          </a>
-        </div>
+        <p class="mt-2 text-sm text-slate-600">
+          As you publish more posts, this will become a curated “next reads” section. For now, keep everything clean and non-broken.
+        </p>
+        <a class="mt-4 inline-flex items-center gap-2 text-brand-700 font-extrabold hover:underline" href="./index.html">
+          Back to Blog →
+        </a>
       </div>
     </aside>
 
@@ -431,7 +399,7 @@
 <script src="../assets/js/main.js"></script>
 
 <script>
-  // progress bar
+  // reading progress bar
   (function () {
     const bar = document.getElementById("progressBar");
     function onScroll() {

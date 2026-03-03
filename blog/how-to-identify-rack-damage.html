@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How to Identify Pallet Rack Upright Damage — Elite Rackz Blog</title>
-  <meta name="description" content="Learn how to identify pallet rack upright damage, what to document, and what steps to take before choosing repair vs replacement.">
+  <title>How to Identify Pallet Rack Upright Damage | Elite Rackz Blog</title>
+  <meta name="description" content="How to identify pallet rack upright damage, what to document, and what to do next—plus a practical checklist for faster approvals.">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
 
@@ -25,6 +25,7 @@
 
   <link rel="stylesheet" href="../assets/css/styles.css">
 
+  <!-- Article schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -37,11 +38,23 @@
     "mainEntityOfPage":{"@type":"WebPage","@id":"https://eliterackz.com/blog/how-to-identify-rack-damage.html"}
   }
   </script>
+
+  <style>
+    #progressBar { width: 0%; }
+    .prose-er h2 { scroll-margin-top: 96px; }
+    .prose-er a { text-decoration: none; }
+    .prose-er a:hover { text-decoration: underline; }
+  </style>
 </head>
 
 <body class="bg-white text-slate-800 antialiased">
 
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+<!-- Reading progress -->
+<div class="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-transparent">
+  <div id="progressBar" class="h-full bg-brand-600"></div>
+</div>
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <a href="../index.html" class="flex items-center gap-3">
@@ -81,121 +94,198 @@
   </div>
 </header>
 
-<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-  <nav class="text-sm text-slate-500">
-    <a class="hover:text-slate-700" href="../index.html">Home</a>
-    <span class="mx-2">/</span>
-    <a class="hover:text-slate-700" href="./index.html">Blog</a>
-    <span class="mx-2">/</span>
-    <span class="text-slate-700 font-semibold">Upright Damage</span>
-  </nav>
+<!-- Article hero -->
+<section class="border-b border-slate-200 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="max-w-4xl">
+      <nav class="text-sm text-slate-500">
+        <a class="hover:text-slate-700" href="../index.html">Home</a>
+        <span class="mx-2">/</span>
+        <a class="hover:text-slate-700" href="./index.html">Blog</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-700 font-semibold">Upright Damage</span>
+      </nav>
 
-  <header class="mt-6">
-    <div class="inline-flex items-center px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-extrabold">
-      SAFETY
+      <div class="mt-6 flex flex-wrap items-center gap-2">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white text-slate-700 text-xs font-extrabold ring-1 ring-slate-200">
+          SAFETY
+        </span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white text-slate-700 text-xs font-extrabold ring-1 ring-slate-200">
+          OPERATIONS
+        </span>
+      </div>
+
+      <h1 class="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        How to Identify Pallet Rack Upright Damage
+      </h1>
+      <p class="mt-4 text-lg text-slate-600">
+        A practical guide for warehouse and safety teams: what damage looks like, what to document, and what to do next—without overreacting or underreacting.
+      </p>
+
+      <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+        <span class="font-semibold text-slate-700">Elite Rackz</span>
+        <span>•</span>
+        <time datetime="2026-03-03">Mar 3, 2026</time>
+        <span>•</span>
+        <span>7 min read</span>
+      </div>
     </div>
+  </div>
+</section>
 
-    <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-      How to Identify Pallet Rack Upright Damage (And What to Do Next)
-    </h1>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="grid lg:grid-cols-12 gap-10 items-start">
 
-    <p class="mt-4 text-lg text-slate-600">
-      A practical guide for warehouse managers and safety teams: what damage looks like, what to document, and how to decide the fastest compliant path.
-    </p>
+    <!-- Main article -->
+    <article class="lg:col-span-8">
 
-    <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
-      <span>By Elite Rackz</span>
-      <span>•</span>
-      <time datetime="2026-03-03">Mar 3, 2026</time>
-      <span>•</span>
-      <span>7 min read</span>
-    </div>
-  </header>
+      <!-- Key takeaway (no “Request a Quote”) -->
+      <div class="rounded-2xl bg-white border border-slate-200 p-7 shadow-smooth">
+        <p class="text-xs font-extrabold tracking-wide text-slate-500">SUMMARY</p>
+        <p class="mt-2 text-lg font-semibold text-slate-900">
+          Uprights carry vertical loads. When an upright is bent, twisted, or torn, capacity can be reduced and risk increases.
+          The fastest way to move from “we noticed damage” to a compliant plan is <span class="font-extrabold">consistent documentation</span>.
+        </p>
+      </div>
 
-  <article class="mt-10 prose prose-slate max-w-none">
-    <h2>Why upright damage matters</h2>
-    <p>
-      Uprights carry the vertical loads of a rack system. When an upright is bent, twisted, or torn, you can reduce structural capacity and
-      increase the risk of progressive failure. The goal of an inspection is simple: identify damage early, document it clearly, and choose a
-      correction path that reduces liability and disruption.
-    </p>
+      <!-- TOC -->
+      <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="text-lg font-extrabold text-slate-900">In this guide</h2>
+          <span class="text-xs text-slate-500">Jump to section</span>
+        </div>
+        <div class="mt-4 grid sm:grid-cols-2 gap-2 text-sm">
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#why">Why upright damage matters</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#patterns">Common damage patterns</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#document">What to document</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#fast">How to move fast</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#framework">Repair vs replace framework</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#faq">FAQ</a>
+        </div>
+      </div>
 
-    <h2>Common upright damage patterns</h2>
-    <ul>
-      <li><strong>Local bends:</strong> small kinks or bows near impact zones (often 6–24 inches above the floor).</li>
-      <li><strong>Twist/rotation:</strong> upright appears “corkscrewed,” often from repeated hits.</li>
-      <li><strong>Base plate deformation:</strong> base plate lifted, cracked anchors, or shifting.</li>
-      <li><strong>Tearing at holes:</strong> elongated or torn holes around beams/diagonals.</li>
-      <li><strong>Cracked welds:</strong> especially near foot plates or connection points.</li>
-    </ul>
+      <!-- Prose -->
+      <div class="prose-er mt-10 prose prose-slate max-w-none">
+        <h2 id="why">Why upright damage matters</h2>
+        <p>
+          Uprights carry vertical loads and help resist impacts and lateral forces. When an upright is bent, twisted, or torn, structural capacity can be reduced.
+          The point of an inspection isn’t to panic—it’s to identify issues early and document them clearly so a safe plan can be implemented with minimal disruption.
+        </p>
 
-    <h2>What to document (so decisions don’t stall)</h2>
-    <p>When you document consistently, engineering review and quoting move much faster. Capture:</p>
-    <ul>
-      <li><strong>Clear photos</strong> (wide + close) of every damaged location</li>
-      <li><strong>Aisle / bay / column location</strong> (a simple map is enough)</li>
-      <li><strong>Upright profile</strong> (brand/type if known)</li>
-      <li><strong>Beam elevations</strong> (which levels are impacted)</li>
-      <li><strong>Impact history</strong> (single incident vs repeated hits)</li>
-    </ul>
+        <h2 id="patterns">Common upright damage patterns</h2>
+        <p>Here are the most common types of damage teams see after forklift impacts and repeated contact:</p>
 
-    <h2>Repair vs replace: the practical decision framework</h2>
-    <p>
-      Replacement can be disruptive when it requires tear-downs or extended downtime. Engineered repair can be the faster compliant path when
-      the repair method restores structural integrity and documentation supports the decision.
-    </p>
-    <p>
-      If you’re deciding between options, start here:
-    </p>
-    <ul>
-      <li>If the damage is localized and the system can be reinforced without tear-down, <strong>engineered repair</strong> is often the fastest path.</li>
-      <li>If the damage is severe across multiple members or the system is unsafe to work around, <strong>replacement</strong> may be required.</li>
-    </ul>
+        <div class="not-prose my-6 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
+            <div class="font-extrabold text-slate-900">Local bends</div>
+            <p class="mt-2 text-sm text-slate-600">Kinks or bows near impact zones (often 6–24 inches above the floor).</p>
+          </div>
+          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
+            <div class="font-extrabold text-slate-900">Twist / rotation</div>
+            <p class="mt-2 text-sm text-slate-600">A “corkscrewed” look from repeated hits or awkward impacts.</p>
+          </div>
+          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
+            <div class="font-extrabold text-slate-900">Base plate / anchors</div>
+            <p class="mt-2 text-sm text-slate-600">Lifted base plates, cracked anchors, or shifting at the foot.</p>
+          </div>
+          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
+            <div class="font-extrabold text-slate-900">Tearing at holes</div>
+            <p class="mt-2 text-sm text-slate-600">Elongated or torn holes around beams/diagonals.</p>
+          </div>
+        </div>
 
-    <hr>
+        <h2 id="document">What to document (so decisions don’t stall)</h2>
+        <p>
+          Documentation is what makes approvals and planning move quickly. If you capture the following consistently, engineering review and quoting tend to accelerate:
+        </p>
 
-    <h2>FAQ</h2>
-    <h3>Should we unload a damaged bay immediately?</h3>
-    <p>
-      If you suspect structural compromise, reducing load is a prudent first step. Document the condition and get an engineering-backed repair plan quickly.
-    </p>
+        <div class="not-prose my-6 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-6">
+          <div class="text-sm font-extrabold text-slate-900">Inspection checklist</div>
+          <ul class="mt-3 grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Wide + close photos</strong> of each damage location</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Aisle / bay / column ID</strong> (simple map is fine)</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Upright profile</strong> (brand/type if known)</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Beam elevations</strong> impacted</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Anchor condition</strong> at base plate</li>
+            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Impact history</strong> (single vs repeated hits)</li>
+          </ul>
+        </div>
 
-    <h3>What’s the fastest way to get a repair plan?</h3>
-    <p>
-      Photos + location + upright profile + beam elevations. That set of inputs removes most delays.
-    </p>
-  </article>
+        <h2 id="fast">How to move fast (without skipping steps)</h2>
+        <p>
+          The fastest workflow is usually: document → triage severity → select a compliant path. If you’re short on time, prioritize the checklist above.
+          It’s the information most teams need to avoid delays.
+        </p>
 
-  <section class="mt-12 rounded-2xl bg-slate-950 text-white p-7 shadow-smooth ring-1 ring-white/10">
-    <h2 class="text-2xl font-extrabold tracking-tight">Want an engineered recommendation?</h2>
-    <p class="mt-2 text-white/75">
-      Send photos and scope. We’ll recommend the fastest compliant path—engineered and documented.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <a href="../contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-        Request a Quote
-      </a>
-      <a href="../products.html" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
-        View Products
-      </a>
-    </div>
-  </section>
+        <h2 id="framework">Repair vs replace: the practical framework</h2>
+        <p>
+          Replacement can be disruptive when it requires tear-downs or extended downtime. Engineered repair can be the faster compliant path when it restores structural integrity and the documentation supports the decision.
+        </p>
+        <ul>
+          <li>If damage is localized and reinforcement can be installed without tear-down, <strong>engineered repair</strong> is often the fastest path.</li>
+          <li>If damage is severe across multiple members or the system is unsafe to work around, <strong>replacement</strong> may be required.</li>
+        </ul>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-extrabold text-slate-900">Related articles</h2>
-    <div class="mt-5 grid gap-4 sm:grid-cols-2">
-      <a class="rounded-2xl border border-slate-200 p-5 hover:shadow-smooth transition" href="./rack-repair-vs-replacement.html">
-        <div class="text-xs font-extrabold text-slate-500">ENGINEERING</div>
-        <div class="mt-2 font-extrabold text-slate-900">Rack Repair vs Replacement</div>
-        <div class="mt-2 text-sm text-slate-600">Cost, safety, and downtime considerations.</div>
-      </a>
-      <a class="rounded-2xl border border-slate-200 p-5 hover:shadow-smooth transition" href="./forklift-damage-to-pallet-racks.html">
-        <div class="text-xs font-extrabold text-slate-500">EMERGENCY</div>
-        <div class="mt-2 font-extrabold text-slate-900">Forklift Damage Response</div>
-        <div class="mt-2 text-sm text-slate-600">What to do immediately after impact.</div>
-      </a>
-    </div>
-  </section>
+        <h2 id="faq">FAQ</h2>
+        <div class="not-prose mt-6 space-y-3">
+          <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
+            <summary class="cursor-pointer font-semibold text-slate-900">Should we unload a damaged bay immediately?</summary>
+            <p class="mt-3 text-sm text-slate-600">
+              If you suspect structural compromise, reducing load is a prudent first step. Document the condition and restrict access as needed until a plan is in place.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
+            <summary class="cursor-pointer font-semibold text-slate-900">What’s the fastest way to get an action plan?</summary>
+            <p class="mt-3 text-sm text-slate-600">
+              Photos + location + upright profile + beam elevations. That set of inputs removes most delays and clarifies scope.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <!-- ONE contact link (bottom only, not pushy) -->
+      <section class="mt-14 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-7">
+        <h2 class="text-xl font-extrabold text-slate-900">Want a second set of eyes?</h2>
+        <p class="mt-2 text-sm text-slate-600">
+          If you want a quick perspective, send photos and scope and we’ll point you in the right direction.
+        </p>
+        <a href="../contact.html#contact" class="mt-5 inline-flex items-center gap-2 text-brand-700 font-extrabold hover:underline">
+          Send photos for a quick review →
+        </a>
+      </section>
+    </article>
+
+    <!-- Sidebar (no extra contact CTAs) -->
+    <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+        <div class="text-xs font-extrabold tracking-wide text-slate-500">QUICK LINKS</div>
+        <div class="mt-3 grid gap-2 text-sm">
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#why">Why upright damage matters</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#patterns">Common damage patterns</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#document">What to document</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#fast">How to move fast</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#framework">Repair vs replace</a>
+          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <!-- Related (ONLY link to what exists right now) -->
+      <div class="rounded-2xl bg-white border border-slate-200 p-6 shadow-smooth">
+        <div class="text-xs font-extrabold tracking-wide text-slate-500">RELATED</div>
+        <a class="mt-4 block rounded-xl p-4 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="./rack-repair-vs-replacement.html">
+          <div class="text-xs text-slate-500 font-extrabold">ENGINEERING</div>
+          <div class="mt-1 font-extrabold text-slate-900">Rack Repair vs Rack Replacement</div>
+          <div class="mt-1 text-sm text-slate-600">Downtime, risk, and decision framework.</div>
+        </a>
+
+        <a class="mt-3 inline-flex items-center gap-2 text-brand-700 font-extrabold hover:underline" href="./index.html">
+          Back to Blog →
+        </a>
+      </div>
+    </aside>
+
+  </div>
 </main>
 
 <footer class="mt-24 border-t border-slate-200">
@@ -234,5 +324,22 @@
 </footer>
 
 <script src="../assets/js/main.js"></script>
+
+<script>
+  // reading progress bar
+  (function () {
+    const bar = document.getElementById("progressBar");
+    function onScroll() {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+      const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      bar.style.width = pct + "%";
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
 </body>
 </html>

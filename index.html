@@ -83,7 +83,9 @@
         </a>
         <a href="about.html" class="hover:text-brand-600">About</a>
         <a href="app.html" class="hover:text-brand-600">App</a>
-        <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
+        <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+          Contact
+        </a>
       </nav>
 
       <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300">
@@ -109,26 +111,33 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO (updated: image centered + stronger overlay + only "Made in USA") -->
 <section class="relative overflow-hidden">
   <div class="absolute inset-0">
-    <img src="assets/images/hero-header.jpg" alt="Warehouse pallet racking" class="w-full h-full object-cover opacity-90">
-    <div class="absolute inset-0 bg-gradient-to-tr from-slate-950/85 via-slate-950/35 to-transparent"></div>
+    <img
+      src="assets/images/hero-header.jpg"
+      alt="Warehouse pallet racking"
+      class="w-full h-full object-cover object-[56%_center] opacity-95"
+      loading="eager"
+    />
+    <!-- stronger, more premium overlay for readability -->
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/55 to-slate-950/15"></div>
+    <!-- subtle vignette -->
+    <div class="absolute inset-0 shadow-[inset_0_0_120px_rgba(0,0,0,0.45)]"></div>
   </div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
     <div class="max-w-4xl mx-auto text-center">
 
-      <!-- ONLY keep Made in the USA -->
-      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm ring-1 ring-white/15">
-        <span class="font-semibold tracking-wide">MADE IN THE USA</span>
+      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950/55 text-white text-sm ring-1 ring-white/20 backdrop-blur">
+        <span class="font-extrabold tracking-wide">MADE IN THE USA</span>
       </div>
 
-      <h1 class="reveal reveal-delay-1 mt-6 text-4xl md:text-6xl font-extrabold leading-tight text-white">
-        Engineered Rack Repair & Guarding
+      <h1 class="reveal reveal-delay-1 mt-6 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+        Engineered Rack Repair &amp; Guarding
       </h1>
 
-      <p class="reveal reveal-delay-2 mt-6 text-lg md:text-xl text-slate-200">
+      <p class="reveal reveal-delay-2 mt-6 text-lg md:text-xl text-slate-100/95 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]">
         Manufacturer-built repair kits and impact protection — engineered for compliance, built for longevity,
         and installed nationwide with minimal disruption.
       </p>
@@ -137,26 +146,25 @@
         <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
           Request a Quote
         </a>
-        <a href="products.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
+        <a href="products.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-white/95 text-slate-900 hover:bg-white">
           View Products
         </a>
       </div>
 
-      <!-- Trust cards (kept, but NOT in the top pill) -->
       <div class="reveal reveal-delay-4 mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto">
-        <div class="rounded-xl bg-slate-950/60 ring-1 ring-white/10 px-4 py-3 text-white">
+        <div class="rounded-xl bg-slate-950/65 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
           <div class="text-xs text-white/70">Engineering</div>
           <div class="font-extrabold tracking-tight">Stamped Calcs</div>
         </div>
-        <div class="rounded-xl bg-slate-950/60 ring-1 ring-white/10 px-4 py-3 text-white">
+        <div class="rounded-xl bg-slate-950/65 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
           <div class="text-xs text-white/70">Warranty</div>
           <div class="font-extrabold tracking-tight">Lifetime</div>
         </div>
-        <div class="rounded-xl bg-slate-950/60 ring-1 ring-white/10 px-4 py-3 text-white">
+        <div class="rounded-xl bg-slate-950/65 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
           <div class="text-xs text-white/70">Manufacturing</div>
           <div class="font-extrabold tracking-tight">In-House</div>
         </div>
-        <div class="rounded-xl bg-slate-950/60 ring-1 ring-white/10 px-4 py-3 text-white">
+        <div class="rounded-xl bg-slate-950/65 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
           <div class="text-xs text-white/70">Installations</div>
           <div class="font-extrabold tracking-tight">Nationwide</div>
         </div>
@@ -204,7 +212,7 @@
 <section class="py-16 bg-slate-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div class="reveal rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5" id="collageCarousel">
+      <div class="reveal relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5" id="collageCarousel">
         <div id="collageWrap" class="relative h-[340px] sm:h-[400px] md:h-[520px] bg-white">
           <img src="assets/images/collage/slide-01.jpg" alt="Elite Rackz product" class="absolute inset-0 w-full h-full object-contain p-3 md:p-6">
         </div>
@@ -543,7 +551,7 @@
 
     <div class="reveal reveal-delay-3">
       <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
     </div>
   </div>
 
@@ -570,7 +578,7 @@
 
   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <path stroke-linecap="round" stroke-linejoin="round"
-          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 0 0 1 4.7-7.6 8.38 0 0 1 3.8-.9h.5A8.48 8.48 0 0 1 21 11v.5z"/>
+          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 0 0 1 3.8-.9h.5A8.48 8.48 0 0 1 21 11v.5z"/>
   </svg>
 </a>
 
@@ -595,5 +603,6 @@
     items.forEach(el => io.observe(el));
   })();
 </script>
+
 </body>
 </html>

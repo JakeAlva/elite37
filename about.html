@@ -36,7 +36,7 @@
 
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- Scroll reveal -->
+  <!-- Scroll reveal + modal helper -->
   <style>
     .reveal{opacity:0;transform:translateY(14px);filter:blur(6px);transition:opacity 650ms ease,transform 650ms ease,filter 650ms ease;will-change:opacity,transform,filter}
     .reveal.in-view{opacity:1;transform:translateY(0);filter:blur(0)}
@@ -46,9 +46,7 @@
     @media (prefers-reduced-motion: reduce){
       .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
     }
-
-    /* Modal helpers */
-    .modal-open { overflow: hidden; }
+    .modal-open{overflow:hidden}
   </style>
 </head>
 
@@ -73,7 +71,6 @@
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
       </nav>
 
-      <!-- Mobile menu button -->
       <button
         id="mobileMenuBtn"
         type="button"
@@ -88,7 +85,6 @@
     </div>
   </div>
 
-  <!-- Mobile -->
   <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200" role="navigation" aria-label="Mobile">
     <div class="px-4 py-3 space-y-2 text-sm">
       <a href="products.html" class="block">Products</a>
@@ -173,7 +169,7 @@
     </div>
   </section>
 
-  <!-- LEADERSHIP GRID (standalone cards, not inside a big card) -->
+  <!-- LEADERSHIP GRID: BIGGER cards + circle portrait on top + name/title under + hover lift+glow -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <div class="reveal text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Company Leadership</h2>
@@ -184,70 +180,85 @@
 
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Card: David -->
+      <!-- David -->
       <button
         type="button"
-        class="reveal group text-left rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-smooth transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-brand-600/20"
+        class="reveal w-full text-center rounded-2xl border border-slate-200 bg-white shadow-smooth transition
+               hover:-translate-y-2 hover:shadow-lg hover:ring-2 hover:ring-brand-600/25
+               focus:outline-none focus:ring-4 focus:ring-brand-600/20"
         data-modal="leaderModal"
         data-name="David Enriquez"
         data-title="CEO"
         data-photo="assets/images/ceo.jpg"
         data-linkedin="https://www.linkedin.com/in/david-enriquez-a3b172356/"
         data-bio="David Enriquez brings over 20 years of hands-on experience in the warehouse racking and repair industry. Over two decades, he has designed, installed, and managed countless repair and safety solutions for facilities across North America.||Mentored by some of the best in the industry, David’s approach combines engineered precision with real-world practicality, always centered on safety and long-term performance.||To expand capabilities and serve customers end-to-end, David acquired FBS Group, Inc.—a respected provider of warehouse equipment solutions. This strategic step strengthens Elite Rackz’ supply, installation, and service offering while reinforcing the company’s commitment to quality and speed.||Beyond the job site, David is a devoted family man with a wonderful wife and children. He leads with humility, accountability, and a constant drive to improve—always striving for greatness.">
-        <div class="relative aspect-[16/10] bg-slate-100">
-          <img src="assets/images/ceo.jpg" alt="David Enriquez" class="absolute inset-0 w-full h-full object-cover">
-          <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/75 to-transparent"></div>
-        </div>
-        <div class="p-5 bg-slate-950 text-white">
-          <div class="text-lg font-extrabold leading-tight">David Enriquez</div>
-          <div class="text-sm text-white/80">CEO</div>
+        <div class="p-8">
+          <div class="mx-auto h-36 w-36 rounded-full overflow-hidden ring-1 ring-slate-200 shadow-sm bg-slate-100">
+            <img src="assets/images/ceo.jpg" alt="David Enriquez" class="h-full w-full object-cover" loading="lazy">
+          </div>
+          <div class="mt-6 text-xl font-extrabold text-slate-900">David Enriquez</div>
+          <div class="mt-1 text-sm text-slate-600">CEO</div>
+
+          <div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">
+            View bio <span aria-hidden="true">→</span>
+          </div>
         </div>
       </button>
 
-      <!-- Card: Jacob -->
+      <!-- Jacob -->
       <button
         type="button"
-        class="reveal reveal-delay-1 group text-left rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-smooth transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-brand-600/20"
+        class="reveal reveal-delay-1 w-full text-center rounded-2xl border border-slate-200 bg-white shadow-smooth transition
+               hover:-translate-y-2 hover:shadow-lg hover:ring-2 hover:ring-brand-600/25
+               focus:outline-none focus:ring-4 focus:ring-brand-600/20"
         data-modal="leaderModal"
         data-name="Jacob Alvarez"
         data-title="Director"
         data-photo="assets/images/jacob.jpg"
         data-linkedin="https://www.linkedin.com/in/jacob-a-alvarez/"
         data-bio="Jacob Alvarez plays a key role in developing Elite Rackz’ customer relationships, project coordination, and field strategy. With over 5 years of experience in warehouse rack repair, Jacob works directly with facilities across the country to identify damage, develop repair strategies, and deliver solutions that reduce downtime while improving safety.||Known for his hands-on approach and deep industry knowledge, Jacob focuses on helping customers navigate the complexities of rack damage, engineering requirements, and installation logistics—ensuring every project moves from assessment to completion efficiently.||When not at work, Jacob leads a packed household with a loving wife, child, dogs, cat, and even a few fish. Outside the office he enjoys hockey, spending time with animals, and exploring new food experiences whenever the opportunity arises.">
-        <div class="relative aspect-[16/10] bg-slate-100">
-          <img src="assets/images/jacob.jpg" alt="Jacob Alvarez" class="absolute inset-0 w-full h-full object-cover">
-          <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/75 to-transparent"></div>
-        </div>
-        <div class="p-5 bg-slate-950 text-white">
-          <div class="text-lg font-extrabold leading-tight">Jacob Alvarez</div>
-          <div class="text-sm text-white/80">Director of Sales</div>
+        <div class="p-8">
+          <div class="mx-auto h-36 w-36 rounded-full overflow-hidden ring-1 ring-slate-200 shadow-sm bg-slate-100">
+            <img src="assets/images/jacob.jpg" alt="Jacob Alvarez" class="h-full w-full object-cover" loading="lazy">
+          </div>
+          <div class="mt-6 text-xl font-extrabold text-slate-900">Jacob Alvarez</div>
+          <div class="mt-1 text-sm text-slate-600">Director of Sales</div>
+
+          <div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">
+            View bio <span aria-hidden="true">→</span>
+          </div>
         </div>
       </button>
 
-      <!-- Card: Rosalie -->
+      <!-- Rosalie -->
       <button
         type="button"
-        class="reveal reveal-delay-2 group text-left rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-smooth transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-brand-600/20"
+        class="reveal reveal-delay-2 w-full text-center rounded-2xl border border-slate-200 bg-white shadow-smooth transition
+               hover:-translate-y-2 hover:shadow-lg hover:ring-2 hover:ring-brand-600/25
+               focus:outline-none focus:ring-4 focus:ring-brand-600/20"
         data-modal="leaderModal"
         data-name="Rosalie York"
         data-title="Office Manager"
         data-photo="assets/images/rosie.jpg"
         data-linkedin="https://www.linkedin.com/in/rosalie-york-b2a364a2/"
         data-bio="Rosalie York brings 7 years of warehouse and rack repair experience to Elite Rackz. As Office Manager, she keeps day-to-day operations organized and responsive—supporting scheduling, coordination, and internal follow-through that helps projects run smoothly.||Rosalie is known for her reliability and attention to detail, helping ensure communication stays clear and projects stay organized as they move through each stage.||The people closest to her matter most—especially her family, including the newest addition: her grandbaby. Outside of work, Rosalie enjoys spending time with family, watching NASCAR, soccer, and tennis, and she never misses a good crime scene documentary.">
-        <div class="relative aspect-[16/10] bg-slate-100">
-          <img src="assets/images/rosie.jpg" alt="Rosalie York" class="absolute inset-0 w-full h-full object-cover">
-          <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/75 to-transparent"></div>
-        </div>
-        <div class="p-5 bg-slate-950 text-white">
-          <div class="text-lg font-extrabold leading-tight">Rosalie York</div>
-          <div class="text-sm text-white/80">Office Manager</div>
+        <div class="p-8">
+          <div class="mx-auto h-36 w-36 rounded-full overflow-hidden ring-1 ring-slate-200 shadow-sm bg-slate-100">
+            <img src="assets/images/rosie.jpg" alt="Rosalie York" class="h-full w-full object-cover" loading="lazy">
+          </div>
+          <div class="mt-6 text-xl font-extrabold text-slate-900">Rosalie York</div>
+          <div class="mt-1 text-sm text-slate-600">Office Manager</div>
+
+          <div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">
+            View bio <span aria-hidden="true">→</span>
+          </div>
         </div>
       </button>
 
     </div>
   </section>
 
-  <!-- Move "side cards" to the bottom (as requested) -->
+  <!-- Bottom info cards (moved down) + banner -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     <div class="grid md:grid-cols-3 gap-6">
       <section class="reveal rounded-2xl border border-slate-200 bg-white shadow-smooth p-6">
@@ -276,7 +287,6 @@
       </section>
     </div>
 
-    <!-- Wide banner -->
     <figure class="reveal mt-10 rounded-2xl border border-slate-200 ring-1 ring-slate-200/50 overflow-hidden bg-white shadow-smooth">
       <img src="assets/images/fbs-is-now-elite.jpg" alt="FBS Group, Inc. is now Elite Rackz"
            class="block w-full h-auto object-contain mx-auto max-h-[520px]" loading="lazy"
@@ -293,7 +303,7 @@
 
 </main>
 
-<!-- Modal (Damotech-style popup, Elite Rackz styling) -->
+<!-- Modal popup -->
 <div id="leaderModal" class="fixed inset-0 z-[200] hidden">
   <div class="absolute inset-0 bg-black/65" data-close></div>
 
@@ -380,7 +390,6 @@
 
 <script src="assets/js/main.js" defer></script>
 
-<!-- Scroll reveal + Modal logic -->
 <script>
   // Scroll reveal
   (function () {
@@ -433,7 +442,6 @@
     function closeModal(){
       modal.classList.add('hidden');
       document.body.classList.remove('modal-open');
-      // clear image to avoid flashing old content next open
       mPhoto.src = '';
       mBio.innerHTML = '';
     }

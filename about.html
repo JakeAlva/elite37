@@ -61,7 +61,7 @@
         <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">SMART STORAGE. NO COMPROMISE. ELITE RACKZ.</span>
       </a>
 
-      <!-- UPDATED: Blog added before Contact (no NEW badge) -->
+      <!-- Blog added before Contact -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium" aria-label="Primary">
         <a href="products.html" class="hover:text-brand-600">Products</a>
         <a href="services.html" class="hover:text-brand-600">Services</a>
@@ -86,7 +86,7 @@
     </div>
   </div>
 
-  <!-- UPDATED: Blog added to mobile menu -->
+  <!-- Mobile -->
   <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200" role="navigation" aria-label="Mobile">
     <div class="px-4 py-3 space-y-2 text-sm">
       <a href="products.html" class="block">Products</a>
@@ -101,7 +101,7 @@
 
 <main id="main" class="min-h-[70vh]" role="main">
 
-  <!-- REFRESHED HERO (matches rest of site) -->
+  <!-- HERO -->
   <section class="bg-slate-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <div class="reveal flex items-center justify-between gap-6 flex-wrap">
@@ -168,7 +168,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -179,9 +178,11 @@
       <!-- Left column -->
       <div class="md:col-span-7 lg:col-span-8 xl:col-span-8 space-y-8">
 
-        <!-- Leadership (refreshed card style) -->
+        <!-- Leadership -->
         <article class="reveal p-6 border border-slate-200 rounded-2xl shadow-smooth bg-white">
           <h2 class="text-2xl font-extrabold">Leadership</h2>
+
+          <!-- DAVID -->
           <div class="mt-5 flex items-start gap-4">
             <div class="relative">
               <div class="w-20 h-20 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0 bg-slate-50">
@@ -189,9 +190,9 @@
                      alt="David Enriquez, CEO of Elite Rackz"
                      class="w-full h-full object-cover"
                      loading="lazy"
-                     onerror="this.closest('.relative').querySelector('[data-ceo-ph]').classList.remove('hidden'); this.parentElement.style.display='none';">
+                     onerror="this.closest('.relative').querySelector('[data-david-ph]').classList.remove('hidden'); this.parentElement.style.display='none';">
               </div>
-              <div data-ceo-ph class="hidden w-20 h-20 rounded-full bg-slate-200 ring-1 ring-slate-200 flex items-center justify-center shrink-0" aria-hidden="true">
+              <div data-david-ph class="hidden w-20 h-20 rounded-full bg-slate-200 ring-1 ring-slate-200 flex items-center justify-center shrink-0" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
                   <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/>
                 </svg>
@@ -199,26 +200,147 @@
             </div>
 
             <div class="flex-1">
-              <p class="text-slate-900 font-extrabold">David Enriquez, CEO</p>
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <p class="text-slate-900 font-extrabold">David Enriquez, CEO</p>
+
+                <!-- LinkedIn icon link -->
+                <a href="https://www.linkedin.com/in/david-enriquez-a3b172356/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center h-9 w-9 rounded-xl bg-slate-50 ring-1 ring-slate-200 hover:bg-slate-100"
+                   aria-label="David Enriquez on LinkedIn">
+                  <img src="assets/images/linkedin.png"
+                       alt="LinkedIn"
+                       class="h-5 w-5 object-contain"
+                       loading="lazy"
+                       onerror="this.style.display='none'; this.parentElement.classList.add('opacity-60'); this.parentElement.title='Add assets/images/linkedin.png';">
+                </a>
+              </div>
+
               <div class="mt-3 text-slate-700 leading-relaxed space-y-3">
                 <p>
-                  David Enriquez brings over 20 years of hands-on experience in the warehouse racking and repair industry. His approach combines
-                  engineered precision with real-world practicality—always centered on safety and long-term performance.
+                  David Enriquez brings over 20 years of hands-on experience in the warehouse racking and repair industry.
+                  Over two decades, he has designed, installed, and managed countless repair and safety solutions for facilities across North America.
                 </p>
                 <p>
-                  To expand capabilities and serve customers end-to-end, David acquired FBS Group, Inc., strengthening Elite Rackz’ supply,
-                  installation, and service offering while reinforcing the company’s commitment to quality and speed.
+                  Mentored by some of the best in the industry, David’s approach combines engineered precision with real-world practicality,
+                  always centered on safety and long-term performance.
                 </p>
                 <p>
-                  Beyond the job site, David is a devoted family man. He leads with humility, accountability, and a constant drive to improve—
-                  <i>always striving for greatness.</i>
+                  To expand capabilities and serve customers end-to-end, David acquired FBS Group, Inc.—a respected provider of warehouse equipment solutions.
+                  This strategic step strengthens Elite Rackz’ supply, installation, and service offering while reinforcing the company’s commitment to quality and speed.
+                </p>
+                <p>
+                  Beyond the job site, David is a devoted family man with a wonderful wife and children. He leads with humility, accountability,
+                  and a constant drive to improve—<i>always striving for greatness.</i>
                 </p>
               </div>
             </div>
           </div>
+
+          <hr class="my-8 border-slate-200">
+
+          <!-- JACOB -->
+          <div class="flex items-start gap-4">
+            <div class="relative">
+              <div class="w-20 h-20 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0 bg-slate-50">
+                <img src="assets/images/jacob.jpg"
+                     alt="Jacob Alvarez, Director at Elite Rackz"
+                     class="w-full h-full object-cover"
+                     loading="lazy"
+                     onerror="this.closest('.relative').querySelector('[data-jacob-ph]').classList.remove('hidden'); this.parentElement.style.display='none';">
+              </div>
+              <div data-jacob-ph class="hidden w-20 h-20 rounded-full bg-slate-200 ring-1 ring-slate-200 flex items-center justify-center shrink-0" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
+                  <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <p class="text-slate-900 font-extrabold">Jacob Alvarez, Director</p>
+
+                <a href="https://www.linkedin.com/in/jacob-a-alvarez/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center h-9 w-9 rounded-xl bg-slate-50 ring-1 ring-slate-200 hover:bg-slate-100"
+                   aria-label="Jacob Alvarez on LinkedIn">
+                  <img src="assets/images/linkedin.png"
+                       alt="LinkedIn"
+                       class="h-5 w-5 object-contain"
+                       loading="lazy"
+                       onerror="this.style.display='none'; this.parentElement.classList.add('opacity-60'); this.parentElement.title='Add assets/images/linkedin.png';">
+                </a>
+              </div>
+
+              <div class="mt-3 text-slate-700 leading-relaxed space-y-3">
+                <p>
+                  Jacob Alvarez plays a key role in developing Elite Rackz’ customer relationships, project coordination, and field strategy.
+                  With years of experience in warehouse rack repair, Jacob works directly with facilities across the country to identify damage,
+                  develop repair strategies, and deliver solutions that reduce downtime while improving safety.
+                </p>
+                <p>
+                  Known for his hands-on approach and deep industry knowledge, Jacob focuses on helping customers navigate the complexities of rack damage,
+                  engineering requirements, and installation logistics—ensuring every project moves from assessment to completion efficiently.
+                </p>
+                <p>
+                  His work helps bridge the gap between engineering, manufacturing, and field operations, supporting Elite Rackz’ mission of delivering
+                  smarter rack repair solutions without compromise.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-8 border-slate-200">
+
+          <!-- ROSALIE -->
+          <div class="flex items-start gap-4">
+            <div class="relative">
+              <div class="w-20 h-20 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0 bg-slate-50">
+                <img src="assets/images/rosie.jpg"
+                     alt="Rosalie York, Office Manager at Elite Rackz"
+                     class="w-full h-full object-cover"
+                     loading="lazy"
+                     onerror="this.closest('.relative').querySelector('[data-rosie-ph]').classList.remove('hidden'); this.parentElement.style.display='none';">
+              </div>
+              <div data-rosie-ph class="hidden w-20 h-20 rounded-full bg-slate-200 ring-1 ring-slate-200 flex items-center justify-center shrink-0" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
+                  <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-4 flex-wrap">
+                <p class="text-slate-900 font-extrabold">Rosalie York, Office Manager</p>
+
+                <a href="https://www.linkedin.com/in/rosalie-york-b2a364a2/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center h-9 w-9 rounded-xl bg-slate-50 ring-1 ring-slate-200 hover:bg-slate-100"
+                   aria-label="Rosalie York on LinkedIn">
+                  <img src="assets/images/linkedin.png"
+                       alt="LinkedIn"
+                       class="h-5 w-5 object-contain"
+                       loading="lazy"
+                       onerror="this.style.display='none'; this.parentElement.classList.add('opacity-60'); this.parentElement.title='Add assets/images/linkedin.png';">
+                </a>
+              </div>
+
+              <div class="mt-3 text-slate-700 leading-relaxed space-y-3">
+                <p>
+                  Rosalie York brings 7 years of warehouse and rack repair experience to Elite Rackz. As Office Manager, she keeps day-to-day operations
+                  organized and responsive—supporting scheduling, coordination, and internal follow-through that helps projects run smoothly.
+                </p>
+                <p>
+                  The people closest to her matter most—especially her family, including the newest addition: her grandbaby. Outside of work, Rosalie enjoys
+                  spending time with family, watching NASCAR, soccer, and tennis, and she never misses a good crime scene documentary.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </article>
 
-        <!-- Wide banner (kept, but framed like other pages) -->
+        <!-- Wide banner -->
         <figure class="reveal rounded-2xl border border-slate-200 ring-1 ring-slate-200/50 overflow-hidden bg-white shadow-smooth">
           <img src="assets/images/fbs-is-now-elite.jpg" alt="FBS Group, Inc. is now Elite Rackz"
                class="block w-full h-auto object-contain mx-auto max-h-[520px]" loading="lazy"
@@ -234,7 +356,7 @@
 
       </div>
 
-      <!-- Sidebar (refreshed to match site) -->
+      <!-- Sidebar -->
       <aside class="md:col-span-5 lg:col-span-4 xl:col-span-4 md:sticky md:top-24 lg:top-28 space-y-4 max-w-xl md:max-w-none w-full justify-self-end" aria-label="Additional information">
 
         <section class="reveal p-6 border border-slate-200 rounded-2xl shadow-smooth bg-white">
@@ -278,7 +400,6 @@
       <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
     </div>
 
-    <!-- UPDATED: Blog in footer Explore -->
     <div>
       <h3 class="text-sm font-semibold mb-3">Explore</h3>
       <ul class="space-y-2 text-sm">

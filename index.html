@@ -37,6 +37,9 @@
     @media (prefers-reduced-motion: reduce){
       .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
     }
+
+    /* Hide top carousel dots while keeping identical carousel behavior */
+    #installedRepairsCarousel .installed-dots { display:none; }
   </style>
 
   <script type="application/ld+json">
@@ -216,25 +219,11 @@
 
       <div class="reveal reveal-delay-2 relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5" id="installedRepairsCarousel">
         <div id="installedRepairsWrap" class="relative h-[340px] sm:h-[400px] md:h-[520px] bg-white">
-          <img
-            id="installedImgA"
-            src="assets/images/completed-repairs/repair-01.jpg"
-            alt="Elite Rackz completed repair 1"
-            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-100 transition-opacity duration-1000 ease-out will-change-[opacity]"
-            loading="eager"
-            decoding="async"
-          >
-          <img
-            id="installedImgB"
-            src="assets/images/completed-repairs/repair-01.jpg"
-            alt="Elite Rackz completed repair 1"
-            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-0 transition-opacity duration-1000 ease-out will-change-[opacity]"
-            loading="eager"
-            decoding="async"
-          >
+          <img src="assets/images/completed-repairs/repair-01.jpg" alt="Elite Rackz completed repair" class="absolute inset-0 w-full h-full object-contain p-3 md:p-6">
         </div>
         <button type="button" aria-label="Previous" class="installed-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">‹</button>
         <button type="button" aria-label="Next" class="installed-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">›</button>
+        <div class="installed-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1"></div>
       </div>
 
     </div>
@@ -631,15 +620,16 @@
   })();
 </script>
 
+<!-- Installed repairs carousel: same behavior pattern as the one underneath -->
 <script>
   (function () {
     const carousel = document.getElementById('installedRepairsCarousel');
     if (!carousel) return;
 
+    const wrap = document.getElementById('installedRepairsWrap');
     const prevBtn = carousel.querySelector('.installed-prev');
     const nextBtn = carousel.querySelector('.installed-next');
-    const imgA = document.getElementById('installedImgA');
-    const imgB = document.getElementById('installedImgB');
+    const dotsWrap = carousel.querySelector('.installed-dots');
 
     const images = [
       'assets/images/completed-repairs/repair-01.jpg',
@@ -652,96 +642,57 @@
     ];
 
     let current = 0;
-    let autoPlay = null;
-    let showingA = true;
-    let isAnimating = false;
-    const preloaded = new Map();
+    let autoPlay;
 
-    function preloadImage(src) {
-      if (preloaded.has(src)) return preloaded.get(src);
+    function renderSlide(index) {
+      wrap.innerHTML = `
+        <img
+          src="${images[index]}"
+          alt="Elite Rackz completed repair ${index + 1}"
+          class="absolute inset-0 w-full h-full object-contain p-3 md:p-6"
+        >
+      `;
 
-      const img = new Image();
-      img.src = src;
-
-      const promise = new Promise((resolve) => {
-        if (img.complete) {
-          if (img.decode) {
-            img.decode().then(() => resolve(img)).catch(() => resolve(img));
-          } else {
-            resolve(img);
-          }
-        } else {
-          img.onload = () => {
-            if (img.decode) {
-              img.decode().then(() => resolve(img)).catch(() => resolve(img));
-            } else {
-              resolve(img);
-            }
-          };
-          img.onerror = () => resolve(img);
-        }
+      Array.from(dotsWrap.children).forEach((dot, i) => {
+        dot.className = i === index
+          ? 'h-2 w-2 rounded-full bg-slate-900'
+          : 'h-2 w-2 rounded-full bg-slate-300 hover:bg-slate-400 transition';
       });
-
-      preloaded.set(src, promise);
-      return promise;
     }
 
-    function preloadAll() {
-      return Promise.all(images.map(preloadImage));
-    }
-
-    async function showSlide(index) {
-      if (isAnimating) return;
-      isAnimating = true;
-
-      const nextIndex = (index + images.length) % images.length;
-      const nextSrc = images[nextIndex];
-
-      const incoming = showingA ? imgB : imgA;
-      const outgoing = showingA ? imgA : imgB;
-
-      await preloadImage(nextSrc);
-
-      incoming.src = nextSrc;
-      incoming.alt = `Elite Rackz completed repair ${nextIndex + 1}`;
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          incoming.classList.remove('opacity-0');
-          incoming.classList.add('opacity-100');
-
-          outgoing.classList.remove('opacity-100');
-          outgoing.classList.add('opacity-0');
-        });
-      });
-
-      current = nextIndex;
-      showingA = !showingA;
-
-      setTimeout(() => {
-        isAnimating = false;
-      }, 1020);
+    function goTo(index) {
+      current = (index + images.length) % images.length;
+      renderSlide(current);
     }
 
     function next() {
-      showSlide(current + 1);
+      goTo(current + 1);
     }
 
     function prev() {
-      showSlide(current - 1);
+      goTo(current - 1);
     }
 
     function startAutoPlay() {
       stopAutoPlay();
-      autoPlay = setInterval(() => {
-        if (!isAnimating) next();
-      }, 5000);
+      autoPlay = setInterval(next, 4500);
     }
 
     function stopAutoPlay() {
       if (autoPlay) clearInterval(autoPlay);
-      autoPlay = null;
     }
+
+    images.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.className = 'h-2 w-2 rounded-full bg-slate-300 hover:bg-slate-400 transition';
+      dot.addEventListener('click', () => {
+        goTo(i);
+        startAutoPlay();
+      });
+      dotsWrap.appendChild(dot);
+    });
 
     prevBtn.addEventListener('click', () => {
       prev();
@@ -756,9 +707,8 @@
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
 
-    preloadAll().then(() => {
-      startAutoPlay();
-    });
+    goTo(0);
+    startAutoPlay();
   })();
 </script>
 

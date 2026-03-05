@@ -17,9 +17,9 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] },
-          colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} },
-          boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'}
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: {600:'#2e6ad6',700:'#2554aa'} },
+          boxShadow: { smooth:'0 10px 25px rgba(0,0,0,0.08)' }
         }
       }
     };
@@ -38,11 +38,11 @@
       .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
     }
 
-    .fade-slide {
-      transition: opacity 700ms ease-in-out;
-      will-change: opacity;
-      backface-visibility: hidden;
-      transform: translateZ(0);
+    .fade-slide{
+      transition:opacity 700ms ease-in-out;
+      will-change:opacity;
+      backface-visibility:hidden;
+      transform:translateZ(0);
     }
   </style>
 
@@ -84,12 +84,10 @@
         <a href="services.html" class="hover:text-brand-600">Services</a>
         <a href="about.html" class="hover:text-brand-600">About</a>
         <a href="app.html" class="hover:text-brand-600">App</a>
-
         <a href="blog/index.html" class="hover:text-brand-600 inline-flex items-center gap-2">
           Blog
           <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-extrabold tracking-wide">NEW</span>
         </a>
-
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
           Contact
         </a>
@@ -110,12 +108,10 @@
       <a href="services.html" class="block">Services</a>
       <a href="about.html" class="block">About</a>
       <a href="app.html" class="block">App</a>
-
       <a href="blog/index.html" class="block font-semibold text-slate-900">
         Blog
         <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-extrabold tracking-wide">NEW</span>
       </a>
-
       <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
     </div>
   </div>
@@ -128,14 +124,13 @@
       alt="Warehouse pallet racking"
       class="w-full h-full object-cover opacity-95 object-[50%_66%] sm:object-[50%_60%] md:object-[50%_56%] lg:object-[50%_54%]"
       loading="eager"
-    />
+    >
     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-slate-950/20"></div>
     <div class="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.50)]"></div>
   </div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-32 sm:pt-20 sm:pb-24 lg:py-36">
     <div class="max-w-4xl mx-auto text-center">
-
       <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950/60 text-white text-sm ring-1 ring-white/20 backdrop-blur">
         <span class="font-extrabold tracking-wide">MADE IN THE USA</span>
       </div>
@@ -150,12 +145,10 @@
       </p>
 
       <div class="reveal reveal-delay-3 mt-7 flex flex-col sm:flex-row justify-center gap-3">
-        <a href="contact.html#contact"
-           class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+        <a href="contact.html#contact" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
           Request a Quote
         </a>
-        <a href="products.html"
-           class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-white/95 text-slate-900 hover:bg-white">
+        <a href="products.html" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-white/95 text-slate-900 hover:bg-white">
           View Products
         </a>
       </div>
@@ -178,7 +171,6 @@
           <div class="font-extrabold tracking-tight">Nationwide</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -188,7 +180,6 @@
 <section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
-
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 ring-1 ring-slate-200 text-xs font-semibold text-slate-700">
           Completed installs
@@ -239,7 +230,6 @@
         <button type="button" aria-label="Previous" class="installed-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">‹</button>
         <button type="button" aria-label="Next" class="installed-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">›</button>
       </div>
-
     </div>
   </div>
 </section>
@@ -309,7 +299,6 @@
       class="w-full h-full object-cover"
       loading="lazy"
     >
-    <!-- softened overlays so the background is actually visible -->
     <div class="absolute inset-0 bg-slate-950/35"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-slate-950/45 via-slate-950/25 to-slate-950/20"></div>
   </div>
@@ -370,80 +359,121 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
 
-<section class="py-16 bg-slate-950 text-white" aria-labelledby="emergency-cta">
+<section class="py-16 bg-slate-50" aria-labelledby="emergency-cta">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto text-center">
-
       <div class="reveal flex flex-col items-center gap-4">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-600/20 ring-1 ring-brand-600/40">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-600/10 ring-1 ring-brand-600/20 text-slate-900">
           <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-xs font-extrabold tracking-wide">NEW</span>
-          <span class="text-sm font-semibold text-white">48-Hour Emergency Repair Options</span>
-          <span class="text-white/60 text-sm hidden sm:inline">•</span>
-          <span class="text-white/70 text-sm hidden sm:inline">for qualifying custom-engineered kits</span>
+          <span class="text-sm font-semibold">48-Hour Emergency Repair Options</span>
+          <span class="text-slate-400 text-sm hidden sm:inline">•</span>
+          <span class="text-slate-500 text-sm hidden sm:inline">for qualifying custom-engineered kits</span>
         </div>
 
-        <h2 id="emergency-cta" class="text-3xl md:text-5xl font-extrabold tracking-tight">
+        <h2 id="emergency-cta" class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           48 Hours on Custom Repair Kits
         </h2>
 
-        <p class="mt-1 text-white/75 text-lg md:text-xl max-w-3xl">
+        <p class="mt-1 text-slate-600 text-lg md:text-xl max-w-3xl">
           Off-the-shelf “one-size” kits can ship fast. Custom-engineered kits usually can’t.
-          <span class="text-white font-semibold">We built a rapid-response path</span> that moves qualifying custom repairs fast
-          <span class="text-white font-semibold">without compromising engineering standards.</span>
+          <span class="text-slate-900 font-semibold">We built a rapid-response path</span> that moves qualifying custom repairs fast
+          <span class="text-slate-900 font-semibold">without compromising engineering standards.</span>
         </p>
       </div>
 
-      <div class="reveal reveal-delay-1 mt-10 mx-auto max-w-4xl rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 md:p-8 text-left shadow-smooth">
+      <div class="reveal reveal-delay-1 mt-10 mx-auto max-w-5xl rounded-2xl bg-white ring-1 ring-slate-200 p-6 md:p-8 text-left shadow-smooth">
         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          <div>
-            <p class="text-sm font-semibold text-brand-600">Why this is different</p>
-            <p class="mt-2 text-white/85">
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-brand-700">Why this is different</p>
+            <p class="mt-2 text-slate-700">
               We accelerate the path while maintaining engineered integrity:
-              <span class="text-white font-semibold">triage → engineered strategy → quick-ship material → installation scheduling.</span>
+              <span class="text-slate-900 font-semibold">triage → engineered strategy → quick-ship material → installation scheduling.</span>
             </p>
 
             <div class="mt-5 grid gap-3 sm:grid-cols-2">
-              <div class="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-                <div class="text-xs text-white/60">Designed for</div>
-                <div class="mt-1 font-bold">Emergency stabilization</div>
-                <p class="mt-2 text-sm text-white/70">High-risk impacts, active damage zones, audit-driven deadlines.</p>
+              <div class="rounded-xl bg-slate-50 ring-1 ring-slate-200 p-4">
+                <div class="text-xs text-slate-500">Designed for</div>
+                <div class="mt-1 font-bold text-slate-900">Emergency stabilization</div>
+                <p class="mt-2 text-sm text-slate-600">
+                  High-risk impacts, active damage zones, audit-driven deadlines.
+                </p>
               </div>
-              <div class="rounded-xl bg-white/5 ring-1 ring-white/10 p-4">
-                <div class="text-xs text-white/60">Still includes</div>
-                <div class="mt-1 font-bold">Engineering-backed strategy</div>
-                <p class="mt-2 text-sm text-white/70">No shortcuts. No generic “fits-all” patchwork.</p>
+
+              <div class="rounded-xl bg-slate-50 ring-1 ring-slate-200 p-4">
+                <div class="text-xs text-slate-500">Still includes</div>
+                <div class="mt-1 font-bold text-slate-900">Engineering-backed strategy</div>
+                <p class="mt-2 text-sm text-slate-600">
+                  No shortcuts. No generic “fits-all” patchwork.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-xl overflow-hidden bg-white ring-1 ring-black/10">
+                <div class="relative">
+                  <img
+                    src="assets/images/emergency-before.jpg"
+                    alt="Critical rack damage before repair"
+                    class="w-full h-[220px] object-cover"
+                    loading="lazy"
+                  >
+                  <div class="absolute top-2 left-2 px-2 py-1 rounded bg-red-600 text-white text-xs font-extrabold tracking-wide">
+                    BEFORE
+                  </div>
+                </div>
+                <div class="p-3">
+                  <p class="text-xs text-slate-600">
+                    Critical rack damage requiring immediate stabilization.
+                  </p>
+                </div>
+              </div>
+
+              <div class="rounded-xl overflow-hidden bg-white ring-1 ring-black/10">
+                <div class="relative">
+                  <img
+                    src="assets/images/emergency-after.jpg"
+                    alt="Rack repaired using custom engineered kit"
+                    class="w-full h-[220px] object-cover"
+                    loading="lazy"
+                  >
+                  <div class="absolute top-2 left-2 px-2 py-1 rounded bg-emerald-600 text-white text-xs font-extrabold tracking-wide">
+                    AFTER
+                  </div>
+                </div>
+                <div class="p-3">
+                  <p class="text-xs text-slate-600">
+                    Engineered repair kit restoring structural integrity.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="rounded-2xl bg-white text-slate-900 p-5 ring-1 ring-black/10 w-full md:w-[320px]">
-            <p class="text-xs font-semibold text-brand-700">Emergency hotline</p>
+          <div class="rounded-2xl bg-slate-900 text-white p-5 ring-1 ring-black/10 w-full md:w-[320px]">
+            <p class="text-xs font-semibold text-brand-600">Emergency hotline</p>
             <p class="mt-1 text-2xl font-extrabold tracking-tight">
               <a href="tel:+17089802936" class="hover:underline">(708) 980-2936</a>
             </p>
-            <p class="mt-2 text-sm text-slate-600">
-              Submit the form and include <span class="font-semibold">“48HR Emergency”</span>.
+            <p class="mt-2 text-sm text-white/75">
+              Submit the form and include <span class="font-semibold text-white">“48HR Emergency”</span>.
             </p>
 
             <div class="mt-4 grid gap-2">
-              <a href="contact.html#contact"
-                 class="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+              <a href="contact.html#contact" class="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
                 Get 48HR Emergency Help
               </a>
-              <a href="services.html"
-                 class="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-slate-100 text-slate-900 hover:bg-slate-200">
+              <a href="services.html" class="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
                 View Service Options
               </a>
             </div>
 
-            <p class="mt-3 text-[11px] text-slate-500 leading-snug">
+            <p class="mt-3 text-[11px] text-white/55 leading-snug">
               Availability depends on location, site conditions, and whether the repair qualifies for the 48hr path.
             </p>
           </div>
@@ -451,32 +481,32 @@
       </div>
 
       <div class="reveal reveal-delay-2 mt-10 grid gap-6 md:grid-cols-3 text-left">
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+        <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="flex items-center gap-3">
             <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">1</div>
-            <div class="font-bold">Rapid Triage</div>
+            <div class="font-bold text-slate-900">Rapid Triage</div>
           </div>
-          <p class="mt-3 text-sm text-white/75">Send photos (or request a rush visit). We confirm the fastest compliant fix path.</p>
+          <p class="mt-3 text-sm text-slate-600">Send photos or request a rush visit. We confirm the fastest compliant fix path.</p>
         </div>
 
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+        <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="flex items-center gap-3">
             <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">2</div>
-            <div class="font-bold">Priority Quote + Strategy</div>
+            <div class="font-bold text-slate-900">Priority Quote + Strategy</div>
           </div>
-          <p class="mt-3 text-sm text-white/75">We deliver a repair strategy, material requirements, and install plan with urgency.</p>
+          <p class="mt-3 text-sm text-slate-600">We deliver a repair strategy, material requirements, and install plan with urgency.</p>
         </div>
 
-        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+        <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="flex items-center gap-3">
             <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">3</div>
-            <div class="font-bold">Quick-Ship + Schedule</div>
+            <div class="font-bold text-slate-900">Quick-Ship + Schedule</div>
           </div>
-          <p class="mt-3 text-sm text-white/75">If it qualifies, we prioritize production and schedule the install ASAP.</p>
+          <p class="mt-3 text-sm text-slate-600">If it qualifies, we prioritize production and schedule the install ASAP.</p>
         </div>
       </div>
 
-      <p class="reveal reveal-delay-3 mt-6 text-center text-xs text-white/60">
+      <p class="reveal reveal-delay-3 mt-6 text-center text-xs text-slate-500">
         Limited rapid-response option for qualifying repairs—built to keep engineered quality intact.
       </p>
     </div>
@@ -553,8 +583,7 @@
     </p>
 
     <div class="reveal reveal-delay-2 mt-6 flex justify-center">
-      <img src="assets/images/app-hero-live.jpg" alt="Elite Rackz App preview"
-           class="w-full max-w-3xl md:max-w-4xl rounded-2xl shadow-smooth object-contain bg-white">
+      <img src="assets/images/app-hero-live.jpg" alt="Elite Rackz App preview" class="w-full max-w-3xl md:max-w-4xl rounded-2xl shadow-smooth object-contain bg-white">
     </div>
 
     <a href="app.html" class="reveal reveal-delay-3 mt-6 block text-brand-700 font-medium">See preview →</a>
@@ -690,7 +719,6 @@
       requestAnimationFrame(() => {
         incoming.classList.remove('opacity-0');
         incoming.classList.add('opacity-100');
-
         active.classList.remove('opacity-100');
         active.classList.add('opacity-0');
       });
@@ -703,19 +731,12 @@
       }, 720);
     }
 
-    function next() {
-      goTo(current + 1);
-    }
-
-    function prev() {
-      goTo(current - 1);
-    }
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
 
     function startAutoPlay() {
       stopAutoPlay();
-      autoPlay = setInterval(() => {
-        next();
-      }, 4500);
+      autoPlay = setInterval(() => { next(); }, 4500);
     }
 
     function stopAutoPlay() {

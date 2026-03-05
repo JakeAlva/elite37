@@ -214,10 +214,20 @@
         </div>
       </div>
 
-      <!-- IDENTICAL STYLE/BEHAVIOR TO THE COLLAGE BELOW -->
       <div class="reveal reveal-delay-2 relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5" id="installedRepairsCarousel">
         <div id="installedRepairsWrap" class="relative h-[340px] sm:h-[400px] md:h-[520px] bg-white">
-          <img src="assets/images/completed-repairs/repair-01.jpg" alt="Elite Rackz completed repair" class="absolute inset-0 w-full h-full object-contain p-3 md:p-6">
+          <img
+            id="installedImgA"
+            src="assets/images/completed-repairs/repair-01.jpg"
+            alt="Elite Rackz completed repair 1"
+            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-100 transition-opacity duration-700 ease-in-out"
+          >
+          <img
+            id="installedImgB"
+            src="assets/images/completed-repairs/repair-01.jpg"
+            alt="Elite Rackz completed repair 1"
+            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-0 transition-opacity duration-700 ease-in-out"
+          >
         </div>
         <button type="button" aria-label="Previous" class="installed-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">‹</button>
         <button type="button" aria-label="Next" class="installed-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">›</button>
@@ -617,15 +627,15 @@
   })();
 </script>
 
-<!-- Installed repairs carousel: identical behavior to the one below (no dots, auto-scroll, same controls/layout) -->
 <script>
   (function () {
     const carousel = document.getElementById('installedRepairsCarousel');
     if (!carousel) return;
 
-    const wrap = document.getElementById('installedRepairsWrap');
     const prevBtn = carousel.querySelector('.installed-prev');
     const nextBtn = carousel.querySelector('.installed-next');
+    const imgA = document.getElementById('installedImgA');
+    const imgB = document.getElementById('installedImgB');
 
     const images = [
       'assets/images/completed-repairs/repair-01.jpg',
@@ -639,28 +649,41 @@
 
     let current = 0;
     let autoPlay;
+    let showingA = true;
+    let isAnimating = false;
 
-    function renderSlide(index) {
-      wrap.innerHTML = `
-        <img
-          src="${images[index]}"
-          alt="Elite Rackz completed repair ${index + 1}"
-          class="absolute inset-0 w-full h-full object-contain p-3 md:p-6"
-        >
-      `;
-    }
+    function showSlide(index) {
+      if (isAnimating) return;
+      isAnimating = true;
 
-    function goTo(index) {
-      current = (index + images.length) % images.length;
-      renderSlide(current);
+      const nextIndex = (index + images.length) % images.length;
+      const incoming = showingA ? imgB : imgA;
+      const outgoing = showingA ? imgA : imgB;
+
+      incoming.src = images[nextIndex];
+      incoming.alt = `Elite Rackz completed repair ${nextIndex + 1}`;
+
+      requestAnimationFrame(() => {
+        incoming.classList.remove('opacity-0');
+        incoming.classList.add('opacity-100');
+        outgoing.classList.remove('opacity-100');
+        outgoing.classList.add('opacity-0');
+      });
+
+      current = nextIndex;
+      showingA = !showingA;
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, 700);
     }
 
     function next() {
-      goTo(current + 1);
+      showSlide(current + 1);
     }
 
     function prev() {
-      goTo(current - 1);
+      showSlide(current - 1);
     }
 
     function startAutoPlay() {
@@ -685,7 +708,6 @@
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
 
-    goTo(0);
     startAutoPlay();
   })();
 </script>

@@ -38,8 +38,13 @@
       .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
     }
 
-    /* Hide top carousel dots while keeping identical carousel behavior */
-    #installedRepairsCarousel .installed-dots { display:none; }
+    /* Smooth fade layers for installed repairs carousel */
+    .fade-slide {
+      transition: opacity 700ms ease-in-out;
+      will-change: opacity;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
   </style>
 
   <script type="application/ld+json">
@@ -219,11 +224,21 @@
 
       <div class="reveal reveal-delay-2 relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5" id="installedRepairsCarousel">
         <div id="installedRepairsWrap" class="relative h-[340px] sm:h-[400px] md:h-[520px] bg-white">
-          <img src="assets/images/completed-repairs/repair-01.jpg" alt="Elite Rackz completed repair" class="absolute inset-0 w-full h-full object-contain p-3 md:p-6">
+          <img
+            id="installedSlideA"
+            src="assets/images/completed-repairs/repair-01.jpg"
+            alt="Elite Rackz completed repair 1"
+            class="fade-slide absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-100"
+          >
+          <img
+            id="installedSlideB"
+            src="assets/images/completed-repairs/repair-01.jpg"
+            alt="Elite Rackz completed repair 1"
+            class="fade-slide absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-0"
+          >
         </div>
         <button type="button" aria-label="Previous" class="installed-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">‹</button>
         <button type="button" aria-label="Next" class="installed-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">›</button>
-        <div class="installed-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1"></div>
       </div>
 
     </div>
@@ -620,16 +635,15 @@
   })();
 </script>
 
-<!-- Installed repairs carousel: same behavior pattern as the one underneath -->
 <script>
   (function () {
     const carousel = document.getElementById('installedRepairsCarousel');
     if (!carousel) return;
 
-    const wrap = document.getElementById('installedRepairsWrap');
     const prevBtn = carousel.querySelector('.installed-prev');
     const nextBtn = carousel.querySelector('.installed-next');
-    const dotsWrap = carousel.querySelector('.installed-dots');
+    const slideA = document.getElementById('installedSlideA');
+    const slideB = document.getElementById('installedSlideB');
 
     const images = [
       'assets/images/completed-repairs/repair-01.jpg',
@@ -642,27 +656,40 @@
     ];
 
     let current = 0;
-    let autoPlay;
+    let activeIsA = true;
+    let autoPlay = null;
+    let isTransitioning = false;
 
-    function renderSlide(index) {
-      wrap.innerHTML = `
-        <img
-          src="${images[index]}"
-          alt="Elite Rackz completed repair ${index + 1}"
-          class="absolute inset-0 w-full h-full object-contain p-3 md:p-6"
-        >
-      `;
-
-      Array.from(dotsWrap.children).forEach((dot, i) => {
-        dot.className = i === index
-          ? 'h-2 w-2 rounded-full bg-slate-900'
-          : 'h-2 w-2 rounded-full bg-slate-300 hover:bg-slate-400 transition';
-      });
-    }
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
 
     function goTo(index) {
-      current = (index + images.length) % images.length;
-      renderSlide(current);
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const nextIndex = (index + images.length) % images.length;
+      const active = activeIsA ? slideA : slideB;
+      const incoming = activeIsA ? slideB : slideA;
+
+      incoming.src = images[nextIndex];
+      incoming.alt = `Elite Rackz completed repair ${nextIndex + 1}`;
+
+      requestAnimationFrame(() => {
+        incoming.classList.remove('opacity-0');
+        incoming.classList.add('opacity-100');
+
+        active.classList.remove('opacity-100');
+        active.classList.add('opacity-0');
+      });
+
+      current = nextIndex;
+      activeIsA = !activeIsA;
+
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 720);
     }
 
     function next() {
@@ -675,24 +702,15 @@
 
     function startAutoPlay() {
       stopAutoPlay();
-      autoPlay = setInterval(next, 4500);
+      autoPlay = setInterval(() => {
+        next();
+      }, 4500);
     }
 
     function stopAutoPlay() {
       if (autoPlay) clearInterval(autoPlay);
+      autoPlay = null;
     }
-
-    images.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-      dot.className = 'h-2 w-2 rounded-full bg-slate-300 hover:bg-slate-400 transition';
-      dot.addEventListener('click', () => {
-        goTo(i);
-        startAutoPlay();
-      });
-      dotsWrap.appendChild(dot);
-    });
 
     prevBtn.addEventListener('click', () => {
       prev();
@@ -707,7 +725,6 @@
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
 
-    goTo(0);
     startAutoPlay();
   })();
 </script>

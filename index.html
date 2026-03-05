@@ -220,13 +220,17 @@
             id="installedImgA"
             src="assets/images/completed-repairs/repair-01.jpg"
             alt="Elite Rackz completed repair 1"
-            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-100 transition-opacity duration-700 ease-in-out"
+            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-100 transition-opacity duration-1000 ease-out will-change-[opacity]"
+            loading="eager"
+            decoding="async"
           >
           <img
             id="installedImgB"
             src="assets/images/completed-repairs/repair-01.jpg"
             alt="Elite Rackz completed repair 1"
-            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-0 transition-opacity duration-700 ease-in-out"
+            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-0 transition-opacity duration-1000 ease-out will-change-[opacity]"
+            loading="eager"
+            decoding="async"
           >
         </div>
         <button type="button" aria-label="Previous" class="installed-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow">‹</button>
@@ -648,26 +652,67 @@
     ];
 
     let current = 0;
-    let autoPlay;
+    let autoPlay = null;
     let showingA = true;
     let isAnimating = false;
+    const preloaded = new Map();
 
-    function showSlide(index) {
+    function preloadImage(src) {
+      if (preloaded.has(src)) return preloaded.get(src);
+
+      const img = new Image();
+      img.src = src;
+
+      const promise = new Promise((resolve) => {
+        if (img.complete) {
+          if (img.decode) {
+            img.decode().then(() => resolve(img)).catch(() => resolve(img));
+          } else {
+            resolve(img);
+          }
+        } else {
+          img.onload = () => {
+            if (img.decode) {
+              img.decode().then(() => resolve(img)).catch(() => resolve(img));
+            } else {
+              resolve(img);
+            }
+          };
+          img.onerror = () => resolve(img);
+        }
+      });
+
+      preloaded.set(src, promise);
+      return promise;
+    }
+
+    function preloadAll() {
+      return Promise.all(images.map(preloadImage));
+    }
+
+    async function showSlide(index) {
       if (isAnimating) return;
       isAnimating = true;
 
       const nextIndex = (index + images.length) % images.length;
+      const nextSrc = images[nextIndex];
+
       const incoming = showingA ? imgB : imgA;
       const outgoing = showingA ? imgA : imgB;
 
-      incoming.src = images[nextIndex];
+      await preloadImage(nextSrc);
+
+      incoming.src = nextSrc;
       incoming.alt = `Elite Rackz completed repair ${nextIndex + 1}`;
 
       requestAnimationFrame(() => {
-        incoming.classList.remove('opacity-0');
-        incoming.classList.add('opacity-100');
-        outgoing.classList.remove('opacity-100');
-        outgoing.classList.add('opacity-0');
+        requestAnimationFrame(() => {
+          incoming.classList.remove('opacity-0');
+          incoming.classList.add('opacity-100');
+
+          outgoing.classList.remove('opacity-100');
+          outgoing.classList.add('opacity-0');
+        });
       });
 
       current = nextIndex;
@@ -675,7 +720,7 @@
 
       setTimeout(() => {
         isAnimating = false;
-      }, 700);
+      }, 1020);
     }
 
     function next() {
@@ -688,11 +733,14 @@
 
     function startAutoPlay() {
       stopAutoPlay();
-      autoPlay = setInterval(next, 4500);
+      autoPlay = setInterval(() => {
+        if (!isAnimating) next();
+      }, 5000);
     }
 
     function stopAutoPlay() {
       if (autoPlay) clearInterval(autoPlay);
+      autoPlay = null;
     }
 
     prevBtn.addEventListener('click', () => {
@@ -708,7 +756,9 @@
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
 
-    startAutoPlay();
+    preloadAll().then(() => {
+      startAutoPlay();
+    });
   })();
 </script>
 

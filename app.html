@@ -26,182 +26,398 @@
   </script>
 
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      filter:blur(6px);
+      transition:opacity 700ms ease,transform 700ms ease,filter 700ms ease;
+      will-change:opacity,transform,filter;
+    }
+    .reveal.in-view{
+      opacity:1;
+      transform:translateY(0);
+      filter:blur(0);
+    }
+    .reveal-delay-1{transition-delay:80ms}
+    .reveal-delay-2{transition-delay:160ms}
+    .reveal-delay-3{transition-delay:240ms}
+    .reveal-delay-4{transition-delay:320ms}
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal{
+        opacity:1!important;
+        transform:none!important;
+        filter:none!important;
+        transition:none!important;
+      }
+    }
+
+    .site-header{
+      transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        backdrop-filter .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .header-hero{
+      background:linear-gradient(to bottom,rgba(2,6,23,.72),rgba(2,6,23,.34),rgba(2,6,23,0));
+      border-bottom:none;
+      box-shadow:none;
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
+    }
+
+    .header-scrolled{
+      background:white;
+      border-bottom:1px solid #e2e8f0;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      box-shadow:0 1px 0 rgba(15,23,42,.04);
+    }
+
+    .header-hero #headerLogoWrap{
+      background:rgba(255,255,255,0.94);
+      box-shadow:0 8px 24px rgba(0,0,0,0.18);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+    }
+
+    .header-hero #headerTagline{
+      color:white;
+      text-shadow:0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .header-scrolled #headerLogoWrap{
+      background:transparent;
+      box-shadow:none;
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
+    }
+
+    .header-scrolled #headerTagline{
+      color:rgb(51 65 85);
+      text-shadow:none;
+    }
+
+    .header-hero .header-nav-link{
+      color:white;
+      text-shadow:0 2px 10px rgba(0,0,0,0.30);
+    }
+
+    .header-hero .header-nav-link:hover{
+      color:rgba(255,255,255,0.82);
+    }
+
+    .header-scrolled .header-nav-link{
+      color:rgb(15 23 42);
+      text-shadow:none;
+    }
+
+    #siteHeader{
+      z-index:1000;
+    }
+
+    #mobileMenuBtn{
+      position:relative;
+      z-index:1001;
+      pointer-events:auto;
+    }
+
+    #mobileMenu{
+      position:relative;
+      z-index:1000;
+      overflow:hidden;
+      max-height:0;
+      opacity:0;
+      transform:translateY(-8px);
+      visibility:hidden;
+      pointer-events:none;
+      transition:
+        max-height 360ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 360ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 360ms;
+      will-change:max-height,opacity,transform;
+    }
+
+    #mobileMenuBtn.menu-open{
+      background:rgba(255,255,255,0.98);
+      box-shadow:0 10px 24px rgba(0,0,0,0.12);
+      border-color:rgba(148,163,184,0.55);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(1){
+      top:8px;
+      transform:rotate(45deg);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(2){
+      opacity:0;
+      transform:scaleX(0);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(3){
+      top:8px;
+      transform:rotate(-45deg);
+    }
+
+    #mobileMenu.menu-open{
+      max-height:420px;
+      opacity:1;
+      transform:translateY(0);
+      visibility:visible;
+      pointer-events:auto;
+      transition:
+        max-height 420ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 420ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 0s;
+    }
+
+    #mobileMenu .mobile-link{
+      display:block;
+      padding:10px 0;
+      transition:color .2s ease,transform .2s ease;
+    }
+
+    #mobileMenu .mobile-link:hover{
+      color:#2e6ad6;
+      transform:translateX(2px);
+    }
+  </style>
 </head>
 
 <body class="bg-white text-slate-800 antialiased">
 
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+<header id="siteHeader" class="site-header header-hero fixed top-0 left-0 right-0 z-40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">
+      <a href="index.html" id="headerBrand" class="flex items-center gap-3 transition-all duration-300">
+        <span id="headerLogoWrap" class="rounded-lg px-2 py-1 transition-all duration-300">
+          <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        </span>
+
+        <span id="headerTagline" class="text-[11px] md:text-xs font-semibold leading-tight transition-colors duration-300">
           SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
         </span>
       </a>
 
-      <!-- Desktop nav (ONLY CHANGE: added Blog between App and Contact) -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="products.html" class="hover:text-brand-600">Products</a>
-        <a href="services.html" class="hover:text-brand-600">Services</a>
-        <a href="about.html" class="hover:text-brand-600">About</a>
-        <a href="app.html" class="text-brand-700">App</a>
-        <a href="blog/index.html" class="hover:text-brand-600">Blog</a>
-        <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
+        <a href="products.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Products</a>
+        <a href="services.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Services</a>
+        <a href="about.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">About</a>
+        <a href="app.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">App</a>
+        <a href="blog/index.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Blog</a>
+        <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+          Contact
+        </a>
       </nav>
 
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300" aria-expanded="false" aria-controls="mobileMenu">
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white/70 transition-all duration-300 hover:bg-white/85 active:scale-95"
+      >
         <span class="sr-only">Open menu</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+        <span class="relative h-5 w-5">
+          <span class="menu-line absolute left-0 top-0 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-2 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-4 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+        </span>
       </button>
     </div>
   </div>
 
-  <!-- Mobile menu (ONLY CHANGE: added Blog between App and Contact) -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
-    <div class="px-4 py-3 space-y-2 text-sm">
-      <a href="products.html" class="block">Products</a>
-      <a href="services.html" class="block">Services</a>
-      <a href="about.html" class="block">About</a>
-      <a href="app.html" class="block font-semibold text-brand-700">App</a>
-      <a href="blog/index.html" class="block">Blog</a>
-      <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
+  <div id="mobileMenu" class="md:hidden border-t border-slate-200 bg-white/95">
+    <div class="px-4 py-3 text-sm">
+      <a href="products.html" class="mobile-link">Products</a>
+      <a href="services.html" class="mobile-link">Services</a>
+      <a href="about.html" class="mobile-link">About</a>
+      <a href="app.html" class="mobile-link font-semibold text-brand-700">App</a>
+      <a href="blog/index.html" class="mobile-link">Blog</a>
+      <a href="contact.html" class="mobile-link font-semibold text-brand-700">Contact</a>
     </div>
   </div>
 </header>
 
-<main>
+<section id="heroSection" class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img
+      src="assets/images/app-page-hero.jpg"
+      alt="Elite Rackz app hero"
+      class="w-full h-full object-cover object-center"
+      loading="eager"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-slate-950/20"></div>
+    <div class="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.50)]"></div>
+  </div>
 
-  <!-- HERO -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
-    <div class="grid lg:grid-cols-2 gap-10 items-start">
-
-      <!-- Copy -->
-      <div class="lg:pt-2">
-        <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700">
-          <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
-          Live Now • Internal Rollout
-        </div>
-
-        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
-          Elite Rackz Survey App
-        </h1>
-
-        <p class="mt-4 text-slate-700 text-lg">
-          Built for real warehouses. Capture frames, locations, photos, and notes quickly — then export clean deliverables for estimating and engineering.
-        </p>
-
-        <div class="mt-6 grid gap-3">
-          <div class="flex gap-3">
-            <div class="mt-1 h-9 w-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4l2-2h6l2 2h4a2 2 0 0 1 2 2z"></path>
-                <circle cx="12" cy="13" r="4"></circle>
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold">Fast field workflow</div>
-              <div class="text-sm text-slate-600">Photo-first capture for frames, locations, defects, and notes — without friction.</div>
-            </div>
-          </div>
-
-          <div class="flex gap-3">
-            <div class="mt-1 h-9 w-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 6h18"></path>
-                <path d="M7 12h10"></path>
-                <path d="M10 18h4"></path>
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold">Clean deliverables</div>
-              <div class="text-sm text-slate-600">Export PDFs and Excel/CSV packets in seconds for internal processing.</div>
-            </div>
-          </div>
-
-          <div class="flex gap-3">
-            <div class="mt-1 h-9 w-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold">Private by default</div>
-              <div class="text-sm text-slate-600">Employee access only — built to keep customer data and jobsite photos secure.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <div class="text-sm text-slate-700">
-            <span class="font-semibold">Current access:</span> Available to <span class="font-semibold">Elite Rackz employees</span> only.
-          </div>
-          <div class="mt-2 text-sm text-slate-600">
-            The platform will continue to roll out in controlled phases as features expand, training completes, and workflows are validated.
-          </div>
-        </div>
-
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="contact.html" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-            Request Access / Info
-          </a>
-          <a href="services.html" class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-slate-300 text-slate-800 hover:bg-slate-50">
-            View Services
-          </a>
-        </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-28">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950/55 text-white text-sm ring-1 ring-white/20 backdrop-blur">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
+        Internal rollout live
       </div>
 
-      <!-- IMAGE COLUMN (ONLY CHANGE: pushed down on lg+) -->
-      <div class="relative lg:mt-[180px]">
-        <div class="rounded-2xl border border-slate-200 shadow-smooth overflow-hidden bg-slate-100">
-          <img
-            src="assets/images/app-hero-live.jpg"
-            alt="Elite Rackz Survey App preview"
-            class="w-full h-auto object-contain"
-            loading="lazy"
-          >
-        </div>
+      <h1 class="reveal reveal-delay-1 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.03em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+        Elite Rackz
+        <br>
+        Survey App
+      </h1>
 
-        <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-600">
-          <span class="px-3 py-1 rounded-full border border-slate-200 bg-white">Enterprise-grade</span>
-          <span class="px-3 py-1 rounded-full border border-slate-200 bg-white">Audit-friendly</span>
-          <span class="px-3 py-1 rounded-full border border-slate-200 bg-white">Built for iPad</span>
-          <span class="px-3 py-1 rounded-full border border-slate-200 bg-white">Offline-ready</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECONDARY SECTION -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="rounded-3xl border border-slate-200 bg-white shadow-smooth p-8 md:p-10">
-      <h2 class="text-2xl font-extrabold tracking-tight">Phased rollout, built for scale</h2>
-      <p class="mt-3 text-slate-700">
-        We’re rolling out the Survey App internally first to ensure speed, reliability, and consistent reporting standards.
-        Customer-facing functionality will be introduced in phases as the product matures.
+      <p class="reveal reveal-delay-2 mt-5 text-base sm:text-lg md:text-xl text-slate-100/95 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] max-w-3xl mx-auto">
+        Built for real warehouses. Capture frames, locations, photos, and notes faster —
+        then turn field information into cleaner internal workflows.
       </p>
 
-      <div class="mt-6 grid md:grid-cols-3 gap-4">
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <div class="text-sm font-semibold">Phase 1: Internal surveys</div>
-          <div class="mt-2 text-sm text-slate-600">Employees capture frames, defects, and photos in the field.</div>
+      <div class="reveal reveal-delay-3 mt-9 flex flex-wrap justify-center gap-2">
+        <span class="px-3 py-2 rounded-xl bg-slate-950/55 ring-1 ring-white/15 text-sm font-semibold text-white backdrop-blur">Photo-First Workflow</span>
+        <span class="px-3 py-2 rounded-xl bg-slate-950/55 ring-1 ring-white/15 text-sm font-semibold text-white backdrop-blur">Built for iPad</span>
+        <span class="px-3 py-2 rounded-xl bg-slate-950/55 ring-1 ring-white/15 text-sm font-semibold text-white backdrop-blur">Internal Access</span>
+        <span class="px-3 py-2 rounded-xl bg-slate-950/55 ring-1 ring-white/15 text-sm font-semibold text-white backdrop-blur">Clean Reporting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+  <div class="grid lg:grid-cols-2 gap-10 items-start">
+    <div class="lg:pt-2">
+      <div class="reveal inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+        Live now • Internal rollout
+      </div>
+
+      <h2 class="reveal reveal-delay-1 mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        Built for field speed
+      </h2>
+
+      <p class="reveal reveal-delay-2 mt-4 text-slate-700 text-lg">
+        The Elite Rackz Survey App helps our team document rack conditions quickly in the field,
+        keep reporting cleaner, and move work into estimating and engineering with less friction.
+      </p>
+
+      <div class="reveal reveal-delay-3 mt-6 grid gap-3">
+        <div class="flex gap-3">
+          <div class="mt-1 h-9 w-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4l2-2h6l2 2h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+          </div>
+          <div>
+            <div class="font-semibold text-slate-900">Fast field workflow</div>
+            <div class="text-sm text-slate-600">Capture locations, photos, damage notes, and frame details without slowing the walkthrough down.</div>
+          </div>
         </div>
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <div class="text-sm font-semibold">Phase 2: Standardized exports</div>
-          <div class="mt-2 text-sm text-slate-600">Clean PDF + Excel/CSV outputs for faster estimating workflows.</div>
+
+        <div class="flex gap-3">
+          <div class="mt-1 h-9 w-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18"></path>
+              <path d="M7 12h10"></path>
+              <path d="M10 18h4"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="font-semibold text-slate-900">Clean internal handoff</div>
+            <div class="text-sm text-slate-600">Organized survey information helps estimating, engineering, and planning move faster with fewer missing details.</div>
+          </div>
         </div>
+
+        <div class="flex gap-3">
+          <div class="mt-1 h-9 w-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="font-semibold text-slate-900">Private by default</div>
+            <div class="text-sm text-slate-600">Access is limited to Elite Rackz team members while features continue to expand and workflows are validated.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-4 mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+        <div class="text-sm text-slate-700">
+          <span class="font-semibold">Current access:</span> Available to <span class="font-semibold">Elite Rackz employees</span> only.
+        </div>
+        <div class="mt-2 text-sm text-slate-600">
+          The platform will continue rolling out in controlled phases as features improve, training expands,
+          and internal workflows are refined.
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-3">
+        <a href="contact.html" class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+          Contact Us
+        </a>
+        <a href="services.html" class="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-slate-300 text-slate-800 hover:bg-slate-50">
+          View Services
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2 relative lg:mt-8">
+      <div class="rounded-2xl border border-slate-200 shadow-smooth overflow-hidden bg-slate-100">
+        <img
+          src="assets/images/app-hero-live.jpg"
+          alt="Elite Rackz Survey App preview"
+          class="w-full h-auto object-contain"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-600">
+        <span class="px-3 py-1 rounded-full border border-slate-200 bg-white">Built for iPad</span>
+        <span class="px-3 py-1 rounded-full border border-slate-200 bg-white">Offline-ready</span>
+        <span class="px-3 py-1 rounded-full border border-slate-200 bg-white">Audit-friendly</span>
+        <span class="px-3 py-1 rounded-full border border-slate-200 bg-white">Internal workflow</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+<section class="py-14 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl border border-slate-200 bg-white shadow-smooth p-8 md:p-10">
+      <h2 class="reveal text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
+        Phased rollout, built for scale
+      </h2>
+
+      <p class="reveal reveal-delay-1 mt-3 text-slate-700">
+        We’re rolling out the Survey App internally first to ensure speed, reliability, consistency,
+        and a smoother reporting standard across the team. Customer-facing functionality can be introduced later as the product matures.
+      </p>
+
+      <div class="reveal reveal-delay-2 mt-6 grid md:grid-cols-3 gap-4">
         <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <div class="text-sm font-semibold">Phase 3: Expanded access</div>
-          <div class="mt-2 text-sm text-slate-600">Controlled expansion for partners and customer-facing features.</div>
+          <div class="text-sm font-semibold text-slate-900">Phase 1: Internal surveys</div>
+          <div class="mt-2 text-sm text-slate-600">Employees capture frames, damage, notes, and photos in the field.</div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <div class="text-sm font-semibold text-slate-900">Phase 2: Cleaner reporting</div>
+          <div class="mt-2 text-sm text-slate-600">Organized outputs support estimating, engineering, and internal project planning.</div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <div class="text-sm font-semibold text-slate-900">Phase 3: Expanded functionality</div>
+          <div class="mt-2 text-sm text-slate-600">Additional workflow tools and broader use cases can be layered in over time.</div>
         </div>
       </div>
     </div>
-  </section>
-
-</main>
+  </div>
+</section>
 
 <footer class="mt-24 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
@@ -236,7 +452,7 @@
 
     <div>
       <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
     </div>
   </div>
 
@@ -248,6 +464,70 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script>
+  (function () {
+    const items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || !items.length) {
+      items.forEach(el => el.classList.add('in-view'));
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+    items.forEach(el => io.observe(el));
+  })();
+</script>
+
+<script>
+  (function () {
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      btn.classList.toggle('menu-open', !isOpen);
+      menu.classList.toggle('menu-open', !isOpen);
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('menu-open');
+        menu.classList.remove('menu-open');
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const hero = document.getElementById('heroSection');
+    const header = document.getElementById('siteHeader');
+    if (!hero || !header) return;
+
+    function updateHeader() {
+      const passedHero = window.scrollY > 12;
+      header.classList.toggle('header-scrolled', passedHero);
+      header.classList.toggle('header-hero', !passedHero);
+    }
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('resize', updateHeader);
+    updateHeader();
+  })();
+</script>
+
 </body>
 </html>

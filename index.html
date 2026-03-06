@@ -44,6 +44,18 @@
       backface-visibility:hidden;
       transform:translateZ(0);
     }
+
+    .sticky-quote-hidden{
+      opacity:0;
+      transform:translateY(18px) scale(.96);
+      pointer-events:none;
+    }
+
+    .sticky-quote-visible{
+      opacity:1;
+      transform:translateY(0) scale(1);
+      pointer-events:auto;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -117,7 +129,7 @@
   </div>
 </header>
 
-<section class="relative overflow-hidden">
+<section id="heroSection" class="relative overflow-hidden">
   <div class="absolute inset-0">
     <img
       src="assets/images/hero-header.jpg"
@@ -129,27 +141,29 @@
     <div class="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.50)]"></div>
   </div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-32 sm:pt-20 sm:pb-24 lg:py-36">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 pb-36 sm:pt-22 sm:pb-28 lg:py-36">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="reveal flex justify-center">
-  <img
-    src="assets/images/made-in-usa-badge.png"
-    alt="Made in the USA"
-    class="h-12 md:h-14 w-auto drop-shadow-[0_8px_22px_rgba(0,0,0,0.45)]"
-    loading="eager"
-  >
-</div>
+      <div class="reveal flex justify-center mb-4">
+        <img
+          src="assets/images/made-in-usa-badge.png"
+          alt="Made in the USA"
+          class="h-12 md:h-14 w-auto drop-shadow-[0_8px_22px_rgba(0,0,0,0.45)]"
+          loading="eager"
+        >
+      </div>
 
-      <h1 class="reveal reveal-delay-1 mt-5 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
-        Engineered Rack Repair &amp; Guarding
+      <h1 class="reveal reveal-delay-1 mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.15] tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+        Engineered Rack Repair
+        <br class="hidden sm:block">
+        &amp; Guarding
       </h1>
 
-      <p class="reveal reveal-delay-2 mt-4 text-base sm:text-lg md:text-xl text-slate-100/95 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)]">
-        Manufacturer-built repair kits and impact protection — engineered for compliance, built for longevity,
-        and installed nationwide with minimal disruption.
+      <p class="reveal reveal-delay-2 mt-5 text-base sm:text-lg md:text-xl text-slate-100/95 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] max-w-3xl mx-auto">
+        Manufacturer-built rack repair kits and impact protection —
+        engineered for compliance and installed nationwide with minimal disruption.
       </p>
 
-      <div class="reveal reveal-delay-3 mt-7 flex flex-col sm:flex-row justify-center gap-3">
+      <div class="reveal reveal-delay-3 mt-9 flex flex-col sm:flex-row justify-center gap-4">
         <a href="contact.html#contact" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
           Request a Quote
         </a>
@@ -158,20 +172,20 @@
         </a>
       </div>
 
-      <div class="reveal reveal-delay-4 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto">
-        <div class="rounded-xl bg-slate-950/70 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
+      <div class="reveal reveal-delay-4 mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto">
+        <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
           <div class="text-xs text-white/70">Engineering</div>
           <div class="font-extrabold tracking-tight">Stamped Calcs</div>
         </div>
-        <div class="rounded-xl bg-slate-950/70 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
+        <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
           <div class="text-xs text-white/70">Warranty</div>
           <div class="font-extrabold tracking-tight">Lifetime</div>
         </div>
-        <div class="hidden sm:block rounded-xl bg-slate-950/70 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
+        <div class="hidden sm:block rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
           <div class="text-xs text-white/70">Manufacturing</div>
           <div class="font-extrabold tracking-tight">In-House</div>
         </div>
-        <div class="hidden sm:block rounded-xl bg-slate-950/70 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
+        <div class="hidden sm:block rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
           <div class="text-xs text-white/70">Installations</div>
           <div class="font-extrabold tracking-tight">Nationwide</div>
         </div>
@@ -388,7 +402,7 @@
         <p class="mt-1 text-slate-600 text-lg md:text-xl max-w-3xl">
           Off-the-shelf “one-size” kits can ship fast. Custom-engineered kits usually can’t.
           <span class="text-slate-900 font-semibold">We built a rapid-response path</span> that moves qualifying custom repairs fast
-          <span class="text-slate-900 font-semibold">without compromising engineering standards.</span>
+          <span class="text-slate-900           font-semibold">without compromising engineering standards.</span>
         </p>
       </div>
 
@@ -597,7 +611,7 @@
         </div>
       </div>
 
-            <div class="reveal reveal-delay-2 flex justify-center lg:justify-end">
+      <div class="reveal reveal-delay-2 flex justify-center lg:justify-end">
         <div class="rounded-2xl bg-white shadow-smooth ring-1 ring-slate-200 p-4 max-w-[260px]">
           <img
             src="assets/images/brochure/cover.png"
@@ -684,6 +698,7 @@
         <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
         <li><a href="about.html" class="hover:text-brand-600">About</a></li>
         <li><a href="app.html" class="hover:text-brand-600">App</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
         <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
       </ul>
     </div>
@@ -699,7 +714,7 @@
 
     <div class="reveal reveal-delay-3">
       <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
     </div>
   </div>
 
@@ -711,8 +726,8 @@
   </div>
 </footer>
 
-<a href="contact.html"
-   class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-3 rounded-full bg-brand-600 text-white px-7 py-4 shadow-smooth hover:bg-brand-700 hover:scale-[1.03] active:scale-[0.98] transition transform focus:outline-none focus:ring-4 focus:ring-brand-600/30">
+<a id="stickyQuoteBtn" href="contact.html"
+   class="fixed bottom-3 right-5 z-50 inline-flex items-center gap-3 rounded-full bg-brand-600 text-white px-7 py-4 shadow-smooth hover:bg-brand-700 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 transform focus:outline-none focus:ring-4 focus:ring-brand-600/30 sticky-quote-hidden">
   <span class="relative flex h-3 w-3">
     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/70 opacity-75"></span>
     <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
@@ -833,6 +848,26 @@
     carousel.addEventListener('mouseleave', startAutoPlay);
 
     startAutoPlay();
+  })();
+</script>
+
+<script>
+  (function () {
+    const hero = document.getElementById('heroSection');
+    const stickyBtn = document.getElementById('stickyQuoteBtn');
+    if (!hero || !stickyBtn) return;
+
+    function toggleStickyQuote() {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      const shouldShow = heroBottom < 0;
+
+      stickyBtn.classList.toggle('sticky-quote-visible', shouldShow);
+      stickyBtn.classList.toggle('sticky-quote-hidden', !shouldShow);
+    }
+
+    window.addEventListener('scroll', toggleStickyQuote, { passive: true });
+    window.addEventListener('resize', toggleStickyQuote);
+    toggleStickyQuote();
   })();
 </script>
 

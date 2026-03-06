@@ -40,12 +40,12 @@
       transform:translateY(14px);
       filter:blur(6px);
       transition:opacity 650ms ease,transform 650ms ease,filter 650ms ease;
-      will-change:opacity,transform,filter
+      will-change:opacity,transform,filter;
     }
     .reveal.in-view{
       opacity:1;
       transform:translateY(0);
-      filter:blur(0)
+      filter:blur(0);
     }
     .reveal-delay-1{transition-delay:80ms}
     .reveal-delay-2{transition-delay:160ms}
@@ -57,7 +57,7 @@
         opacity:1!important;
         transform:none!important;
         filter:none!important;
-        transition:none!important
+        transition:none!important;
       }
     }
 
@@ -195,27 +195,72 @@
       transform:rotate(-45deg);
     }
 
-    /* Mobile modal fix */
+    /* Modal: desktop centered, mobile full-height sheet */
+    #leaderModal .modal-shell{
+      position:relative;
+      max-width:48rem;
+      width:100%;
+      margin:0 auto;
+      height:100%;
+      display:flex;
+      align-items:center;
+    }
+
     #leaderModal .modal-panel{
-      max-height:calc(100vh - 24px);
+      width:100%;
+      max-height:88vh;
       overflow:hidden;
-      margin-top:auto;
-      margin-bottom:auto;
+      border-radius:1rem;
+      background:#fff;
+      box-shadow:0 25px 50px rgba(0,0,0,.25);
+    }
+
+    #leaderModal .modal-header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:1rem;
+      padding:1.5rem;
+      border-bottom:1px solid rgb(226 232 240);
+      background:#fff;
     }
 
     #leaderModal .modal-body{
-      max-height:calc(100vh - 120px);
+      max-height:calc(88vh - 92px);
       overflow-y:auto;
       -webkit-overflow-scrolling:touch;
+      padding:1.5rem;
     }
 
     @media (max-width: 640px){
+      #leaderModal .modal-shell{
+        max-width:none;
+        width:100%;
+        height:100%;
+        display:flex;
+        align-items:flex-end;
+        padding:0;
+      }
+
       #leaderModal .modal-panel{
-        max-height:calc(100vh - 16px);
+        width:100%;
+        height:100dvh;
+        max-height:100dvh;
+        border-radius:1rem 1rem 0 0;
+      }
+
+      #leaderModal .modal-header{
+        position:sticky;
+        top:0;
+        padding:1rem 1rem .875rem;
       }
 
       #leaderModal .modal-body{
-        max-height:calc(100vh - 110px);
+        max-height:calc(100dvh - 78px);
+        padding:1rem;
       }
     }
   </style>
@@ -496,10 +541,12 @@
 <div id="leaderModal" class="fixed inset-0 z-[200] hidden" aria-hidden="true">
   <div class="absolute inset-0 bg-black/65" data-close></div>
 
-  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-start sm:items-center pt-4 sm:pt-0">
-    <div class="modal-panel w-full rounded-2xl bg-white shadow-xl ring-1 ring-black/10 overflow-hidden">
-      <div class="sticky top-0 z-10 flex items-start justify-between gap-4 p-6 border-b border-slate-200 bg-white">
-        <div>
+  <div class="modal-shell px-0 sm:px-4 sm:px-6 lg:px-8">
+    <div class="modal-panel ring-1 ring-black/10">
+      <div class="modal-header relative">
+        <div class="sm:hidden absolute left-1/2 top-2 -translate-x-1/2 h-1.5 w-12 rounded-full bg-slate-300"></div>
+
+        <div class="pt-3 sm:pt-0">
           <div id="mName" class="text-2xl font-extrabold text-slate-900"></div>
           <div id="mTitle" class="mt-1 text-sm text-slate-600"></div>
         </div>
@@ -509,7 +556,7 @@
         </button>
       </div>
 
-      <div class="modal-body p-6">
+      <div class="modal-body">
         <div class="grid md:grid-cols-12 gap-6 items-start">
           <div class="md:col-span-4">
             <div class="rounded-2xl overflow-hidden ring-1 ring-slate-200 bg-slate-100">
@@ -638,7 +685,6 @@
       mPhoto.src = photo;
       mPhoto.alt = name;
       mLinkedIn.href = linkedin;
-
       mBio.innerHTML = paragraphs.map(p => `<p>${p.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</p>`).join('');
 
       modal.classList.remove('hidden');

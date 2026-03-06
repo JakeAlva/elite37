@@ -17,9 +17,9 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          colors: { brand: { 600: '#2e6ad6', 700: '#2554aa' } },
-          boxShadow: { smooth: '0 10px 25px rgba(0,0,0,0.08)' }
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: {600:'#2e6ad6',700:'#2554aa'} },
+          boxShadow: { smooth:'0 10px 25px rgba(0,0,0,0.08)' }
         }
       }
     };
@@ -82,12 +82,12 @@
     }
 
     .header-hero{
-  background:linear-gradient(to bottom,rgba(2,6,23,.72),rgba(2,6,23,.34),rgba(2,6,23,0));
-  border-bottom:none;
-  box-shadow:none;
-  backdrop-filter:none;
-  -webkit-backdrop-filter:none;
-}
+      background:linear-gradient(to bottom,rgba(2,6,23,.72),rgba(2,6,23,.34),rgba(2,6,23,0));
+      border-bottom:none;
+      box-shadow:none;
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
+    }
 
     .header-scrolled{
       background:white;
@@ -133,6 +133,39 @@
     .header-scrolled .header-nav-link{
       color:rgb(15 23 42);
       text-shadow:none;
+    }
+
+    #mobileMenuBtn.menu-open{
+      background:rgba(255,255,255,0.96);
+      box-shadow:0 8px 20px rgba(0,0,0,0.10);
+      border-color:rgba(148,163,184,0.55);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(1){
+      top:8px;
+      transform:rotate(45deg);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(2){
+      opacity:0;
+      transform:scaleX(0);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(3){
+      top:8px;
+      transform:rotate(-45deg);
+    }
+
+    #mobileMenu{
+      overflow:hidden;
+      max-height:0;
+      opacity:0;
+      transition:max-height 300ms ease,opacity 250ms ease;
+    }
+
+    #mobileMenu.menu-open{
+      max-height:320px;
+      opacity:1;
     }
   </style>
 
@@ -186,16 +219,24 @@
         </a>
       </nav>
 
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300 bg-white/70">
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white/70 transition-all duration-300 hover:bg-white/85 active:scale-95"
+      >
         <span class="sr-only">Open menu</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+        <span class="relative h-5 w-5">
+          <span class="menu-line absolute left-0 top-0 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-2 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-4 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+        </span>
       </button>
     </div>
   </div>
 
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white/95">
+  <div id="mobileMenu" class="md:hidden border-t border-slate-200 bg-white/95">
     <div class="px-4 py-3 space-y-2 text-sm">
       <a href="products.html" class="block">Products</a>
       <a href="services.html" class="block">Services</a>
@@ -929,6 +970,21 @@
     carousel.addEventListener('mouseleave', startAutoPlay);
 
     startAutoPlay();
+  })();
+</script>
+
+<script>
+  (function () {
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      btn.classList.toggle('menu-open', !isOpen);
+      menu.classList.toggle('menu-open', !isOpen);
+    });
   })();
 </script>
 

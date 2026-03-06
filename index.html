@@ -17,9 +17,9 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
-          colors: { brand: {600:'#2e6ad6',700:'#2554aa'} },
-          boxShadow: { smooth:'0 10px 25px rgba(0,0,0,0.08)' }
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: { brand: { 600: '#2e6ad6', 700: '#2554aa' } },
+          boxShadow: { smooth: '0 10px 25px rgba(0,0,0,0.08)' }
         }
       }
     };
@@ -33,12 +33,12 @@
       transform:translateY(18px);
       filter:blur(6px);
       transition:opacity 700ms ease,transform 700ms ease,filter 700ms ease;
-      will-change:opacity,transform,filter
+      will-change:opacity,transform,filter;
     }
     .reveal.in-view{
       opacity:1;
       transform:translateY(0);
-      filter:blur(0)
+      filter:blur(0);
     }
     .reveal-delay-1{transition-delay:80ms}
     .reveal-delay-2{transition-delay:160ms}
@@ -50,7 +50,7 @@
         opacity:1!important;
         transform:none!important;
         filter:none!important;
-        transition:none!important
+        transition:none!important;
       }
     }
 
@@ -81,13 +81,13 @@
         box-shadow .25s ease;
     }
 
-   .header-hero{
-  background: linear-gradient(to bottom, rgba(255,255,255,.22), rgba(255,255,255,.08), rgba(255,255,255,0));
-  border-bottom: none;
-  box-shadow: none;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
+    .header-hero{
+      background:linear-gradient(to bottom,rgba(255,255,255,.16),rgba(255,255,255,.05),rgba(255,255,255,0));
+      border-bottom:none;
+      box-shadow:none;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+    }
 
     .header-scrolled{
       background:white;
@@ -95,6 +95,44 @@
       backdrop-filter:blur(10px);
       -webkit-backdrop-filter:blur(10px);
       box-shadow:0 1px 0 rgba(15,23,42,.04);
+    }
+
+    .header-hero #headerLogoWrap{
+      background:rgba(255,255,255,0.94);
+      box-shadow:0 8px 24px rgba(0,0,0,0.18);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+    }
+
+    .header-hero #headerTagline{
+      color:white;
+      text-shadow:0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .header-scrolled #headerLogoWrap{
+      background:transparent;
+      box-shadow:none;
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
+    }
+
+    .header-scrolled #headerTagline{
+      color:rgb(51 65 85);
+      text-shadow:none;
+    }
+
+    .header-hero .header-nav-link{
+      color:white;
+      text-shadow:0 2px 10px rgba(0,0,0,0.30);
+    }
+
+    .header-hero .header-nav-link:hover{
+      color:rgba(255,255,255,0.82);
+    }
+
+    .header-scrolled .header-nav-link{
+      color:rgb(15 23 42);
+      text-shadow:none;
     }
   </style>
 
@@ -124,19 +162,22 @@
 <header id="siteHeader" class="site-header header-hero fixed top-0 left-0 right-0 z-40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">
+      <a href="index.html" id="headerBrand" class="flex items-center gap-3 transition-all duration-300">
+        <span id="headerLogoWrap" class="rounded-lg px-2 py-1 transition-all duration-300">
+          <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        </span>
+
+        <span id="headerTagline" class="text-[11px] md:text-xs font-semibold leading-tight transition-colors duration-300">
           SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
         </span>
       </a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="products.html" class="hover:text-brand-600">Products</a>
-        <a href="services.html" class="hover:text-brand-600">Services</a>
-        <a href="about.html" class="hover:text-brand-600">About</a>
-        <a href="app.html" class="hover:text-brand-600">App</a>
-        <a href="blog/index.html" class="hover:text-brand-600 inline-flex items-center gap-2">
+        <a href="products.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Products</a>
+        <a href="services.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Services</a>
+        <a href="about.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">About</a>
+        <a href="app.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">App</a>
+        <a href="blog/index.html" class="header-nav-link hover:text-brand-600 inline-flex items-center gap-2 transition-colors duration-300">
           Blog
           <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-extrabold tracking-wide">NEW</span>
         </a>
@@ -774,7 +815,7 @@
   </span>
 
   <span class="flex flex-col leading-tight">
-    <span class="font-extrabold tracking-tight">Get My Quote</span>
+    <span class="font-extrabold tracking-tight">Contact Us!</span>
     <span class="text-xs text-white/90">60-sec form • Fast response</span>
   </span>
 

@@ -23,33 +23,63 @@ document.addEventListener('DOMContentLoaded', () => {
     function isMenuOpen() {
       return (
         btn.getAttribute('aria-expanded') === 'true' ||
+        btn.classList.contains('menu-open') ||
         menu.classList.contains('menu-open') ||
         !menu.classList.contains('hidden')
       );
     }
 
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      if (isMenuOpen()) {
-        closeMenu();
-      } else {
+    function toggleMenu(forceOpen) {
+      const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !isMenuOpen();
+      if (shouldOpen) {
         openMenu();
+      } else {
+        closeMenu();
       }
-    });
+    }
+
+    // Force control from main.js only.
+    // Capture phase + stopImmediatePropagation prevents page-level duplicate click handlers.
+    btn.addEventListener(
+      'click',
+      (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        toggleMenu();
+      },
+      true
+    );
 
     menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener(
+        'click',
+        () => {
+          closeMenu();
+        },
+        true
+      );
     });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
 
+    document.addEventListener(
+      'click',
+      (e) => {
+        if (!isMenuOpen()) return;
+        if (btn.contains(e.target) || menu.contains(e.target)) return;
+        closeMenu();
+      },
+      true
+    );
+
     window.addEventListener('resize', () => {
       if (window.innerWidth >= 768) closeMenu();
     });
+
+    closeMenu();
   })();
 
   function initFadeCarousel({
@@ -172,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('mouseleave', restart);
   }
 
-  // Index page: Repair. Reinforce. Protect.
+  // Index page carousel
   initFadeCarousel({
     rootId: 'collageCarousel',
     wrapId: 'collageWrap',

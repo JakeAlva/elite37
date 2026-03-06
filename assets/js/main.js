@@ -10,20 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.setAttribute('aria-expanded', 'true');
       btn.classList.add('menu-open');
       menu.classList.add('menu-open');
+      menu.classList.remove('hidden');
     }
 
     function closeMenu() {
       btn.setAttribute('aria-expanded', 'false');
       btn.classList.remove('menu-open');
       menu.classList.remove('menu-open');
+      menu.classList.add('hidden');
+    }
+
+    function isMenuOpen() {
+      return (
+        btn.getAttribute('aria-expanded') === 'true' ||
+        menu.classList.contains('menu-open') ||
+        !menu.classList.contains('hidden')
+      );
     }
 
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
 
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      if (isOpen) {
+      if (isMenuOpen()) {
         closeMenu();
       } else {
         openMenu();
@@ -70,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let timer = null;
     let isAnimating = false;
 
-    // Clear any hardcoded starter image only once
     wrap.innerHTML = '';
 
     const imgA = document.createElement('img');
@@ -85,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateDots() {
       if (!dots) return;
-      dots.innerHTML = '';
 
+      dots.innerHTML = '';
       slides.forEach((_, idx) => {
         const d = document.createElement('button');
         d.type = 'button';

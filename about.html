@@ -66,7 +66,8 @@
         background-color .25s ease,
         border-color .25s ease,
         backdrop-filter .25s ease,
-        box-shadow .25s ease;
+        box-shadow .25s ease,
+        opacity .2s ease;
     }
 
     .header-hero{
@@ -123,15 +124,8 @@
       text-shadow:none;
     }
 
-    #siteHeader{
-      z-index:1000;
-    }
-
-    #mobileMenuBtn{
-      position:relative;
-      z-index:1001;
-      pointer-events:auto;
-    }
+    #siteHeader{ z-index:1000; }
+    #mobileMenuBtn{ position:relative; z-index:1001; pointer-events:auto; }
 
     #mobileMenu{
       position:relative;
@@ -184,18 +178,30 @@
       top:8px;
       transform:rotate(45deg);
     }
-
     #mobileMenuBtn.menu-open .menu-line:nth-child(2){
       opacity:0;
       transform:scaleX(0);
     }
-
     #mobileMenuBtn.menu-open .menu-line:nth-child(3){
       top:8px;
       transform:rotate(-45deg);
     }
 
-    /* Modal: desktop centered, mobile full-height sheet */
+    /* Leadership panel */
+    body.modal-open #siteHeader{
+      opacity:0;
+      pointer-events:none;
+    }
+
+    #leaderModal{
+      z-index:3000;
+    }
+
+    #leaderModal .modal-overlay{
+      opacity:0;
+      transition:opacity .22s ease;
+    }
+
     #leaderModal .modal-shell{
       position:relative;
       max-width:48rem;
@@ -204,6 +210,8 @@
       height:100%;
       display:flex;
       align-items:center;
+      justify-content:center;
+      padding:1rem;
     }
 
     #leaderModal .modal-panel{
@@ -213,6 +221,9 @@
       border-radius:1rem;
       background:#fff;
       box-shadow:0 25px 50px rgba(0,0,0,.25);
+      transform:translateY(16px) scale(.98);
+      opacity:0;
+      transition:transform .24s ease, opacity .24s ease;
     }
 
     #leaderModal .modal-header{
@@ -223,25 +234,34 @@
       align-items:flex-start;
       justify-content:space-between;
       gap:1rem;
-      padding:1.5rem;
+      padding:1.25rem 1.5rem;
       border-bottom:1px solid rgb(226 232 240);
       background:#fff;
     }
 
     #leaderModal .modal-body{
-      max-height:calc(88vh - 92px);
+      max-height:calc(88vh - 86px);
       overflow-y:auto;
       -webkit-overflow-scrolling:touch;
       padding:1.5rem;
     }
 
+    #leaderModal.is-open .modal-overlay{
+      opacity:1;
+    }
+
+    #leaderModal.is-open .modal-panel{
+      transform:translateY(0) scale(1);
+      opacity:1;
+    }
+
+    /* Mobile: dropdown sheet from the top */
     @media (max-width: 640px){
       #leaderModal .modal-shell{
         max-width:none;
         width:100%;
         height:100%;
-        display:flex;
-        align-items:flex-end;
+        display:block;
         padding:0;
       }
 
@@ -249,17 +269,21 @@
         width:100%;
         height:100dvh;
         max-height:100dvh;
-        border-radius:1rem 1rem 0 0;
+        border-radius:0 0 1rem 1rem;
+        transform:translateY(-100%);
       }
 
       #leaderModal .modal-header{
         position:sticky;
         top:0;
-        padding:1rem 1rem .875rem;
+        padding:
+          calc(env(safe-area-inset-top, 0px) + 14px)
+          1rem
+          .875rem;
       }
 
       #leaderModal .modal-body{
-        max-height:calc(100dvh - 78px);
+        max-height:calc(100dvh - 102px - env(safe-area-inset-top, 0px));
         padding:1rem;
       }
     }
@@ -538,15 +562,13 @@
 
 </main>
 
-<div id="leaderModal" class="fixed inset-0 z-[200] hidden" aria-hidden="true">
-  <div class="absolute inset-0 bg-black/65" data-close></div>
+<div id="leaderModal" class="fixed inset-0 hidden" aria-hidden="true">
+  <div class="modal-overlay absolute inset-0 bg-black/65" data-close></div>
 
-  <div class="modal-shell px-0 sm:px-4 sm:px-6 lg:px-8">
+  <div class="modal-shell">
     <div class="modal-panel ring-1 ring-black/10">
-      <div class="modal-header relative">
-        <div class="sm:hidden absolute left-1/2 top-2 -translate-x-1/2 h-1.5 w-12 rounded-full bg-slate-300"></div>
-
-        <div class="pt-3 sm:pt-0">
+      <div class="modal-header">
+        <div>
           <div id="mName" class="text-2xl font-extrabold text-slate-900"></div>
           <div id="mTitle" class="mt-1 text-sm text-slate-600"></div>
         </div>
@@ -654,6 +676,7 @@
     document.body.style.left = '0';
     document.body.style.right = '0';
     document.body.style.width = '100%';
+    document.body.classList.add('modal-open');
   }
   function unlockScroll(){
     document.body.style.position = '';
@@ -661,6 +684,7 @@
     document.body.style.left = '';
     document.body.style.right = '';
     document.body.style.width = '';
+    document.body.classList.remove('modal-open');
     window.scrollTo(0, __scrollY);
   }
 
@@ -688,16 +712,24 @@
       mBio.innerHTML = paragraphs.map(p => `<p>${p.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</p>`).join('');
 
       modal.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        modal.classList.add('is-open');
+      });
       modal.setAttribute('aria-hidden', 'false');
       lockScroll();
     }
 
     function closeModal(){
-      modal.classList.add('hidden');
+      modal.classList.remove('is-open');
       modal.setAttribute('aria-hidden', 'true');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        mPhoto.src = '';
+        mBio.innerHTML = '';
+      }, 220);
+
       unlockScroll();
-      mPhoto.src = '';
-      mBio.innerHTML = '';
     }
 
     document.querySelectorAll('button[data-modal="leaderModal"]').forEach(btn=>{

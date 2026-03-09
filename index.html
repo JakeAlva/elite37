@@ -242,10 +242,7 @@
         <a href="services.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Services</a>
         <a href="about.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">About</a>
         <a href="app.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">App</a>
-        <a href="blog/index.html" class="header-nav-link hover:text-brand-600 inline-flex items-center gap-2 transition-colors duration-300">
-          Blog
-          <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-extrabold tracking-wide">NEW</span>
-        </a>
+        <a href="blog/index.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Blog</a>
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
           Contact
         </a>
@@ -268,16 +265,13 @@
     </div>
   </div>
 
-  <div id="mobileMenu" class="md:hidden border-t border-slate-200 bg-white/95">
+  <div id="mobileMenu" class="md:hidden border-t border-slate-200 bg-white/95 hidden">
     <div class="mobile-menu-inner px-4 text-sm">
       <a href="products.html" class="mobile-link">Products</a>
       <a href="services.html" class="mobile-link">Services</a>
       <a href="about.html" class="mobile-link">About</a>
       <a href="app.html" class="mobile-link">App</a>
-      <a href="blog/index.html" class="mobile-link font-semibold text-slate-900">
-        Blog
-        <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-extrabold tracking-wide">NEW</span>
-      </a>
+      <a href="blog/index.html" class="mobile-link">Blog</a>
       <a href="contact.html" class="mobile-link font-semibold text-brand-700">Contact</a>
     </div>
   </div>
@@ -544,7 +538,7 @@
       <div class="reveal flex flex-col items-center gap-4">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-600/10 ring-1 ring-brand-600/20 text-slate-900">
           <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-xs font-extrabold tracking-wide">NEW</span>
-          <span class="text-sm font-semibold">48-Hour Emergency Repair Options</span>
+                    <span class="text-sm font-semibold">48-Hour Emergency Repair Options</span>
           <span class="text-slate-400 text-sm hidden sm:inline">•</span>
           <span class="text-slate-500 text-sm hidden sm:inline">for qualifying custom-engineered kits</span>
         </div>
@@ -745,6 +739,61 @@
   </div>
 </section>
 
+<section class="py-12 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="reveal text-sm font-semibold tracking-[0.18em] text-slate-500 uppercase">
+        Trusted Industry Memberships
+      </p>
+      <h2 class="reveal reveal-delay-1 mt-3 text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
+        Proud to participate in respected industry organizations
+      </h2>
+      <p class="reveal reveal-delay-2 mt-3 text-slate-600 text-base md:text-lg">
+        Elite Rackz maintains memberships that support contractor compliance, safety standards,
+        and stronger relationships across warehousing and food industry operations.
+      </p>
+    </div>
+
+    <div class="reveal reveal-delay-3 mt-8 grid gap-4 md:grid-cols-2 max-w-4xl mx-auto">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-6 shadow-smooth">
+        <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div class="h-20 w-full sm:w-40 flex items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 p-3">
+            <img
+              src="assets/images/isn-member-contractor.png"
+              alt="ISNetworld Member Contractor"
+              class="max-h-full max-w-full object-contain"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="flex-1">
+            <p class="text-base font-semibold text-slate-900">ISNetworld® Member Contractor</p>
+            <p class="mt-1 text-sm text-slate-600">Supporting contractor compliance and qualification standards.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-6 shadow-smooth">
+        <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div class="h-20 w-full sm:w-40 flex items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 p-3">
+            <img
+              src="assets/images/mwfpa-logo.png"
+              alt="Midwest Food Products Association, Inc."
+              class="max-h-full max-w-full object-contain"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="flex-1">
+            <p class="text-base font-semibold text-slate-900">Midwest Food Products Association, Inc.</p>
+            <p class="mt-1 text-sm text-slate-600">Industry member supporting food manufacturing and distribution operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="py-16 bg-slate-50" aria-labelledby="catalog-cta">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -898,7 +947,7 @@
   </svg>
 </a>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=4"></script>
 
 <script>
   (function () {
@@ -1007,21 +1056,6 @@
 
 <script>
   (function () {
-    const btn = document.getElementById('mobileMenuBtn');
-    const menu = document.getElementById('mobileMenu');
-    if (!btn || !menu) return;
-
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!isOpen));
-      btn.classList.toggle('menu-open', !isOpen);
-      menu.classList.toggle('menu-open', !isOpen);
-    });
-  })();
-</script>
-
-<script>
-  (function () {
     const hero = document.getElementById('heroSection');
     const stickyBtn = document.getElementById('stickyQuoteBtn');
     const header = document.getElementById('siteHeader');
@@ -1047,4 +1081,4 @@
 </script>
 
 </body>
-</html>
+</html> 

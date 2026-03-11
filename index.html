@@ -61,18 +61,6 @@
       transform:translateZ(0);
     }
 
-    .sticky-quote-hidden{
-      opacity:0;
-      transform:translateY(18px) scale(.96);
-      pointer-events:none;
-    }
-
-    .sticky-quote-visible{
-      opacity:1;
-      transform:translateY(0) scale(1);
-      pointer-events:auto;
-    }
-
     .site-header{
       transition:
         background-color .25s ease,
@@ -198,6 +186,207 @@
     #mobileMenu .mobile-link:hover{
       color:#2e6ad6;
       transform:translateX(2px);
+    }
+
+    .chat-preview-wrap{
+      position:fixed;
+      right:20px;
+      bottom:12px;
+      z-index:999999;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+      opacity:0;
+      transform:translateY(18px) scale(.96);
+      pointer-events:none;
+      transition:opacity .3s ease,transform .3s ease;
+    }
+
+    .chat-preview-wrap.chat-visible{
+      opacity:1;
+      transform:translateY(0) scale(1);
+      pointer-events:auto;
+    }
+
+    .chat-helper{
+      position:relative;
+      max-width:300px;
+      border-radius:18px;
+      border:1px solid rgba(226,232,240,0.95);
+      background:rgba(255,255,255,0.98);
+      padding:14px 16px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.14);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      opacity:0;
+      transform:translateY(8px) scale(.95);
+      pointer-events:none;
+      transition:opacity .28s ease,transform .28s ease;
+    }
+
+    .chat-helper.chat-helper-visible{
+      opacity:1;
+      transform:translateY(0) scale(1);
+    }
+
+    .chat-helper::after{
+      content:"";
+      position:absolute;
+      right:24px;
+      bottom:-8px;
+      width:16px;
+      height:16px;
+      background:rgba(255,255,255,0.98);
+      border-right:1px solid rgba(226,232,240,0.95);
+      border-bottom:1px solid rgba(226,232,240,0.95);
+      transform:rotate(45deg);
+    }
+
+    .chat-mini-btn{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:54px;
+      height:54px;
+      border-radius:9999px;
+      border:1px solid rgba(255,255,255,0.16);
+      color:#fff;
+      box-shadow:
+        0 12px 28px rgba(15,23,42,0.22),
+        0 1px 0 rgba(255,255,255,0.10) inset;
+      transition:
+        opacity .24s ease,
+        transform .24s ease,
+        background-color .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease;
+    }
+
+    .chat-mini-btn:hover{
+      transform:translateY(-1px) scale(1.04);
+    }
+
+    .chat-mini-btn:active{
+      transform:translateY(0) scale(.97);
+    }
+
+    .chat-mini-btn svg{
+      transform:translateY(1px);
+    }
+
+    .chat-mini-status{
+      position:absolute;
+      top:4px;
+      right:4px;
+      width:11px;
+      height:11px;
+      border-radius:9999px;
+      border:2px solid rgba(255,255,255,0.96);
+      box-shadow:0 0 0 3px rgba(15,23,42,0.10);
+    }
+
+    .chat-mini-status::after{
+      content:"";
+      position:absolute;
+      top:-4px;
+      left:-4px;
+      right:-4px;
+      bottom:-4px;
+      border-radius:9999px;
+      opacity:.45;
+      animation:chatDotPulse 2s infinite;
+    }
+
+    .chat-wide-btn{
+      position:relative;
+      overflow:hidden;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      min-height:56px;
+      border-radius:9999px;
+      border:1px solid rgba(255,255,255,0.14);
+      color:#fff;
+      padding:12px 16px;
+      box-shadow:
+        0 10px 24px rgba(15,23,42,0.18),
+        0 1px 0 rgba(255,255,255,0.08) inset;
+      transition:
+        opacity .22s ease,
+        transform .22s ease,
+        background-color .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease;
+    }
+
+    .chat-wide-btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.05) 35%, rgba(255,255,255,0) 65%);
+      pointer-events:none;
+    }
+
+    .chat-wide-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .chat-wide-btn:active{
+      transform:translateY(0) scale(.985);
+    }
+
+    .chat-online{
+      background:#2563eb;
+      box-shadow:
+        0 10px 24px rgba(37,99,235,0.22),
+        0 1px 0 rgba(255,255,255,0.08) inset;
+    }
+
+    .chat-offline{
+      background:#b91c1c;
+      box-shadow:
+        0 10px 24px rgba(185,28,28,0.20),
+        0 1px 0 rgba(255,255,255,0.08) inset;
+    }
+
+    .chat-mini-btn.chat-online .chat-mini-status{
+      background:#34d399;
+    }
+
+    .chat-mini-btn.chat-online .chat-mini-status::after{
+      background:#86efac;
+    }
+
+    .chat-mini-btn.chat-offline .chat-mini-status{
+      background:#f87171;
+    }
+
+    .chat-mini-btn.chat-offline .chat-mini-status::after{
+      background:#fca5a5;
+    }
+
+    .chat-dot-pulse{
+      animation:chatDotPulse 2s infinite;
+    }
+
+    @keyframes chatDotPulse{
+      0%{transform:scale(1);opacity:.8}
+      70%{transform:scale(1.95);opacity:0}
+      100%{transform:scale(1.95);opacity:0}
+    }
+
+    @media (max-width:640px){
+      .chat-preview-wrap{
+        right:14px;
+        left:auto;
+        bottom:12px;
+      }
+
+      .chat-helper{
+        max-width:260px;
+      }
     }
   </style>
 
@@ -538,7 +727,7 @@
       <div class="reveal flex flex-col items-center gap-4">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-600/10 ring-1 ring-brand-600/20 text-slate-900">
           <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-xs font-extrabold tracking-wide">NEW</span>
-                    <span class="text-sm font-semibold">48-Hour Emergency Repair Options</span>
+          <span class="text-sm font-semibold">48-Hour Emergency Repair Options</span>
           <span class="text-slate-400 text-sm hidden sm:inline">•</span>
           <span class="text-slate-500 text-sm hidden sm:inline">for qualifying custom-engineered kits</span>
         </div>
@@ -929,23 +1118,54 @@
   </div>
 </footer>
 
-<a id="stickyQuoteBtn" href="contact.html"
-   class="fixed bottom-3 right-5 z-50 inline-flex items-center gap-3 rounded-full bg-brand-600 text-white px-7 py-4 shadow-smooth hover:bg-brand-700 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 transform focus:outline-none focus:ring-4 focus:ring-brand-600/30 sticky-quote-hidden">
-  <span class="relative flex h-3 w-3">
-    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/70 opacity-75"></span>
-    <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-  </span>
+<div id="chatPreviewWrap" class="chat-preview-wrap">
+  <div id="chatHelperBubble" class="chat-helper">
+    <p id="chatHelperTitle" class="text-sm font-extrabold tracking-tight text-slate-900">
+      Have a question?
+    </p>
+    <p id="chatHelperText" class="mt-1 text-sm text-slate-600">
+      Talk to an Elite Rackz employee now.
+    </p>
+  </div>
 
-  <span class="flex flex-col leading-tight">
-    <span class="font-extrabold tracking-tight">Contact Us!</span>
-    <span class="text-xs text-white/90">60-sec form • Fast response</span>
-  </span>
+  <button id="chatMiniBtn"
+    type="button"
+    aria-label="Open live chat"
+    class="chat-mini-btn chat-online focus:outline-none focus:ring-4 focus:ring-brand-600/20">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5A8.48 8.48 0 0 1 21 11v.5z"/>
+    </svg>
+    <span class="chat-mini-status"></span>
+  </button>
 
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path stroke-linecap="round" stroke-linejoin="round"
-          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5A8.48 8.48 0 0 1 21 11v.5z"/>
-  </svg>
-</a>
+  <button id="chatWideBtn"
+    type="button"
+    class="chat-wide-btn chat-online focus:outline-none focus:ring-4 focus:ring-brand-600/20">
+    <span class="relative flex items-center gap-4">
+      <span class="relative flex h-3 w-3 shrink-0">
+        <span id="chatWidePulse" class="chat-dot-pulse absolute inline-flex h-full w-full rounded-full opacity-70 bg-emerald-300"></span>
+        <span id="chatWideDot" class="relative inline-flex h-3 w-3 rounded-full bg-emerald-400"></span>
+      </span>
+
+      <span class="flex min-w-0 flex-col items-start leading-tight text-left">
+        <span id="chatWidePrimary" class="text-[14px] font-bold tracking-tight text-white">
+          Talk to Elite Rackz
+        </span>
+        <span id="chatWideStatus" class="text-[11px] text-white/75">
+          Live support • Send photos for review
+        </span>
+      </span>
+
+      <span class="ml-1 inline-flex shrink-0 items-center gap-2 text-[11px] font-semibold text-white/80">
+        Live chat
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </span>
+    </span>
+  </button>
+</div>
 
 <script src="assets/js/main.js?v=4"></script>
 
@@ -1054,31 +1274,249 @@
   })();
 </script>
 
+<script type="text/javascript">
+  window.$crisp = window.$crisp || [];
+  window.CRISP_WEBSITE_ID = "c50925e0-5d2b-4886-9eed-b51f6c30e107";
+
+  window.$crisp.push(["do", "chat:hide"]);
+
+  window.$crisp.push(["on", "chat:closed", function () {
+    window.$crisp.push(["do", "chat:hide"]);
+  }]);
+
+  (function () {
+    const d = document;
+    const s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+</script>
+
 <script>
   (function () {
     const hero = document.getElementById('heroSection');
-    const stickyBtn = document.getElementById('stickyQuoteBtn');
     const header = document.getElementById('siteHeader');
 
-    if (!hero || !stickyBtn || !header) return;
+    const wrap = document.getElementById('chatPreviewWrap');
+    const wideBtn = document.getElementById('chatWideBtn');
+    const miniBtn = document.getElementById('chatMiniBtn');
 
-    function updateHeaderAndSticky() {
+    const helper = document.getElementById('chatHelperBubble');
+    const helperTitle = document.getElementById('chatHelperTitle');
+    const helperText = document.getElementById('chatHelperText');
+
+    const widePrimary = document.getElementById('chatWidePrimary');
+    const wideStatus = document.getElementById('chatWideStatus');
+    const wideDot = document.getElementById('chatWideDot');
+    const widePulse = document.getElementById('chatWidePulse');
+
+    if (!hero || !header || !wrap || !wideBtn || !miniBtn || !helper) return;
+
+    let helperLoopTimer = null;
+    let helperHideTimer = null;
+    let hoverCollapseTimer = null;
+    let messageIndex = 0;
+    let crispOpen = false;
+
+    const chatMessagesOnline = [
+      {
+        title: 'Have a question?',
+        text: 'Talk to an Elite Rackz employee now.'
+      },
+      {
+        title: 'Need help with rack damage?',
+        text: 'Send photos and we’ll take a look.'
+      },
+      {
+        title: 'Need a fast answer?',
+        text: 'Chat live with our team during business hours.'
+      },
+      {
+        title: 'Not sure what you need?',
+        text: 'We can help point you to the right repair or guarding solution.'
+      }
+    ];
+
+    const chatMessagesOffline = [
+      {
+        title: 'Leave us a message',
+        text: 'We’re offline right now, but we’ll reply next business day.'
+      },
+      {
+        title: 'Questions after hours?',
+        text: 'Send us a message and our team will follow up soon.'
+      },
+      {
+        title: 'Need help later?',
+        text: 'Drop us a message anytime and we’ll get back to you.'
+      }
+    ];
+
+    function isDesktopHoverable() {
+      return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    }
+
+    function getChicagoOnlineStatus() {
+      const chicagoNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+      const day = chicagoNow.getDay();
+      const totalMinutes = chicagoNow.getHours() * 60 + chicagoNow.getMinutes();
+      const isWeekday = day >= 1 && day <= 5;
+      return isWeekday && totalMinutes >= 420 && totalMinutes < 990;
+    }
+
+    function getCurrentMessages() {
+      return getChicagoOnlineStatus() ? chatMessagesOnline : chatMessagesOffline;
+    }
+
+    function setNextHelperMessage() {
+      const messages = getCurrentMessages();
+      const item = messages[messageIndex % messages.length];
+      helperTitle.textContent = item.title;
+      helperText.textContent = item.text;
+      messageIndex++;
+    }
+
+    function applyChatStatus() {
+      const isOnline = getChicagoOnlineStatus();
+
+      widePrimary.textContent = isOnline ? 'Talk to Elite Rackz' : 'Leave a Message';
+      wideStatus.textContent = isOnline ? 'Live support • Send photos for review' : 'Offline now • We’ll reply next business day';
+
+      wideDot.className = 'relative inline-flex h-3 w-3 rounded-full ' + (isOnline ? 'bg-emerald-400' : 'bg-red-400');
+      widePulse.className = 'chat-dot-pulse absolute inline-flex h-full w-full rounded-full opacity-70 ' + (isOnline ? 'bg-emerald-300' : 'bg-red-300');
+
+      wideBtn.classList.toggle('chat-online', isOnline);
+      wideBtn.classList.toggle('chat-offline', !isOnline);
+      miniBtn.classList.toggle('chat-online', isOnline);
+      miniBtn.classList.toggle('chat-offline', !isOnline);
+    }
+
+    function showWidget() {
+      if (!crispOpen) {
+        wrap.classList.add('chat-visible');
+      }
+    }
+
+    function hideWidget() {
+      wrap.classList.remove('chat-visible');
+    }
+
+    function hideHelper() {
+      helper.classList.remove('chat-helper-visible');
+      clearTimeout(helperHideTimer);
+    }
+
+    function showHelper() {
+      if (crispOpen) return;
+      setNextHelperMessage();
+      hideHelper();
+      helper.classList.add('chat-helper-visible');
+      helperHideTimer = setTimeout(() => {
+        helper.classList.remove('chat-helper-visible');
+      }, 5000);
+    }
+
+    function restartHelperLoop() {
+      clearTimeout(helperLoopTimer);
+      helperLoopTimer = setTimeout(function loop() {
+        if (!crispOpen && wideBtn.style.display === 'none' && wrap.classList.contains('chat-visible')) {
+          showHelper();
+        }
+        helperLoopTimer = setTimeout(loop, 30000);
+      }, 22000);
+    }
+
+    function showMini() {
+      clearTimeout(hoverCollapseTimer);
+      wideBtn.style.display = 'none';
+      miniBtn.style.display = 'inline-flex';
+    }
+
+    function showWideTemporary() {
+      if (!isDesktopHoverable() || crispOpen) return;
+      hideHelper();
+      clearTimeout(hoverCollapseTimer);
+      miniBtn.style.display = 'none';
+      wideBtn.style.display = 'inline-flex';
+
+      hoverCollapseTimer = setTimeout(() => {
+        showMini();
+      }, 3500);
+    }
+
+    function resetToDefault() {
+      clearTimeout(hoverCollapseTimer);
+      wideBtn.style.display = 'none';
+      miniBtn.style.display = 'inline-flex';
+    }
+
+    function openCrispChat() {
+      try {
+        crispOpen = true;
+        hideHelper();
+        hideWidget();
+
+        window.$crisp = window.$crisp || [];
+        window.$crisp.push(["do", "chat:show"]);
+        window.$crisp.push(["do", "chat:open"]);
+      } catch (e) {}
+    }
+
+    function updateHeaderAndWidget() {
       const passedHero = window.scrollY > 12;
       const heroBottom = hero.getBoundingClientRect().bottom;
-      const passedHeroForQuote = heroBottom <= 0;
-
-      stickyBtn.classList.toggle('sticky-quote-visible', passedHeroForQuote);
-      stickyBtn.classList.toggle('sticky-quote-hidden', !passedHeroForQuote);
+      const showChat = heroBottom <= 0;
 
       header.classList.toggle('header-scrolled', passedHero);
       header.classList.toggle('header-hero', !passedHero);
+
+      if (showChat && !crispOpen) {
+        showWidget();
+        resetToDefault();
+      } else if (!showChat) {
+        hideWidget();
+        hideHelper();
+      }
     }
 
-    window.addEventListener('scroll', updateHeaderAndSticky, { passive: true });
-    window.addEventListener('resize', updateHeaderAndSticky);
-    updateHeaderAndSticky();
+    miniBtn.addEventListener('mouseenter', () => {
+      showWideTemporary();
+      restartHelperLoop();
+    });
+
+    wideBtn.addEventListener('mouseleave', () => {
+      showMini();
+      restartHelperLoop();
+    });
+
+    miniBtn.addEventListener('click', () => {
+      openCrispChat();
+      restartHelperLoop();
+    });
+
+    wideBtn.addEventListener('click', () => {
+      openCrispChat();
+      restartHelperLoop();
+    });
+
+    window.$crisp = window.$crisp || [];
+    window.$crisp.push(["on", "chat:closed", function () {
+      crispOpen = false;
+      window.$crisp.push(["do", "chat:hide"]);
+      updateHeaderAndWidget();
+      restartHelperLoop();
+    }]);
+
+    applyChatStatus();
+    updateHeaderAndWidget();
+    restartHelperLoop();
+
+    window.addEventListener('scroll', updateHeaderAndWidget, { passive: true });
+    window.addEventListener('resize', updateHeaderAndWidget);
+    setInterval(applyChatStatus, 60000);
   })();
 </script>
 
 </body>
-</html> 
+</html>

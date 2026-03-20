@@ -4,18 +4,64 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EZ Roll-Form Repair Kits — Elite Rackz</title>
-  <meta name="description" content="Elite Rackz delivers engineered pallet rack repair and guarding solutions with lifetime warranty and stamped calculations.">
+  <meta name="description" content="EZ Roll-Form Repair Kits by Elite Rackz. Engineered roll-form rack repair kits with multiple deflector options, adjustable beam compatibility, and customizable configurations.">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] }, colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} }, boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'} } } };
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] },
+          colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} },
+          boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'}
+        }
+      }
+    };
   </script>
+
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    .reveal{
+      opacity:0;
+      transform:translateY(14px);
+      filter:blur(6px);
+      transition:opacity 650ms ease,transform 650ms ease,filter 650ms ease;
+      will-change:opacity,transform,filter
+    }
+    .reveal.in-view{
+      opacity:1;
+      transform:translateY(0);
+      filter:blur(0)
+    }
+    .reveal-delay-1{transition-delay:80ms}
+    .reveal-delay-2{transition-delay:160ms}
+    .reveal-delay-3{transition-delay:240ms}
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal{
+        opacity:1!important;
+        transform:none!important;
+        filter:none!important;
+        transition:none!important
+      }
+    }
+
+    .product-fade{
+      transition:opacity 700ms ease-in-out;
+      will-change:opacity;
+      backface-visibility:hidden;
+      transform:translateZ(0)
+    }
+  </style>
 </head>
+
 <body class="bg-white text-slate-800 antialiased">
 
 <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
@@ -23,15 +69,20 @@
     <div class="flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-3">
         <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">SMART STORAGE. NO COMPROMISE. ELITE RACKZ.</span>
+        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">
+          SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
+        </span>
       </a>
+
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="products.html" class="hover:text-brand-600">Products</a>
+        <a href="products.html" class="text-brand-700">Products</a>
         <a href="services.html" class="hover:text-brand-600">Services</a>
         <a href="about.html" class="hover:text-brand-600">About</a>
         <a href="app.html" class="hover:text-brand-600">App</a>
+        <a href="blog/index.html" class="hover:text-brand-600">Blog</a>
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
       </nav>
+
       <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300">
         <span class="sr-only">Open menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,42 +91,319 @@
       </button>
     </div>
   </div>
+
   <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
     <div class="px-4 py-3 space-y-2 text-sm">
-      <a href="products.html" class="block">Products</a>
+      <a href="products.html" class="block font-semibold text-brand-700">Products</a>
       <a href="services.html" class="block">Services</a>
       <a href="about.html" class="block">About</a>
       <a href="app.html" class="block">App</a>
+      <a href="blog/index.html" class="block">Blog</a>
       <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
     </div>
   </div>
 </header>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <h1 class="text-4xl font-extrabold">EZ Roll-Form Repair Kits</h1>
-  <div class="space-y-6 mt-4 max-w-3xl text-slate-700"><div><h3 class="text-xl font-semibold">With Non-Protruding Deflector</h3><p class="mt-2">This reinforced column kit offers ultimate repair and protection against outrigger impact damage, the most common cause of frame damage. Made of the same punch style as the parent frame. Recommended for narrow aisles, due to 1/4″ deflector protrusion.<br><br>It accommodates most beam levels above 12”. The repair kit reuses existing factory bracing or accepts new bracing when needed. The front post is reinforced with a backer channel for additional strength. It is available with V-nose deflectors, non-protruding deflectors, or internal deflectors for added protection to the bottom of the column. It has a massive 3/8” thick oversized footplate with two 3/4”x7” anchors for high impact resistance and minimal twisting.</p></div><div><h3 class="text-xl font-semibold">With Protruding Deflector</h3><p class="mt-2">This reinforced column kit offers ultimate repair and protection against outrigger impact damage, the most common cause of frame damage. Made of the same punch style as the parent frame. Recommended for wider aisles, due to 1″ deflector protrusion.<br><br>It accommodates most beam levels above 12”. The repair kit reuses existing factory bracing or accepts new bracing when needed. The front post is reinforced with a backer channel for additional strength. It has a massive 3/8” thick oversized footplate with two 3/4”x7” anchors for high impact resistance and minimal twisting.</p></div><div><h3 class="text-xl font-semibold">Without Deflector</h3><p class="mt-2">This Pallet Rack Repair Kit returns any frame post to original specifications. The Frontline Repair Kit is best for VNA and rear post applications.</p>
-<p class="mt-2">It reuses existing factory bracing or accommodates new bracing when needed. It accommodates nearly all beam heights while maximizing your repair budget. It allows for maximum beam adjustability and can reuse undamaged factory strutting. An additional backer is added for added impact resistance.</p></div></div>
-<h2 class="text-2xl font-bold mt-10">Specifications</h2>
-  <ul class="mt-4 space-y-2 text-slate-700">
-    <li><strong>RACK SYSTEM:</strong> All</li>
-    <li><strong>CATEGORY:</strong> Repair</li>
-    <li><strong>STEEL GAUGE:</strong> Minimum 12 gauge Steel (55,000 PSI min yield) 3/16” outer clamp, ⅛” top cap, ⅜” footplate, ¼” deflectors</li>
-    <li><strong>ROLL/STRUCTURAL:</strong> Roll form (Structural with Mac Rak approva.)</li>
-    <li><strong>STYLE:</strong> Bolt (Welded available by special order)</li>
-    <li><strong>NUMBER OF ANCHORS:</strong> Two, 3/4″ X 7″</li>
-    <li><strong>ANCHOR DIMS:</strong> 3/4″ X 7″</li>
-    <li><strong>FOOTPLATE DIMS:</strong> 4’x12” X 3/8″ standard</li>
-    <li><strong>COLOR:</strong> All color options available*</li>
-    <li><strong>PUNCH:</strong> Available in most punch styles</li>
-    <li><strong>PROTECTOR TYPE:</strong> V-Nose, Non-Protruding, Internal reinforcement<br><span class="text-sm text-slate-600">(custom deflector options are always available)</span></li>
-    <li><strong>SIZE OPTIONS:</strong> Available in all heights over 2′-0″</li>
-    <li><strong>CUSTOMIZABLE:</strong> Yes</li>
-  </ul>
-  <p class="mt-3 text-sm text-slate-500 italic">* Available powder coat paint colors are common industry-standard colors. Exact match is not guaranteed.</p>
-<a class="mt-8 inline-flex items-center px-5 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700" href="contact.html">Request cut-sheet</a>
+<section class="bg-slate-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="reveal flex items-center justify-between gap-6 flex-wrap">
+      <div class="text-sm text-slate-500">
+        <a class="hover:text-slate-700" href="index.html">Home</a>
+        <span class="mx-2">/</span>
+        <a class="hover:text-slate-700" href="products.html">Products</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-700 font-semibold">EZ Roll-Form Repair Kits</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-black/5">
+        <span class="text-[11px] font-extrabold tracking-wide text-slate-900">ROLL-FORM REPAIR</span>
+      </div>
+    </div>
+
+    <div class="mt-6 grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5">
+        <div class="reveal reveal-delay-1 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-slate-200 text-slate-700 text-sm">
+          <span class="font-extrabold tracking-wide text-slate-900">ROLL-FORM KIT</span>
+          <span class="text-slate-400">•</span>
+          <span class="text-slate-600">Multiple deflector options</span>
+        </div>
+
+        <h1 class="reveal reveal-delay-2 mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          EZ Roll-Form Repair Kits
+        </h1>
+
+        <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-xl">
+          A versatile repair option for roll-form rack damage, available with protruding, non-protruding, and no-deflector configurations depending on aisle conditions and protection needs.
+        </p>
+
+        <div class="reveal reveal-delay-3 mt-7 flex flex-wrap gap-3">
+          <a href="contact.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+            Request Cut-Sheet
+          </a>
+          <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50">
+            Call (708) 980-2936
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-3 mt-8 grid grid-cols-2 gap-3">
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Category</div>
+            <div class="font-extrabold text-slate-900">Repair</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Style</div>
+            <div class="font-extrabold text-slate-900">Bolt-On</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Rack Type</div>
+            <div class="font-extrabold text-slate-900">Roll Form</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Customizable</div>
+            <div class="font-extrabold text-slate-900">Yes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div id="rollFormCarousel" class="reveal reveal-delay-2 relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5">
+          <div id="rollFormWrap" class="relative h-[340px] sm:h-[420px] lg:h-[560px] bg-white">
+            <img
+              id="rollFormSlideA"
+              src="assets/images/repairC/slide-01.jpg"
+              alt="EZ Roll-Form Repair Kit image 1"
+              class="product-fade absolute inset-0 w-full h-full object-contain p-4 md:p-6 opacity-100"
+            >
+            <img
+              id="rollFormSlideB"
+              src="assets/images/repairC/slide-01.jpg"
+              alt="EZ Roll-Form Repair Kit image 1"
+              class="product-fade absolute inset-0 w-full h-full object-contain p-4 md:p-6 opacity-0"
+            >
+          </div>
+
+          <button type="button" aria-label="Previous" class="roll-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/85 hover:bg-white p-2 shadow">‹</button>
+          <button type="button" aria-label="Next" class="roll-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/85 hover:bg-white p-2 shadow">›</button>
+
+          <div class="absolute top-3 right-3 rounded-full bg-slate-900/80 text-white text-xs font-semibold px-3 py-1" id="rollFormCount">1 / 2</div>
+          <div id="rollFormDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="mt-24 border-t border-slate-200">
+<section class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7">
+        <div class="reveal rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
+          <h2 class="text-2xl font-extrabold text-slate-900">Overview</h2>
+          <p class="mt-4 text-slate-700 leading-relaxed">
+            EZ Roll-Form Repair Kits are designed to restore damaged roll-form rack columns while preserving beam adjustability and supporting multiple protection configurations. These kits can reuse existing factory bracing when possible or accept new bracing when needed.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-6 shadow-smooth bg-slate-50">
+          <h3 class="text-lg font-extrabold text-slate-900">Best For</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-700">
+            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span><span>Roll-form rack damage requiring an engineered repair path</span></li>
+            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span><span>Narrow aisles, wider aisles, or VNA conditions depending on deflector choice</span></li>
+            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span><span>Facilities prioritizing beam adjustability and repair budget efficiency</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-4">
+      <div class="reveal rounded-2xl bg-slate-50 ring-1 ring-black/5 p-5">
+        <div class="font-semibold text-slate-900">Three configuration options</div>
+        <p class="mt-1 text-sm text-slate-600">Available with non-protruding, protruding, or no deflector depending on site conditions.</p>
+      </div>
+
+      <div class="reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-5">
+        <div class="font-semibold text-slate-900">Beam-friendly design</div>
+        <p class="mt-1 text-sm text-slate-600">Allows maximum beam adjustability and can reuse undamaged factory strutting when possible.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-5">
+        <div class="font-semibold text-slate-900">Budget-conscious repair option</div>
+        <p class="mt-1 text-sm text-slate-600">A strong repair solution for roll-form systems without the heavier double- or single-leg kit approach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 bg-slate-50 border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal">
+      <div class="text-sm font-semibold tracking-[0.18em] text-slate-500 uppercase">Configurations</div>
+      <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">Choose the right deflector style</h2>
+    </div>
+
+    <div class="mt-8 grid lg:grid-cols-3 gap-6">
+      <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">Non-Protruding Deflector</h3>
+        <p class="mt-4 text-sm leading-relaxed text-slate-700">
+          This reinforced column kit offers ultimate repair and protection against outrigger impact damage, the most common cause of frame damage. Made of the same punch style as the parent frame.
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          Recommended for narrow aisles due to 1/4″ deflector protrusion. It accommodates most beam levels above 12”, reuses existing factory bracing or accepts new bracing when needed, and reinforces the front post with a backer channel.
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          Available with V-nose, non-protruding, or internal deflectors for added bottom-column protection. Includes a massive 3/8” thick oversized footplate with two 3/4” x 7” anchors for high impact resistance and minimal twisting.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">Protruding Deflector</h3>
+        <p class="mt-4 text-sm leading-relaxed text-slate-700">
+          This reinforced column kit offers ultimate repair and protection against outrigger impact damage, the most common cause of frame damage. Made of the same punch style as the parent frame.
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          Recommended for wider aisles due to 1″ deflector protrusion. It accommodates most beam levels above 12”, reuses existing factory bracing or accepts new bracing when needed, and reinforces the front post with a backer channel for additional strength.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">Without Deflector</h3>
+        <p class="mt-4 text-sm leading-relaxed text-slate-700">
+          This Pallet Rack Repair Kit returns any frame post to original specifications. The Frontline Repair Kit is best for VNA and rear post applications.
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          It reuses existing factory bracing or accommodates new bracing when needed. It accommodates nearly all beam heights while maximizing your repair budget, allows for maximum beam adjustability, and can reuse undamaged factory strutting.
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          An additional backer is added for increased impact resistance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal flex items-end justify-between gap-4 flex-wrap">
+      <div>
+        <div class="text-sm font-semibold tracking-[0.18em] text-slate-500 uppercase">Specifications</div>
+        <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">Grouped Product Specs</h2>
+      </div>
+
+      <a href="contact.html" class="inline-flex items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
+        Request Project Review
+      </a>
+    </div>
+
+    <div class="mt-8 grid lg:grid-cols-2 gap-6">
+      <div class="reveal rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">Core Specs</h3>
+        <div class="mt-5 space-y-4 text-sm">
+          <div>
+            <div class="text-xs text-slate-500">RACK SYSTEM</div>
+            <div class="font-semibold text-slate-900">All</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">CATEGORY</div>
+            <div class="font-semibold text-slate-900">Repair</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">ROLL / STRUCTURAL</div>
+            <div class="font-semibold text-slate-900">Roll form (Structural with Elite Rackz approval.)</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">STYLE</div>
+            <div class="font-semibold text-slate-900">Bolt-On (Welded available by special order)</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">CUSTOMIZABLE</div>
+            <div class="font-semibold text-slate-900">Yes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">Anchors & Footplate</h3>
+        <div class="mt-5 space-y-4 text-sm">
+          <div>
+            <div class="text-xs text-slate-500">NUMBER OF ANCHORS</div>
+            <div class="font-semibold text-slate-900">Two, 3/4″ x 7″</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">ANCHOR DIMS</div>
+            <div class="font-semibold text-slate-900">3/4″ x 7″</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">FOOTPLATE DIMS</div>
+            <div class="font-semibold text-slate-900">4’ x 12” x 3/8″ standard</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">Material & Protection</h3>
+        <div class="mt-5 space-y-4 text-sm">
+          <div>
+            <div class="text-xs text-slate-500">STEEL GAUGE</div>
+            <div class="font-semibold text-slate-900">Minimum 12 gauge steel (55,000 PSI min yield), 3/16” outer clamp, ⅛” top cap, ⅜” footplate, ¼” deflectors</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">PUNCH</div>
+            <div class="font-semibold text-slate-900">Available in most punch styles</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">PROTECTOR TYPE</div>
+            <div class="font-semibold text-slate-900">V-Nose, Non-Protruding, Internal reinforcement</div>
+            <div class="text-xs text-slate-500 mt-1">(custom deflector options are always available)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">Sizing & Finish</h3>
+        <div class="mt-5 space-y-4 text-sm">
+          <div>
+            <div class="text-xs text-slate-500">SIZE OPTIONS</div>
+            <div class="font-semibold text-slate-900">Available in all heights over 2′-0″</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">COLOR</div>
+            <div class="font-semibold text-slate-900">All color options available*</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">NOTE</div>
+            <div class="font-semibold text-slate-900">* Available powder coat paint colors are common industry-standard colors. Exact match is not guaranteed.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-slate-950">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal rounded-3xl bg-white text-slate-900 p-8 md:p-10 shadow-smooth ring-1 ring-slate-200 text-center">
+      <div class="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase">Need Help Choosing?</div>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">
+        Let our team review your rack damage
+      </h2>
+      <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
+        Send us project details, rack information, or photos and we’ll help determine which EZ Roll-Form configuration is the right fit for your facility.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+        <a href="contact.html" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700">
+          Request Review
+        </a>
+        <a href="tel:+17089802936" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
+          Call (708) 980-2936
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mt-10 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
     <div>
       <div class="flex items-center gap-3 mb-4">
@@ -84,6 +412,7 @@
       </div>
       <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
     </div>
+
     <div>
       <h3 class="text-sm font-semibold mb-3">Explore</h3>
       <ul class="space-y-2 text-sm">
@@ -91,9 +420,11 @@
         <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
         <li><a href="about.html" class="hover:text-brand-600">About</a></li>
         <li><a href="app.html" class="hover:text-brand-600">App</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
         <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
       </ul>
     </div>
+
     <div>
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
@@ -102,11 +433,13 @@
         <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
       </ul>
     </div>
+
     <div>
       <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
     </div>
   </div>
+
   <div class="border-t border-slate-200/70">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-center gap-3 text-sm text-slate-600">
       <span>This site was created by:</span>
@@ -114,6 +447,123 @@
     </div>
   </div>
 </footer>
+
 <script src="assets/js/main.js"></script>
+
+<script>
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(el => el.classList.add("in-view"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+    items.forEach(el => io.observe(el));
+  })();
+</script>
+
+<script>
+  (function () {
+    const carousel = document.getElementById('rollFormCarousel');
+    if (!carousel) return;
+
+    const prevBtn = carousel.querySelector('.roll-prev');
+    const nextBtn = carousel.querySelector('.roll-next');
+    const dotsWrap = document.getElementById('rollFormDots');
+    const countWrap = document.getElementById('rollFormCount');
+    const slideA = document.getElementById('rollFormSlideA');
+    const slideB = document.getElementById('rollFormSlideB');
+
+    const images = [
+      'assets/images/repairC/slide-01.jpg',
+      'assets/images/repairC/slide-02.jpg'
+    ];
+
+    let current = 0;
+    let activeIsA = true;
+    let autoPlay = null;
+    let isTransitioning = false;
+
+    function renderDots() {
+      dotsWrap.innerHTML = '';
+      images.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'h-2 w-2 rounded-full transition ' + (idx === current ? 'bg-slate-800' : 'bg-slate-400/70');
+        dot.setAttribute('aria-label', 'Go to slide ' + (idx + 1));
+        dot.addEventListener('click', () => {
+          goTo(idx);
+          startAutoPlay();
+        });
+        dotsWrap.appendChild(dot);
+      });
+      if (countWrap) countWrap.textContent = (current + 1) + ' / ' + images.length;
+    }
+
+    function goTo(index) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const nextIndex = (index + images.length) % images.length;
+      const active = activeIsA ? slideA : slideB;
+      const incoming = activeIsA ? slideB : slideA;
+
+      incoming.src = images[nextIndex];
+      incoming.alt = 'EZ Roll-Form Repair Kit image ' + (nextIndex + 1);
+
+      requestAnimationFrame(() => {
+        incoming.classList.remove('opacity-0');
+        incoming.classList.add('opacity-100');
+        active.classList.remove('opacity-100');
+        active.classList.add('opacity-0');
+      });
+
+      current = nextIndex;
+      activeIsA = !activeIsA;
+      renderDots();
+
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 720);
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlay = setInterval(() => { next(); }, 4500);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlay) clearInterval(autoPlay);
+      autoPlay = null;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      prev();
+      startAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      next();
+      startAutoPlay();
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+
+    renderDots();
+    startAutoPlay();
+  })();
+</script>
+
 </body>
 </html>

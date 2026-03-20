@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Column Guards — Elite Rackz</title>
-  <meta name="description" content="Elite Rackz delivers engineered pallet rack repair and guarding solutions with lifetime warranty and stamped calculations.">
+  <meta name="description" content="Column Guards by Elite Rackz including EZ Guard Pro, EZ Guard Shield, and EZ Guard V-Nose. Engineered rack protection solutions for impact-prone warehouse environments.">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,8 +24,44 @@
       }
     };
   </script>
+
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    .reveal{
+      opacity:0;
+      transform:translateY(14px);
+      filter:blur(6px);
+      transition:opacity 650ms ease,transform 650ms ease,filter 650ms ease;
+      will-change:opacity,transform,filter
+    }
+    .reveal.in-view{
+      opacity:1;
+      transform:translateY(0);
+      filter:blur(0)
+    }
+    .reveal-delay-1{transition-delay:80ms}
+    .reveal-delay-2{transition-delay:160ms}
+    .reveal-delay-3{transition-delay:240ms}
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal{
+        opacity:1!important;
+        transform:none!important;
+        filter:none!important;
+        transition:none!important
+      }
+    }
+
+    .product-fade{
+      transition:opacity 700ms ease-in-out;
+      will-change:opacity;
+      backface-visibility:hidden;
+      transform:translateZ(0)
+    }
+  </style>
 </head>
+
 <body class="bg-white text-slate-800 antialiased">
 
 <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
@@ -31,15 +69,20 @@
     <div class="flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-3">
         <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">SMART STORAGE. NO COMPROMISE. ELITE RACKZ.</span>
+        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">
+          SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
+        </span>
       </a>
+
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="products.html" class="hover:text-brand-600">Products</a>
+        <a href="products.html" class="text-brand-700">Products</a>
         <a href="services.html" class="hover:text-brand-600">Services</a>
         <a href="about.html" class="hover:text-brand-600">About</a>
         <a href="app.html" class="hover:text-brand-600">App</a>
+        <a href="blog/index.html" class="hover:text-brand-600">Blog</a>
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
       </nav>
+
       <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300">
         <span class="sr-only">Open menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,138 +91,158 @@
       </button>
     </div>
   </div>
+
   <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
     <div class="px-4 py-3 space-y-2 text-sm">
-      <a href="products.html" class="block">Products</a>
+      <a href="products.html" class="block font-semibold text-brand-700">Products</a>
       <a href="services.html" class="block">Services</a>
       <a href="about.html" class="block">About</a>
       <a href="app.html" class="block">App</a>
+      <a href="blog/index.html" class="block">Blog</a>
       <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
     </div>
   </div>
 </header>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <h1 class="text-4xl font-extrabold">Column Guards</h1>
-  <p class="mt-3 text-slate-600 max-w-3xl">Explore our column guard families. Click “See More” on any item to reveal full details and specifications.</p>
+<section class="bg-slate-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="reveal flex items-center justify-between gap-6 flex-wrap">
+      <div class="text-sm text-slate-500">
+        <a class="hover:text-slate-700" href="index.html">Home</a>
+        <span class="mx-2">/</span>
+        <a class="hover:text-slate-700" href="products.html">Products</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-700 font-semibold">Column Guards</span>
+      </div>
 
-  <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-smooth transition bg-white">
-      <div class="w-full h-56 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
-        <img src="assets/images/column-guard-shield.jpg" alt="EZ Guard Shield" class="max-w-full max-h-full object-contain p-2">
-      </div>
-      <h2 class="text-xl font-semibold mt-4">EZ Guard Shield</h2>
-      <p class="mt-2 text-slate-700">Long description and full specifications are available below. Use the “See More” button to expand.</p>
-      <div class="mt-4">
-        <button
-          type="button"
-          class="js-see-more inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800"
-          data-target="shield-details"
-          aria-expanded="false"
-        >
-          See More
-        </button>
-      </div>
-      <div id="shield-details" class="mt-4 hidden">
-        <h3 class="text-sm font-semibold text-slate-900">Long Description</h3>
-        <p class="mt-1 text-slate-700">The EZ Guard Shield is a bolted protective guard that may be installed anywhere on the column to prevent damage from forklifts or product impact.<br><br>Made with robust 1/4” steel in variable customizable lengths. Great at shielding column from accidental forklift truck counterbalance weights and overhead guard collision.</p>
-        <h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3>
-        <ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
-          <li><strong>RACK SYSTEM:</strong> All</li>
-          <li><strong>CATEGORY:</strong> Protection / Reinforcement</li>
-          <li><strong>STEEL GAUGE:</strong> Rugged 1/4″ steel</li>
-          <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
-          <li><strong>STYLE:</strong> Bolt Style</li>
-          <li><strong>LENGTH:</strong> Standard 12”, 18” or 24” (Custom lengths available)</li>
-          <li><strong>WIDTH:</strong> All</li>
-          <li><strong>HARDWARE:</strong> Two grade 5 fasteners Included</li>
-          <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
-          <li><strong>PUNCH:</strong> Universally compatible with all punch styles</li>
-          <li><strong>CUSTOMIZABLE:</strong> Yes</li>
-        </ul>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-black/5">
+        <span class="text-[11px] font-extrabold tracking-wide text-slate-900">COLUMN PROTECTION</span>
       </div>
     </div>
 
-    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-smooth transition bg-white">
-      <div class="w-full h-56 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
-        <img src="assets/images/column-guard-vnose.jpg" alt="EZ Guard V-Nose" class="max-w-full max-h-full object-contain p-2">
+    <div class="mt-6 grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5">
+        <div class="reveal reveal-delay-1 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-slate-200 text-slate-700 text-sm">
+          <span class="font-extrabold tracking-wide text-slate-900">GUARDING</span>
+          <span class="text-slate-400">•</span>
+          <span class="text-slate-600">Impact protection solutions</span>
+        </div>
+
+        <h1 class="reveal reveal-delay-2 mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          Column Guards
+        </h1>
+
+        <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-xl">
+          Explore our column guard families including EZ Guard Pro, EZ Guard Shield, and EZ Guard V-Nose.
+        </p>
+
+        <div class="reveal reveal-delay-3 mt-7 flex flex-wrap gap-3">
+          <a href="contact.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+            Request Info
+          </a>
+          <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50">
+            Call (708) 980-2936
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-3 mt-8 grid grid-cols-2 gap-3">
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Use Case</div>
+            <div class="font-extrabold text-slate-900">Protection</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">System Types</div>
+            <div class="font-extrabold text-slate-900">All Rack Types</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Customization</div>
+            <div class="font-extrabold text-slate-900">Available</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Finish</div>
+            <div class="font-extrabold text-slate-900">Powder Coated</div>
+          </div>
+        </div>
       </div>
-      <h2 class="text-xl font-semibold mt-4">EZ Guard V-Nose</h2>
-      <p class="mt-2 text-slate-700">Long description and full specifications are available below. Use the “See More” button to expand.</p>
-      <div class="mt-4">
-        <button
-          type="button"
-          class="js-see-more inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800"
-          data-target="vnose-details"
-          aria-expanded="false"
-        >
-          See More
-        </button>
+
+      <div class="lg:col-span-7">
+        <div id="guardProHeroCarousel" class="reveal reveal-delay-2 relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5">
+          <div id="guardProHeroWrap" class="relative h-[340px] sm:h-[420px] lg:h-[560px] bg-white">
+            <img
+              id="guardProHeroA"
+              src="assets/images/IMG_1518.png"
+              alt="EZ Guard Pro image 1"
+              class="product-fade absolute inset-0 w-full h-full object-contain p-4 md:p-6 opacity-100"
+            >
+            <img
+              id="guardProHeroB"
+              src="assets/images/IMG_1518.png"
+              alt="EZ Guard Pro image 1"
+              class="product-fade absolute inset-0 w-full h-full object-contain p-4 md:p-6 opacity-0"
+            >
+          </div>
+
+          <button type="button" aria-label="Previous" class="guardpro-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/85 hover:bg-white p-2 shadow">‹</button>
+          <button type="button" aria-label="Next" class="guardpro-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/85 hover:bg-white p-2 shadow">›</button>
+
+          <div class="absolute top-3 right-3 rounded-full bg-slate-900/80 text-white text-xs font-semibold px-3 py-1" id="guardProHeroCount">1 / 4</div>
+          <div id="guardProHeroDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
+        </div>
       </div>
-      <div id="vnose-details" class="mt-4 hidden">
-        <h3 class="text-sm font-semibold text-slate-900">Long Description</h3>
-        <p class="mt-1 text-slate-700">The EZ Guard V-Nose is a pallet rack guard that protects racks from outrigger damage. The standard 4″ high 3/8″ thick steel guard uses a 3/4″ internal anchor that ensures ultimate impact resistance. The anchor fastens this guard to the floor rather than to the column. Thus transferring impact energy to the guard rather than the column. Designed to prevent column twisting with single anchored footplates.<br><br>The 3/8″ thick footplate can be set flush or below the guard sufficiently to accommodate various footplate dimensions. Highly customizable, the EZ Guard column protector may be designed to accept various column widths and setbacks. It is not a flimsy wrap around boot, bolted angle or other gimmick. It is a heavy-duty steel column guard that will protect your pallet racks from costly future damage.</p>
-        <h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3>
-        <ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
-          <li><strong>RACK SYSTEM:</strong> All</li>
-          <li><strong>CATEGORY:</strong> Protection</li>
-          <li><strong>STEEL GAUGE:</strong> Rugged 3/8” throughout</li>
-          <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
-          <li><strong>STYLE:</strong> Single Anchor</li>
-          <li><strong>HEIGHT:</strong> Standard 4″</li>
-          <li><strong>NUMBER OF ANCHORS:</strong> 1 internal 3/4″ X 7″ anchor included</li>
-          <li><strong>ANCHOR DIMS:</strong> 3/4” x 7” for high impact resistance and minimal twisting</li>
-          <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
-          <li><strong>PUNCH:</strong> Universally compatible with all punch styles</li>
-          <li><strong>CUSTOMIZABLE:</strong> Yes</li>
-          <li><strong>FOAM PLUG:</strong> Optional foam plug eliminates the trash build-ups</li>
-          <li><strong>WARRANTY DESCRIPTION:</strong> Mac Rak offers a Lifetime Warranty for all our products against defects in manufacturing or material workmanship.</li>
-        </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EZ Guard Pro -->
+<section class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7">
+        <div class="reveal rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
+          <h2 class="text-3xl font-extrabold text-slate-900">EZ Guard Pro</h2>
+          <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
+            <p>
+              The EZ Guard PRO is a dual purpose repair and high impact outrigger protector. It provides ultimate impact protection for the most vulnerable frame section, the bottom 12″ of the front column. This is a high impact deflecting kit.
+            </p>
+            <p>
+              Laser focused, addresses the largest single catagory of column damage with the most effective solution. Does not require replacing undamaged factory bracing. Accommodate beam levels 20” or higher. It is not a wraparound post protector or plastic gimmick.
+            </p>
+            <p>
+              This engineered kit becomes part of the post and prevents twisting. It is available in protruding and non-protruding versions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+          <h3 class="text-xl font-extrabold text-slate-900">Quick Specs</h3>
+          <div class="mt-5 space-y-4 text-sm">
+            <div>
+              <div class="text-xs text-slate-500">CATEGORY</div>
+              <div class="font-semibold text-slate-900">Repair and protection</div>
+            </div>
+            <div>
+              <div class="text-xs text-slate-500">STYLE</div>
+              <div class="font-semibold text-slate-900">Bolted</div>
+            </div>
+            <div>
+              <div class="text-xs text-slate-500">SEAT HEIGHT</div>
+              <div class="font-semibold text-slate-900">Standard 4″, 6″ or 8″</div>
+            </div>
+            <div>
+              <div class="text-xs text-slate-500">WARRANTY</div>
+              <div class="font-semibold text-slate-900">Limited Lifetime Impact Warranty</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-smooth transition bg-white">
-      <div
-        class="w-full h-56 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100"
-        data-carousel
-        data-images='[
-          "assets/images/IMG_1518.png",
-          "assets/images/IMG_1515.jpg",
-          "assets/images/IMG_1511.jpg",
-          "assets/images/IMG_1510.jpg"
-        ]'>
-        <img alt="EZ Guard Pro" class="max-w-full max-h-full object-contain p-2 transition-opacity duration-500 opacity-100">
-      </div>
-
-      <h2 class="text-xl font-semibold mt-4">EZ Guard Pro</h2>
-      <p class="mt-2 text-slate-700">Long description and full specifications are available below. Use the “See More” button to expand.</p>
-
-      <div class="mt-4">
-        <button
-          type="button"
-          class="js-see-more inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800"
-          data-target="pro-details"
-          aria-expanded="false"
-        >
-          See More
-        </button>
-      </div>
-
-      <div id="pro-details" class="mt-4 hidden">
-        <h3 class="text-sm font-semibold text-slate-900">Long Description</h3>
-        <p class="mt-1 text-slate-700">
-          The EZ Guard PRO is a dual purpose repair and high impact outrigger protector. It provides ultimate impact protection
-          for the most vulnerable frame section, the bottom 12″ of the front column. This is a high impact deflecting kit.
-        </p>
-        <p class="mt-3 text-slate-700">
-          Laser focused, addresses the largest single catagory of column damage with the most effective solution. Does not require
-          replacing undamaged factory bracing. Accommodate beam levels 20” or higher. It is not a wraparound post protector or
-          plastic gimmick. This engineered kit becomes part of the post and prevents twisting. It is available in protruding and
-          non-protruding versions.
-        </p>
-
-        <h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3>
-        <ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
+    <div class="mt-8 grid lg:grid-cols-2 gap-6">
+      <div class="reveal rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">Specifications</h3>
+        <ul class="mt-5 space-y-2 text-sm text-slate-700 list-disc pl-5">
           <li><strong>RACK SYSTEM:</strong> All</li>
           <li><strong>CATEGORY:</strong> Repair and protection</li>
           <li><strong>STEEL GAUGE:</strong> 1/4″ &amp; 3/8″ Steel</li>
@@ -189,13 +252,19 @@
           <li><strong>NUMBER OF ANCHORS:</strong> Two 3/4″ × 7″</li>
           <li><strong>ANCHOR DIMS:</strong> 3/4” × 7” for high impact resistance and minimal twisting</li>
           <li><strong>FOOTPLATE DIMS:</strong> ⅜” 4” × 12” Standard</li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+        <h3 class="text-xl font-extrabold text-slate-900">More Details</h3>
+        <ul class="mt-5 space-y-2 text-sm text-slate-700 list-disc pl-5">
           <li><strong>COLOR:</strong> Any standard rack color powder coat finish*</li>
           <li><strong>PUNCH:</strong> Non-punched</li>
           <li><strong>PROTECTOR TYPE:</strong> Standard non-protruding</li>
           <li><strong>CUSTOMIZABLE:</strong> Standard front or side bolt connection</li>
           <li><strong>WARRANTY DESCRIPTION:</strong> Limited Lifetime Impact Warranty</li>
         </ul>
-        <p class="mt-2 text-xs text-slate-500">
+        <p class="mt-3 text-xs text-slate-500">
           * Available powder coat paint colors are common industry-standard colors. Exact match is not guaranteed.
         </p>
       </div>
@@ -203,7 +272,125 @@
   </div>
 </section>
 
-<footer class="mt-24 border-t border-slate-200">
+<!-- EZ Guard Shield -->
+<section class="py-12 bg-slate-50 border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-5">
+        <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+          <div class="w-full h-72 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
+            <img src="assets/images/column-guard-shield.jpg" alt="EZ Guard Shield" class="max-w-full max-h-full object-contain p-2">
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
+          <h2 class="text-3xl font-extrabold text-slate-900">EZ Guard Shield</h2>
+          <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
+            <p>
+              The EZ Guard Shield is a bolted protective guard that may be installed anywhere on the column to prevent damage from forklifts or product impact.
+            </p>
+            <p>
+              Made with robust 1/4” steel in variable customizable lengths. Great at shielding column from accidental forklift truck counterbalance weights and overhead guard collision.
+            </p>
+          </div>
+
+          <h3 class="mt-8 text-xl font-extrabold text-slate-900">Specifications</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
+            <li><strong>RACK SYSTEM:</strong> All</li>
+            <li><strong>CATEGORY:</strong> Protection / Reinforcement</li>
+            <li><strong>STEEL GAUGE:</strong> Rugged 1/4″ steel</li>
+            <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
+            <li><strong>STYLE:</strong> Bolt Style</li>
+            <li><strong>LENGTH:</strong> Standard 12”, 18” or 24” (Custom lengths available)</li>
+            <li><strong>WIDTH:</strong> All</li>
+            <li><strong>HARDWARE:</strong> Two grade 5 fasteners Included</li>
+            <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
+            <li><strong>PUNCH:</strong> Universally compatible with all punch styles</li>
+            <li><strong>CUSTOMIZABLE:</strong> Yes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EZ Guard V-Nose -->
+<section class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-5">
+        <div class="reveal rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+          <div class="w-full h-72 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
+            <img src="assets/images/column-guard-vnose.jpg" alt="EZ Guard V-Nose" class="max-w-full max-h-full object-contain p-2">
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
+          <h2 class="text-3xl font-extrabold text-slate-900">EZ Guard V-Nose</h2>
+          <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
+            <p>
+              The EZ Guard V-Nose is a pallet rack guard that protects racks from outrigger damage. The standard 4″ high 3/8″ thick steel guard uses a 3/4″ internal anchor that ensures ultimate impact resistance.
+            </p>
+            <p>
+              The anchor fastens this guard to the floor rather than to the column. Thus transferring impact energy to the guard rather than the column. Designed to prevent column twisting with single anchored footplates.
+            </p>
+            <p>
+              The 3/8″ thick footplate can be set flush or below the guard sufficiently to accommodate various footplate dimensions. Highly customizable, the EZ Guard column protector may be designed to accept various column widths and setbacks.
+            </p>
+            <p>
+              It is not a flimsy wrap around boot, bolted angle or other gimmick. It is a heavy-duty steel column guard that will protect your pallet racks from costly future damage.
+            </p>
+          </div>
+
+          <h3 class="mt-8 text-xl font-extrabold text-slate-900">Specifications</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
+            <li><strong>RACK SYSTEM:</strong> All</li>
+            <li><strong>CATEGORY:</strong> Protection</li>
+            <li><strong>STEEL GAUGE:</strong> Rugged 3/8” throughout</li>
+            <li><strong>ROLL/STRUCTURAL:</strong> Both</li>
+            <li><strong>STYLE:</strong> Single Anchor</li>
+            <li><strong>HEIGHT:</strong> Standard 4″</li>
+            <li><strong>NUMBER OF ANCHORS:</strong> 1 internal 3/4″ X 7″ anchor included</li>
+            <li><strong>ANCHOR DIMS:</strong> 3/4” x 7” for high impact resistance and minimal twisting</li>
+            <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
+            <li><strong>PUNCH:</strong> Universally compatible with all punch styles</li>
+            <li><strong>CUSTOMIZABLE:</strong> Yes</li>
+            <li><strong>FOAM PLUG:</strong> Optional foam plug eliminates the trash build-ups</li>
+            <li><strong>WARRANTY DESCRIPTION:</strong> Mac Rak offers a Lifetime Warranty for all our products against defects in manufacturing or material workmanship.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-slate-950">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal rounded-3xl bg-white text-slate-900 p-8 md:p-10 shadow-smooth ring-1 ring-slate-200 text-center">
+      <div class="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase">Need Help Choosing?</div>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">
+        Let our team review your protection needs
+      </h2>
+      <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
+        Send us project details, rack information, or photos and we’ll help determine which column guard is the right fit for your facility.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+        <a href="contact.html" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700">
+          Request Review
+        </a>
+        <a href="tel:+17089802936" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
+          Call (708) 980-2936
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mt-10 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
     <div>
       <div class="flex items-center gap-3 mb-4">
@@ -219,6 +406,7 @@
         <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
         <li><a href="about.html" class="hover:text-brand-600">About</a></li>
         <li><a href="app.html" class="hover:text-brand-600">App</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
         <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
       </ul>
     </div>
@@ -232,7 +420,7 @@
     </div>
     <div>
       <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
     </div>
   </div>
   <div class="border-t border-slate-200/70">
@@ -244,60 +432,123 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.js-see-more').forEach(function (btn) {
-    if (btn.dataset.bound === '1') return;
-    btn.dataset.bound = '1';
-
-    btn.addEventListener('click', function () {
-      var id = btn.getAttribute('data-target');
-      var target = document.getElementById(id);
-      if (!target) return;
-
-      var isHidden = target.classList.contains('hidden');
-
-      if (isHidden) {
-        target.classList.remove('hidden');
-        btn.textContent = 'See Less';
-        btn.setAttribute('aria-expanded', 'true');
-      } else {
-        target.classList.add('hidden');
-        btn.textContent = 'See More';
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-  document.querySelectorAll('[data-carousel]').forEach(function (wrap) {
-    if (wrap.dataset.boundCarousel === '1') return;
-    wrap.dataset.boundCarousel = '1';
-
-    const imgEl = wrap.querySelector('img');
-    let imgs = [];
-    try {
-      imgs = JSON.parse(wrap.getAttribute('data-images')) || [];
-    } catch(e) {}
-
-    if (!imgs.length || !imgEl) return;
-
-    let i = 0;
-    imgEl.src = imgs[0];
-    imgEl.style.opacity = '1';
-
-    setInterval(function () {
-      i = (i + 1) % imgs.length;
-      imgEl.style.opacity = '0';
-
-      setTimeout(function () {
-        imgEl.src = imgs[i];
-        imgEl.onload = function () {
-          imgEl.style.opacity = '1';
-        };
-      }, 200);
-    }, 3000);
-  });
-});
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(el => el.classList.add("in-view"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+    items.forEach(el => io.observe(el));
+  })();
 </script>
+
+<script>
+  (function () {
+    const carousel = document.getElementById('guardProHeroCarousel');
+    if (!carousel) return;
+
+    const prevBtn = carousel.querySelector('.guardpro-prev');
+    const nextBtn = carousel.querySelector('.guardpro-next');
+    const dotsWrap = document.getElementById('guardProHeroDots');
+    const countWrap = document.getElementById('guardProHeroCount');
+    const slideA = document.getElementById('guardProHeroA');
+    const slideB = document.getElementById('guardProHeroB');
+
+    const images = [
+      'assets/images/IMG_1518.png',
+      'assets/images/IMG_1515.jpg',
+      'assets/images/IMG_1511.jpg',
+      'assets/images/IMG_1510.jpg'
+    ];
+
+    let current = 0;
+    let activeIsA = true;
+    let autoPlay = null;
+    let isTransitioning = false;
+
+    function renderDots() {
+      dotsWrap.innerHTML = '';
+      images.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'h-2 w-2 rounded-full transition ' + (idx === current ? 'bg-slate-800' : 'bg-slate-400/70');
+        dot.setAttribute('aria-label', 'Go to slide ' + (idx + 1));
+        dot.addEventListener('click', () => {
+          goTo(idx);
+          startAutoPlay();
+        });
+        dotsWrap.appendChild(dot);
+      });
+      if (countWrap) countWrap.textContent = (current + 1) + ' / ' + images.length;
+    }
+
+    function goTo(index) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const nextIndex = (index + images.length) % images.length;
+      const active = activeIsA ? slideA : slideB;
+      const incoming = activeIsA ? slideB : slideA;
+
+      incoming.src = images[nextIndex];
+      incoming.alt = 'EZ Guard Pro image ' + (nextIndex + 1);
+
+      requestAnimationFrame(() => {
+        incoming.classList.remove('opacity-0');
+        incoming.classList.add('opacity-100');
+        active.classList.remove('opacity-100');
+        active.classList.add('opacity-0');
+      });
+
+      current = nextIndex;
+      activeIsA = !activeIsA;
+      renderDots();
+
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 720);
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlay = setInterval(() => { next(); }, 4500);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlay) clearInterval(autoPlay);
+      autoPlay = null;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      prev();
+      startAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      next();
+      startAutoPlay();
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+
+    renderDots();
+    startAutoPlay();
+  })();
+</script>
+
 </body>
 </html>

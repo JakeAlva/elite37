@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>End-of-Aisle Guards — Elite Rackz</title>
-  <meta name="description" content="Elite Rackz delivers engineered pallet rack repair and guarding solutions with lifetime warranty and stamped calculations.">
+  <meta name="description" content="End-of-Aisle Guards by Elite Rackz including EZ End of Row Guard and EZ Pallet Rack Dock Door Guard. Heavy-duty protection solutions for impact-prone rack areas.">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,8 +24,37 @@
       }
     };
   </script>
+
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    .reveal{
+      opacity:0;
+      transform:translateY(14px);
+      filter:blur(6px);
+      transition:opacity 650ms ease,transform 650ms ease,filter 650ms ease;
+      will-change:opacity,transform,filter
+    }
+    .reveal.in-view{
+      opacity:1;
+      transform:translateY(0);
+      filter:blur(0)
+    }
+    .reveal-delay-1{transition-delay:80ms}
+    .reveal-delay-2{transition-delay:160ms}
+    .reveal-delay-3{transition-delay:240ms}
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal{
+        opacity:1!important;
+        transform:none!important;
+        filter:none!important;
+        transition:none!important
+      }
+    }
+  </style>
 </head>
+
 <body class="bg-white text-slate-800 antialiased">
 
 <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
@@ -35,13 +66,16 @@
           SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
         </span>
       </a>
+
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="products.html" class="hover:text-brand-600">Products</a>
+        <a href="products.html" class="text-brand-700">Products</a>
         <a href="services.html" class="hover:text-brand-600">Services</a>
         <a href="about.html" class="hover:text-brand-600">About</a>
         <a href="app.html" class="hover:text-brand-600">App</a>
+        <a href="blog/index.html" class="hover:text-brand-600">Blog</a>
         <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
       </nav>
+
       <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300">
         <span class="sr-only">Open menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,122 +84,229 @@
       </button>
     </div>
   </div>
+
   <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
     <div class="px-4 py-3 space-y-2 text-sm">
-      <a href="products.html" class="block">Products</a>
+      <a href="products.html" class="block font-semibold text-brand-700">Products</a>
       <a href="services.html" class="block">Services</a>
       <a href="about.html" class="block">About</a>
       <a href="app.html" class="block">App</a>
+      <a href="blog/index.html" class="block">Blog</a>
       <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
     </div>
   </div>
 </header>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <h1 class="text-4xl font-extrabold">End-of-Aisle Guards</h1>
-  <p class="mt-3 text-slate-600 max-w-3xl">
-    Extra info and specifications. Click “See More” on any item to reveal full details.
-  </p>
-
-  <div class="mt-8 grid md:grid-cols-2 gap-8">
-
-    <!-- EZ End of Row Guard -->
-    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-smooth transition bg-white">
-      <!-- Visible image at top -->
-      <img
-        src="assets/images/end-of-row-guard.jpg"
-        alt="EZ End of Row Guard — Elite Rackz"
-        class="w-full h-56 object-contain mb-4"
-      >
-      <h2 class="text-xl font-semibold">EZ End of Row Guard</h2>
-      <p class="mt-2 text-slate-700">Long description and full specifications are available below.</p>
-      <div class="mt-4">
-        <button
-          type="button"
-          class="js-see-more inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800"
-          data-target="eor-details"
-        >
-          See More
-        </button>
+<section class="bg-slate-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="reveal flex items-center justify-between gap-6 flex-wrap">
+      <div class="text-sm text-slate-500">
+        <a class="hover:text-slate-700" href="index.html">Home</a>
+        <span class="mx-2">/</span>
+        <a class="hover:text-slate-700" href="products.html">Products</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-700 font-semibold">End-of-Aisle Guards</span>
       </div>
-      <div id="eor-details" class="mt-4 hidden">
-        <h3 class="text-sm font-semibold text-slate-900">Long Description</h3>
-        <p class="mt-1 text-slate-700">
-          Elite Rackz', “Heavy Duty” end of aisle rack protectors, are the ultimate standard for end of a row and
-          tunnel frame guarding. Constructed with 12” tall, ½” thick round ends, to isolate the front frame post from
-          impact damage, as well as 6” x 4” X 3/8″ angle that protects the frame’s side and rear post (highly
-          customizable).<br><br>
-          Guards are manufactured to the highest standards with full length inside and outside vertical welds attaching
-          the thick round end to the heavy-duty angle. The angle is punched 12″ on center for 3/4″ X 7″ anchors. Row end
-          guards are available in left side, right side or double side in all lengths over 24″. (Additional punched
-          angle is available to extend to desired overall length.) Notching available on round end and floor angle to
-          accommodate custom applications.
-        </p>
-        <h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3>
-        <ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
-          <li><strong>CATEGORY:</strong> Protection</li>
-          <li><strong>SPECIFICATIONS:</strong> Standard guard accepts up to a 5 1/2″ wide frame footplate</li>
-          <li><strong>STEEL GAUGE:</strong> 10” schedule 60 pipe ½” thick; 6”x 4” ⅜” angle</li>
-          <li><strong>STYLE:</strong> Round row end guards are available in left, right or double sided</li>
-          <li><strong>PROTECTOR HEIGHT:</strong> 12” tall, ½” thick round ends protect front frame post, 6” x 4” X 3/8″ angle that protects the frame’s side and rear post</li>
-          <li><strong>ROW END GUARD:</strong> All lengths over 24” up to 60″ (Additional punched angle available to extend guard length)</li>
-          <li><strong>NUMBER OF ANCHOR HOLES:</strong> Varies, spaced less than 12” on center</li>
-          <li><strong>ANCHOR DIMS:</strong> ¾” x 7″ included (typically 3)</li>
-          <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
-          <li><strong>PROTECTOR TYPE:</strong> Round (standard 42″ and 48″ long guards are available for quick ship)</li>
-          <li><strong>CUSTOMIZABLE:</strong> Custom designed for your exact needs, notching and exact lengths to fit your specifications</li>
-        </ul>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-black/5">
+        <span class="text-[11px] font-extrabold tracking-wide text-slate-900">END-OF-AISLE PROTECTION</span>
       </div>
     </div>
 
-    <!-- EZ Pallet Rack Dock Door Guard -->
-    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-smooth transition bg-white">
-      <!-- Visible image at top, ~15% bigger -->
-      <img
-        src="assets/images/dock-door-guard.jpg"
-        alt="EZ Pallet Rack Dock Door Guard — Elite Rackz"
-        class="w-full h-64 object-contain mb-4"
-      >
-      <h2 class="text-xl font-semibold">EZ Pallet Rack Dock Door Guard</h2>
-      <p class="mt-2 text-slate-700">Long description and full specifications are available below.</p>
-      <div class="mt-4">
-        <button
-          type="button"
-          class="js-see-more inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800"
-          data-target="dock-details"
-        >
-          See More
-        </button>
-      </div>
-      <div id="dock-details" class="mt-4 hidden">
-        <h3 class="text-sm font-semibold text-slate-900">Long Description</h3>
-        <p class="mt-1 text-slate-700">
-          Dock Door Guards protect your valuable all too often abused pallet racking lining the dock door wall. These
-          heavy gauge guards keep forklifts from damaging your racking resulting in expensive emergency repair bills.<br><br>
-          The Elite Rackz' dock door guards anchor to the floor for maximum strength and rigidity. The bright yellow
-          safety powder coat paint looks great and is highly visible.
+    <div class="mt-6 grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5">
+        <div class="reveal reveal-delay-1 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-slate-200 text-slate-700 text-sm">
+          <span class="font-extrabold tracking-wide text-slate-900">GUARDING</span>
+          <span class="text-slate-400">•</span>
+          <span class="text-slate-600">Heavy-duty aisle-end protection</span>
+        </div>
+
+        <h1 class="reveal reveal-delay-2 mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          End-of-Aisle Guards
+        </h1>
+
+        <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-xl">
+          Heavy-duty protection solutions built for end-of-row, tunnel frame, and dock door impact zones.
         </p>
-        <h3 class="mt-4 text-sm font-semibold text-slate-900">Specifications</h3>
-        <ul class="mt-1 space-y-1 text-slate-700 text-sm list-disc pl-5">
-          <li><strong>CATEGORY:</strong> Protection</li>
-          <li><strong>SPECIFICATIONS:</strong> Standard guard accepts up to a 5 1/2″ wide frame footplate</li>
-          <li><strong>STEEL GAUGE:</strong> 1/2” thick steel plate, 6″x4″ 3/8″ angle</li>
-          <li><strong>STYLE:</strong> Welded</li>
-          <li><strong>PROTECTOR HEIGHT:</strong> 12” tall, ½” thick v-nose ends protect front frame post, 6” x 4” X 3/8″ angle that protects the frame’s side and rear post</li>
-          <li><strong>STANDARD DEPTH:</strong> 42” Standard</li>
-          <li><strong>NUMBER OF ANCHOR HOLES:</strong> Varies, spaced less than 12” on center</li>
-          <li><strong>ANCHOR DIMS:</strong> ¾” x 7″ included (typically 3)</li>
-          <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
-          <li><strong>PROTECTOR TYPE:</strong> (Standard 42″ and 48″ long guards are available for quick ship)</li>
-          <li><strong>CUSTOMIZABLE:</strong> Custom designed for your exact needs notching and exact lengths to fit your specifications</li>
-        </ul>
+
+        <div class="reveal reveal-delay-3 mt-7 flex flex-wrap gap-3">
+          <a href="contact.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+            Request Info
+          </a>
+          <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50">
+            Call (708) 980-2936
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-3 mt-8 grid grid-cols-2 gap-3">
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Category</div>
+            <div class="font-extrabold text-slate-900">Protection</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Applications</div>
+            <div class="font-extrabold text-slate-900">End-of-Row / Dock</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Customization</div>
+            <div class="font-extrabold text-slate-900">Available</div>
+          </div>
+          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
+            <div class="text-xs text-slate-500">Finish</div>
+            <div class="font-extrabold text-slate-900">Safety Yellow</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal reveal-delay-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-xl bg-slate-50 ring-1 ring-black/5 p-4 flex items-center justify-center min-h-[220px]">
+              <img
+                src="assets/images/end-of-row-guard.jpg"
+                alt="EZ End of Row Guard — Elite Rackz"
+                class="max-w-full max-h-[200px] object-contain"
+              >
+            </div>
+            <div class="rounded-xl bg-slate-50 ring-1 ring-black/5 p-4 flex items-center justify-center min-h-[220px]">
+              <img
+                src="assets/images/dock-door-guard.jpg"
+                alt="EZ Pallet Rack Dock Door Guard — Elite Rackz"
+                class="max-w-full max-h-[220px] object-contain"
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<footer class="mt-24 border-t border-slate-200">
+<!-- EZ End of Row Guard -->
+<section class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-5">
+        <div class="reveal rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
+          <div class="w-full h-80 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
+            <img
+              src="assets/images/end-of-row-guard.jpg"
+              alt="EZ End of Row Guard — Elite Rackz"
+              class="max-w-full max-h-full object-contain p-2"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
+          <h2 class="text-3xl font-extrabold text-slate-900">EZ End of Row Guard</h2>
+          <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
+            <p>
+              Elite Rackz', “Heavy Duty” end of aisle rack protectors, are the ultimate standard for end of a row and tunnel frame guarding.
+            </p>
+            <p>
+              Constructed with 12” tall, ½” thick round ends, to isolate the front frame post from impact damage, as well as 6” x 4” X 3/8″ angle that protects the frame’s side and rear post (highly customizable).
+            </p>
+            <p>
+              Guards are manufactured to the highest standards with full length inside and outside vertical welds attaching the thick round end to the heavy-duty angle.
+            </p>
+            <p>
+              The angle is punched 12″ on center for 3/4″ X 7″ anchors. Row end guards are available in left side, right side or double side in all lengths over 24″. (Additional punched angle is available to extend to desired overall length.) Notching available on round end and floor angle to accommodate custom applications.
+            </p>
+          </div>
+
+          <h3 class="mt-8 text-xl font-extrabold text-slate-900">Specifications</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
+            <li><strong>CATEGORY:</strong> Protection</li>
+            <li><strong>SPECIFICATIONS:</strong> Standard guard accepts up to a 5 1/2″ wide frame footplate</li>
+            <li><strong>STEEL GAUGE:</strong> 10” schedule 60 pipe ½” thick; 6”x 4” ⅜” angle</li>
+            <li><strong>STYLE:</strong> Round row end guards are available in left, right or double sided</li>
+            <li><strong>PROTECTOR HEIGHT:</strong> 12” tall, ½” thick round ends protect front frame post, 6” x 4” X 3/8″ angle that protects the frame’s side and rear post</li>
+            <li><strong>ROW END GUARD:</strong> All lengths over 24” up to 60″ (Additional punched angle available to extend guard length)</li>
+            <li><strong>NUMBER OF ANCHOR HOLES:</strong> Varies, spaced less than 12” on center</li>
+            <li><strong>ANCHOR DIMS:</strong> ¾” x 7″ included (typically 3)</li>
+            <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
+            <li><strong>PROTECTOR TYPE:</strong> Round (standard 42″ and 48″ long guards are available for quick ship)</li>
+            <li><strong>CUSTOMIZABLE:</strong> Custom designed for your exact needs, notching and exact lengths to fit your specifications</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EZ Pallet Rack Dock Door Guard -->
+<section class="py-12 bg-slate-50 border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-5">
+        <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
+          <div class="w-full h-80 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
+            <img
+              src="assets/images/dock-door-guard.jpg"
+              alt="EZ Pallet Rack Dock Door Guard — Elite Rackz"
+              class="max-w-full max-h-full object-contain p-2"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
+          <h2 class="text-3xl font-extrabold text-slate-900">EZ Pallet Rack Dock Door Guard</h2>
+          <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
+            <p>
+              Dock Door Guards protect your valuable all too often abused pallet racking lining the dock door wall. These heavy gauge guards keep forklifts from damaging your racking resulting in expensive emergency repair bills.
+            </p>
+            <p>
+              The Elite Rackz' dock door guards anchor to the floor for maximum strength and rigidity. The bright yellow safety powder coat paint looks great and is highly visible.
+            </p>
+          </div>
+
+          <h3 class="mt-8 text-xl font-extrabold text-slate-900">Specifications</h3>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
+            <li><strong>CATEGORY:</strong> Protection</li>
+            <li><strong>SPECIFICATIONS:</strong> Standard guard accepts up to a 5 1/2″ wide frame footplate</li>
+            <li><strong>STEEL GAUGE:</strong> 1/2” thick steel plate, 6″x4″ 3/8″ angle</li>
+            <li><strong>STYLE:</strong> Welded</li>
+            <li><strong>PROTECTOR HEIGHT:</strong> 12” tall, ½” thick v-nose ends protect front frame post, 6” x 4” X 3/8″ angle that protects the frame’s side and rear post</li>
+            <li><strong>STANDARD DEPTH:</strong> 42” Standard</li>
+            <li><strong>NUMBER OF ANCHOR HOLES:</strong> Varies, spaced less than 12” on center</li>
+            <li><strong>ANCHOR DIMS:</strong> ¾” x 7″ included (typically 3)</li>
+            <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
+            <li><strong>PROTECTOR TYPE:</strong> (Standard 42″ and 48″ long guards are available for quick ship)</li>
+            <li><strong>CUSTOMIZABLE:</strong> Custom designed for your exact needs notching and exact lengths to fit your specifications</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-slate-950">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal rounded-3xl bg-white text-slate-900 p-8 md:p-10 shadow-smooth ring-1 ring-slate-200 text-center">
+      <div class="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase">Need Help Choosing?</div>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">
+        Let our team review your guarding needs
+      </h2>
+      <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
+        Send us project details, rack information, or photos and we’ll help determine which end-of-aisle guard is the right fit for your facility.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+        <a href="contact.html" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700">
+          Request Review
+        </a>
+        <a href="tel:+17089802936" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
+          Call (708) 980-2936
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mt-10 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
     <div>
       <div class="flex items-center gap-3 mb-4">
@@ -183,6 +324,7 @@
         <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
         <li><a href="about.html" class="hover:text-brand-600">About</a></li>
         <li><a href="app.html" class="hover:text-brand-600">App</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
         <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
       </ul>
     </div>
@@ -196,7 +338,7 @@
     </div>
     <div>
       <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
     </div>
   </div>
   <div class="border-t border-slate-200/70">
@@ -208,23 +350,25 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.js-see-more').forEach(function (btn) {
-    if (btn.dataset.bound === '1') return;
-    btn.dataset.bound = '1';
-    btn.addEventListener('click', function () {
-      var id = btn.getAttribute('data-target');
-      var target = document.getElementById(id);
-      if (!target) return;
-      var isHidden = target.classList.contains('hidden') || getComputedStyle(target).display === 'none';
-      target.classList.toggle('hidden');
-      target.style.display = isHidden ? 'block' : 'none';
-      btn.textContent = isHidden ? 'See Less' : 'See More';
-      btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-    });
-  });
-});
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(el => el.classList.add("in-view"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+    items.forEach(el => io.observe(el));
+  })();
 </script>
+
 </body>
 </html>

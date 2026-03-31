@@ -563,7 +563,7 @@
 
           <div class="rounded-2xl border border-slate-200 p-5 shadow-smooth bg-white">
             <p class="text-sm font-semibold text-slate-900">Manufacturer accountability</p>
-            <p class="mt-2 text-sm text-slate-600">Not a generic “fits-all” patch. Purpose-built systems engineered to perform.</p>
+            <p class="mt-2 text-sm text-slate-600">Not a generic "fits-all" patch. Purpose-built systems engineered to perform.</p>
           </div>
         </div>
       </div>
@@ -737,7 +737,7 @@
         </h2>
 
         <p class="mt-1 text-slate-600 text-lg md:text-xl max-w-3xl">
-          Off-the-shelf “one-size” kits can ship fast. Custom-engineered kits usually can’t.
+          Off-the-shelf "one-size" kits can ship fast. Custom-engineered kits usually can't.
           <span class="text-slate-900 font-semibold">We built a rapid-response path</span> that moves qualifying custom repairs fast
           <span class="text-slate-900 font-semibold">without compromising engineering standards.</span>
         </p>
@@ -765,7 +765,7 @@
                 <div class="text-xs text-slate-500">Still includes</div>
                 <div class="mt-1 font-bold text-slate-900">Engineering-backed strategy</div>
                 <p class="mt-2 text-sm text-slate-600">
-                  No shortcuts. No generic “fits-all” patchwork.
+                  No shortcuts. No generic "fits-all" patchwork.
                 </p>
               </div>
             </div>
@@ -817,7 +817,7 @@
               <a href="tel:+17089802936" class="hover:underline">(708) 980-2936</a>
             </p>
             <p class="mt-2 text-sm text-white/75">
-              Submit the form and include <span class="font-semibold text-white">“48HR Emergency”</span>.
+              Submit the form and include <span class="font-semibold text-white">"48HR Emergency"</span>.
             </p>
 
             <div class="mt-4 grid gap-2">
@@ -889,7 +889,7 @@
         Built for the people responsible for rack safety
       </h2>
       <p class="reveal reveal-delay-1 mt-4 text-white/90 text-lg">
-        Warehouse leadership, safety directors, and engineers choose Elite Rackz for engineered clarity—without generic “fits-all” compromises.
+        Warehouse leadership, safety directors, and engineers choose Elite Rackz for engineered clarity—without generic "fits-all" compromises.
       </p>
     </div>
 
@@ -1223,7 +1223,10 @@
       'assets/images/completed-repairs/repair-04.jpg',
       'assets/images/completed-repairs/repair-05.jpg',
       'assets/images/completed-repairs/repair-06.jpg',
-      'assets/images/completed-repairs/repair-07.jpg'
+      'assets/images/completed-repairs/repair-07.jpg',
+      'assets/images/completed-repairs/repair-08.jpg',
+      'assets/images/completed-repairs/repair-09.jpg',
+      'assets/images/completed-repairs/repair-10.jpg'
     ];
 
     let current = 0;
@@ -1344,7 +1347,7 @@
       },
       {
         title: 'Need help with rack damage?',
-        text: 'Send photos and we’ll take a look.'
+        text: 'Send photos and we'll take a look.'
       },
       {
         title: 'Need a fast answer?',
@@ -1359,7 +1362,7 @@
     const chatMessagesOffline = [
       {
         title: 'Leave us a message',
-        text: 'We’re offline right now, but we’ll reply next business day.'
+        text: 'We're offline right now, but we'll reply next business day.'
       },
       {
         title: 'Questions after hours?',
@@ -1367,7 +1370,7 @@
       },
       {
         title: 'Need help later?',
-        text: 'Drop us a message anytime and we’ll get back to you.'
+        text: 'Drop us a message anytime and we'll get back to you.'
       }
     ];
 
@@ -1399,7 +1402,7 @@
       const isOnline = getChicagoOnlineStatus();
 
       widePrimary.textContent = isOnline ? 'Talk to Elite Rackz' : 'Leave a Message';
-      wideStatus.textContent = isOnline ? 'Live support • Send photos for review' : 'Offline now • We’ll reply next business day';
+      wideStatus.textContent = isOnline ? 'Live support • Send photos for review' : 'Offline now • We'll reply next business day';
 
       wideDot.className = 'relative inline-flex h-3 w-3 rounded-full ' + (isOnline ? 'bg-emerald-400' : 'bg-red-400');
       widePulse.className = 'chat-dot-pulse absolute inline-flex h-full w-full rounded-full opacity-70 ' + (isOnline ? 'bg-emerald-300' : 'bg-red-300');

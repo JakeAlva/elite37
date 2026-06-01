@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pallet Rack Repair, Inspection & Guarding | Elite Rackz</title>
   <meta name="description" content="Elite Rackz manufactures Made in USA pallet rack repair kits and guarding systems with rack inspections, stamped calculations, and 48-hour emergency repair support.">
+  <meta name="theme-color" content="#0f172a">
   <link rel="canonical" href="https://eliterackz.com/">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
 
@@ -18,6 +18,253 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: {600:'#2e6ad6',700:'#2554aa'} },
+          boxShadow: { smooth:'0 10px 25px rgba(0,0,0,0.08)' }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    .fade-slide {
+      transition: opacity 700ms ease-in-out;
+      will-change: opacity;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    .site-header {
+      transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        backdrop-filter .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .header-hero {
+      background: linear-gradient(to bottom,rgba(2,6,23,.72),rgba(2,6,23,.34),rgba(2,6,23,0));
+      border-bottom: none;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .header-scrolled {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 1px 0 rgba(15,23,42,.04);
+    }
+
+    .header-hero #headerLogoWrap {
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .header-hero #headerTagline {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .header-scrolled #headerLogoWrap {
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .header-scrolled #headerTagline {
+      color: rgb(51 65 85);
+      text-shadow: none;
+    }
+
+    .header-hero .header-nav-link {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.30);
+    }
+
+    .header-hero .header-nav-link:hover {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .header-scrolled .header-nav-link {
+      color: rgb(15 23 42);
+      text-shadow: none;
+    }
+
+    .header-hero .header-phone-link {
+      background: rgba(255,255,255,0.94);
+      color: rgb(15 23 42);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .header-scrolled .header-phone-link {
+      background: rgb(15 23 42);
+      color: white;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+    }
+
+    #mobileMenuBtn.menu-open {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      border-color: rgba(148,163,184,0.55);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(1) {
+      top: 8px;
+      transform: rotate(45deg);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(3) {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+
+    #mobileMenu {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        max-height 360ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 360ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 360ms;
+      will-change: max-height, opacity, transform;
+    }
+
+    #mobileMenu.menu-open {
+      max-height: 620px;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      pointer-events: auto;
+      transition:
+        max-height 420ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 420ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 0s;
+    }
+
+    #mobileMenu .mobile-menu-inner {
+      padding-top: 12px;
+      padding-bottom: 14px;
+    }
+
+    #mobileMenu .mobile-link {
+      display: block;
+      padding: 10px 0;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    #mobileMenu .mobile-link:hover {
+      color: #2e6ad6;
+      transform: translateX(2px);
+    }
+
+    .hero-emergency-card {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+    }
+
+    .future-link {
+      cursor: default;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: rgb(239 246 255);
+      color: #2554aa;
+      border: 1px solid rgba(46,106,214,.18);
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .service-card,
+    .product-card,
+    .industry-card,
+    .membership-card {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .service-card:hover,
+    .product-card:hover,
+    .industry-card:hover,
+    .membership-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      border-color: rgba(46,106,214,.28);
+    }
+
+    .checklist-form input,
+    .checklist-form select {
+      width: 100%;
+      border: 1px solid rgb(226 232 240);
+      border-radius: .875rem;
+      min-height: 48px;
+      padding: .75rem .875rem;
+      outline: none;
+    }
+
+    .checklist-form input:focus,
+    .checklist-form select:focus {
+      border-color: #2e6ad6;
+      box-shadow: 0 0 0 4px rgba(46,106,214,.12);
+    }
+
+    @media (max-width: 767px) {
+      .hero-made-badge {
+        height: 90px;
+      }
+
+      .hero-mobile-pad {
+        padding-top: 7.5rem;
+      }
+    }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -40,1229 +287,1286 @@
   }
   </script>
 
-  <style>
-    :root {
-      --ink: #0f172a;
-      --steel: #1e293b;
-      --muted: #64748b;
-      --line: #e2e8f0;
-      --panel: #f8fafc;
-      --brand: #2e6ad6;
-      --brand-dark: #2554aa;
-      --brand-pale: #eff6ff;
-      --white: #ffffff;
-      --shadow: 0 18px 55px rgba(15, 23, 42, 0.14);
-      --shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.08);
-      --radius: 24px;
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Inter", Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      line-height: 1.55;
-      overflow-x: hidden;
-    }
-    body.menu-open { overflow: hidden; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button, input, select { font: inherit; }
-    button { cursor: pointer; }
-
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin-inline: auto;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      border: 1px solid rgba(46, 106, 214, 0.18);
-      background: rgba(239, 246, 255, 0.96);
-      color: var(--brand-dark);
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .eyebrow.dark {
-      border-color: rgba(255,255,255,0.18);
-      background: rgba(15,23,42,0.55);
-      color: #fff;
-      backdrop-filter: blur(12px);
-    }
-
-    .section-pad { padding: 70px 0; }
-    .section-title {
-      margin: 14px 0 0;
-      font-size: clamp(32px, 7vw, 54px);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-      font-weight: 950;
-    }
-    .section-lead {
-      margin: 16px 0 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: clamp(16px, 2vw, 20px);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      padding: 13px 18px;
-      border-radius: 14px;
-      border: 1px solid transparent;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
-      white-space: nowrap;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--brand); color: #fff; box-shadow: 0 14px 30px rgba(46,106,214,0.25); }
-    .btn-primary:hover { background: var(--brand-dark); }
-    .btn-dark { background: var(--ink); color: #fff; box-shadow: var(--shadow-soft); }
-    .btn-dark:hover { background: #020617; }
-    .btn-light { background: #fff; color: var(--ink); border-color: rgba(255,255,255,0.58); box-shadow: var(--shadow-soft); }
-    .btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); }
-    .btn-ghost:hover { border-color: #cbd5e1; background: var(--panel); }
-
-    .top-strip {
-      background: #0b1220;
-      color: rgba(255,255,255,0.86);
-      font-size: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .top-strip-inner {
-      min-height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      text-align: center;
-      flex-wrap: wrap;
-      padding: 8px 0;
-    }
-    .top-strip strong { color: #fff; }
-    .top-strip .desktop-strip { display: none; }
-    .top-strip a { color: #fff; font-weight: 900; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 1px 0 rgba(15,23,42,0.04);
-    }
-    .header-inner {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .brand-lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-    .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--line);
-      background: #fff;
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-      flex: 0 0 auto;
-    }
-    .brand-mark img { width: 38px; height: 38px; object-fit: contain; }
-    .brand-name { display: flex; flex-direction: column; line-height: 1.05; min-width: 0; }
-    .brand-name strong { font-weight: 950; letter-spacing: -0.03em; font-size: 18px; }
-    .brand-name span { display: none; margin-top: 4px; font-size: 10px; font-weight: 900; letter-spacing: 0.11em; color: var(--muted); text-transform: uppercase; }
-
-    .desktop-nav { display: none; }
-    .header-actions { display: flex; align-items: center; gap: 8px; }
-    .phone-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      border-radius: 13px;
-      padding: 10px 12px;
-      background: var(--ink);
-      color: #fff;
-      font-weight: 950;
-      font-size: 14px;
-      box-shadow: var(--shadow-soft);
-    }
-    .phone-link .phone-full { display: none; }
-
-    .mobile-toggle {
-      width: 46px;
-      height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fff;
-      box-shadow: var(--shadow-soft);
-    }
-    .hamb { position: relative; width: 20px; height: 14px; }
-    .hamb span {
-      position: absolute;
-      left: 0;
-      width: 20px;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--ink);
-      transition: transform .2s ease, opacity .2s ease, top .2s ease;
-    }
-    .hamb span:nth-child(1) { top: 0; }
-    .hamb span:nth-child(2) { top: 6px; }
-    .hamb span:nth-child(3) { top: 12px; }
-    .mobile-toggle.is-open .hamb span:nth-child(1) { top: 6px; transform: rotate(45deg); }
-    .mobile-toggle.is-open .hamb span:nth-child(2) { opacity: 0; }
-    .mobile-toggle.is-open .hamb span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
-
-    .mobile-panel {
-      position: fixed;
-      inset: 107px 0 0 0;
-      background: rgba(255,255,255,0.98);
-      z-index: 999;
-      transform: translateX(100%);
-      transition: transform .24s ease;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      border-top: 1px solid var(--line);
-      box-shadow: -14px 0 40px rgba(15,23,42,0.10);
-    }
-    .mobile-panel.is-open { transform: translateX(0); }
-    .mobile-menu-inner { padding: 16px 0 26px; }
-    .mobile-panel details {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--panel);
-      overflow: hidden;
-      margin-bottom: 10px;
-    }
-    .mobile-panel summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 15px;
-      font-weight: 950;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: var(--ink);
-    }
-    .mobile-panel summary::-webkit-details-marker { display: none; }
-    .mobile-panel summary::after { content: "+"; color: var(--brand); font-size: 20px; line-height: 1; }
-    .mobile-panel details[open] summary::after { content: "–"; }
-    .mobile-group-links { padding: 0 12px 12px; display: grid; gap: 6px; }
-    .mobile-group-links a,
-    .mobile-direct-link {
-      display: block;
-      border-radius: 12px;
-      padding: 11px 12px;
-      color: var(--steel);
-      background: #fff;
-      border: 1px solid rgba(226,232,240,.9);
-      font-size: 14px;
-      font-weight: 760;
-    }
-    .mobile-direct-link { margin-top: 10px; }
-    .mobile-cta-row { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
-
-    .hero {
-      position: relative;
-      min-height: 760px;
-      display: grid;
-      align-items: stretch;
-      overflow: hidden;
-      background: var(--ink);
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 58%; opacity: .96; }
-    .hero-bg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 76% 22%, rgba(46,106,214,.24), transparent 32%),
-        linear-gradient(90deg, rgba(2,6,23,.92), rgba(15,23,42,.74) 46%, rgba(15,23,42,.32)),
-        linear-gradient(0deg, rgba(2,6,23,.62), rgba(2,6,23,.05));
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: center;
-      padding: 64px 0;
-    }
-    .hero-copy { color: #fff; }
-    .hero h1 {
-      margin: 18px 0 0;
-      font-size: clamp(42px, 12vw, 88px);
-      line-height: .96;
-      letter-spacing: -0.07em;
-      font-weight: 950;
-      max-width: 930px;
-      text-shadow: 0 22px 45px rgba(0,0,0,.42);
-    }
-    .hero-lead {
-      margin: 22px 0 0;
-      max-width: 720px;
-      color: rgba(255,255,255,.88);
-      font-size: clamp(17px, 2.3vw, 22px);
-    }
-    .hero-actions {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 28px;
-      max-width: 560px;
-    }
-    .hero-proof {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 28px;
-      max-width: 660px;
-    }
-    .proof-pill {
-      border: 1px solid rgba(255,255,255,.15);
-      background: rgba(15,23,42,.56);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      padding: 13px;
-      color: #fff;
-    }
-    .proof-pill span { display: block; color: rgba(255,255,255,.62); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
-    .proof-pill strong { display: block; margin-top: 2px; font-size: 15px; line-height: 1.15; }
-
-    .usa-card {
-      border-radius: 28px;
-      background: rgba(255,255,255,.94);
-      border: 1px solid rgba(255,255,255,.8);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      max-width: 500px;
-      justify-self: start;
-    }
-    .usa-card-top { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: center; }
-    .usa-card img { width: 120px; height: auto; filter: drop-shadow(0 14px 24px rgba(15,23,42,.18)); }
-    .usa-card h2 { margin: 0; font-size: 28px; line-height: .98; letter-spacing: -0.04em; }
-    .usa-card p { margin: 8px 0 0; color: var(--muted); font-weight: 700; }
-    .triage-list { margin: 20px 0 0; display: grid; gap: 10px; }
-    .triage-item { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
-    .triage-num { width: 34px; height: 34px; border-radius: 12px; display: grid; place-items: center; color: #fff; background: var(--brand); font-weight: 950; }
-    .triage-item strong { display: block; font-size: 14px; }
-    .triage-item span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-
-    .service-grid, .product-grid, .industry-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 34px;
-    }
-    .service-card, .product-card, .industry-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-      padding: 22px;
-      box-shadow: var(--shadow-soft);
-      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
-    }
-    .service-card:hover, .product-card:hover, .industry-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(46,106,214,.28);
-      box-shadow: var(--shadow);
-    }
-    .card-kicker { color: var(--brand-dark); font-size: 11px; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; }
-    .service-card h3, .product-card h3, .industry-card h3 { margin: 8px 0 0; font-size: 21px; line-height: 1.05; letter-spacing: -0.03em; }
-    .service-card p, .product-card p, .industry-card p { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
-
-    .split { display: grid; grid-template-columns: 1fr; gap: 34px; align-items: center; }
-    .photo-card {
-      border-radius: 30px;
-      overflow: hidden;
-      border: 1px solid rgba(226,232,240,.9);
-      background: #fff;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-    .photo-card img { width: 100%; height: 360px; object-fit: cover; }
-    .photo-pad { padding: 20px; }
-    .repair-carousel { height: 420px; background: #fff; position: relative; }
-    .repair-carousel img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 18px;
-      transition: opacity .7s ease;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 42px;
-      height: 42px;
-      border: 0;
-      border-radius: 999px;
-      background: rgba(255,255,255,.9);
-      box-shadow: var(--shadow-soft);
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--ink);
-      z-index: 2;
-    }
-    .carousel-btn.prev { left: 12px; }
-    .carousel-btn.next { right: 12px; }
-
-    .products-section { background: var(--panel); }
-    .product-showcase {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .product-image {
-      border-radius: 30px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #fff;
-      box-shadow: var(--shadow);
-      min-height: 360px;
-      display: grid;
-      place-items: center;
-    }
-    .product-image img { width: 100%; height: 100%; max-height: 500px; object-fit: contain; padding: 18px; }
-    .product-link-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
-    .product-link-card {
-      display: block;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fff;
-      padding: 16px;
-      box-shadow: var(--shadow-soft);
-    }
-    .product-link-card strong { display: block; font-size: 16px; }
-    .product-link-card span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
-
-    .emergency-band {
-      background: #0b1220;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-    .emergency-band::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 14% 20%, rgba(46,106,214,.28), transparent 28%), radial-gradient(circle at 88% 10%, rgba(46,106,214,.22), transparent 34%);
-    }
-    .emergency-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
-    .emergency-band .section-lead { color: rgba(255,255,255,.76); }
-    .before-after { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    .ba-card {
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
-    }
-    .ba-card img { width: 100%; height: 230px; object-fit: cover; }
-    .ba-card div { padding: 13px; font-weight: 900; display: flex; justify-content: space-between; gap: 10px; }
-    .ba-card span { color: rgba(255,255,255,.7); font-size: 13px; font-weight: 700; }
-
-    .checklist-box {
-      border-radius: 34px;
-      border: 1px solid rgba(46,106,214,.16);
-      background: linear-gradient(135deg, #fff, var(--brand-pale));
-      box-shadow: var(--shadow);
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .checklist-points { display: grid; gap: 10px; margin-top: 22px; }
-    .checklist-points li { color: var(--steel); font-weight: 750; }
-    .lead-form {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow-soft);
-      padding: 20px;
-      display: grid;
-      gap: 12px;
-    }
-    .lead-form input, .lead-form select {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      min-height: 48px;
-      padding: 12px 14px;
-      outline: none;
-    }
-    .lead-form input:focus, .lead-form select:focus { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(46,106,214,.12); }
-    .lead-form .full { width: 100%; }
-
-    .manufacturing {
-      position: relative;
-      color: #fff;
-      overflow: hidden;
-      background: #0b1220;
-    }
-    .manufacturing-bg { position: absolute; inset: 0; }
-    .manufacturing-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .62; }
-    .manufacturing-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2,6,23,.88), rgba(2,6,23,.44)); }
-    .manufacturing-content { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
-    .manufacturing .section-lead { color: rgba(255,255,255,.80); }
-    .feature-stack { display: grid; gap: 12px; }
-    .feature-row {
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.08);
-      border-radius: 18px;
-      padding: 16px;
-      backdrop-filter: blur(10px);
-    }
-    .feature-row strong { display: block; }
-    .feature-row span { display: block; color: rgba(255,255,255,.72); font-size: 13px; margin-top: 3px; }
-
-    .industries-photo {
-      position: relative;
-      overflow: hidden;
-      background: #0b1220;
-      color: #fff;
-    }
-    .industries-photo-bg { position: absolute; inset: 0; }
-    .industries-photo-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; opacity: .54; }
-    .industries-photo-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(2,6,23,.78), rgba(2,6,23,.42)); }
-    .industries-photo .container { position: relative; z-index: 1; }
-    .industries-photo .section-lead { color: rgba(255,255,255,.78); }
-    .industry-card { background: rgba(255,255,255,.93); color: var(--ink); }
-
-    .logo-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 30px;
-    }
-    .logo-card {
-      display: grid;
-      grid-template-columns: 116px 1fr;
-      gap: 16px;
-      align-items: center;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: #fff;
-      box-shadow: var(--shadow-soft);
-      padding: 16px;
-    }
-    .logo-box {
-      height: 82px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      display: grid;
-      place-items: center;
-      padding: 10px;
-    }
-    .logo-box img { max-height: 62px; object-fit: contain; }
-    .logo-card strong { display: block; line-height: 1.15; }
-    .logo-card span { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
-
-    .comparison {
-      background: linear-gradient(135deg, #fff, #f8fafc);
-    }
-    .comparison-box {
-      border: 1px solid var(--line);
-      background: #fff;
-      box-shadow: var(--shadow);
-      border-radius: 34px;
-      padding: 26px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .comparison-list { display: grid; gap: 10px; padding-left: 18px; color: var(--steel); }
-
-    .site-footer {
-      background: #0b1220;
-      color: rgba(255,255,255,.78);
-      padding: 56px 0 24px;
-    }
-    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
-    .footer-logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-weight: 950; font-size: 20px; }
-    .footer-logo img { width: 42px; height: 42px; object-fit: contain; border-radius: 12px; background: #fff; padding: 4px; }
-    .site-footer h3 { color: #fff; margin: 0 0 12px; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; }
-    .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-    .site-footer a:hover { color: #fff; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 34px; padding-top: 22px; font-size: 13px; }
-
-    .inactive-link { cursor: default; }
-
-    @media (min-width: 640px) {
-      .top-strip .desktop-strip { display: inline; }
-      .brand-name span { display: block; }
-      .phone-link .phone-short { display: none; }
-      .phone-link .phone-full { display: inline; }
-      .hero-actions { grid-template-columns: auto auto auto; }
-      .hero-proof { grid-template-columns: repeat(4, 1fr); }
-      .service-grid, .industry-grid { grid-template-columns: repeat(2, 1fr); }
-      .product-grid { grid-template-columns: repeat(2, 1fr); }
-      .before-after { grid-template-columns: 1fr 1fr; }
-      .logo-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
-    }
-
-    @media (min-width: 920px) {
-      .mobile-toggle, .mobile-panel { display: none; }
-      .desktop-nav { display: flex; align-items: center; gap: 4px; }
-      .desktop-nav > a, .nav-trigger {
-        height: 42px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        border: 0;
-        background: transparent;
-        padding: 0 12px;
-        border-radius: 12px;
-        color: var(--steel);
-        font-weight: 850;
-        font-size: 14px;
-      }
-      .desktop-nav > a:hover, .nav-trigger:hover { background: var(--panel); color: var(--brand-dark); }
-      .nav-item { position: relative; }
-      .dropdown {
-        position: absolute;
-        top: calc(100% + 12px);
-        left: 0;
-        min-width: 310px;
-        background: #fff;
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-        border-radius: 20px;
-        padding: 10px;
-        display: none;
-      }
-      .nav-item:hover .dropdown, .nav-item.open .dropdown { display: grid; gap: 4px; }
-      .dropdown a { border-radius: 14px; padding: 12px; display: grid; gap: 3px; }
-      .dropdown a:hover { background: var(--brand-pale); }
-      .dropdown strong { font-size: 14px; }
-      .dropdown span { font-size: 12px; color: var(--muted); }
-      .hero-inner { grid-template-columns: 1.1fr .75fr; min-height: 720px; padding: 86px 0; }
-      .usa-card { justify-self: end; }
-      .service-grid { grid-template-columns: repeat(3, 1fr); }
-      .product-showcase { grid-template-columns: .9fr 1.1fr; }
-      .product-link-grid { grid-template-columns: 1fr 1fr; }
-      .split { grid-template-columns: 1fr 1fr; }
-      .emergency-inner { grid-template-columns: .88fr 1.12fr; }
-      .checklist-box { grid-template-columns: 1.05fr .95fr; padding: 34px; }
-      .manufacturing-content { grid-template-columns: 1fr .75fr; }
-      .industry-grid { grid-template-columns: repeat(3, 1fr); }
-      .comparison-box { grid-template-columns: 1.4fr .6fr; padding: 40px; }
-      .footer-grid { grid-template-columns: 1.35fr 1fr 1fr 1fr 1fr; }
-    }
-
-    @media (max-width: 520px) {
-      .container { width: min(var(--max), calc(100% - 24px)); }
-      .site-header { top: 0; }
-      .mobile-panel { inset-top: 107px; }
-      .phone-link { min-height: 42px; padding: 9px 11px; font-size: 13px; }
-      .hero { min-height: auto; }
-      .hero-inner { padding: 42px 0 52px; }
-      .hero h1 { font-size: clamp(40px, 13vw, 58px); }
-      .hero-actions .btn { width: 100%; }
-      .usa-card { padding: 16px; }
-      .usa-card-top { grid-template-columns: 92px 1fr; gap: 14px; }
-      .usa-card img { width: 92px; }
-      .usa-card h2 { font-size: 22px; }
-      .repair-carousel { height: 330px; }
-      .photo-card img { height: 300px; }
-      .ba-card img { height: 210px; }
-      .logo-card { grid-template-columns: 1fr; text-align: center; }
-      .logo-box { width: 100%; }
-      .btn { white-space: normal; text-align: center; }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Elite Rackz",
+    "alternateName": "Elite Rackz — Pallet Rack Repair & Guarding",
+    "url": "https://eliterackz.com/"
+  }
+  </script>
 </head>
 
-<body>
-  <div class="top-strip">
-    <div class="container top-strip-inner">
-      <span><strong>Made in USA</strong> pallet rack repair kits</span>
-      <span class="desktop-strip">• Stamped calculations • Lifetime warranty • 48-hour emergency repair path</span>
-      <span>Call <a href="tel:+17089802936">(708) 980-2936</a></span>
-    </div>
-  </div>
+<body class="bg-white text-slate-800 antialiased">
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand-lockup" href="index.html" aria-label="Elite Rackz Home">
-        <span class="brand-mark"><img src="assets/images/logo.png" alt="Elite Rackz"></span>
-        <span class="brand-name">
-          <strong>Elite Rackz</strong>
-          <span>Smart storage. No compromise.</span>
+<header id="siteHeader" class="site-header header-hero fixed top-0 left-0 right-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" id="headerBrand" class="flex items-center gap-3 transition-all duration-300">
+        <span id="headerLogoWrap" class="rounded-lg px-2 py-1 transition-all duration-300">
+          <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        </span>
+
+        <span id="headerTagline" class="text-[11px] md:text-xs font-semibold leading-tight transition-colors duration-300">
+          SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
         </span>
       </a>
 
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <div class="nav-item has-dropdown">
-          <button class="nav-trigger" type="button" aria-expanded="false">Services</button>
-          <div class="dropdown">
-            <a class="inactive-link" href="#" data-target="/pallet-rack-repair"><strong>Pallet Rack Repair</strong><span>Engineered repair for damaged uprights and forklift-impact zones.</span></a>
-            <a class="inactive-link" href="#" data-target="/emergency-rack-repair"><strong>Emergency Rack Repair</strong><span>48-hour emergency rack repair path for qualifying damage.</span></a>
-            <a href="services.html"><strong>Rack Inspection &amp; Compliance</strong><span>Pallet rack inspection, reports, audits, and documentation.</span></a>
-            <a href="services.html#rack-safety-audits"><strong>Rack Safety Audits</strong><span>Warehouse rack safety surveys and damage assessments.</span></a>
-          </div>
-        </div>
-
-        <div class="nav-item has-dropdown">
-          <button class="nav-trigger" type="button" aria-expanded="false">Products</button>
-          <div class="dropdown">
-            <a href="products.html"><strong>Pallet Rack Repair Kits</strong><span>Made in USA repair kits with stamped calculations.</span></a>
-            <a href="ez-double-leg.html"><strong>EZ Double Leg</strong><span>Double-leg pallet rack repair kit.</span></a>
-            <a href="ez-single-leg.html"><strong>EZ Single Leg</strong><span>Single-leg pallet rack repair kit.</span></a>
-            <a href="ez-roll-form.html"><strong>EZ Roll-Form</strong><span>Roll-form rack repair kit option.</span></a>
-            <a class="inactive-link" href="#" data-target="/column-guards"><strong>Column Guards</strong><span>Warehouse column protection and post protectors.</span></a>
-            <a class="inactive-link" href="#" data-target="/end-of-aisle-guards"><strong>End-of-Aisle Guards</strong><span>Rack upright guards and forklift impact protection.</span></a>
-          </div>
-        </div>
-
-        <div class="nav-item has-dropdown">
-          <button class="nav-trigger" type="button" aria-expanded="false">Resources</button>
-          <div class="dropdown">
-            <a class="inactive-link" href="#" data-target="/rack-inspection-checklist"><strong>Rack Inspection Checklist</strong><span>Warehouse rack inspection checklist for safety walkthroughs.</span></a>
-            <a class="inactive-link" href="#" data-target="/rack-repair-vs-replacement"><strong>Repair vs. Replacement</strong><span>Compare engineered repair kits with full rack replacement.</span></a>
-            <a class="inactive-link" href="#" data-target="/fbs-group"><strong>FBS Group Support</strong><span>Service continuity and support for former FBS Group customers.</span></a>
-            <a href="app.html"><strong>Rack Inspection App</strong><span>Field documentation tools for rack damage surveys.</span></a>
-          </div>
-        </div>
-
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium">
+        <a href="#repair-services" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Rack Repair</a>
+        <a href="services.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Inspections</a>
+        <a href="products.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Repair Kits</a>
+        <a href="#emergency-repair" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Emergency</a>
+        <a href="app.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">App</a>
+        <a href="blog/index.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Blog</a>
+        <a href="about.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">About</a>
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl font-extrabold transition-all duration-300">
+          (708) 980-2936
+        </a>
+        <a href="contact.html#contact" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+          Contact
+        </a>
       </nav>
 
-      <div class="header-actions">
-        <a class="phone-link" href="tel:+17089802936"><span class="phone-short">Call</span><span class="phone-full">Call (708) 980-2936</span></a>
-        <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobilePanel">
-          <span class="hamb"><span></span><span></span><span></span></span>
-        </button>
+      <div class="hidden md:flex xl:hidden items-center gap-3">
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl text-sm font-extrabold transition-all duration-300">
+          Call
+        </a>
+        <a href="contact.html#contact" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm font-semibold">
+          Contact
+        </a>
       </div>
+
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        class="xl:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white/70 transition-all duration-300 hover:bg-white/85 active:scale-95"
+      >
+        <span class="sr-only">Open menu</span>
+        <span class="relative h-5 w-5">
+          <span class="menu-line absolute left-0 top-0 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-2 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-4 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+        </span>
+      </button>
     </div>
-  </header>
+  </div>
 
-  <aside class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
-    <div class="container mobile-menu-inner">
-      <details open>
-        <summary>Services</summary>
-        <div class="mobile-group-links">
-          <a class="inactive-link" href="#" data-target="/pallet-rack-repair">Pallet Rack Repair</a>
-          <a class="inactive-link" href="#" data-target="/emergency-rack-repair">Emergency Rack Repair</a>
-          <a href="services.html">Rack Inspection &amp; Compliance</a>
-          <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
-          <a href="services.html#damage-assessment">Rack Damage Assessment</a>
-        </div>
-      </details>
-      <details>
-        <summary>Products</summary>
-        <div class="mobile-group-links">
-          <a href="products.html">Pallet Rack Repair Kits</a>
-          <a href="ez-double-leg.html">EZ Double Leg</a>
-          <a href="ez-single-leg.html">EZ Single Leg</a>
-          <a href="ez-roll-form.html">EZ Roll-Form</a>
-          <a class="inactive-link" href="#" data-target="/column-guards">Column Guards</a>
-          <a class="inactive-link" href="#" data-target="/end-of-aisle-guards">End-of-Aisle Guards</a>
-        </div>
-      </details>
-      <details>
-        <summary>Resources</summary>
-        <div class="mobile-group-links">
-          <a class="inactive-link" href="#" data-target="/rack-inspection-checklist">Rack Inspection Checklist</a>
-          <a class="inactive-link" href="#" data-target="/rack-repair-vs-replacement">Repair vs. Replacement</a>
-          <a class="inactive-link" href="#" data-target="/fbs-group">FBS Group Support</a>
-          <a href="app.html">Rack Inspection App</a>
-        </div>
-      </details>
-      <a class="mobile-direct-link" href="about.html">About</a>
-      <a class="mobile-direct-link" href="contact.html">Contact</a>
-      <div class="mobile-cta-row">
-        <a class="btn btn-dark" href="tel:+17089802936">Call (708) 980-2936</a>
-        <a class="btn btn-primary" href="contact.html#contact">Request a Quote</a>
-      </div>
+  <div id="mobileMenu" class="xl:hidden border-t border-slate-200 bg-white/95">
+    <div class="mobile-menu-inner px-4 text-sm max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <a href="#repair-services" class="mobile-link">Pallet Rack Repair</a>
+      <a href="services.html" class="mobile-link">Rack Inspection &amp; Compliance</a>
+      <a href="#emergency-repair" class="mobile-link">Emergency Rack Repair</a>
+      <a href="products.html" class="mobile-link">Pallet Rack Repair Kits</a>
+      <a href="#rack-inspection-checklist" class="mobile-link">Rack Inspection Checklist</a>
+      <a href="about.html" class="mobile-link">About</a>
+      <a href="app.html" class="mobile-link">App</a>
+      <a href="blog/index.html" class="mobile-link">Blog</a>
+      <a href="contact.html#contact" class="mobile-link font-semibold text-brand-700">Contact</a>
+      <a href="tel:+17089802936" class="mt-2 inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white font-extrabold">
+        Call (708) 980-2936
+      </a>
     </div>
-  </aside>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-bg">
-        <img src="assets/images/hero-header.jpg" onerror="assetFallback(this)" alt="Warehouse pallet racking and pallet rack repair environment">
-      </div>
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <div class="eyebrow dark">Made in USA • 48-hour emergency repair path</div>
-          <h1>Pallet Rack Repair, Inspections &amp; Guarding</h1>
-          <p class="hero-lead">Elite Rackz manufactures engineered pallet rack repair kits, performs rack inspections and safety surveys, and provides warehouse guarding systems with stamped engineering documentation.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html#contact">Request a Repair Quote</a>
-            <a class="btn btn-light" href="tel:+17089802936">Call Now</a>
-            <a class="btn btn-ghost" href="products.html">View Repair Kits</a>
-          </div>
-          <div class="hero-proof">
-            <div class="proof-pill"><span>Manufacturing</span><strong>South Chicago Heights, IL</strong></div>
-            <div class="proof-pill"><span>Engineering</span><strong>Stamped Calculations</strong></div>
-            <div class="proof-pill"><span>Emergency</span><strong>48-Hour Path</strong></div>
-            <div class="proof-pill"><span>Warranty</span><strong>Lifetime Kit Warranty</strong></div>
-          </div>
+<section id="heroSection" class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img
+      src="assets/images/hero-header.jpg"
+      alt="Warehouse pallet racking for pallet rack repair, rack inspection, and guarding"
+      class="w-full h-full object-cover opacity-95 object-[50%_66%] sm:object-[50%_60%] md:object-[50%_56%] lg:object-[50%_54%]"
+      loading="eager"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/72 to-slate-950/25"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-950/35 to-slate-950/55"></div>
+    <div class="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.50)]"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pt-32 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
+    <div class="grid lg:grid-cols-[1.08fr_0.92fr] gap-10 items-center">
+      <div class="text-center lg:text-left">
+        <div class="flex justify-center lg:justify-start mb-5">
+          <img
+            src="assets/images/made-in-usa-badge.png"
+            alt="Made in the USA"
+            class="hero-made-badge h-24 md:h-32 w-auto drop-shadow-[0_16px_34px_rgba(0,0,0,0.55)]"
+            loading="eager"
+          >
         </div>
 
-        <aside class="usa-card" aria-label="Made in USA manufacturing">
-          <div class="usa-card-top">
-            <img src="assets/images/made-in-usa-badge.png" onerror="assetFallback(this)" alt="Made in the USA">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
+          <span class="inline-block h-2 w-2 rounded-full bg-brand-600"></span>
+          <span class="text-xs font-extrabold tracking-[0.14em] uppercase">Pallet rack repair • inspections • guarding</span>
+        </div>
+
+        <h1 class="mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+          Pallet Rack Repair
+          <br>
+          &amp; Guarding
+        </h1>
+
+        <p class="mt-5 text-base sm:text-lg md:text-xl text-slate-100/95 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] max-w-3xl mx-auto lg:mx-0">
+          Elite Rackz manufactures engineered pallet rack repair kits, performs rack inspections and safety surveys,
+          and provides warehouse guarding systems with stamped engineering documentation.
+        </p>
+
+        <div class="mt-9 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto lg:mx-0">
+          <a href="contact.html#contact" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm sm:text-base font-semibold">
+            Request a Quote
+          </a>
+          <a href="tel:+17089802936" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-white/95 text-slate-900 hover:bg-white text-sm sm:text-base font-semibold">
+            Call Now
+          </a>
+          <a href="products.html" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-slate-950/55 text-white ring-1 ring-white/20 hover:bg-slate-950/75 text-sm sm:text-base font-semibold backdrop-blur-sm">
+            View Repair Kits
+          </a>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto lg:mx-0">
+          <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
+            <div class="text-xs text-white/70">Engineering</div>
+            <div class="font-extrabold tracking-tight">Stamped Calcs</div>
+          </div>
+
+          <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
+            <div class="text-xs text-white/70">Emergency</div>
+            <div class="font-extrabold tracking-tight">48-Hour Path</div>
+          </div>
+
+          <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
+            <div class="text-xs text-white/70">Manufacturing</div>
+            <div class="font-extrabold tracking-tight">In-House</div>
+          </div>
+
+          <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
+            <div class="text-xs text-white/70">Warranty</div>
+            <div class="font-extrabold tracking-tight">Lifetime</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-emergency-card rounded-3xl p-6 md:p-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-600/10 text-brand-700 ring-1 ring-brand-600/20">
+          <span class="inline-block h-2 w-2 rounded-full bg-brand-600"></span>
+          <span class="text-xs font-extrabold tracking-[0.12em] uppercase">Emergency rack repair</span>
+        </div>
+
+        <h2 class="mt-5 text-3xl md:text-4xl font-black tracking-tight text-slate-900">
+          48-Hour Emergency Rack Repair Path
+        </h2>
+
+        <p class="mt-4 text-slate-600 text-base md:text-lg">
+          Critical rack damage, forklift impact, bent uprights, and compromised base plates need fast review.
+          Elite Rackz offers a 48-hour emergency pallet rack repair path for qualifying custom-engineered repairs.
+        </p>
+
+        <div class="mt-6 grid gap-4">
+          <div class="flex gap-4">
+            <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">1</div>
             <div>
-              <h2>Manufactured in the USA</h2>
-              <p>USA-sourced steel, in-house production, and direct manufacturer support.</p>
+              <p class="font-bold text-slate-900">Rapid triage</p>
+              <p class="text-sm text-slate-600 mt-1">Send photos or request a rush review of pallet rack damage.</p>
             </div>
           </div>
-          <div class="triage-list">
-            <div class="triage-item"><span class="triage-num">1</span><div><strong>Send photos or schedule inspection</strong><span>We review rack damage, upright impact, and repair needs.</span></div></div>
-            <div class="triage-item"><span class="triage-num">2</span><div><strong>Get an engineered repair strategy</strong><span>Repair kits, guarding, documentation, and installation path.</span></div></div>
-            <div class="triage-item"><span class="triage-num">3</span><div><strong>Repair, reinforce, protect</strong><span>Reduce downtime and prevent repeat forklift impact damage.</span></div></div>
+
+          <div class="flex gap-4">
+            <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">2</div>
+            <div>
+              <p class="font-bold text-slate-900">Priority quote + repair strategy</p>
+              <p class="text-sm text-slate-600 mt-1">We identify the fastest engineered repair path for the damaged rack.</p>
+            </div>
           </div>
-        </aside>
+
+          <div class="flex gap-4">
+            <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">3</div>
+            <div>
+              <p class="font-bold text-slate-900">Quick-ship + scheduling</p>
+              <p class="text-sm text-slate-600 mt-1">If the repair qualifies, production and installation scheduling move fast.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-7 grid sm:grid-cols-2 gap-3">
+          <a href="tel:+17089802936" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-extrabold">
+            (708) 980-2936
+          </a>
+
+          <a href="contact.html#contact" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+            Emergency Help
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs text-slate-500">
+          Availability depends on location, site conditions, and whether the repair qualifies for the 48-hour emergency path.
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+<section id="repair-services" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="section-kicker">
+          Pallet rack repair services
+        </div>
+
+        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+          Real pallet rack repairs. Real installed results.
+        </h2>
+
+        <p class="mt-4 text-slate-600 text-lg">
+          Rack damage is structural risk. Elite Rackz designs and manufactures engineered pallet rack repair kits,
+          rack guarding, and repair strategies that restore integrity, reduce liability, and avoid unnecessary full rack replacement.
+        </p>
+
+        <div class="mt-8 grid gap-4">
+          <div class="service-card rounded-2xl border border-slate-200 p-5 shadow-smooth bg-white">
+            <p class="text-sm font-semibold text-slate-900">Pallet rack repair built for compliance</p>
+            <p class="mt-2 text-sm text-slate-600">Stamped calculations and documentation designed for real audits, approvals, and repair records.</p>
+          </div>
+
+          <div class="service-card rounded-2xl border border-slate-200 p-5 shadow-smooth bg-white">
+            <p class="text-sm font-semibold text-slate-900">Designed to reduce warehouse downtime</p>
+            <p class="mt-2 text-sm text-slate-600">Repair strategies that keep operations moving without unnecessary tear-downs or full frame replacement.</p>
+          </div>
+
+          <div class="service-card rounded-2xl border border-slate-200 p-5 shadow-smooth bg-white">
+            <p class="text-sm font-semibold text-slate-900">Manufacturer accountability</p>
+            <p class="mt-2 text-sm text-slate-600">Not a generic fits-all patch. Purpose-built pallet rack repair systems engineered to perform.</p>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section class="section-pad" id="services-overview">
-      <div class="container">
-        <div class="eyebrow">Repair, inspection, and safety services</div>
-        <h2 class="section-title">Pallet rack repair and warehouse safety support for damaged racking systems.</h2>
-        <p class="section-lead">From forklift impact damage to rack inspection reports, Elite Rackz helps warehouse teams document damage, repair damaged pallet rack uprights, and protect vulnerable rack areas.</p>
+      <div class="relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5" id="installedRepairsCarousel">
+        <div id="installedRepairsWrap" class="relative h-[340px] sm:h-[400px] md:h-[520px] bg-white">
+          <img
+            id="installedSlideA"
+            src="assets/images/completed-repairs/repair-01.jpg"
+            alt="Elite Rackz completed pallet rack repair example 1"
+            class="fade-slide absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-100"
+          >
+          <img
+            id="installedSlideB"
+            src="assets/images/completed-repairs/repair-01.jpg"
+            alt="Elite Rackz completed pallet rack repair example 1"
+            class="fade-slide absolute inset-0 w-full h-full object-contain p-3 md:p-6 opacity-0"
+          >
+        </div>
 
-        <div class="service-grid">
-          <a class="service-card inactive-link" href="#" data-target="/pallet-rack-repair">
-            <span class="card-kicker">Repair Service</span>
-            <h3>Pallet Rack Repair</h3>
-            <p>Engineered repair for damaged pallet rack uprights, columns, base plates, and forklift-impact zones.</p>
+        <button type="button" aria-label="Previous" class="installed-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow text-3xl leading-none">‹</button>
+        <button type="button" aria-label="Next" class="installed-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow text-3xl leading-none">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+<section class="py-16 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5" id="collageCarousel">
+        <div id="collageWrap" class="relative h-[340px] sm:h-[400px] md:h-[520px] bg-white">
+          <img
+            id="collageSlide"
+            src="assets/images/collage/slide-01.jpg"
+            alt="Elite Rackz pallet rack repair kits and warehouse guarding products"
+            class="absolute inset-0 w-full h-full object-contain p-3 md:p-6"
+          >
+        </div>
+
+        <button type="button" aria-label="Previous" class="collage-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow text-3xl leading-none">‹</button>
+        <button type="button" aria-label="Next" class="collage-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white p-2 shadow text-3xl leading-none">›</button>
+        <div class="collage-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1"></div>
+      </div>
+
+      <div>
+        <div class="section-kicker">
+          Repair kits and guarding products
+        </div>
+
+        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+          Pallet rack repair kits, column guards, and end-of-aisle protection.
+        </h2>
+
+        <p class="mt-4 text-slate-600 text-lg">
+          Engineered pallet rack repair kits and guarding systems built for impact environments — manufactured to match your rack and built to last.
+        </p>
+
+        <div class="mt-6 grid gap-4">
+          <a href="products.html" class="product-card rounded-2xl bg-white p-5 shadow-smooth ring-1 ring-black/5 block">
+            <div class="font-semibold text-slate-900">Pallet Rack Repair Kits</div>
+            <p class="mt-1 text-sm text-slate-600">Custom-fit repair kits for damaged uprights, pallet rack frame repair, and engineered reinforcement.</p>
           </a>
-          <a class="service-card inactive-link" href="#" data-target="/emergency-rack-repair">
-            <span class="card-kicker">Emergency Service</span>
-            <h3>Emergency Rack Repair</h3>
-            <p>Urgent rack damage triage, priority quote, and repair scheduling for qualifying emergency situations.</p>
+
+          <a href="products.html" class="product-card rounded-2xl bg-white p-5 shadow-smooth ring-1 ring-black/5 block">
+            <div class="font-semibold text-slate-900">Engineered Rack Repair Kit Options</div>
+            <p class="mt-1 text-sm text-slate-600">Single-leg, double-leg, and roll-form repair options with Made in USA manufacturing.</p>
           </a>
-          <a class="service-card" href="services.html">
-            <span class="card-kicker">Inspection Service</span>
-            <h3>Rack Inspection &amp; Compliance</h3>
-            <p>Rack inspection, warehouse racking inspection, inspection reports, and compliance documentation.</p>
+
+          <a href="#" class="product-card future-link rounded-2xl bg-white p-5 shadow-smooth ring-1 ring-black/5 block">
+            <div class="font-semibold text-slate-900">Column Guards</div>
+            <p class="mt-1 text-sm text-slate-600">Warehouse column protection, pallet rack post protectors, and steel upright protection.</p>
           </a>
-          <a class="service-card" href="services.html#rack-safety-audits">
-            <span class="card-kicker">Safety Surveys</span>
-            <h3>Rack Safety Audits</h3>
-            <p>Warehouse rack safety audits for EHS teams, operations managers, and facility leadership.</p>
+
+          <a href="#" class="product-card future-link rounded-2xl bg-white p-5 shadow-smooth ring-1 ring-black/5 block">
+            <div class="font-semibold text-slate-900">End-of-Aisle Guards</div>
+            <p class="mt-1 text-sm text-slate-600">End-of-aisle rack guards, rack upright guards, and forklift impact guarding.</p>
           </a>
-          <a class="service-card" href="services.html#damage-assessment">
-            <span class="card-kicker">Damage Review</span>
-            <h3>Rack Damage Assessment</h3>
-            <p>Photo documentation and repair recommendations for bent uprights, damaged braces, and impact zones.</p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="products.html" class="inline-flex items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
+            View Products
           </a>
-          <a class="service-card" href="services.html#load-capacity">
-            <span class="card-kicker">Documentation</span>
-            <h3>Load Capacity &amp; Labels</h3>
-            <p>Support for rack load capacity review, load capacity labels, and audit-ready rack documentation.</p>
+
+          <a href="services.html" class="inline-flex items-center px-5 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100">
+            See Services
           </a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="section-pad" style="background: var(--panel);">
-      <div class="container split">
+<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+<section class="relative py-16 overflow-hidden">
+  <div class="absolute inset-0">
+    <img
+      src="assets/images/manufacturing-hero.jpg"
+      alt="Elite Rackz in-house pallet rack repair kit manufacturing"
+      class="w-full h-full object-cover"
+      loading="lazy"
+    >
+    <div class="absolute inset-0 bg-slate-950/35"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/45 via-slate-950/25 to-slate-950/20"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
+          <span class="text-xs font-extrabold tracking-[0.14em] uppercase">Made in USA manufacturing</span>
+        </div>
+
+        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+          Pallet rack repair kits manufactured in South Chicago Heights, Illinois.
+        </h2>
+
+        <p class="mt-4 text-white/90 text-lg">
+          We control the process — from roll-forming to punching — so quality stays consistent, tolerances stay tight,
+          and emergency repair lead times stay competitive.
+        </p>
+
+        <ul class="mt-6 space-y-3 text-white/90">
+          <li>• USA-sourced steel</li>
+          <li>• Rolled and punched in-house</li>
+          <li>• Designed to match common upright profiles</li>
+          <li>• Engineering-backed pallet rack repair strategy</li>
+          <li>• Lifetime warranty on select repair kits</li>
+        </ul>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="contact.html#contact" class="inline-flex items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+            Talk to an Expert
+          </a>
+
+          <a href="about.html" class="inline-flex items-center px-5 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-white/20 hover:bg-slate-100">
+            About Elite Rackz
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-smooth ring-1 ring-white/20 bg-white/80 backdrop-blur-sm">
+        <div class="p-6 md:p-8">
+          <div class="text-sm font-semibold text-brand-700">HQ + Manufacturing</div>
+          <div class="mt-1 text-2xl font-extrabold tracking-tight text-slate-900">South Chicago Heights, IL</div>
+
+          <p class="mt-3 text-sm text-slate-700">
+            In-house production helps Elite Rackz respond fast while keeping repair kits, guarding systems, and documentation aligned with engineered quality.
+          </p>
+
+          <div class="mt-6 grid grid-cols-2 gap-3">
+            <div class="rounded-xl bg-white p-4 ring-1 ring-black/5">
+              <div class="text-xs text-slate-500">Process</div>
+              <div class="font-semibold text-slate-900">Roll Forming</div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 ring-1 ring-black/5">
+              <div class="text-xs text-slate-500">Process</div>
+              <div class="font-semibold text-slate-900">Punching</div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 ring-1 ring-black/5">
+              <div class="text-xs text-slate-500">Support</div>
+              <div class="font-semibold text-slate-900">Engineering</div>
+            </div>
+
+            <div class="rounded-xl bg-white p-4 ring-1 ring-black/5">
+              <div class="text-xs text-slate-500">Coverage</div>
+              <div class="font-semibold text-slate-900">Nationwide</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+<section id="emergency-repair" class="py-16 bg-slate-50" aria-labelledby="emergency-cta">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="flex flex-col items-center gap-4">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-600/10 ring-1 ring-brand-600/20 text-slate-900">
+          <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-brand-600 text-white text-xs font-extrabold tracking-wide">48HR</span>
+          <span class="text-sm font-semibold">Emergency Pallet Rack Repair Options</span>
+          <span class="text-slate-400 text-sm hidden sm:inline">•</span>
+          <span class="text-slate-500 text-sm hidden sm:inline">for qualifying custom-engineered kits</span>
+        </div>
+
+        <h2 id="emergency-cta" class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          48-Hour Emergency Rack Repair
+        </h2>
+
+        <p class="mt-1 text-slate-600 text-lg md:text-xl max-w-3xl">
+          Off-the-shelf one-size kits can ship fast. Custom-engineered pallet rack repair kits usually cannot.
+          Elite Rackz built a rapid-response path that moves qualifying custom repairs fast without compromising engineering standards.
+        </p>
+      </div>
+
+      <div class="mt-10 mx-auto max-w-5xl rounded-2xl bg-white ring-1 ring-slate-200 p-6 md:p-8 text-left shadow-smooth">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-brand-700">Why this is different</p>
+
+            <p class="mt-2 text-slate-700">
+              We accelerate the path while maintaining engineered integrity:
+              <span class="text-slate-900 font-semibold">triage → engineered strategy → quick-ship material → installation scheduling.</span>
+            </p>
+
+            <div class="mt-5 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-xl bg-slate-50 ring-1 ring-slate-200 p-4">
+                <div class="text-xs text-slate-500">Designed for</div>
+                <div class="mt-1 font-bold text-slate-900">Emergency stabilization</div>
+                <p class="mt-2 text-sm text-slate-600">
+                  High-risk impacts, active damage zones, and audit-driven deadlines.
+                </p>
+              </div>
+
+              <div class="rounded-xl bg-slate-50 ring-1 ring-slate-200 p-4">
+                <div class="text-xs text-slate-500">Still includes</div>
+                <div class="mt-1 font-bold text-slate-900">Engineering-backed strategy</div>
+                <p class="mt-2 text-sm text-slate-600">
+                  No shortcuts. No generic fits-all patchwork.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-xl overflow-hidden bg-white ring-1 ring-black/10">
+                <div class="relative">
+                  <img
+                    src="assets/images/emergency-before.jpg"
+                    alt="Critical pallet rack damage before emergency rack repair"
+                    class="w-full h-[220px] object-cover"
+                    loading="lazy"
+                  >
+
+                  <div class="absolute top-2 left-2 px-2 py-1 rounded bg-slate-900 text-white text-xs font-extrabold tracking-wide">
+                    BEFORE
+                  </div>
+                </div>
+
+                <div class="p-3">
+                  <p class="text-xs text-slate-600">
+                    Critical rack damage requiring immediate review and stabilization.
+                  </p>
+                </div>
+              </div>
+
+              <div class="rounded-xl overflow-hidden bg-white ring-1 ring-black/10">
+                <div class="relative">
+                  <img
+                    src="assets/images/emergency-after.jpg"
+                    alt="Pallet rack repaired using custom engineered repair kit"
+                    class="w-full h-[220px] object-cover"
+                    loading="lazy"
+                  >
+
+                  <div class="absolute top-2 left-2 px-2 py-1 rounded bg-brand-600 text-white text-xs font-extrabold tracking-wide">
+                    AFTER
+                  </div>
+                </div>
+
+                <div class="p-3">
+                  <p class="text-xs text-slate-600">
+                    Engineered repair kit restoring structural integrity.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-slate-900 text-white p-5 ring-1 ring-black/10 w-full md:w-[320px]">
+            <p class="text-xs font-semibold text-brand-600">Emergency hotline</p>
+
+            <p class="mt-1 text-2xl font-extrabold tracking-tight">
+              <a href="tel:+17089802936" class="hover:underline">(708) 980-2936</a>
+            </p>
+
+            <p class="mt-2 text-sm text-white/75">
+              Submit the form and include <span class="font-semibold text-white">48HR Emergency</span>.
+            </p>
+
+            <div class="mt-4 grid gap-2">
+              <a href="contact.html#contact" class="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+                Get Emergency Help
+              </a>
+
+              <a href="services.html" class="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
+                View Service Options
+              </a>
+            </div>
+
+            <p class="mt-3 text-[11px] text-white/55 leading-snug">
+              Availability depends on location, site conditions, and whether the repair qualifies for the 48-hour path.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3 text-left">
+        <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+          <div class="flex items-center gap-3">
+            <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">1</div>
+            <div class="font-bold text-slate-900">Rapid Triage</div>
+          </div>
+
+          <p class="mt-3 text-sm text-slate-600">Send photos or request a rush visit. We confirm the fastest compliant fix path.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+          <div class="flex items-center gap-3">
+            <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">2</div>
+            <div class="font-bold text-slate-900">Priority Quote + Strategy</div>
+          </div>
+
+          <p class="mt-3 text-sm text-slate-600">We deliver a repair strategy, material requirements, and install plan with urgency.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+          <div class="flex items-center gap-3">
+            <div class="h-8 w-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">3</div>
+            <div class="font-bold text-slate-900">Quick-Ship + Schedule</div>
+          </div>
+
+          <p class="mt-3 text-sm text-slate-600">If it qualifies, we prioritize production and schedule the install as quickly as possible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
+<section id="rack-inspection-checklist" class="py-16 bg-white" aria-labelledby="checklist-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl bg-gradient-to-br from-white via-slate-50 to-blue-50 ring-1 ring-slate-200 shadow-smooth p-6 md:p-10">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <div class="eyebrow">Completed repairs</div>
-          <h2 class="section-title">Real pallet rack repairs. Real installed results.</h2>
-          <p class="section-lead">See examples of completed pallet rack repair work using engineered repair kits, upright reinforcement, and warehouse rack protection systems.</p>
-          <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px;">
-            <a class="btn btn-primary" href="contact.html#contact">Request a Quote</a>
-            <a class="btn btn-ghost" href="products.html">View Repair Kits</a>
+          <div class="section-kicker">
+            Rack inspection checklist
           </div>
-        </div>
-        <div class="photo-card" id="repairCarousel">
-          <div class="repair-carousel">
-            <img id="repairSlideA" src="assets/images/completed-repairs/repair-01.jpg" onerror="assetFallback(this)" alt="Elite Rackz completed pallet rack repair example 1" style="opacity:1;">
-            <img id="repairSlideB" src="assets/images/completed-repairs/repair-02.jpg" onerror="assetFallback(this)" alt="Elite Rackz completed pallet rack repair example 2" style="opacity:0;">
-            <button class="carousel-btn prev" id="repairPrev" type="button" aria-label="Previous repair image">‹</button>
-            <button class="carousel-btn next" id="repairNext" type="button" aria-label="Next repair image">›</button>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section-pad products-section" id="products-overview">
-      <div class="container product-showcase">
-        <div class="product-image">
-          <img src="assets/images/collage/slide-01.jpg" onerror="assetFallback(this)" alt="Elite Rackz pallet rack repair kits and warehouse guarding products">
-        </div>
-        <div>
-          <div class="eyebrow">Repair kits and guarding products</div>
-          <h2 class="section-title">Pallet rack repair kits and warehouse impact protection.</h2>
-          <p class="section-lead">Elite Rackz manufactures pallet rack repair kits, column guards, end-of-aisle guards, and rack upright protection systems for high-impact warehouse environments.</p>
-          <div class="product-link-grid">
-            <a class="product-link-card" href="products.html"><strong>Pallet Rack Repair Kits</strong><span>Made in USA repair kits for damaged pallet rack uprights.</span></a>
-            <a class="product-link-card" href="ez-double-leg.html"><strong>EZ Double Leg Repair Kit</strong><span>Double-leg repair kit with engineered reinforcement.</span></a>
-            <a class="product-link-card" href="ez-single-leg.html"><strong>EZ Single Leg Repair Kit</strong><span>Single-leg repair kit for damaged upright areas.</span></a>
-            <a class="product-link-card" href="ez-roll-form.html"><strong>EZ Roll-Form Repair Kit</strong><span>Roll-form pallet rack repair option.</span></a>
-            <a class="product-link-card inactive-link" href="#" data-target="/column-guards"><strong>Column Guards</strong><span>Warehouse column protection and pallet rack post protectors.</span></a>
-            <a class="product-link-card inactive-link" href="#" data-target="/end-of-aisle-guards"><strong>End-of-Aisle Guards</strong><span>Rack upright guards and forklift impact protection.</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
+          <h2 id="checklist-title" class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+            Free warehouse rack inspection checklist for safety walkthroughs.
+          </h2>
 
-    <section class="section-pad emergency-band" id="emergency">
-      <div class="container emergency-inner">
-        <div>
-          <div class="eyebrow dark">Emergency pallet rack repair</div>
-          <h2 class="section-title">Rack damage is a structural emergency.</h2>
-          <p class="section-lead">Critical rack damage, forklift impact, bent uprights, and compromised base plates should be reviewed quickly. Elite Rackz offers a 48-hour emergency rack repair path for qualifying repairs.</p>
-          <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px;">
-            <a class="btn btn-primary" href="tel:+17089802936">Call (708) 980-2936</a>
-            <a class="btn btn-light" href="contact.html#contact">Request Emergency Help</a>
-            <a class="btn btn-ghost inactive-link" href="#" data-target="/emergency-rack-repair">Emergency Repair Details</a>
-          </div>
-          <p style="color: rgba(255,255,255,.72); margin-top: 18px;">Call or send photos. If the repair qualifies, Elite Rackz can move through rapid triage, priority quote, and quick-ship scheduling.</p>
-        </div>
-        <div class="before-after">
-          <div class="ba-card">
-            <img src="assets/images/emergency-before.jpg" onerror="assetFallback(this)" alt="Damaged pallet rack upright before emergency rack repair">
-            <div>Before <span>Critical rack damage</span></div>
-          </div>
-          <div class="ba-card">
-            <img src="assets/images/emergency-after.jpg" onerror="assetFallback(this)" alt="Pallet rack repaired with engineered repair kit after emergency rack repair">
-            <div>After <span>Engineered repair kit</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <p class="mt-4 text-slate-600 text-lg">
+            Use the checklist to review uprights, beams, braces, base plates, anchors, safety pins,
+            load capacity labels, and visible pallet rack damage.
+          </p>
 
-    <section class="section-pad" id="checklist">
-      <div class="container checklist-box">
-        <div>
-          <div class="eyebrow">Rack inspection checklist</div>
-          <h2 class="section-title">Free warehouse rack inspection checklist for safety walkthroughs.</h2>
-          <p class="section-lead">Use the checklist to review uprights, beams, braces, base plates, anchors, safety pins, load capacity labels, and visible pallet rack damage.</p>
-          <ul class="checklist-points">
-            <li>Uprights, columns, braces, and base plates</li>
-            <li>Beam connectors, safety pins, and anchor bolts</li>
-            <li>Rack inspection report notes and photo documentation</li>
-            <li>Load capacity labels and rack safety audit preparation</li>
+          <ul class="mt-6 grid gap-3 text-slate-700">
+            <li>• Uprights, columns, braces, and base plates</li>
+            <li>• Beam connectors, safety pins, and anchor bolts</li>
+            <li>• Rack inspection report notes and photo documentation</li>
+            <li>• Load capacity labels and rack safety audit preparation</li>
           </ul>
         </div>
-        <form class="lead-form" name="rack-inspection-checklist" method="POST" data-netlify="true">
+
+        <form class="checklist-form rounded-2xl bg-white ring-1 ring-slate-200 shadow-smooth p-5 md:p-6" name="rack-inspection-checklist" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="rack-inspection-checklist">
-          <input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
-          <input type="email" name="email" placeholder="Work email" aria-label="Work email" required>
-          <input type="text" name="company" placeholder="Company" aria-label="Company" required>
-          <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
-          <select name="role" aria-label="Role">
-            <option value="">Role</option>
-            <option>Warehouse Operations</option>
-            <option>EHS / Safety</option>
-            <option>Facilities / Maintenance</option>
-            <option>Engineering</option>
-            <option>Purchasing / Procurement</option>
-          </select>
-          <button class="btn btn-primary full" type="submit">Get the Checklist</button>
-          <a class="btn btn-ghost full inactive-link" href="#" data-target="/rack-inspection-checklist">View Checklist Details</a>
+
+          <div class="grid gap-3">
+            <input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" required>
+            <input type="text" name="company" placeholder="Company" aria-label="Company" required>
+            <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
+
+            <select name="role" aria-label="Role">
+              <option value="">Role</option>
+              <option>Warehouse Operations</option>
+              <option>EHS / Safety</option>
+              <option>Facilities / Maintenance</option>
+              <option>Engineering</option>
+              <option>Purchasing / Procurement</option>
+            </select>
+
+            <button class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold" type="submit">
+              Get the Checklist
+            </button>
+
+            <a href="tel:+17089802936" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
+              Call (708) 980-2936
+            </a>
+          </div>
         </form>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="section-pad manufacturing" id="manufacturing">
-      <div class="manufacturing-bg">
-        <img src="assets/images/manufacturing-hero.jpg" onerror="assetFallback(this)" alt="Elite Rackz in-house manufacturing in South Chicago Heights Illinois">
-      </div>
-      <div class="container manufacturing-content">
-        <div>
-          <div class="eyebrow dark">In-house manufacturing</div>
-          <h2 class="section-title">Pallet rack repair kits manufactured in South Chicago Heights, Illinois.</h2>
-          <p class="section-lead">Elite Rackz controls the process from roll-forming to punching so repair kits, guards, and engineered rack protection systems are built with speed, consistency, and accountability.</p>
-          <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px;">
-            <a class="btn btn-primary" href="about.html">About Elite Rackz</a>
-            <a class="btn btn-light" href="contact.html#contact">Talk to an Expert</a>
+<section class="py-12 bg-white border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm font-semibold tracking-[0.18em] text-slate-500 uppercase">
+        Trusted industry memberships
+      </p>
+
+      <h2 class="mt-3 text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
+        Proud to participate in respected industry organizations.
+      </h2>
+
+      <p class="mt-3 text-slate-600 text-base md:text-lg">
+        Elite Rackz maintains memberships that support contractor compliance, safety standards,
+        material handling, food manufacturing relationships, and Illinois manufacturing credibility.
+      </p>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
+      <div class="membership-card rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-6 shadow-smooth">
+        <div class="flex flex-col items-center gap-4 text-center">
+          <div class="h-20 w-full flex items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 p-3">
+            <img
+              src="assets/images/isn-member-contractor.png"
+              alt="ISNetworld Member Contractor"
+              class="max-h-full max-w-full object-contain"
+              loading="lazy"
+            >
+          </div>
+
+          <div>
+            <p class="text-base font-semibold text-slate-900">ISNetworld® Member Contractor</p>
+            <p class="mt-1 text-sm text-slate-600">Supporting contractor qualification and procurement conversations.</p>
           </div>
         </div>
-        <div class="feature-stack">
-          <div class="feature-row"><strong>USA-sourced steel</strong><span>Built for warehouse repair, guarding, and impact protection.</span></div>
-          <div class="feature-row"><strong>Roll-forming and punching</strong><span>In-house manufacturing control for faster response.</span></div>
-          <div class="feature-row"><strong>Stamped calculations</strong><span>Engineering documentation for audits and repair approval.</span></div>
-          <div class="feature-row"><strong>Lifetime warranty</strong><span>Available on EZ Double Leg and EZ Single Leg repair kits.</span></div>
+      </div>
+
+      <div class="membership-card rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-6 shadow-smooth">
+        <div class="flex flex-col items-center gap-4 text-center">
+          <div class="h-20 w-full flex items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 p-3">
+            <img
+              src="assets/images/mwfpa-logo.png"
+              alt="Midwest Food Products Association, Inc."
+              class="max-h-full max-w-full object-contain"
+              loading="lazy"
+            >
+          </div>
+
+          <div>
+            <p class="text-base font-semibold text-slate-900">Midwest Food Products Association</p>
+            <p class="mt-1 text-sm text-slate-600">Supporting food manufacturing and distribution relationships.</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="section-pad industries-photo" id="industries">
-      <div class="industries-photo-bg">
-        <img src="assets/images/rack-safety-team.jpg" onerror="assetFallback(this)" alt="Warehouse team responsible for rack safety inspections and rack repair planning">
-      </div>
-      <div class="container">
-        <div class="eyebrow dark">Industries served</div>
-        <h2 class="section-title">Rack repair and inspections for high-demand warehouse environments.</h2>
-        <p class="section-lead">Elite Rackz supports operations where rack damage, downtime, safety audits, and documentation matter.</p>
-        <div class="industry-grid">
-          <div class="industry-card"><span class="card-kicker">Tier 1</span><h3>Cold Storage &amp; Food DCs</h3><p>Galvanized kit options, FDA-documentable repairs, and emergency response support.</p></div>
-          <div class="industry-card"><span class="card-kicker">Tier 1</span><h3>3PL Warehousing</h3><p>Rack inspections, safety documentation, and repair support for multi-client warehouses.</p></div>
-          <div class="industry-card"><span class="card-kicker">Tier 1</span><h3>Food Manufacturing</h3><p>Stamped engineering documentation and repair records for audit-ready facilities.</p></div>
-          <div class="industry-card"><span class="card-kicker">Distribution</span><h3>Automotive Parts DCs</h3><p>Fast repair planning where damaged rack can interrupt production and order flow.</p></div>
-          <div class="industry-card"><span class="card-kicker">Fulfillment</span><h3>E-Commerce Warehouses</h3><p>Post-peak damage assessments, pallet rack inspections, and forklift impact protection.</p></div>
-          <div class="industry-card"><span class="card-kicker">Heavy Load</span><h3>Building Materials DCs</h3><p>Heavy-duty rack repair, custom-engineered repair kits, and guarding systems.</p></div>
+      <div class="membership-card rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-6 shadow-smooth">
+        <div class="flex flex-col items-center gap-4 text-center">
+          <div class="h-20 w-full flex items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 p-3">
+            <img
+              src="assets/images/mhi-logo.png"
+              alt="Material Handling Industry"
+              class="max-h-full max-w-full object-contain"
+              loading="lazy"
+            >
+          </div>
+
+          <div>
+            <p class="text-base font-semibold text-slate-900">Material Handling Industry</p>
+            <p class="mt-1 text-sm text-slate-600">Material handling industry credibility.</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="section-pad" id="memberships">
-      <div class="container">
-        <div class="eyebrow">Industry memberships</div>
-        <h2 class="section-title">Industry memberships support safety, procurement, and compliance conversations.</h2>
-        <p class="section-lead">Elite Rackz participates in industry organizations that support contractor qualification, material handling safety, food manufacturing relationships, and Illinois manufacturing credibility.</p>
-        <div class="logo-grid">
-          <div class="logo-card"><div class="logo-box"><img src="assets/images/isn-member-contractor.png" onerror="assetFallback(this)" alt="ISNetworld Member Contractor"></div><div><strong>ISNetworld® Member Contractor</strong><span>Supporting contractor qualification and procurement conversations.</span></div></div>
-          <div class="logo-card"><div class="logo-box"><img src="assets/images/mwfpa-logo.png" onerror="assetFallback(this)" alt="Midwest Food Products Association"></div><div><strong>Midwest Food Products Association</strong><span>Supporting food manufacturing and distribution relationships.</span></div></div>
-          <div class="logo-card"><div class="logo-box"><img src="assets/images/mhi-logo.png" onerror="assetFallback(this)" alt="Material Handling Industry"></div><div><strong>Material Handling Industry</strong><span>Material handling industry credibility.</span></div></div>
-          <div class="logo-card"><div class="logo-box"><img src="assets/images/ima-logo.png" onerror="assetFallback(this)" alt="Illinois Manufacturers Association"></div><div><strong>Illinois Manufacturers Association</strong><span>Manufacturing and Illinois business credibility.</span></div></div>
+      <div class="membership-card rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-6 shadow-smooth">
+        <div class="flex flex-col items-center gap-4 text-center">
+          <div class="h-20 w-full flex items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 p-3">
+            <img
+              src="assets/images/ima-logo.png"
+              alt="Illinois Manufacturers Association"
+              class="max-h-full max-w-full object-contain"
+              loading="lazy"
+            >
+          </div>
+
+          <div>
+            <p class="text-base font-semibold text-slate-900">Illinois Manufacturers Association</p>
+            <p class="mt-1 text-sm text-slate-600">Manufacturing and Illinois business credibility.</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="section-pad comparison" id="comparison">
-      <div class="container comparison-box">
+<section class="relative py-16 overflow-hidden">
+  <div class="absolute inset-0">
+    <img
+      src="assets/images/rack-safety-team.jpg"
+      alt="Warehouse team responsible for pallet rack repair and rack inspections"
+      class="w-full h-full object-cover object-[center_10%]"
+      loading="lazy"
+    >
+    <div class="absolute inset-0 bg-slate-950/38"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/52 via-slate-950/30 to-slate-950/35"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
+        <span class="text-xs font-extrabold tracking-[0.14em] uppercase">High-demand warehouse environments</span>
+      </div>
+
+      <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+        Pallet rack repair and inspections for facilities where damage, downtime, and documentation matter.
+      </h2>
+
+      <p class="mt-4 text-white/90 text-lg">
+        Elite Rackz supports warehouse leadership, safety directors, and facility teams with engineered rack repair,
+        rack inspections, rack safety audits, and warehouse guarding systems.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Cold storage</div>
+        <h3 class="mt-2 font-bold text-slate-900">Cold Storage &amp; Food DCs</h3>
+        <p class="mt-2 text-sm text-slate-600">Galvanized kit options, FDA-documentable repairs, rack inspections, and emergency response support.</p>
+      </div>
+
+      <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">3PL warehousing</div>
+        <h3 class="mt-2 font-bold text-slate-900">3PL Warehouses</h3>
+        <p class="mt-2 text-sm text-slate-600">Rack inspections, safety documentation, and repair support for multi-client warehouse operations.</p>
+      </div>
+
+      <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Food manufacturing</div>
+        <h3 class="mt-2 font-bold text-slate-900">Food Manufacturing</h3>
+        <p class="mt-2 text-sm text-slate-600">Stamped engineering documentation and repair records for audit-ready manufacturing facilities.</p>
+      </div>
+
+      <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Distribution</div>
+        <h3 class="mt-2 font-bold text-slate-900">Automotive Parts DCs</h3>
+        <p class="mt-2 text-sm text-slate-600">Fast pallet rack repair planning where damaged rack can interrupt production and order flow.</p>
+      </div>
+
+      <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Fulfillment</div>
+        <h3 class="mt-2 font-bold text-slate-900">E-Commerce Warehouses</h3>
+        <p class="mt-2 text-sm text-slate-600">Post-peak rack damage assessments, warehouse racking inspections, and forklift impact protection.</p>
+      </div>
+
+      <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Heavy load</div>
+        <h3 class="mt-2 font-bold text-slate-900">Building Materials DCs</h3>
+        <p class="mt-2 text-sm text-slate-600">Heavy-duty rack repair, custom-engineered repair kits, and warehouse guarding systems.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+        Request a Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-slate-50" aria-labelledby="catalog-cta">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="section-kicker">
+          Product catalog
+        </div>
+
+        <h2 id="catalog-cta" class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+          Need product specs for internal review?
+        </h2>
+
+        <p class="mt-4 text-slate-600 text-lg max-w-xl">
+          Request our product catalog with pallet rack repair kit configurations, guarding options,
+          install guidelines, and engineering overview.
+        </p>
+
+        <div class="mt-6">
+          <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
+            Request Product Catalog
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center lg:justify-end">
+        <div class="rounded-2xl bg-white shadow-smooth ring-1 ring-slate-200 p-4 max-w-[260px]">
+          <img
+            src="assets/images/brochure/cover.png"
+            alt="Elite Rackz product catalog cover for repair kits and guarding"
+            class="w-full h-auto rounded-lg object-contain"
+            loading="lazy"
+          >
+
+          <div class="mt-3 text-center">
+            <p class="text-sm font-semibold text-slate-900">
+              Elite Rackz Product Catalog
+            </p>
+            <p class="text-xs text-slate-500 mt-1">
+              Engineering • Repair Kits • Guarding
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative py-24 overflow-hidden">
+  <div class="absolute inset-0">
+    <img
+      src="assets/images/app/app-hero-bg.jpg"
+      alt="Warehouse worker using tablet for rack inspection"
+      class="w-full h-full object-cover object-left"
+      loading="lazy"
+    >
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/50 to-slate-950/20"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-xl ml-auto text-right">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
+        <span class="text-xs font-semibold tracking-wide">COMING SOON</span>
+      </div>
+
+      <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-white">
+        Elite Rackz Survey App
+      </h2>
+
+      <p class="mt-4 text-white/90 text-lg">
+        Plan, survey, and document rack damage directly in the field.
+        Built for warehouse teams to capture photos, defects, and generate clean reports faster.
+      </p>
+
+      <div class="mt-8 flex justify-end">
+        <img
+          src="assets/images/app-hero-live.jpg"
+          alt="Elite Rackz app preview for rack inspection documentation"
+          class="w-full max-w-md rounded-2xl shadow-2xl ring-1 ring-white/20 bg-white/5 backdrop-blur-sm"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="mt-6">
+        <a href="app.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+          See App Preview →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white border-y border-slate-200" aria-labelledby="repair-replacement-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl bg-white ring-1 ring-slate-200 shadow-smooth p-6 md:p-10">
+      <div class="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 items-center">
         <div>
-          <div class="eyebrow">Repair vs. replacement</div>
-          <h2 class="section-title">Looking for a pallet rack replacement alternative?</h2>
-          <p class="section-lead">Before replacing an entire pallet rack frame, compare engineered pallet rack repair kits designed to restore damaged uprights, reduce aisle disruption, and give your team a documented repair path.</p>
-          <ul class="comparison-list" style="margin-top: 22px;">
-            <li>Made in USA pallet rack repair kits manufactured in South Chicago Heights, IL.</li>
-            <li>Stamped engineering calculations and repair documentation available.</li>
-            <li>Repair options designed to reduce unnecessary full rack replacement and downtime.</li>
-            <li>Support for rack inspections, emergency rack repair, and warehouse guarding when damage prevention matters.</li>
+          <div class="section-kicker">
+            Repair vs. replacement
+          </div>
+
+          <h2 id="repair-replacement-title" class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+            Looking for a pallet rack replacement alternative?
+          </h2>
+
+          <p class="mt-4 text-slate-600 text-lg">
+            Before replacing an entire pallet rack frame, compare engineered pallet rack repair kits designed to restore damaged uprights,
+            reduce aisle disruption, and give your team a documented repair path.
+          </p>
+
+          <ul class="mt-6 grid gap-3 text-slate-700">
+            <li>• Made in USA pallet rack repair kits manufactured in South Chicago Heights, IL</li>
+            <li>• Stamped engineering calculations and repair documentation available</li>
+            <li>• Repair options designed to reduce unnecessary full rack replacement and downtime</li>
+            <li>• Support for rack inspections, emergency rack repair, and warehouse guarding</li>
           </ul>
         </div>
-        <div style="display: grid; gap: 12px;">
-          <a class="btn btn-primary inactive-link" href="#" data-target="/rack-repair-vs-replacement">Compare Repair vs. Replacement</a>
-          <a class="btn btn-ghost" href="products.html">View Repair Kits</a>
-          <a class="btn btn-dark" href="contact.html#contact">Request a Repair Quote</a>
+
+        <div class="grid gap-3">
+          <a href="#" class="future-link inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+            Compare Repair vs. Replacement
+          </a>
+
+          <a href="products.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-semibold">
+            View Repair Kits
+          </a>
+
+          <a href="contact.html#contact" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
+            Request a Repair Quote
+          </a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="footer-logo" href="index.html"><img src="assets/images/logo.png" onerror="assetFallback(this)" alt="Elite Rackz">Elite Rackz</a>
-        <p style="max-width: 330px; margin-top: 14px;">Made in USA pallet rack repair kits, rack inspections, emergency repair support, and warehouse guarding systems.</p>
-      </div>
-      <div>
-        <h3>Services</h3>
-        <ul>
-          <li><a class="inactive-link" href="#" data-target="/pallet-rack-repair">Pallet Rack Repair</a></li>
-          <li><a class="inactive-link" href="#" data-target="/emergency-rack-repair">Emergency Rack Repair</a></li>
-          <li><a href="services.html">Rack Inspection &amp; Compliance</a></li>
-          <li><a href="services.html#rack-safety-audits">Rack Safety Audits</a></li>
-          <li><a href="services.html#damage-assessment">Rack Damage Assessment</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Products</h3>
-        <ul>
-          <li><a href="products.html">Pallet Rack Repair Kits</a></li>
-          <li><a href="ez-double-leg.html">EZ Double Leg</a></li>
-          <li><a href="ez-single-leg.html">EZ Single Leg</a></li>
-          <li><a href="ez-roll-form.html">EZ Roll-Form</a></li>
-          <li><a class="inactive-link" href="#" data-target="/column-guards">Column Guards</a></li>
-          <li><a class="inactive-link" href="#" data-target="/end-of-aisle-guards">End-of-Aisle Guards</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Resources</h3>
-        <ul>
-          <li><a class="inactive-link" href="#" data-target="/rack-inspection-checklist">Rack Inspection Checklist</a></li>
-          <li><a class="inactive-link" href="#" data-target="/rack-repair-vs-replacement">Repair vs. Replacement</a></li>
-          <li><a class="inactive-link" href="#" data-target="/fbs-group">FBS Group Support</a></li>
-          <li><a href="app.html">Rack Inspection App</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Company</h3>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="mailto:David@eliterackz.com">David@eliterackz.com</a></li>
-          <li><a href="tel:+17089802936">Call (708) 980-2936</a></li>
-        </ul>
-      </div>
     </div>
-    <div class="container footer-bottom">
+  </div>
+</section>
+
+<footer class="mt-24 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-5">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        <span class="font-extrabold tracking-tight text-slate-900">
+          Elite <span class="text-brand-600">Rackz</span>
+        </span>
+      </div>
+
+      <p class="text-sm text-slate-600">
+        Made in USA pallet rack repair kits, rack inspections, emergency repair support, and warehouse guarding systems.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Services</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#repair-services" class="hover:text-brand-600">Pallet Rack Repair</a></li>
+        <li><a href="#emergency-repair" class="hover:text-brand-600">Emergency Rack Repair</a></li>
+        <li><a href="services.html" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
+        <li><a href="#rack-inspection-checklist" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Products</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="products.html" class="hover:text-brand-600">Pallet Rack Repair Kits</a></li>
+        <li><a href="products.html" class="hover:text-brand-600">EZ Double Leg</a></li>
+        <li><a href="products.html" class="hover:text-brand-600">EZ Single Leg</a></li>
+        <li><a href="products.html" class="hover:text-brand-600">EZ Roll-Form</a></li>
+        <li><a href="#" class="future-link hover:text-brand-600">Column Guards</a></li>
+        <li><a href="#" class="future-link hover:text-brand-600">End-of-Aisle Guards</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Resources</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#rack-inspection-checklist" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="#" class="future-link hover:text-brand-600">Repair vs. Replacement</a></li>
+        <li><a href="app.html" class="hover:text-brand-600">Rack Inspection App</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold mb-3">Contact</h3>
+      <ul class="space-y-2 text-sm">
+        <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
+        <li>Phone: <a href="tel:+17089802936" class="text-brand-700">(708) 980-2936</a></li>
+        <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-slate-600">
       <span>© 2026 Elite Rackz. All rights reserved.</span>
+      <span class="hidden sm:inline">•</span>
+      <span>This site was created by:</span>
+      <img src="assets/images/creator-logo.png" alt="JA Web Services" class="h-6 w-auto opacity-90">
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    function assetFallback(img) {
-      if (!img || img.dataset.fallbackTried === 'true') return;
-      img.dataset.fallbackTried = 'true';
-      var src = img.getAttribute('src') || '';
-      if (src.indexOf('http') === 0) return;
-      img.src = 'https://eliterackz.com/' + src.replace(/^\/+/, '');
+<script>
+  (function () {
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    if (!btn || !menu) return;
+
+    function closeMenu() {
+      btn.classList.remove('menu-open');
+      menu.classList.remove('menu-open');
+      btn.setAttribute('aria-expanded', 'false');
     }
 
-    (function () {
-      var toggle = document.getElementById('mobileToggle');
-      var panel = document.getElementById('mobilePanel');
-      var body = document.body;
+    function openMenu() {
+      btn.classList.add('menu-open');
+      menu.classList.add('menu-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
 
-      function setMobileMenu(open) {
-        if (!toggle || !panel) return;
-        toggle.classList.toggle('is-open', open);
-        panel.classList.toggle('is-open', open);
-        body.classList.toggle('menu-open', open);
-        toggle.setAttribute('aria-expanded', String(open));
+    btn.addEventListener('click', function () {
+      const isOpen = btn.classList.contains('menu-open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
       }
+    });
 
-      if (toggle && panel) {
-        toggle.addEventListener('click', function () {
-          setMobileMenu(!panel.classList.contains('is-open'));
-        });
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMenu();
+      });
+    });
 
-        panel.addEventListener('click', function (event) {
-          var link = event.target.closest('a');
-          if (link && !link.classList.contains('inactive-link')) setMobileMenu(false);
-        });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
 
-        document.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') setMobileMenu(false);
-        });
-      }
+<script>
+  (function () {
+    const hero = document.getElementById('heroSection');
+    const header = document.getElementById('siteHeader');
 
-      document.querySelectorAll('.has-dropdown .nav-trigger').forEach(function (trigger) {
-        trigger.addEventListener('click', function (event) {
-          event.stopPropagation();
-          var item = trigger.closest('.nav-item');
-          var isOpen = item.classList.contains('open');
-          document.querySelectorAll('.nav-item.open').forEach(function (openItem) {
-            openItem.classList.remove('open');
-            var btn = openItem.querySelector('.nav-trigger');
-            if (btn) btn.setAttribute('aria-expanded', 'false');
-          });
-          if (!isOpen) {
-            item.classList.add('open');
-            trigger.setAttribute('aria-expanded', 'true');
-          } else {
-            trigger.setAttribute('aria-expanded', 'false');
-          }
-        });
+    if (!hero || !header) return;
+
+    function updateHeader() {
+      const passedHero = window.scrollY > 12;
+      header.classList.toggle('header-scrolled', passedHero);
+      header.classList.toggle('header-hero', !passedHero);
+    }
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('resize', updateHeader);
+  })();
+</script>
+
+<script>
+  (function () {
+    document.querySelectorAll('.future-link').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (link.getAttribute('href') === '#') {
+          event.preventDefault();
+        }
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const carousel = document.getElementById('installedRepairsCarousel');
+    if (!carousel) return;
+
+    const prevBtn = carousel.querySelector('.installed-prev');
+    const nextBtn = carousel.querySelector('.installed-next');
+    const slideA = document.getElementById('installedSlideA');
+    const slideB = document.getElementById('installedSlideB');
+
+    if (!prevBtn || !nextBtn || !slideA || !slideB) return;
+
+    const images = [
+      'assets/images/completed-repairs/repair-01.jpg',
+      'assets/images/completed-repairs/repair-02.jpg',
+      'assets/images/completed-repairs/repair-03.jpg',
+      'assets/images/completed-repairs/repair-04.jpg',
+      'assets/images/completed-repairs/repair-05.jpg',
+      'assets/images/completed-repairs/repair-06.jpg',
+      'assets/images/completed-repairs/repair-07.jpg',
+      'assets/images/completed-repairs/repair-08.jpg',
+      'assets/images/completed-repairs/repair-09.jpg',
+      'assets/images/completed-repairs/repair-10.jpg'
+    ];
+
+    let current = 0;
+    let activeIsA = true;
+    let autoPlay = null;
+    let isTransitioning = false;
+
+    images.forEach(function (src) {
+      const img = new Image();
+      img.src = src;
+    });
+
+    function goTo(index) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const nextIndex = (index + images.length) % images.length;
+      const active = activeIsA ? slideA : slideB;
+      const incoming = activeIsA ? slideB : slideA;
+
+      incoming.src = images[nextIndex];
+      incoming.alt = 'Elite Rackz completed pallet rack repair example ' + (nextIndex + 1);
+
+      requestAnimationFrame(function () {
+        incoming.classList.remove('opacity-0');
+        incoming.classList.add('opacity-100');
+        active.classList.remove('opacity-100');
+        active.classList.add('opacity-0');
       });
 
-      document.addEventListener('click', function () {
-        document.querySelectorAll('.nav-item.open').forEach(function (openItem) {
-          openItem.classList.remove('open');
-          var btn = openItem.querySelector('.nav-trigger');
-          if (btn) btn.setAttribute('aria-expanded', 'false');
+      current = nextIndex;
+      activeIsA = !activeIsA;
+
+      setTimeout(function () {
+        isTransitioning = false;
+      }, 720);
+    }
+
+    function next() {
+      goTo(current + 1);
+    }
+
+    function prev() {
+      goTo(current - 1);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlay = setInterval(function () {
+        next();
+      }, 4500);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlay) clearInterval(autoPlay);
+      autoPlay = null;
+    }
+
+    prevBtn.addEventListener('click', function () {
+      prev();
+      startAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', function () {
+      next();
+      startAutoPlay();
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+
+    startAutoPlay();
+  })();
+</script>
+
+<script>
+  (function () {
+    const carousel = document.getElementById('collageCarousel');
+    const slide = document.getElementById('collageSlide');
+
+    if (!carousel || !slide) return;
+
+    const prevBtn = carousel.querySelector('.collage-prev');
+    const nextBtn = carousel.querySelector('.collage-next');
+    const dotsWrap = carousel.querySelector('.collage-dots');
+
+    const images = [
+      'assets/images/collage/slide-01.jpg',
+      'assets/images/collage/slide-02.jpg',
+      'assets/images/collage/slide-03.jpg',
+      'assets/images/collage/slide-04.jpg'
+    ];
+
+    let current = 0;
+    let timer = null;
+
+    function renderDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+
+      images.forEach(function (_, index) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'View product image ' + (index + 1));
+        dot.className = 'h-2 w-2 rounded-full transition-all ' + (index === current ? 'bg-brand-600 w-5' : 'bg-slate-300');
+        dot.addEventListener('click', function () {
+          goTo(index);
+          start();
         });
+        dotsWrap.appendChild(dot);
       });
+    }
 
-      document.querySelectorAll('.inactive-link').forEach(function (link) {
-        link.addEventListener('click', function (event) {
-          if (link.getAttribute('href') === '#') event.preventDefault();
-        });
+    function goTo(index) {
+      current = (index + images.length) % images.length;
+      slide.src = images[current];
+      slide.alt = 'Elite Rackz pallet rack repair kit and guarding product image ' + (current + 1);
+      renderDots();
+    }
+
+    function next() {
+      goTo(current + 1);
+    }
+
+    function prev() {
+      goTo(current - 1);
+    }
+
+    function start() {
+      stop();
+      timer = setInterval(next, 5000);
+    }
+
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        prev();
+        start();
       });
-    })();
+    }
 
-    (function () {
-      var carousel = document.getElementById('repairCarousel');
-      var slideA = document.getElementById('repairSlideA');
-      var slideB = document.getElementById('repairSlideB');
-      var prev = document.getElementById('repairPrev');
-      var next = document.getElementById('repairNext');
-      if (!carousel || !slideA || !slideB || !prev || !next) return;
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        next();
+        start();
+      });
+    }
 
-      var images = [
-        'assets/images/completed-repairs/repair-01.jpg',
-        'assets/images/completed-repairs/repair-02.jpg',
-        'assets/images/completed-repairs/repair-03.jpg',
-        'assets/images/completed-repairs/repair-04.jpg',
-        'assets/images/completed-repairs/repair-05.jpg',
-        'assets/images/completed-repairs/repair-06.jpg',
-        'assets/images/completed-repairs/repair-07.jpg',
-        'assets/images/completed-repairs/repair-08.jpg',
-        'assets/images/completed-repairs/repair-09.jpg',
-        'assets/images/completed-repairs/repair-10.jpg'
-      ];
-      var index = 0;
-      var activeA = true;
-      var timer = null;
-
-      function go(to) {
-        var nextIndex = (to + images.length) % images.length;
-        var active = activeA ? slideA : slideB;
-        var incoming = activeA ? slideB : slideA;
-        incoming.src = images[nextIndex];
-        incoming.alt = 'Elite Rackz completed pallet rack repair example ' + (nextIndex + 1);
-        incoming.style.opacity = '1';
-        active.style.opacity = '0';
-        index = nextIndex;
-        activeA = !activeA;
+    slide.addEventListener('error', function () {
+      if (current !== 0) {
+        goTo(0);
       }
-      function start() {
-        stop();
-        timer = setInterval(function () { go(index + 1); }, 4500);
-      }
-      function stop() { if (timer) clearInterval(timer); timer = null; }
-      prev.addEventListener('click', function () { go(index - 1); start(); });
-      next.addEventListener('click', function () { go(index + 1); start(); });
-      carousel.addEventListener('mouseenter', stop);
-      carousel.addEventListener('mouseleave', start);
-      start();
-    })();
-  </script>
+    });
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+
+    renderDots();
+    start();
+  })();
+</script>
+
 </body>
 </html>

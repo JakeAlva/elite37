@@ -355,12 +355,14 @@
     }
 
     .service-card,
-    .inspection-card {
+    .inspection-card,
+    .trust-card {
       transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
 
     .service-card:hover,
-    .inspection-card:hover {
+    .inspection-card:hover,
+    .trust-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 16px 35px rgba(15,23,42,.10);
       border-color: rgba(46,106,214,.28);
@@ -573,6 +575,11 @@
               <strong>Load Capacity &amp; Labels</strong>
               <span>Rack load capacity review, labels, and audit-ready documentation.</span>
             </a>
+
+            <a href="services.html#isnetworld">
+              <strong>ISNetworld® Contractor Support</strong>
+              <span>Procurement-friendly support for safety-driven facilities and qualified workflows.</span>
+            </a>
           </div>
         </div>
 
@@ -730,6 +737,7 @@
           <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
           <a href="services.html#damage-assessment">Rack Damage Assessments</a>
           <a href="services.html#load-capacity">Load Capacity &amp; Labels</a>
+          <a href="services.html#isnetworld">ISNetworld® Contractor Support</a>
         </div>
       </details>
 
@@ -1214,6 +1222,78 @@
     </div>
   </section>
 
+  <section id="isnetworld" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[0.82fr_1.18fr] gap-10 items-center">
+        <div class="trust-card rounded-3xl bg-slate-50 ring-1 ring-slate-200 p-6 md:p-8 shadow-smooth">
+          <div class="h-36 w-full flex items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200 p-5">
+            <img
+              src="assets/images/isn-member-contractor.png"
+              alt="ISNetworld Member Contractor"
+              class="max-h-full max-w-full object-contain"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="mt-6 text-center">
+            <p class="text-xl font-extrabold text-slate-900">ISNetworld® Member Contractor</p>
+            <p class="mt-2 text-sm text-slate-600">
+              Supporting procurement, contractor qualification, and safety-driven vendor workflows.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-kicker">Contractor qualification support</div>
+
+          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            ISNetworld® support for facilities with strict safety and procurement requirements.
+          </h2>
+
+          <p class="mt-4 text-lg text-slate-600">
+            Many cold storage facilities, 3PL warehouses, food manufacturers, and enterprise distribution centers need contractors who can support safety qualification, documentation, and procurement workflows before work begins.
+          </p>
+
+          <p class="mt-4 text-lg text-slate-600">
+            Elite Rackz is an ISNetworld® Member Contractor, helping EHS, procurement, and operations teams move faster when pallet rack inspections, rack damage assessments, repair documentation, or engineered rack repair support are needed.
+          </p>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+              <h3 class="font-extrabold text-slate-900">For EHS teams</h3>
+              <p class="mt-2 text-sm text-slate-600">Rack safety audits, inspection reports, repair documentation, and compliance support.</p>
+            </div>
+
+            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+              <h3 class="font-extrabold text-slate-900">For procurement</h3>
+              <p class="mt-2 text-sm text-slate-600">A clearer contractor qualification path for safety-driven facilities and multi-site organizations.</p>
+            </div>
+
+            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+              <h3 class="font-extrabold text-slate-900">For 3PL warehouses</h3>
+              <p class="mt-2 text-sm text-slate-600">Support for facilities managing client inventory, risk exposure, audits, and high rack utilization.</p>
+            </div>
+
+            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+              <h3 class="font-extrabold text-slate-900">For food and cold storage</h3>
+              <p class="mt-2 text-sm text-slate-600">Inspection and repair documentation for facilities where safety, sanitation, and audit readiness matter.</p>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+              Request Inspection Support
+            </a>
+
+            <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100">
+              Call (708) 980-2936
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="faq" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
@@ -1344,9 +1424,10 @@
               <option>Load capacity review</option>
               <option>Stamped documentation</option>
               <option>Emergency rack damage</option>
+              <option>ISNetworld contractor support</option>
             </select>
 
-            <textarea name="message" placeholder="Tell us about the rack damage, inspection need, or upcoming audit." aria-label="Message"></textarea>
+            <textarea name="message" placeholder="Tell us about the rack damage, inspection need, upcoming audit, or procurement requirements." aria-label="Message"></textarea>
 
             <button class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold" type="submit">
               Request a Rack Inspection
@@ -1386,6 +1467,7 @@
         <li><a href="services.html" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
         <li><a href="services.html#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
         <li><a href="services.html#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
+        <li><a href="services.html#isnetworld" class="hover:text-brand-600">ISNetworld® Support</a></li>
       </ul>
     </div>
 

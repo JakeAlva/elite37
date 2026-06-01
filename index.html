@@ -176,7 +176,7 @@
       top: calc(100% + 14px);
       left: 50%;
       transform: translateX(-50%) translateY(8px);
-      width: 330px;
+      width: 340px;
       border: 1px solid rgba(226,232,240,.95);
       background: rgba(255,255,255,.98);
       border-radius: 22px;
@@ -488,12 +488,17 @@
           </button>
 
           <div class="dropdown-menu">
-            <a href="#repair-services">
+            <a href="services.html">
+              <strong>All Services</strong>
+              <span>Pallet rack repair, rack inspections, safety audits, damage assessments, and documentation.</span>
+            </a>
+
+            <a class="future-link" href="#" data-future="pallet-rack-repair.html">
               <strong>Pallet Rack Repair</strong>
               <span>Engineered repair for damaged pallet rack uprights and forklift impact zones.</span>
             </a>
 
-            <a href="#emergency-repair">
+            <a class="future-link" href="#" data-future="emergency-rack-repair.html">
               <strong>Emergency Rack Repair</strong>
               <span>48-hour emergency repair path for qualifying critical rack damage.</span>
             </a>
@@ -511,6 +516,11 @@
             <a href="services.html#damage-assessment">
               <strong>Rack Damage Assessments</strong>
               <span>Photo documentation and repair recommendations for damaged rack.</span>
+            </a>
+
+            <a href="services.html#load-capacity">
+              <strong>Load Capacity &amp; Labels</strong>
+              <span>Rack load capacity review, labels, and audit-ready documentation.</span>
             </a>
           </div>
         </div>
@@ -544,12 +554,12 @@
               <span>Roll-form rack repair kit option for compatible systems.</span>
             </a>
 
-            <a class="future-link" href="#">
+            <a class="future-link" href="#" data-future="column-guards.html">
               <strong>Column Guards</strong>
               <span>Warehouse column protection and pallet rack post protectors.</span>
             </a>
 
-            <a class="future-link" href="#">
+            <a class="future-link" href="#" data-future="end-of-aisle-guards.html">
               <strong>End-of-Aisle Guards</strong>
               <span>End-of-aisle rack guards and forklift impact protection.</span>
             </a>
@@ -565,17 +575,17 @@
           </button>
 
           <div class="dropdown-menu">
-            <a href="#rack-inspection-checklist">
+            <a class="future-link" href="#" data-future="rack-inspection-checklist.html">
               <strong>Rack Inspection Checklist</strong>
-              <span>Free warehouse rack inspection checklist for safety walkthroughs.</span>
+              <span>Warehouse rack inspection checklist for safety walkthroughs.</span>
             </a>
 
-            <a href="#repair-replacement">
+            <a class="future-link" href="#" data-future="rack-repair-vs-replacement.html">
               <strong>Repair vs. Replacement</strong>
               <span>Compare engineered rack repair kits with full pallet rack replacement.</span>
             </a>
 
-            <a class="future-link" href="#">
+            <a class="future-link" href="#" data-future="fbs-group.html">
               <strong>FBS Group Support</strong>
               <span>Service continuity and support for former FBS Group customers.</span>
             </a>
@@ -620,6 +630,11 @@
               <strong>E-Commerce Fulfillment</strong>
               <span>Post-peak damage assessments and forklift impact protection.</span>
             </a>
+
+            <a href="#industries">
+              <strong>Building Materials DCs</strong>
+              <span>Heavy-duty rack repair, custom kits, and warehouse guarding systems.</span>
+            </a>
           </div>
         </div>
 
@@ -662,11 +677,13 @@
       <details class="mobile-menu-section" open>
         <summary>Services</summary>
         <div class="mobile-menu-links">
-          <a href="#repair-services">Pallet Rack Repair</a>
-          <a href="#emergency-repair">Emergency Rack Repair</a>
+          <a href="services.html">All Services</a>
+          <a class="future-link" href="#" data-future="pallet-rack-repair.html">Pallet Rack Repair</a>
+          <a class="future-link" href="#" data-future="emergency-rack-repair.html">Emergency Rack Repair</a>
           <a href="services.html">Rack Inspection &amp; Compliance</a>
           <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
           <a href="services.html#damage-assessment">Rack Damage Assessments</a>
+          <a href="services.html#load-capacity">Load Capacity &amp; Labels</a>
         </div>
       </details>
 
@@ -677,17 +694,17 @@
           <a href="ez-double-leg.html">EZ Double Leg Repair Kit</a>
           <a href="ez-single-leg.html">EZ Single Leg Repair Kit</a>
           <a href="ez-roll-form.html">EZ Roll-Form Repair Kit</a>
-          <a class="future-link" href="#">Column Guards</a>
-          <a class="future-link" href="#">End-of-Aisle Guards</a>
+          <a class="future-link" href="#" data-future="column-guards.html">Column Guards</a>
+          <a class="future-link" href="#" data-future="end-of-aisle-guards.html">End-of-Aisle Guards</a>
         </div>
       </details>
 
       <details class="mobile-menu-section">
         <summary>Resources</summary>
         <div class="mobile-menu-links">
-          <a href="#rack-inspection-checklist">Rack Inspection Checklist</a>
-          <a href="#repair-replacement">Repair vs. Replacement</a>
-          <a class="future-link" href="#">FBS Group Support</a>
+          <a class="future-link" href="#" data-future="rack-inspection-checklist.html">Rack Inspection Checklist</a>
+          <a class="future-link" href="#" data-future="rack-repair-vs-replacement.html">Repair vs. Replacement</a>
+          <a class="future-link" href="#" data-future="fbs-group.html">FBS Group Support</a>
           <a href="blog/index.html">Blog</a>
         </div>
       </details>
@@ -877,13 +894,13 @@
       </div>
 
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <a href="#repair-services" class="service-card rounded-2xl border border-slate-200 p-6 shadow-smooth bg-white block">
+        <a class="service-card future-link rounded-2xl border border-slate-200 p-6 shadow-smooth bg-white block" href="#" data-future="pallet-rack-repair.html">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Repair Service</div>
           <h3 class="mt-2 text-xl font-extrabold tracking-tight text-slate-900">Pallet Rack Repair</h3>
           <p class="mt-3 text-sm text-slate-600">Engineered repair for damaged pallet rack uprights, columns, base plates, and forklift-impact zones.</p>
         </a>
 
-        <a href="#emergency-repair" class="service-card rounded-2xl border border-slate-200 p-6 shadow-smooth bg-white block">
+        <a class="service-card future-link rounded-2xl border border-slate-200 p-6 shadow-smooth bg-white block" href="#" data-future="emergency-rack-repair.html">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Emergency Service</div>
           <h3 class="mt-2 text-xl font-extrabold tracking-tight text-slate-900">Emergency Rack Repair</h3>
           <p class="mt-3 text-sm text-slate-600">Urgent rack damage triage, priority quote, and repair scheduling for qualifying emergency situations.</p>
@@ -1027,12 +1044,12 @@
               <p class="mt-1 text-sm text-slate-600">Roll-form rack repair kit option for compatible systems.</p>
             </a>
 
-            <a href="#" class="product-card future-link rounded-2xl bg-white p-5 shadow-smooth ring-1 ring-black/5 block">
+            <a href="#" data-future="column-guards.html" class="product-card future-link rounded-2xl bg-white p-5 shadow-smooth ring-1 ring-black/5 block">
               <div class="font-semibold text-slate-900">Column Guards</div>
               <p class="mt-1 text-sm text-slate-600">Warehouse column protection and pallet rack post protectors.</p>
             </a>
 
-            <a href="#" class="product-card future-link rounded-2xl bg-white p-5 shadow-smooth ring-1 ring-black/5 block">
+            <a href="#" data-future="end-of-aisle-guards.html" class="product-card future-link rounded-2xl bg-white p-5 shadow-smooth ring-1 ring-black/5 block">
               <div class="font-semibold text-slate-900">End-of-Aisle Guards</div>
               <p class="mt-1 text-sm text-slate-600">End-of-aisle rack guards and forklift impact protection.</p>
             </a>
@@ -1299,11 +1316,11 @@
             <div class="section-kicker">Rack inspection checklist</div>
 
             <h2 id="checklist-title" class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
-              Free warehouse rack inspection checklist for safety walkthroughs.
+              Warehouse rack inspection checklist and safety review support.
             </h2>
 
             <p class="mt-4 text-slate-600 text-lg">
-              Use the checklist to review uprights, beams, braces, base plates, anchors, safety pins,
+              Use a structured rack inspection process to review uprights, beams, braces, base plates, anchors, safety pins,
               load capacity labels, and visible pallet rack damage.
             </p>
 
@@ -1334,7 +1351,7 @@
               </select>
 
               <button class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold" type="submit">
-                Get the Checklist
+                Request Inspection Help
               </button>
 
               <a href="tel:+17089802936" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
@@ -1580,7 +1597,7 @@
           </div>
 
           <div class="grid gap-3">
-            <a href="#" class="future-link inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+            <a href="#" data-future="rack-repair-vs-replacement.html" class="future-link inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
               Compare Repair vs. Replacement
             </a>
 
@@ -1616,11 +1633,12 @@
     <div>
       <h3 class="text-sm font-semibold mb-3">Services</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#repair-services" class="hover:text-brand-600">Pallet Rack Repair</a></li>
-        <li><a href="#emergency-repair" class="hover:text-brand-600">Emergency Rack Repair</a></li>
+        <li><a href="services.html" class="hover:text-brand-600">All Services</a></li>
+        <li><a href="#" data-future="pallet-rack-repair.html" class="future-link hover:text-brand-600">Pallet Rack Repair</a></li>
+        <li><a href="#" data-future="emergency-rack-repair.html" class="future-link hover:text-brand-600">Emergency Rack Repair</a></li>
         <li><a href="services.html" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
         <li><a href="services.html#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
-        <li><a href="#rack-inspection-checklist" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="services.html#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
       </ul>
     </div>
 
@@ -1631,17 +1649,17 @@
         <li><a href="ez-double-leg.html" class="hover:text-brand-600">EZ Double Leg</a></li>
         <li><a href="ez-single-leg.html" class="hover:text-brand-600">EZ Single Leg</a></li>
         <li><a href="ez-roll-form.html" class="hover:text-brand-600">EZ Roll-Form</a></li>
-        <li><a href="#" class="future-link hover:text-brand-600">Column Guards</a></li>
-        <li><a href="#" class="future-link hover:text-brand-600">End-of-Aisle Guards</a></li>
+        <li><a href="#" data-future="column-guards.html" class="future-link hover:text-brand-600">Column Guards</a></li>
+        <li><a href="#" data-future="end-of-aisle-guards.html" class="future-link hover:text-brand-600">End-of-Aisle Guards</a></li>
       </ul>
     </div>
 
     <div>
       <h3 class="text-sm font-semibold mb-3">Resources</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#rack-inspection-checklist" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
-        <li><a href="#repair-replacement" class="hover:text-brand-600">Repair vs. Replacement</a></li>
-        <li><a href="#" class="future-link hover:text-brand-600">FBS Group Support</a></li>
+        <li><a href="#" data-future="rack-inspection-checklist.html" class="future-link hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="#" data-future="rack-repair-vs-replacement.html" class="future-link hover:text-brand-600">Repair vs. Replacement</a></li>
+        <li><a href="#" data-future="fbs-group.html" class="future-link hover:text-brand-600">FBS Group Support</a></li>
         <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
       </ul>
     </div>

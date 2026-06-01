@@ -371,7 +371,6 @@
 
     .service-card,
     .product-card,
-    .industry-card,
     .membership-card,
     .resource-card {
       transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
@@ -379,12 +378,26 @@
 
     .service-card:hover,
     .product-card:hover,
-    .industry-card:hover,
     .membership-card:hover,
     .resource-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 16px 35px rgba(15,23,42,.10);
       border-color: rgba(46,106,214,.28);
+    }
+
+    .industry-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #0f172a;
+      box-shadow: 0 10px 25px rgba(15,23,42,0.12);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      will-change: transform;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(46,106,214,.45);
+      box-shadow: 0 20px 48px rgba(15,23,42,0.22);
     }
 
     .checklist-form input,
@@ -1431,13 +1444,13 @@
         class="w-full h-full object-cover object-[center_10%]"
         loading="lazy"
       >
-      <div class="absolute inset-0 bg-slate-950/38"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/52 via-slate-950/30 to-slate-950/35"></div>
+      <div class="absolute inset-0 bg-slate-950/72"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/68 to-slate-950/72"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/12 text-white ring-1 ring-white/24 backdrop-blur-sm">
           <span class="text-xs font-extrabold tracking-[0.14em] uppercase">High-demand warehouse environments</span>
         </div>
 
@@ -1451,40 +1464,40 @@
         </p>
       </div>
 
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
-        <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="industry-card rounded-2xl p-6">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Cold storage</div>
-          <h3 class="mt-2 font-bold text-slate-900">Cold Storage &amp; Food DCs</h3>
+          <h3 class="mt-2 text-lg font-extrabold text-slate-900">Cold Storage &amp; Food DCs</h3>
           <p class="mt-2 text-sm text-slate-600">Galvanized kit options, FDA-documentable repairs, rack inspections, and emergency response support.</p>
         </div>
 
-        <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="industry-card rounded-2xl p-6">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">3PL warehousing</div>
-          <h3 class="mt-2 font-bold text-slate-900">3PL Warehouses</h3>
+          <h3 class="mt-2 text-lg font-extrabold text-slate-900">3PL Warehouses</h3>
           <p class="mt-2 text-sm text-slate-600">Rack inspections, safety documentation, and repair support for multi-client warehouse operations.</p>
         </div>
 
-        <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="industry-card rounded-2xl p-6">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Food manufacturing</div>
-          <h3 class="mt-2 font-bold text-slate-900">Food Manufacturing</h3>
+          <h3 class="mt-2 text-lg font-extrabold text-slate-900">Food Manufacturing</h3>
           <p class="mt-2 text-sm text-slate-600">Stamped engineering documentation and repair records for audit-ready manufacturing facilities.</p>
         </div>
 
-        <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="industry-card rounded-2xl p-6">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Distribution</div>
-          <h3 class="mt-2 font-bold text-slate-900">Automotive Parts DCs</h3>
+          <h3 class="mt-2 text-lg font-extrabold text-slate-900">Automotive Parts DCs</h3>
           <p class="mt-2 text-sm text-slate-600">Fast pallet rack repair planning where damaged rack can interrupt production and order flow.</p>
         </div>
 
-        <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="industry-card rounded-2xl p-6">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Fulfillment</div>
-          <h3 class="mt-2 font-bold text-slate-900">E-Commerce Warehouses</h3>
+          <h3 class="mt-2 text-lg font-extrabold text-slate-900">E-Commerce Warehouses</h3>
           <p class="mt-2 text-sm text-slate-600">Post-peak rack damage assessments, warehouse racking inspections, and forklift impact protection.</p>
         </div>
 
-        <div class="industry-card rounded-2xl bg-white/92 backdrop-blur-sm p-5 shadow-smooth ring-1 ring-white/30">
+        <div class="industry-card rounded-2xl p-6">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Heavy load</div>
-          <h3 class="mt-2 font-bold text-slate-900">Building Materials DCs</h3>
+          <h3 class="mt-2 text-lg font-extrabold text-slate-900">Building Materials DCs</h3>
           <p class="mt-2 text-sm text-slate-600">Heavy-duty rack repair, custom-engineered repair kits, and warehouse guarding systems.</p>
         </div>
       </div>

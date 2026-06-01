@@ -35,7 +35,8 @@
           },
           boxShadow: {
             smooth: '0 10px 25px rgba(0,0,0,0.08)',
-            lift: '0 18px 48px rgba(15,23,42,0.14)'
+            lift: '0 18px 48px rgba(15,23,42,0.14)',
+            contrast: '0 22px 55px rgba(2,6,23,0.28)'
           }
         }
       }
@@ -376,6 +377,20 @@
       border-color: rgba(46,106,214,.28);
     }
 
+    .difference-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #0f172a;
+      box-shadow: 0 18px 42px rgba(2,6,23,.24);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .difference-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(46,106,214,.45);
+      box-shadow: 0 24px 60px rgba(2,6,23,.32);
+    }
+
     .future-link {
       cursor: default;
     }
@@ -454,48 +469,57 @@
       "url": "https://eliterackz.com/products",
       "itemListElement": [
         {
-          "@type": "Product",
+          "@type": "ListItem",
           "position": 1,
-          "name": "EZ Double Leg Pallet Rack Repair Kit",
-          "image": "https://eliterackz.com/assets/images/repairA/slide-01.jpg",
-          "description": "Made in USA double-leg pallet rack repair kit for damaged rack frames.",
-          "brand": {
-            "@type": "Brand",
-            "name": "Elite Rackz"
-          },
-          "manufacturer": {
-            "@type": "Organization",
-            "name": "Elite Rackz"
+          "item": {
+            "@type": "Product",
+            "name": "EZ Double Leg Pallet Rack Repair Kit",
+            "image": "https://eliterackz.com/assets/images/repairA/slide-01.jpg",
+            "description": "Made in USA double-leg pallet rack repair kit for damaged rack frames.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Elite Rackz"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "Elite Rackz"
+            }
           }
         },
         {
-          "@type": "Product",
+          "@type": "ListItem",
           "position": 2,
-          "name": "EZ Single Leg Pallet Rack Repair Kit",
-          "image": "https://eliterackz.com/assets/images/repairB/slide-01.jpg",
-          "description": "Made in USA single-leg pallet rack repair kit for damaged front uprights.",
-          "brand": {
-            "@type": "Brand",
-            "name": "Elite Rackz"
-          },
-          "manufacturer": {
-            "@type": "Organization",
-            "name": "Elite Rackz"
+          "item": {
+            "@type": "Product",
+            "name": "EZ Single Leg Pallet Rack Repair Kit",
+            "image": "https://eliterackz.com/assets/images/repairB/slide-01.jpg",
+            "description": "Made in USA single-leg pallet rack repair kit for damaged front uprights.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Elite Rackz"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "Elite Rackz"
+            }
           }
         },
         {
-          "@type": "Product",
+          "@type": "ListItem",
           "position": 3,
-          "name": "EZ Roll-Form Pallet Rack Repair Kit",
-          "image": "https://eliterackz.com/assets/images/repairC/slide-01.jpg",
-          "description": "Bolt-on roll-form pallet rack repair kit for compatible rack frames.",
-          "brand": {
-            "@type": "Brand",
-            "name": "Elite Rackz"
-          },
-          "manufacturer": {
-            "@type": "Organization",
-            "name": "Elite Rackz"
+          "item": {
+            "@type": "Product",
+            "name": "EZ Roll-Form Pallet Rack Repair Kit",
+            "image": "https://eliterackz.com/assets/images/repairC/slide-01.jpg",
+            "description": "Bolt-on roll-form pallet rack repair kit for compatible rack frames.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Elite Rackz"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "Elite Rackz"
+            }
           }
         }
       ]
@@ -1175,7 +1199,7 @@
     </div>
   </section>
 
-  <section class="relative py-16 overflow-hidden">
+  <section id="kit-difference" class="relative py-16 overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="assets/images/manufacturing-hero.jpg"
@@ -1183,14 +1207,14 @@
         class="w-full h-full object-cover"
         loading="lazy"
       >
-      <div class="absolute inset-0 bg-slate-950/35"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/55 via-slate-950/28 to-slate-950/22"></div>
+      <div class="absolute inset-0 bg-slate-950/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/88 via-slate-950/72 to-slate-950/66"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/12 text-white ring-1 ring-white/24 backdrop-blur-sm">
             <span class="text-xs font-extrabold tracking-[0.14em] uppercase">What makes our kits different</span>
           </div>
 
@@ -1198,69 +1222,111 @@
             Made in USA rack repair kits with in-house manufacturing control.
           </h2>
 
-          <p class="mt-4 text-white/90 text-lg">
+          <p class="mt-4 text-white/88 text-lg">
             Elite Rackz manufactures pallet rack repair kits in South Chicago Heights, Illinois. We control the process from roll-forming to punching so quality stays consistent, tolerances stay tight, and repair lead times stay competitive.
           </p>
 
-          <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl bg-white/10 ring-1 ring-white/14 p-5 backdrop-blur-sm">
-              <h3 class="font-extrabold text-white">In-house manufacturing</h3>
-              <p class="mt-2 text-sm text-white/72">USA-sourced steel, roll-forming, punching, and product control from our Illinois facility.</p>
-            </div>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+              Request a Kit Quote
+            </a>
 
-            <div class="rounded-2xl bg-white/10 ring-1 ring-white/14 p-5 backdrop-blur-sm">
-              <h3 class="font-extrabold text-white">Stamped engineering calculations</h3>
-              <p class="mt-2 text-sm text-white/72">Repair documentation and stamped calculations available for qualifying projects.</p>
-            </div>
-
-            <div class="rounded-2xl bg-white/10 ring-1 ring-white/14 p-5 backdrop-blur-sm">
-              <h3 class="font-extrabold text-white">Lifetime warranty options</h3>
-              <p class="mt-2 text-sm text-white/72">Lifetime impact warranty available on EZ Double Leg and EZ Single Leg repair kits.</p>
-            </div>
-
-            <div class="rounded-2xl bg-white/10 ring-1 ring-white/14 p-5 backdrop-blur-sm">
-              <h3 class="font-extrabold text-white">Repair and guarding together</h3>
-              <p class="mt-2 text-sm text-white/72">Repair damaged uprights and protect impact-prone areas with guarding systems.</p>
-            </div>
+            <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
+              Call (708) 980-2936
+            </a>
           </div>
         </div>
 
-        <div class="rounded-3xl overflow-hidden shadow-lift ring-1 ring-white/20 bg-white/88 backdrop-blur-sm">
-          <div class="p-6 md:p-8">
-            <div class="text-sm font-semibold text-brand-700">HQ + Manufacturing</div>
-            <div class="mt-1 text-2xl font-extrabold tracking-tight text-slate-900">South Chicago Heights, IL</div>
-
-            <p class="mt-3 text-sm text-slate-700">
-              In-house production helps Elite Rackz respond fast while keeping pallet rack repair kits, replacement parts, guarding systems, and documentation aligned with engineered quality.
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="difference-card rounded-2xl p-5">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Manufacturing
+            </div>
+            <h3 class="mt-2 text-lg font-extrabold text-slate-900">
+              In-house manufacturing
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              USA-sourced steel, roll-forming, punching, and product control from our Illinois facility.
             </p>
+          </div>
 
-            <div class="mt-6 grid grid-cols-2 gap-3">
-              <div class="rounded-xl bg-white p-4 ring-1 ring-black/5">
+          <div class="difference-card rounded-2xl p-5">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Engineering
+            </div>
+            <h3 class="mt-2 text-lg font-extrabold text-slate-900">
+              Stamped calculations
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Repair documentation and stamped engineering calculations available for qualifying projects.
+            </p>
+          </div>
+
+          <div class="difference-card rounded-2xl p-5">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Warranty
+            </div>
+            <h3 class="mt-2 text-lg font-extrabold text-slate-900">
+              Lifetime warranty options
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Lifetime impact warranty available on EZ Double Leg and EZ Single Leg repair kits.
+            </p>
+          </div>
+
+          <div class="difference-card rounded-2xl p-5">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Protection
+            </div>
+            <h3 class="mt-2 text-lg font-extrabold text-slate-900">
+              Repair and guarding together
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Repair damaged uprights and protect impact-prone areas with column guards and end-of-aisle guards.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 rounded-3xl overflow-hidden shadow-lift ring-1 ring-white/20 bg-white">
+        <div class="p-6 md:p-8">
+          <div class="grid md:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
+            <div>
+              <div class="text-sm font-semibold text-brand-700">HQ + Manufacturing</div>
+              <div class="mt-1 text-2xl font-extrabold tracking-tight text-slate-900">South Chicago Heights, IL</div>
+
+              <p class="mt-3 text-sm text-slate-700">
+                In-house production helps Elite Rackz respond fast while keeping pallet rack repair kits, replacement parts, guarding systems, and documentation aligned with engineered quality.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div class="rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200">
                 <div class="text-xs text-slate-500">Process</div>
                 <div class="font-semibold text-slate-900">Roll Forming</div>
               </div>
 
-              <div class="rounded-xl bg-white p-4 ring-1 ring-black/5">
+              <div class="rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200">
                 <div class="text-xs text-slate-500">Process</div>
                 <div class="font-semibold text-slate-900">Punching</div>
               </div>
 
-              <div class="rounded-xl bg-white p-4 ring-1 ring-black/5">
+              <div class="rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200">
                 <div class="text-xs text-slate-500">Support</div>
                 <div class="font-semibold text-slate-900">Engineering</div>
               </div>
 
-              <div class="rounded-xl bg-white p-4 ring-1 ring-black/5">
+              <div class="rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200">
                 <div class="text-xs text-slate-500">Coverage</div>
                 <div class="font-semibold text-slate-900">Nationwide</div>
               </div>
             </div>
+          </div>
 
-            <div class="mt-7">
-              <a href="about.html" class="inline-flex w-full justify-center items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
-                About Elite Rackz Manufacturing
-              </a>
-            </div>
+          <div class="mt-7">
+            <a href="about.html" class="inline-flex w-full md:w-auto justify-center items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
+              About Elite Rackz Manufacturing
+            </a>
           </div>
         </div>
       </div>
@@ -1535,7 +1601,7 @@
           </summary>
 
           <div class="faq-answer">
-             Elite Rackz repair kits are engineered to restore the damaged frame back to its original load capacity. Our repair kits do not add extra load capacity whatsoever. 
+            Load capacity after repair depends on the rack configuration, repair design, installation, and engineering review. Elite Rackz can support load capacity review and repair documentation when your facility needs an audit-ready repair path.
           </div>
         </details>
 

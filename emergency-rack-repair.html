@@ -13,7 +13,7 @@
   <meta property="og:description" content="Critical rack damage? Elite Rackz offers 48-hour emergency rack repair with engineered kits, stamped documentation, and no shortcuts.">
   <meta property="og:url" content="https://eliterackz.com/emergency-rack-repair">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://eliterackz.com/assets/images/og-image.jpg">
+  <meta property="og:image" content="https://eliterackz.com/assets/images/emergency-rack-repair-hero.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +67,7 @@
     }
 
     .header-hero {
-      background: linear-gradient(to bottom, rgba(2,6,23,.74), rgba(2,6,23,.38), rgba(2,6,23,0));
+      background: linear-gradient(to bottom, rgba(2,6,23,.96), rgba(2,6,23,.75), rgba(2,6,23,0));
       border-bottom: none;
       box-shadow: none;
       backdrop-filter: none;
@@ -83,10 +83,8 @@
     }
 
     .header-hero #headerLogoWrap {
-      background: rgba(255,255,255,0.94);
+      background: #ffffff;
       box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
     }
 
     .header-hero #headerTagline {
@@ -97,8 +95,6 @@
     .header-scrolled #headerLogoWrap {
       background: transparent;
       box-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
     }
 
     .header-scrolled #headerTagline {
@@ -114,7 +110,7 @@
 
     .header-hero .header-nav-link:hover,
     .header-hero .nav-trigger:hover {
-      color: rgba(255,255,255,0.82);
+      color: #dbeafe;
     }
 
     .header-scrolled .header-nav-link,
@@ -128,7 +124,7 @@
     }
 
     .header-hero .header-phone-link {
-      background: rgba(255,255,255,0.94);
+      background: #ffffff;
       color: rgb(15 23 42);
       box-shadow: 0 10px 24px rgba(0,0,0,0.15);
     }
@@ -172,7 +168,7 @@
       transform: translateX(-50%) translateY(8px);
       width: 340px;
       border: 1px solid rgba(226,232,240,.95);
-      background: rgba(255,255,255,.98);
+      background: #ffffff;
       border-radius: 22px;
       padding: 10px;
       box-shadow: 0 22px 60px rgba(15,23,42,.16);
@@ -180,8 +176,6 @@
       visibility: hidden;
       pointer-events: none;
       transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
     }
 
     .dropdown-menu::before {
@@ -228,7 +222,7 @@
     }
 
     #mobileMenuBtn.menu-open {
-      background: rgba(255,255,255,0.98);
+      background: #ffffff;
       box-shadow: 0 10px 24px rgba(0,0,0,0.12);
       border-color: rgba(148,163,184,0.55);
     }
@@ -345,9 +339,25 @@
       gap: .5rem;
       padding: .375rem .75rem;
       border-radius: 9999px;
-      background: rgb(239 246 255);
+      background: #eff6ff;
       color: #2554aa;
       border: 1px solid rgba(46,106,214,.18);
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .dark-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #2554aa;
+      border: 1px solid #dbeafe;
       font-size: .75rem;
       line-height: 1rem;
       font-weight: 800;
@@ -359,6 +369,7 @@
     .process-card,
     .qualification-card,
     .audience-card,
+    .proof-card,
     .faq-accordion {
       transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
@@ -366,7 +377,8 @@
     .emergency-card:hover,
     .process-card:hover,
     .qualification-card:hover,
-    .audience-card:hover {
+    .audience-card:hover,
+    .proof-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 16px 35px rgba(15,23,42,.10);
       border-color: rgba(46,106,214,.28);
@@ -454,13 +466,13 @@
       line-height: 1.65;
     }
 
-    @media (max-width: 767px) {
-      .hero-made-badge {
-        height: 86px;
-      }
+    .hero-mobile-pad {
+      padding-top: 7.5rem;
+    }
 
+    @media (min-width: 768px) {
       .hero-mobile-pad {
-        padding-top: 7.5rem;
+        padding-top: 9rem;
       }
     }
   </style>
@@ -471,6 +483,7 @@
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Emergency Pallet Rack Repair",
+      "url": "https://eliterackz.com/emergency-rack-repair",
       "provider": {
         "@type": "Organization",
         "name": "Elite Rackz",
@@ -710,8 +723,8 @@
           Call
         </a>
 
-        <a href="contact.html#contact" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm font-semibold">
-          Contact
+        <a href="#emergency-request" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm font-semibold">
+          Emergency Help
         </a>
       </div>
 
@@ -720,7 +733,7 @@
         type="button"
         aria-expanded="false"
         aria-controls="mobileMenu"
-        class="xl:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white/70 transition-all duration-300 hover:bg-white/85 active:scale-95"
+        class="xl:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white transition-all duration-300 hover:bg-slate-50 active:scale-95"
       >
         <span class="sr-only">Open menu</span>
         <span class="relative h-5 w-5">
@@ -732,7 +745,7 @@
     </div>
   </div>
 
-  <div id="mobileMenu" class="xl:hidden border-t border-slate-200 bg-white/95">
+  <div id="mobileMenu" class="xl:hidden border-t border-slate-200 bg-white">
     <div class="mobile-menu-inner px-4 text-sm max-w-7xl mx-auto sm:px-6 lg:px-8">
       <details class="mobile-menu-section" open>
         <summary>Services</summary>
@@ -790,7 +803,7 @@
           Call (708) 980-2936
         </a>
 
-        <a href="contact.html#contact" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold">
+        <a href="#emergency-request" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold">
           Request Emergency Help
         </a>
       </div>
@@ -799,137 +812,156 @@
 </header>
 
 <main>
-  <section id="heroSection" class="relative overflow-hidden">
+  <section id="heroSection" class="relative overflow-hidden text-white">
     <div class="absolute inset-0">
       <img
-        src="assets/images/hero-header.jpg"
-        alt="Warehouse pallet racking requiring emergency pallet rack repair"
-        class="w-full h-full object-cover opacity-95 object-[50%_66%] sm:object-[50%_60%] md:object-[50%_56%] lg:object-[50%_54%]"
+        src="assets/images/emergency-rack-repair-hero.jpg"
+        alt="Warehouse accident showing why emergency pallet rack repair and safety response matter"
+        class="w-full h-full object-cover object-center"
         loading="eager"
       >
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/96 via-slate-950/74 to-slate-950/28"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/78 via-slate-950/42 to-slate-950/68"></div>
-      <div class="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.50)]"></div>
+      <div class="absolute inset-0 bg-slate-950/72"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/96 via-slate-950/84 to-slate-950/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/45 to-slate-950/62"></div>
+      <div class="absolute inset-0 shadow-[inset_0_0_170px_rgba(0,0,0,0.70)]"></div>
     </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pt-32 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
-      <div class="grid lg:grid-cols-[1.08fr_0.92fr] gap-10 items-center">
-        <div class="text-center lg:text-left">
-          <div class="flex justify-center lg:justify-start mb-5">
-            <img
-              src="assets/images/made-in-usa-badge.png"
-              alt="Made in the USA"
-              class="hero-made-badge h-24 md:h-32 w-auto drop-shadow-[0_16px_34px_rgba(0,0,0,0.55)]"
-              loading="eager"
-            >
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pb-16 sm:pb-20 lg:pb-24">
+      <div class="grid lg:grid-cols-[1.03fr_0.97fr] gap-10 items-center">
+        <div>
+          <div class="dark-kicker">
+            Emergency pallet rack repair • 48-hour path
           </div>
 
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm">
-            <span class="inline-block h-2 w-2 rounded-full bg-brand-600"></span>
-            <span class="text-xs font-extrabold tracking-[0.14em] uppercase">Emergency pallet rack repair • 48-hour path</span>
-          </div>
-
-          <h1 class="mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+          <h1 class="mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.78)]">
             Emergency Pallet Rack Repair
-            <span class="block text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.035em]">
+            <span class="block text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.035em] text-blue-100">
               48-Hour Response Available
             </span>
           </h1>
 
-          <p class="mt-5 text-base sm:text-lg md:text-xl text-slate-100/95 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] max-w-3xl mx-auto lg:mx-0">
-            Critical rack damage, forklift impact, bent uprights, and compromised base plates need fast action. Elite Rackz offers a 48-hour emergency rack repair path for qualifying repairs — engineered kits, stamped documentation, and no shortcuts.
+          <p class="mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.78)]">
+            Critical rack damage, forklift impact, bent uprights, displaced anchors, and compromised base plates need fast action. Elite Rackz offers a 48-hour emergency rack repair path for qualifying repairs — engineered kits, stamped documentation, and no shortcuts.
           </p>
 
-          <div class="mt-9 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto lg:mx-0">
-            <a href="tel:+17089802936" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm sm:text-base font-extrabold">
-              Call (708) 980-2936
+          <div class="mt-8 rounded-3xl bg-white text-slate-900 p-5 md:p-6 shadow-contrast ring-1 ring-white">
+            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Emergency hotline
+            </p>
+
+            <a href="tel:+17089802936" class="mt-2 block text-4xl md:text-6xl font-black tracking-tight text-slate-950 hover:text-brand-700">
+              (708) 980-2936
             </a>
 
-            <a href="#emergency-request" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-white/95 text-slate-900 hover:bg-white text-sm sm:text-base font-semibold">
-              Request Emergency Help
-            </a>
+            <p class="mt-3 text-slate-600">
+              Call first if rack damage is blocking an aisle, creating a safety concern, delaying an audit, or putting product and people at risk.
+            </p>
 
-            <a href="#emergency-path" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-slate-950/55 text-white ring-1 ring-white/20 hover:bg-slate-950/75 text-sm sm:text-base font-semibold backdrop-blur-sm">
-              See 48-Hour Path
-            </a>
+            <div class="mt-6 grid sm:grid-cols-2 gap-3">
+              <a href="tel:+17089802936" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-extrabold">
+                Call Now
+              </a>
+
+              <a href="#emergency-request" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
+                Request Emergency Help
+              </a>
+            </div>
           </div>
 
-          <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto lg:mx-0">
-            <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
-              <div class="text-xs text-white/70">Emergency</div>
+          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Emergency</div>
               <div class="font-extrabold tracking-tight">48-Hour Path</div>
             </div>
 
-            <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
-              <div class="text-xs text-white/70">Repair Type</div>
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Repair Type</div>
               <div class="font-extrabold tracking-tight">Engineered Kit</div>
             </div>
 
-            <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
-              <div class="text-xs text-white/70">Documentation</div>
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Documentation</div>
               <div class="font-extrabold tracking-tight">Stamped Calcs</div>
             </div>
 
-            <div class="rounded-xl bg-slate-950/55 ring-1 ring-white/15 px-4 py-3 text-white backdrop-blur">
-              <div class="text-xs text-white/70">Manufacturing</div>
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Manufacturing</div>
               <div class="font-extrabold tracking-tight">Made in USA</div>
             </div>
           </div>
         </div>
 
-        <aside class="rounded-3xl p-6 md:p-8 bg-white/96 backdrop-blur-sm border border-white/70 shadow-lift">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-600/10 text-brand-700 ring-1 ring-brand-600/20">
-            <span class="inline-block h-2 w-2 rounded-full bg-brand-600"></span>
-            <span class="text-xs font-extrabold tracking-[0.12em] uppercase">Emergency hotline</span>
-          </div>
+        <aside class="rounded-3xl bg-white text-slate-900 p-4 md:p-5 shadow-contrast ring-1 ring-white">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+            <div class="proof-card rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
+              <div class="relative">
+                <img
+                  src="assets/images/emergency-before.jpg"
+                  alt="Critical pallet rack damage before emergency rack repair"
+                  class="w-full h-[220px] sm:h-[260px] lg:h-[240px] xl:h-[260px] object-cover"
+                  loading="eager"
+                >
+                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-extrabold tracking-wide">
+                  BEFORE
+                </div>
+              </div>
 
-          <h2 class="mt-5 text-4xl md:text-5xl font-black tracking-tight text-slate-900">
-            (708) 980-2936
-          </h2>
-
-          <p class="mt-4 text-slate-600 text-base md:text-lg">
-            Call now if rack damage is blocking an aisle, creating a safety concern, delaying an audit, or putting product and people at risk.
-          </p>
-
-          <div class="mt-6 grid gap-4">
-            <div class="flex gap-4">
-              <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">1</div>
-              <div>
-                <p class="font-bold text-slate-900">Send photos</p>
-                <p class="text-sm text-slate-600 mt-1">Send upright, base plate, aisle, anchor, and damage photos for rapid triage.</p>
+              <div class="p-4">
+                <p class="font-extrabold text-slate-900">Critical rack damage</p>
+                <p class="mt-1 text-sm text-slate-600">
+                  Bent uprights, damaged impact zones, and compromised rack sections.
+                </p>
               </div>
             </div>
 
-            <div class="flex gap-4">
-              <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">2</div>
-              <div>
-                <p class="font-bold text-slate-900">Get a priority strategy</p>
-                <p class="text-sm text-slate-600 mt-1">We identify the fastest engineered repair path and quote requirements.</p>
+            <div class="proof-card rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
+              <div class="relative">
+                <img
+                  src="assets/images/emergency-after.jpg"
+                  alt="Pallet rack repaired with engineered repair kit"
+                  class="w-full h-[220px] sm:h-[260px] lg:h-[240px] xl:h-[260px] object-cover"
+                  loading="eager"
+                >
+                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-extrabold tracking-wide">
+                  AFTER
+                </div>
               </div>
-            </div>
 
-            <div class="flex gap-4">
-              <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">3</div>
-              <div>
-                <p class="font-bold text-slate-900">Move to repair</p>
-                <p class="text-sm text-slate-600 mt-1">Qualifying repairs move into quick-ship and installation scheduling.</p>
+              <div class="p-4">
+                <p class="font-extrabold text-slate-900">Engineered repair</p>
+                <p class="mt-1 text-sm text-slate-600">
+                  Documented repair path with engineered kit support.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="mt-7 grid gap-3">
-            <a href="tel:+17089802936" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-extrabold">
-              Call Emergency Hotline
-            </a>
+          <div class="mt-5 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Emergency triage checklist
+            </p>
 
-            <a href="#emergency-request" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
-              Request Emergency Help
-            </a>
+            <h2 class="mt-2 text-2xl md:text-3xl font-black tracking-tight text-slate-950">
+              What to send us right away.
+            </h2>
+
+            <div class="mt-4 grid gap-3 text-sm text-slate-700">
+              <div class="rounded-xl bg-white ring-1 ring-slate-200 p-3">
+                <span class="font-bold text-slate-900">1. Damaged upright photo</span>
+                <span class="block mt-1">Show the full column, bend, twist, or impact area.</span>
+              </div>
+
+              <div class="rounded-xl bg-white ring-1 ring-slate-200 p-3">
+                <span class="font-bold text-slate-900">2. Base plate and anchors</span>
+                <span class="block mt-1">Include floor, anchor bolts, base plate, and concrete damage.</span>
+              </div>
+
+              <div class="rounded-xl bg-slate-950 text-white p-3">
+                <span class="font-bold">3. Aisle and rack location</span>
+                <span class="block mt-1 text-slate-200">Show the surrounding rack bay and whether product is loaded.</span>
+              </div>
+            </div>
           </div>
-
-          <p class="mt-4 text-xs text-slate-500">
-            Availability depends on location, site conditions, repair complexity, and whether the damage qualifies for the 48-hour emergency path.
-          </p>
         </aside>
       </div>
     </div>
@@ -958,30 +990,40 @@
           <p class="mt-4 text-lg text-slate-600 max-w-3xl">
             Elite Rackz helps warehouse operations, EHS, facilities, and maintenance teams move quickly from emergency rack damage to triage, quote, repair strategy, and installation scheduling.
           </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-extrabold">
+              Call (708) 980-2936
+            </a>
+
+            <a href="#emergency-path" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-semibold">
+              See 48-Hour Path
+            </a>
+          </div>
         </div>
 
         <div class="rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
-          <div class="text-xs text-white/60 uppercase tracking-[0.16em] font-extrabold">Emergency signs</div>
+          <div class="text-xs text-white uppercase tracking-[0.16em] font-extrabold">Emergency signs</div>
 
           <div class="mt-5 grid gap-3">
-            <div class="rounded-2xl bg-white/8 ring-1 ring-white/10 p-4">
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
               <p class="font-bold">Forklift impact on an upright</p>
-              <p class="mt-1 text-sm text-white/70">Bent, twisted, crushed, or visibly deformed rack column.</p>
+              <p class="mt-1 text-sm text-slate-600">Bent, twisted, crushed, or visibly deformed rack column.</p>
             </div>
 
-            <div class="rounded-2xl bg-white/8 ring-1 ring-white/10 p-4">
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
               <p class="font-bold">Base plate or anchor damage</p>
-              <p class="mt-1 text-sm text-white/70">Loose anchors, torn plates, displaced rack, or concrete damage.</p>
+              <p class="mt-1 text-sm text-slate-600">Loose anchors, torn plates, displaced rack, or concrete damage.</p>
             </div>
 
-            <div class="rounded-2xl bg-white/8 ring-1 ring-white/10 p-4">
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
               <p class="font-bold">Aisle closure or blocked operation</p>
-              <p class="mt-1 text-sm text-white/70">Damage that stops picking, staging, shipping, or safe aisle flow.</p>
+              <p class="mt-1 text-sm text-slate-600">Damage that stops picking, staging, shipping, or safe aisle flow.</p>
             </div>
 
-            <div class="rounded-2xl bg-white/8 ring-1 ring-white/10 p-4">
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
               <p class="font-bold">Upcoming safety or customer audit</p>
-              <p class="mt-1 text-sm text-white/70">Inspection pressure, EHS concern, insurance walkthrough, or customer review.</p>
+              <p class="mt-1 text-sm text-slate-600">Inspection pressure, EHS concern, insurance walkthrough, or customer review.</p>
             </div>
           </div>
         </div>
@@ -1056,7 +1098,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
         <div>
-          <div class="section-kicker">Before and after</div>
+          <div class="section-kicker">Emergency repair proof</div>
 
           <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             Critical rack damage needs more than a quick visual patch.
@@ -1065,102 +1107,45 @@
           <p class="mt-4 text-lg text-slate-600">
             Emergency pallet rack repair is about stabilizing risk, restoring the damaged section, and giving your team documentation for safety and internal approval.
           </p>
-
-          <div class="mt-8 grid gap-4">
-            <div class="emergency-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
-              <h3 class="font-extrabold text-slate-900">Engineered repair kit path</h3>
-              <p class="mt-2 text-sm text-slate-600">
-                The correct repair path depends on damage severity, rack type, frame geometry, and site conditions.
-              </p>
-            </div>
-
-            <div class="emergency-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
-              <h3 class="font-extrabold text-slate-900">Stamped documentation when needed</h3>
-              <p class="mt-2 text-sm text-slate-600">
-                Emergency repair projects can include stamped calculations and documentation when the project qualifies.
-              </p>
-            </div>
-
-            <div class="emergency-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
-              <h3 class="font-extrabold text-slate-900">Repair plus protection</h3>
-              <p class="mt-2 text-sm text-slate-600">
-                After repair, column guards or end-of-aisle guards may help reduce repeat forklift impact.
-              </p>
-            </div>
-          </div>
         </div>
 
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div class="rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-lift">
-            <div class="relative">
-              <img
-                src="assets/images/emergency-before.jpg"
-                alt="Critical pallet rack damage before emergency rack repair"
-                class="w-full h-[280px] object-cover"
-                loading="lazy"
-              >
-              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-extrabold tracking-wide">
-                BEFORE
-              </div>
-            </div>
-
-            <div class="p-5">
-              <h3 class="font-extrabold text-slate-900">Critical rack damage</h3>
-              <p class="mt-2 text-sm text-slate-600">
-                Bent or damaged rack can create risk for warehouse teams, product, and compliance records.
-              </p>
-            </div>
+        <div class="grid gap-4">
+          <div class="emergency-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <h3 class="font-extrabold text-slate-900">Engineered repair kit path</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              The correct repair path depends on damage severity, rack type, frame geometry, and site conditions.
+            </p>
           </div>
 
-          <div class="rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-lift">
-            <div class="relative">
-              <img
-                src="assets/images/emergency-after.jpg"
-                alt="Pallet rack repaired with custom engineered repair kit"
-                class="w-full h-[280px] object-cover"
-                loading="lazy"
-              >
-              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-extrabold tracking-wide">
-                AFTER
-              </div>
-            </div>
+          <div class="emergency-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <h3 class="font-extrabold text-slate-900">Stamped documentation when needed</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Emergency repair projects can include stamped calculations and documentation when the project qualifies.
+            </p>
+          </div>
 
-            <div class="p-5">
-              <h3 class="font-extrabold text-slate-900">Engineered repair</h3>
-              <p class="mt-2 text-sm text-slate-600">
-                A documented repair path helps restore integrity and gives your team cleaner records.
-              </p>
-            </div>
+          <div class="emergency-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <h3 class="font-extrabold text-slate-900">Repair plus protection</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              After repair, column guards or end-of-aisle guards may help reduce repeat forklift impact.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="different" class="relative py-16 overflow-hidden">
-    <div class="absolute inset-0">
-      <img
-        src="assets/images/manufacturing-hero.jpg"
-        alt="Elite Rackz in-house manufacturing for emergency pallet rack repair kits"
-        class="w-full h-full object-cover"
-        loading="lazy"
-      >
-      <div class="absolute inset-0 bg-slate-950/72"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/88 via-slate-950/70 to-slate-950/66"></div>
-    </div>
-
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="different" class="py-16 bg-slate-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/12 text-white ring-1 ring-white/24 backdrop-blur-sm">
-            <span class="text-xs font-extrabold tracking-[0.14em] uppercase">What makes this different</span>
-          </div>
+          <div class="dark-kicker">What makes this different</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
             Emergency speed without sacrificing engineering standards.
           </h2>
 
-          <p class="mt-4 text-white/88 text-lg">
+          <p class="mt-4 text-slate-200 text-lg">
             Fast does not mean improvised. Elite Rackz combines Made in USA manufacturing, stamped calculations, in-house production control, and a 48-hour emergency repair path for qualifying damaged rack.
           </p>
 
@@ -1176,7 +1161,7 @@
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-2xl bg-white p-5 shadow-contrast ring-1 ring-slate-200">
+          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Made in USA</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Illinois manufacturing</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1184,7 +1169,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white p-5 shadow-contrast ring-1 ring-slate-200">
+          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Engineering</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Stamped calculations</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1192,7 +1177,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white p-5 shadow-contrast ring-1 ring-slate-200">
+          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Emergency</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">48-hour repair path</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1200,7 +1185,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white p-5 shadow-contrast ring-1 ring-slate-200">
+          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">No shortcuts</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Engineered strategy</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1314,7 +1299,7 @@
 
           <div class="qualification-card rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
             <h3 class="font-extrabold">Not sure if it qualifies?</h3>
-            <p class="mt-2 text-sm text-white/72">
+            <p class="mt-2 text-sm text-slate-200">
               Call or send photos. We can help determine whether emergency rack repair, standard repair, replacement, or guarding is the right next step.
             </p>
             <a href="tel:+17089802936" class="mt-4 inline-flex items-center text-white font-extrabold hover:underline">
@@ -1435,7 +1420,7 @@
 
             <div class="rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
               <p class="font-extrabold">Include these details if possible:</p>
-              <ul class="mt-3 grid gap-2 text-sm text-white/72">
+              <ul class="mt-3 grid gap-2 text-sm text-slate-200">
                 <li>• Photos of damaged upright, base plate, and aisle</li>
                 <li>• Rack brand/profile if known</li>
                 <li>• Beam elevations and frame height</li>

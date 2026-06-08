@@ -38,14 +38,20 @@
   </url>
 
   <url>
+    <loc>https://eliterackz.com/rack-inspection-checklist</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://eliterackz.com/rack-repair-vs-replacement</loc>
     <priority>0.75</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://eliterackz.com/rack-inspection-checklist</loc>
-    <priority>0.85</priority>
+    <loc>https://eliterackz.com/fbs-group</loc>
+    <priority>0.75</priority>
     <changefreq>monthly</changefreq>
   </url>
 

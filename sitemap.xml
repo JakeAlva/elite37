@@ -44,6 +44,12 @@
   </url>
 
   <url>
+    <loc>https://eliterackz.com/rack-inspection-checklist</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://eliterackz.com/ez-double-leg</loc>
     <priority>0.75</priority>
     <changefreq>monthly</changefreq>

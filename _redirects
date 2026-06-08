@@ -1,0 +1,29 @@
+# Clean URL redirects — send .html URLs to clean versions
+/products.html /products 301!
+/services.html /services 301!
+/about.html /about 301!
+/contact.html /contact 301!
+/emergency-rack-repair.html /emergency-rack-repair 301!
+/column-guards.html /column-guards 301!
+/end-of-aisle-guards.html /end-of-aisle-guards 301!
+/rack-repair-vs-replacement.html /rack-repair-vs-replacement 301!
+/ez-double-leg.html /ez-double-leg 301!
+/ez-single-leg.html /ez-single-leg 301!
+/ez-roll-form.html /ez-roll-form 301!
+
+# Serve clean URLs from the actual HTML files
+/products /products.html 200
+/services /services.html 200
+/about /about.html 200
+/contact /contact.html 200
+/emergency-rack-repair /emergency-rack-repair.html 200
+/column-guards /column-guards.html 200
+/end-of-aisle-guards /end-of-aisle-guards.html 200
+/rack-repair-vs-replacement /rack-repair-vs-replacement.html 200
+/ez-double-leg /ez-double-leg.html 200
+/ez-single-leg /ez-single-leg.html 200
+/ez-roll-form /ez-roll-form.html 200
+
+# Blog clean-up
+/blog /blog/ 301!
+/blog/index.html /blog/ 301!

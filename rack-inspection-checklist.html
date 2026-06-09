@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://eliterackz.com/rack-inspection-checklist">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://eliterackz.com/assets/images/rack-safety-team.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +57,45 @@
 
     body.mobile-menu-open {
       overflow: hidden;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+      transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 80ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 160ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 240ms;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 320ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
     }
 
     .site-header {
@@ -133,6 +173,10 @@
       background: rgb(15 23 42);
       color: white;
       box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+    }
+
+    #siteHeader {
+      z-index: 1000;
     }
 
     .nav-item {
@@ -219,6 +263,12 @@
       font-size: .78rem;
       color: #64748b;
       line-height: 1.35;
+    }
+
+    #mobileMenuBtn {
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto;
     }
 
     #mobileMenuBtn.menu-open {
@@ -449,10 +499,6 @@
       line-height: 1.65;
     }
 
-    .future-link {
-      cursor: default;
-    }
-
     .hero-mobile-pad {
       padding-top: 7.5rem;
     }
@@ -538,12 +584,6 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Resources",
-          "item": "https://eliterackz.com/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
           "name": "Rack Inspection Checklist",
           "item": "https://eliterackz.com/rack-inspection-checklist"
         }
@@ -593,7 +633,7 @@
               <span>48-hour emergency repair path for qualifying critical rack damage.</span>
             </a>
 
-            <a href="services.html">
+            <a href="services.html#inspection-covers">
               <strong>Rack Inspection &amp; Compliance</strong>
               <span>Pallet rack inspection, rack safety audits, reports, and documentation.</span>
             </a>
@@ -680,7 +720,7 @@
               <span>Compare engineered rack repair kits with full pallet rack replacement.</span>
             </a>
 
-            <a class="future-link" href="#" data-future="fbs-group.html">
+            <a href="fbs-group.html">
               <strong>FBS Group Support</strong>
               <span>Service continuity and support for former FBS Group customers.</span>
             </a>
@@ -724,6 +764,11 @@
             <a href="index.html#industries">
               <strong>E-Commerce Fulfillment</strong>
               <span>Post-peak damage assessments and forklift impact protection.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Building Materials DCs</strong>
+              <span>Heavy-duty rack repair, custom kits, and warehouse guarding systems.</span>
             </a>
           </div>
         </div>
@@ -770,7 +815,7 @@
           <a href="services.html">All Services</a>
           <a href="services.html#pallet-rack-repair">Pallet Rack Repair</a>
           <a href="emergency-rack-repair.html">Emergency Rack Repair</a>
-          <a href="services.html">Rack Inspection &amp; Compliance</a>
+          <a href="services.html#inspection-covers">Rack Inspection &amp; Compliance</a>
           <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
           <a href="services.html#damage-assessment">Rack Damage Assessments</a>
           <a href="services.html#load-capacity">Load Capacity &amp; Labels</a>
@@ -795,7 +840,7 @@
         <div class="mobile-menu-links">
           <a href="rack-inspection-checklist.html">Rack Inspection Checklist</a>
           <a href="rack-repair-vs-replacement.html">Repair vs. Replacement</a>
-          <a class="future-link" href="#" data-future="fbs-group.html">FBS Group Support</a>
+          <a href="fbs-group.html">FBS Group Support</a>
           <a href="blog/index.html">Blog</a>
         </div>
       </details>
@@ -846,19 +891,19 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pb-16 sm:pb-20 lg:pb-24">
       <div class="grid lg:grid-cols-[1.03fr_0.97fr] gap-10 items-center">
         <div>
-          <div class="dark-kicker">
+          <div class="dark-kicker reveal">
             Free warehouse rack inspection checklist
           </div>
 
-          <h1 class="mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+          <h1 class="reveal reveal-delay-1 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
             Free Warehouse Rack Inspection Checklist
           </h1>
 
-          <p class="mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
+          <p class="reveal reveal-delay-2 mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
             A practical pallet rack inspection checklist built for warehouse operations, EHS teams, maintenance leads, and facility managers reviewing visible rack damage.
           </p>
 
-          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="reveal reveal-delay-3 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
               <div class="text-xs text-slate-500">Covers</div>
               <div class="font-extrabold tracking-tight">Uprights</div>
@@ -880,13 +925,13 @@
             </div>
           </div>
 
-          <p class="mt-7 text-sm text-slate-200 max-w-2xl">
+          <p class="reveal reveal-delay-4 mt-7 text-sm text-slate-200 max-w-2xl">
             Fill out the form to receive checklist access. For urgent rack damage, call
             <a href="tel:+17089802936" class="font-extrabold text-white hover:underline">(708) 980-2936</a>.
           </p>
         </div>
 
-        <aside id="checklist-form" class="rounded-3xl bg-white text-slate-900 p-5 md:p-6 shadow-contrast ring-1 ring-white scroll-mt-24">
+        <aside id="checklist-form" class="reveal reveal-delay-2 rounded-3xl bg-white text-slate-900 p-5 md:p-6 shadow-contrast ring-1 ring-white scroll-mt-24">
           <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
             Checklist access form
           </p>
@@ -903,11 +948,14 @@
             class="checklist-form mt-6"
             name="rack-inspection-checklist"
             method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
             action="/rack-inspection-checklist-download"
+            data-netlify="true"
+            netlify
+            netlify-honeypot="bot-field"
+            enctype="application/x-www-form-urlencoded"
           >
             <input type="hidden" name="form-name" value="rack-inspection-checklist">
+            <input type="hidden" name="subject" value="New rack inspection checklist download — Elite Rackz">
 
             <p class="hidden" style="display:none;">
               <label>
@@ -917,10 +965,10 @@
             </p>
 
             <div class="grid gap-3">
-              <input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
-              <input type="email" name="email" placeholder="Work email" aria-label="Work email" required>
-              <input type="text" name="company" placeholder="Company" aria-label="Company" required>
-              <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" required>
+              <input type="text" name="first_name" placeholder="First name" aria-label="First name" autocomplete="given-name" required>
+              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+              <input type="text" name="company" placeholder="Company" aria-label="Company" autocomplete="organization" required>
+              <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" autocomplete="tel" required>
 
               <select name="role" aria-label="Role" required>
                 <option value="">Role</option>
@@ -960,22 +1008,22 @@
 
       <div class="mt-8 grid lg:grid-cols-[1fr_0.75fr] gap-10 items-start">
         <div>
-          <div class="section-kicker">Why rack inspections matter</div>
+          <div class="section-kicker reveal">Why rack inspections matter</div>
 
-          <h2 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             A simple checklist can help your team catch visible rack damage before it becomes downtime.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600 max-w-3xl">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600 max-w-3xl">
             Pallet rack damage is easy to overlook during a busy shift. Bent uprights, missing safety pins, damaged braces, loose anchors, and missing load capacity labels can all create risk for warehouse teams.
           </p>
 
-          <p class="mt-4 text-lg text-slate-600 max-w-3xl">
+          <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-3xl">
             The Elite Rackz warehouse rack inspection checklist gives operations, EHS, and maintenance teams a structured way to document visible conditions, organize rack damage notes, and decide when professional review is needed.
           </p>
         </div>
 
-        <div class="rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
+        <div class="reveal reveal-delay-2 rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
           <div class="text-xs text-white uppercase tracking-[0.16em] font-extrabold">Use this checklist for</div>
 
           <div class="mt-5 grid gap-3">
@@ -994,9 +1042,9 @@
               <p class="mt-1 text-sm text-slate-600">Document rack damage after a hit and collect photos for review.</p>
             </div>
 
-            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+            <div class="rounded-2xl bg-brand-600 text-white p-4">
               <p class="font-bold">Repair planning</p>
-              <p class="mt-1 text-sm text-slate-600">Decide when to request a damage assessment or engineered repair quote.</p>
+              <p class="mt-1 text-sm text-white/88">Decide when to request a damage assessment or engineered repair quote.</p>
             </div>
           </div>
         </div>
@@ -1007,19 +1055,19 @@
   <section id="what-it-covers" class="py-16 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <div class="section-kicker">What the checklist covers</div>
+        <div class="section-kicker reveal">What the checklist covers</div>
 
-        <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           Review the rack components most likely to show visible damage.
         </h2>
 
-        <p class="mt-4 text-lg text-slate-600">
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
           The checklist is built around visible conditions warehouse teams can identify during a rack safety walkthrough.
         </p>
       </div>
 
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <div class="check-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="check-card reveal rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Uprights and columns</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">Front and rear upright review</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1027,7 +1075,7 @@
           </p>
         </div>
 
-        <div class="check-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="check-card reveal reveal-delay-1 rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Braces</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">Horizontal and diagonal bracing</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1035,7 +1083,7 @@
           </p>
         </div>
 
-        <div class="check-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="check-card reveal reveal-delay-2 rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Beams</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">Beam connectors and safety pins</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1043,7 +1091,7 @@
           </p>
         </div>
 
-        <div class="check-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="check-card reveal rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Base plates</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">Base plates and anchor bolts</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1051,7 +1099,7 @@
           </p>
         </div>
 
-        <div class="check-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="check-card reveal reveal-delay-1 rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Labels</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">Load capacity labels</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1059,7 +1107,7 @@
           </p>
         </div>
 
-        <div class="check-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="check-card reveal reveal-delay-2 rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Documentation</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">Photos and rack inspection report notes</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1074,19 +1122,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
         <div>
-          <div class="section-kicker">How to use it</div>
+          <div class="section-kicker reveal">How to use it</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             Turn a walkthrough into a clean rack inspection report.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
             The checklist is designed to help your team walk the aisle, mark visible conditions, and collect the details needed for a professional repair or inspection review.
           </p>
         </div>
 
         <div class="grid gap-4">
-          <div class="use-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="use-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
             <div class="flex gap-4">
               <div class="h-10 w-10 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">1</div>
               <div>
@@ -1096,7 +1144,7 @@
             </div>
           </div>
 
-          <div class="use-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="use-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
             <div class="flex gap-4">
               <div class="h-10 w-10 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">2</div>
               <div>
@@ -1106,7 +1154,7 @@
             </div>
           </div>
 
-          <div class="use-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="use-card reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
             <div class="flex gap-4">
               <div class="h-10 w-10 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">3</div>
               <div>
@@ -1116,7 +1164,7 @@
             </div>
           </div>
 
-          <div class="use-card rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+          <div class="use-card reveal reveal-delay-3 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
             <div class="flex gap-4">
               <div class="h-10 w-10 shrink-0 rounded-full bg-white text-slate-950 flex items-center justify-center font-extrabold">4</div>
               <div>
@@ -1135,33 +1183,33 @@
       <div class="rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift p-6 md:p-10">
         <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div>
-            <div class="section-kicker">When a checklist is not enough</div>
+            <div class="section-kicker reveal">When a checklist is not enough</div>
 
-            <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
               Visible rack damage should move from checklist to professional review.
             </h2>
 
-            <p class="mt-4 text-lg text-slate-600">
+            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
               A checklist can help your team identify and organize visible issues, but it cannot determine structural capacity, repair design, or whether a rack frame is safe to keep in service.
             </p>
 
-            <p class="mt-4 text-lg text-slate-600">
+            <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600">
               If your team finds bent uprights, damaged base plates, loose anchors, missing safety pins, compromised bracing, or unclear load labels, it may be time for a rack damage assessment or engineered repair review.
             </p>
           </div>
 
           <div class="grid gap-4">
-            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <div class="use-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
               <h3 class="font-extrabold text-slate-900">Bent or twisted upright</h3>
               <p class="mt-2 text-sm text-slate-600">Document and request review before assuming the rack can stay in service.</p>
             </div>
 
-            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <div class="use-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
               <h3 class="font-extrabold text-slate-900">Base plate or anchor damage</h3>
               <p class="mt-2 text-sm text-slate-600">Loose anchors, cracked concrete, or displaced rack can change the urgency of the repair.</p>
             </div>
 
-            <div class="rounded-2xl bg-slate-950 text-white p-5">
+            <div class="use-card reveal reveal-delay-2 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
               <h3 class="font-extrabold">Active safety concern?</h3>
               <p class="mt-2 text-sm text-slate-200">Call the emergency line and send photos for rapid triage.</p>
               <a href="tel:+17089802936" class="mt-4 inline-flex items-center text-white font-extrabold hover:underline">
@@ -1178,35 +1226,35 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
         <div>
-          <div class="section-kicker">Professional support</div>
+          <div class="section-kicker reveal">Professional support</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             From inspection notes to repair plan.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
             Elite Rackz can help turn inspection findings into practical next steps: rack damage assessment, engineered pallet rack repair kits, stamped calculations, load capacity review, and guarding recommendations.
           </p>
 
           <div class="mt-8 grid gap-4">
-            <a href="services.html#damage-assessment" class="use-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 block">
+            <a href="services.html#damage-assessment" class="use-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 block shadow-smooth">
               <h3 class="font-extrabold text-slate-900">Rack Damage Assessment</h3>
               <p class="mt-2 text-sm text-slate-600">Photo documentation and repair recommendations for damaged pallet rack.</p>
             </a>
 
-            <a href="products.html" class="use-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 block">
+            <a href="products.html" class="use-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 block shadow-smooth">
               <h3 class="font-extrabold text-slate-900">Pallet Rack Repair Kits</h3>
               <p class="mt-2 text-sm text-slate-600">Engineered repair kit options for damaged uprights and impact zones.</p>
             </a>
 
-            <a href="column-guards.html" class="use-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 block">
+            <a href="column-guards.html" class="use-card reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 block shadow-smooth">
               <h3 class="font-extrabold text-slate-900">Column Guards</h3>
               <p class="mt-2 text-sm text-slate-600">Protect repaired uprights and high-impact areas from repeat forklift damage.</p>
             </a>
           </div>
         </div>
 
-        <div class="rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
+        <div class="reveal reveal-delay-2 rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
           <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-600">
             Send photos for review
           </p>
@@ -1240,18 +1288,18 @@
   <section id="faq" class="py-16 bg-slate-50 border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <div class="section-kicker">Frequently asked questions</div>
+        <div class="section-kicker reveal">Frequently asked questions</div>
 
-        <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           Rack inspection checklist questions.
         </h2>
 
-        <p class="mt-4 text-lg text-slate-600">
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
           Common questions about warehouse rack inspection checklists, rack inspection reports, OSHA-related rack safety preparation, and when to request professional help.
         </p>
       </div>
 
-      <div class="mt-10 grid gap-4">
+      <div class="reveal reveal-delay-3 mt-10 grid gap-4">
         <details class="faq-accordion">
           <summary>
             <h3 class="text-lg font-extrabold text-slate-900">
@@ -1319,18 +1367,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
         <div>
-          <div class="dark-kicker">Need review support?</div>
+          <div class="dark-kicker reveal">Need review support?</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
             Use the checklist, then send us what you find.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-200 max-w-3xl">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-200 max-w-3xl">
             The fastest way to get help is to document the damage clearly. After using the checklist, send photos, aisle references, rack details, and notes so Elite Rackz can recommend inspection, repair, replacement, emergency support, or guarding.
           </p>
         </div>
 
-        <div class="rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast">
+        <div class="reveal reveal-delay-3 rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast">
           <p class="text-sm font-semibold text-brand-700">Talk to Elite Rackz</p>
           <p class="mt-2 text-3xl font-extrabold tracking-tight">
             <a href="tel:+17089802936">(708) 980-2936</a>
@@ -1357,7 +1405,7 @@
 
 <footer class="mt-24 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-5">
-    <div>
+    <div class="reveal">
       <div class="flex items-center gap-3 mb-4">
         <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
         <span class="font-extrabold tracking-tight text-slate-900">
@@ -1370,20 +1418,20 @@
       </p>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-1">
       <h3 class="text-sm font-semibold mb-3">Services</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="services.html" class="hover:text-brand-600">All Services</a></li>
         <li><a href="services.html#pallet-rack-repair" class="hover:text-brand-600">Pallet Rack Repair</a></li>
         <li><a href="emergency-rack-repair.html" class="hover:text-brand-600">Emergency Rack Repair</a></li>
-        <li><a href="services.html" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
+        <li><a href="services.html#inspection-covers" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
         <li><a href="services.html#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
         <li><a href="services.html#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
         <li><a href="services.html#isnetworld" class="hover:text-brand-600">ISNetworld® Support</a></li>
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-2">
       <h3 class="text-sm font-semibold mb-3">Products</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="products.html" class="hover:text-brand-600">Pallet Rack Repair Kits</a></li>
@@ -1395,17 +1443,17 @@
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-3">
       <h3 class="text-sm font-semibold mb-3">Resources</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="rack-inspection-checklist.html" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
         <li><a href="rack-repair-vs-replacement.html" class="hover:text-brand-600">Repair vs. Replacement</a></li>
-        <li><a href="#" data-future="fbs-group.html" class="future-link hover:text-brand-600">FBS Group Support</a></li>
+        <li><a href="fbs-group.html" class="hover:text-brand-600">FBS Group Support</a></li>
         <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-4">
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
@@ -1424,6 +1472,32 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(function (el) {
+        el.classList.add("in-view");
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+
+    items.forEach(function (el) {
+      io.observe(el);
+    });
+  })();
+</script>
 
 <script>
   (function () {
@@ -1448,6 +1522,7 @@
 
     btn.addEventListener('click', function () {
       const isOpen = btn.classList.contains('menu-open');
+
       if (isOpen) {
         closeMenu();
       } else {
@@ -1455,11 +1530,9 @@
       }
     });
 
-    menu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (!link.classList.contains('future-link')) {
-          closeMenu();
-        }
+    menu.querySelectorAll('a').forEach(function () {
+      this.addEventListener('click', function () {
+        closeMenu();
       });
     });
 
@@ -1529,18 +1602,6 @@
         item.classList.remove('open');
         const trigger = item.querySelector('.nav-trigger');
         if (trigger) trigger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  })();
-</script>
-
-<script>
-  (function () {
-    document.querySelectorAll('.future-link').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        if (link.getAttribute('href') === '#') {
-          event.preventDefault();
-        }
       });
     });
   })();

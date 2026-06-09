@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://eliterackz.com/column-guards">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://eliterackz.com/assets/images/column-guards-hero2.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +57,45 @@
 
     body.mobile-menu-open {
       overflow: hidden;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+      transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 80ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 160ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 240ms;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 320ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
     }
 
     .product-fade {
@@ -142,6 +182,10 @@
       box-shadow: 0 10px 24px rgba(15,23,42,0.12);
     }
 
+    #siteHeader {
+      z-index: 1000;
+    }
+
     .nav-item {
       position: relative;
     }
@@ -226,6 +270,12 @@
       font-size: .78rem;
       color: #64748b;
       line-height: 1.35;
+    }
+
+    #mobileMenuBtn {
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto;
     }
 
     #mobileMenuBtn.menu-open {
@@ -441,10 +491,6 @@
       line-height: 1.65;
     }
 
-    .future-link {
-      cursor: default;
-    }
-
     .hero-mobile-pad {
       padding-top: 7.5rem;
     }
@@ -462,6 +508,7 @@
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Pallet Rack Column Guards",
+      "url": "https://eliterackz.com/column-guards",
       "brand": {
         "@type": "Brand",
         "name": "Elite Rackz"
@@ -529,6 +576,30 @@
           }
         }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://eliterackz.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://eliterackz.com/products"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Column Guards",
+          "item": "https://eliterackz.com/column-guards"
+        }
+      ]
     }
   ]
   </script>
@@ -574,7 +645,7 @@
               <span>48-hour emergency repair path for qualifying critical rack damage.</span>
             </a>
 
-            <a href="services.html">
+            <a href="services.html#inspection-covers">
               <strong>Rack Inspection &amp; Compliance</strong>
               <span>Pallet rack inspection, rack safety audits, reports, and documentation.</span>
             </a>
@@ -651,17 +722,17 @@
           </button>
 
           <div class="dropdown-menu">
-            <a class="future-link" href="#" data-future="rack-inspection-checklist.html">
+            <a href="rack-inspection-checklist.html">
               <strong>Rack Inspection Checklist</strong>
-              <span>Warehouse rack inspection checklist for safety walkthroughs.</span>
+              <span>Warehouse rack inspection checklist for safety walkthroughs and documentation.</span>
             </a>
 
-            <a class="future-link" href="#" data-future="rack-repair-vs-replacement.html">
+            <a href="rack-repair-vs-replacement.html">
               <strong>Repair vs. Replacement</strong>
               <span>Compare engineered rack repair kits with full pallet rack replacement.</span>
             </a>
 
-            <a class="future-link" href="#" data-future="fbs-group.html">
+            <a href="fbs-group.html">
               <strong>FBS Group Support</strong>
               <span>Service continuity and support for former FBS Group customers.</span>
             </a>
@@ -705,6 +776,11 @@
             <a href="index.html#industries">
               <strong>E-Commerce Fulfillment</strong>
               <span>Post-peak damage assessments and forklift impact protection.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Building Materials DCs</strong>
+              <span>Heavy-duty rack repair, custom kits, and warehouse guarding systems.</span>
             </a>
           </div>
         </div>
@@ -751,7 +827,7 @@
           <a href="services.html">All Services</a>
           <a href="services.html#pallet-rack-repair">Pallet Rack Repair</a>
           <a href="emergency-rack-repair.html">Emergency Rack Repair</a>
-          <a href="services.html">Rack Inspection &amp; Compliance</a>
+          <a href="services.html#inspection-covers">Rack Inspection &amp; Compliance</a>
           <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
           <a href="services.html#damage-assessment">Rack Damage Assessments</a>
           <a href="services.html#load-capacity">Load Capacity &amp; Labels</a>
@@ -774,9 +850,9 @@
       <details class="mobile-menu-section">
         <summary>Resources</summary>
         <div class="mobile-menu-links">
-          <a class="future-link" href="#" data-future="rack-inspection-checklist.html">Rack Inspection Checklist</a>
-          <a class="future-link" href="#" data-future="rack-repair-vs-replacement.html">Repair vs. Replacement</a>
-          <a class="future-link" href="#" data-future="fbs-group.html">FBS Group Support</a>
+          <a href="rack-inspection-checklist.html">Rack Inspection Checklist</a>
+          <a href="rack-repair-vs-replacement.html">Repair vs. Replacement</a>
+          <a href="fbs-group.html">FBS Group Support</a>
           <a href="blog/index.html">Blog</a>
         </div>
       </details>
@@ -827,22 +903,22 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pb-16 sm:pb-20 lg:pb-24">
       <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-center">
         <div>
-          <div class="dark-kicker">
+          <div class="dark-kicker reveal">
             Warehouse column protection • Steel pallet rack guards
           </div>
 
-          <h1 class="mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+          <h1 class="reveal reveal-delay-1 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
             Pallet Rack Column Guards
             <span class="block text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.035em] text-blue-100">
               Steel Warehouse Protection
             </span>
           </h1>
 
-          <p class="mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
+          <p class="reveal reveal-delay-2 mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
             Protect pallet rack uprights, warehouse columns, and forklift impact zones with heavy-duty steel column guards built for real warehouse traffic, rack damage prevention, and long-term protection.
           </p>
 
-          <div class="mt-8 grid sm:grid-cols-2 gap-3 max-w-xl">
+          <div class="reveal reveal-delay-3 mt-8 grid sm:grid-cols-2 gap-3 max-w-xl">
             <a href="contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
               Request a Quote
             </a>
@@ -852,7 +928,7 @@
             </a>
           </div>
 
-          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="reveal reveal-delay-4 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
               <div class="text-xs text-slate-500">Protection</div>
               <div class="font-extrabold tracking-tight">Uprights</div>
@@ -875,7 +951,7 @@
           </div>
         </div>
 
-        <aside class="rounded-3xl bg-white text-slate-900 p-4 md:p-5 shadow-contrast ring-1 ring-white">
+        <aside class="reveal reveal-delay-2 rounded-3xl bg-white text-slate-900 p-4 md:p-5 shadow-contrast ring-1 ring-white">
           <div id="guardProHeroCarousel" class="relative rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
             <div id="guardProHeroWrap" class="relative h-[340px] sm:h-[430px] lg:h-[520px] bg-white">
               <img
@@ -929,22 +1005,22 @@
 
       <div class="mt-8 grid lg:grid-cols-[1fr_0.75fr] gap-10 items-start">
         <div>
-          <div class="section-kicker">Protect the most vulnerable part of your rack</div>
+          <div class="section-kicker reveal">Protect the most vulnerable part of your rack</div>
 
-          <h2 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             Forklift impact usually starts at the bottom of the upright.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600 max-w-3xl">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600 max-w-3xl">
             Pallet rack column guards protect the lower rack upright, post, and impact-prone column areas from forklift damage, pallet jack contact, outrigger hits, and repeated traffic exposure.
           </p>
 
-          <p class="mt-4 text-lg text-slate-600 max-w-3xl">
+          <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-3xl">
             Elite Rackz steel column guards are built for warehouse column protection, pallet rack post protection, and rack damage prevention in high-traffic facilities where downtime, safety, and documentation matter.
           </p>
         </div>
 
-        <div class="rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
+        <div class="reveal reveal-delay-2 rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
           <div class="text-xs text-white uppercase tracking-[0.16em] font-extrabold">Common impact zones</div>
 
           <div class="mt-5 grid gap-3">
@@ -963,9 +1039,9 @@
               <p class="mt-1 text-sm text-slate-600">Aisles with repeat forklift movement and tight turns.</p>
             </div>
 
-            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+            <div class="rounded-2xl bg-brand-600 text-white p-4">
               <p class="font-bold">Previously damaged uprights</p>
-              <p class="mt-1 text-sm text-slate-600">Pair repair kits with protection to reduce repeat damage.</p>
+              <p class="mt-1 text-sm text-white/88">Pair repair kits with protection to reduce repeat damage.</p>
             </div>
           </div>
         </div>
@@ -976,19 +1052,19 @@
   <section id="products" class="py-16 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <div class="section-kicker">Column guard products</div>
+        <div class="section-kicker reveal">Column guard products</div>
 
-        <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           Steel pallet rack column guards for different impact conditions.
         </h2>
 
-        <p class="mt-4 text-lg text-slate-600">
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
           Elite Rackz offers steel column guard families for protection, reinforcement, and high-impact upright zones.
         </p>
       </div>
 
       <div class="mt-10 grid gap-8 lg:grid-cols-3">
-        <article class="product-card rounded-3xl bg-white border border-slate-200 shadow-smooth overflow-hidden">
+        <article class="product-card reveal rounded-3xl bg-white border border-slate-200 shadow-smooth overflow-hidden">
           <div class="h-72 bg-white flex items-center justify-center ring-1 ring-slate-100">
             <img
               src="assets/images/IMG_1518.png"
@@ -1022,7 +1098,7 @@
           </div>
         </article>
 
-        <article class="product-card rounded-3xl bg-white border border-slate-200 shadow-smooth overflow-hidden">
+        <article class="product-card reveal reveal-delay-1 rounded-3xl bg-white border border-slate-200 shadow-smooth overflow-hidden">
           <div class="h-72 bg-white flex items-center justify-center ring-1 ring-slate-100">
             <img
               src="assets/images/column-guard-shield.jpg"
@@ -1056,7 +1132,7 @@
           </div>
         </article>
 
-        <article class="product-card rounded-3xl bg-white border border-slate-200 shadow-smooth overflow-hidden">
+        <article class="product-card reveal reveal-delay-2 rounded-3xl bg-white border border-slate-200 shadow-smooth overflow-hidden">
           <div class="h-72 bg-white flex items-center justify-center ring-1 ring-slate-100">
             <img
               src="assets/images/column-guard-vnose.jpg"
@@ -1097,29 +1173,29 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
         <div>
-          <div class="section-kicker">Product specifications</div>
+          <div class="section-kicker reveal">Product specifications</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             Built for warehouse impact zones, not light-duty contact.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
             The correct pallet rack column guard depends on rack profile, upright width, footplate dimensions, aisle layout, forklift exposure, and whether you are protecting new rack or reinforcing a previously damaged upright.
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-3">
+          <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
             <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
               Request Product Review
             </a>
 
-            <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100">
+            <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-extrabold">
               Call (708) 980-2936
             </a>
           </div>
         </div>
 
         <div class="grid gap-5">
-          <div class="spec-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+          <div class="spec-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
             <h3 class="text-xl font-extrabold text-slate-900">EZ Guard Pro Specifications</h3>
             <div class="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
               <div><span class="text-slate-500">Rack system:</span> <span class="font-semibold text-slate-900">All</span></div>
@@ -1131,7 +1207,7 @@
             </div>
           </div>
 
-          <div class="spec-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+          <div class="spec-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
             <h3 class="text-xl font-extrabold text-slate-900">EZ Guard Shield Specifications</h3>
             <div class="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
               <div><span class="text-slate-500">Rack system:</span> <span class="font-semibold text-slate-900">All</span></div>
@@ -1143,7 +1219,7 @@
             </div>
           </div>
 
-          <div class="spec-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+          <div class="spec-card reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
             <h3 class="text-xl font-extrabold text-slate-900">EZ Guard V-Nose Specifications</h3>
             <div class="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
               <div><span class="text-slate-500">Rack system:</span> <span class="font-semibold text-slate-900">All</span></div>
@@ -1163,17 +1239,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
         <div>
-          <div class="dark-kicker">Why steel over plastic</div>
+          <div class="dark-kicker reveal">Why steel over plastic</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
             Heavy-duty forklift impact guarding needs steel.
           </h2>
 
-          <p class="mt-4 text-slate-200 text-lg">
+          <p class="reveal reveal-delay-2 mt-4 text-slate-200 text-lg">
             Plastic protectors can help with light contact, but high-traffic warehouse rack guarding requires a stronger approach. Steel pallet rack column guards are built for repeated impact exposure, lower upright protection, and long-term rack damage prevention.
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-3">
+          <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
             <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
               Request Guarding Help
             </a>
@@ -1185,7 +1261,7 @@
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+          <div class="reveal rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Impact resistance</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Built for forklift traffic</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1193,7 +1269,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+          <div class="reveal reveal-delay-1 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Anchoring</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Anchored protection</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1201,7 +1277,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+          <div class="reveal reveal-delay-2 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Durability</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Not a disposable boot</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1209,7 +1285,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+          <div class="reveal reveal-delay-3 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Made in USA</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Manufacturer support</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1225,31 +1301,31 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[1fr_0.85fr] gap-10 items-start">
         <div>
-          <div class="section-kicker">Low-profile design</div>
+          <div class="section-kicker reveal">Low-profile design</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             Protect the upright without creating a new aisle problem.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
             Column guards need to protect vulnerable rack areas without interfering with aisle flow, pallets, picking, turning, and daily warehouse traffic. Low-profile steel column protection helps reduce impact exposure while keeping operations practical.
           </p>
         </div>
 
         <div class="grid gap-4">
-          <div class="feature-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="feature-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Designed around rack geometry</h3>
             <p class="mt-2 text-sm text-slate-600">Guard selection depends on upright width, footplate dimensions, and rack profile.</p>
           </div>
 
-          <div class="feature-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="feature-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Built for busy warehouse traffic</h3>
             <p class="mt-2 text-sm text-slate-600">Use column protection where forklift operators, pallets, and equipment repeatedly pass close to rack uprights.</p>
           </div>
 
-          <div class="feature-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
-            <h3 class="font-extrabold text-slate-900">Customizable when needed</h3>
-            <p class="mt-2 text-sm text-slate-600">Some facilities require custom dimensions, setbacks, or mounting considerations.</p>
+          <div class="feature-card reveal reveal-delay-2 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+            <h3 class="font-extrabold">Customizable when needed</h3>
+            <p class="mt-2 text-sm text-slate-200">Some facilities require custom dimensions, setbacks, or mounting considerations.</p>
           </div>
         </div>
       </div>
@@ -1261,17 +1337,17 @@
       <div class="rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift p-6 md:p-10">
         <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div>
-            <div class="section-kicker">Pair with repair kits</div>
+            <div class="section-kicker reveal">Pair with repair kits</div>
 
-            <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
               Repair damaged uprights, then protect the impact zone.
             </h2>
 
-            <p class="mt-4 text-lg text-slate-600">
+            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
               If an upright is already damaged, a guard alone may not be enough. Elite Rackz can help determine whether your facility needs pallet rack repair kits, column guards, end-of-aisle guards, or a combined repair-and-protection plan.
             </p>
 
-            <div class="mt-8 flex flex-wrap gap-3">
+            <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
               <a href="products.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
                 View Repair Kits
               </a>
@@ -1283,17 +1359,17 @@
           </div>
 
           <div class="grid gap-4">
-            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <div class="feature-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
               <h3 class="font-extrabold text-slate-900">Damaged rack upright?</h3>
               <p class="mt-2 text-sm text-slate-600">Start with repair review before choosing a guard.</p>
             </div>
 
-            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <div class="feature-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
               <h3 class="font-extrabold text-slate-900">Repeat forklift impact?</h3>
               <p class="mt-2 text-sm text-slate-600">Add column protection to reduce recurring damage.</p>
             </div>
 
-            <div class="rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+            <div class="feature-card reveal reveal-delay-2 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
               <h3 class="font-extrabold">Not sure what you need?</h3>
               <p class="mt-2 text-sm text-slate-200">Send rack photos and aisle details. We can help recommend the right repair or guarding path.</p>
               <a href="tel:+17089802936" class="mt-4 inline-flex items-center text-white font-extrabold hover:underline">(708) 980-2936</a>
@@ -1307,18 +1383,18 @@
   <section id="faq" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <div class="section-kicker">Frequently asked questions</div>
+        <div class="section-kicker reveal">Frequently asked questions</div>
 
-        <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           Pallet rack column guard questions.
         </h2>
 
-        <p class="mt-4 text-lg text-slate-600">
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
           Common questions about warehouse column protection, pallet rack post protectors, rack upright guards, and steel forklift impact guarding.
         </p>
       </div>
 
-      <div class="mt-10 grid gap-4">
+      <div class="reveal reveal-delay-3 mt-10 grid gap-4">
         <details class="faq-accordion">
           <summary>
             <h3 class="text-lg font-extrabold text-slate-900">
@@ -1374,18 +1450,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
         <div>
-          <div class="dark-kicker">Quote support</div>
+          <div class="dark-kicker reveal">Quote support</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
             Need help choosing column guards?
           </h2>
 
-          <p class="mt-4 text-lg text-slate-200 max-w-3xl">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-200 max-w-3xl">
             Send rack photos, upright dimensions, footplate measurements, and aisle details. Elite Rackz can help determine whether your facility needs EZ Guard Pro, EZ Guard Shield, EZ Guard V-Nose, end-of-aisle guards, or repair kits.
           </p>
         </div>
 
-        <div class="rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast">
+        <div class="reveal reveal-delay-3 rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast">
           <p class="text-sm font-semibold text-brand-700">Talk to Elite Rackz</p>
           <p class="mt-2 text-3xl font-extrabold tracking-tight">
             <a href="tel:+17089802936">(708) 980-2936</a>
@@ -1412,7 +1488,7 @@
 
 <footer class="mt-24 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-5">
-    <div>
+    <div class="reveal">
       <div class="flex items-center gap-3 mb-4">
         <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
         <span class="font-extrabold tracking-tight text-slate-900">
@@ -1425,20 +1501,20 @@
       </p>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-1">
       <h3 class="text-sm font-semibold mb-3">Services</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="services.html" class="hover:text-brand-600">All Services</a></li>
         <li><a href="services.html#pallet-rack-repair" class="hover:text-brand-600">Pallet Rack Repair</a></li>
         <li><a href="emergency-rack-repair.html" class="hover:text-brand-600">Emergency Rack Repair</a></li>
-        <li><a href="services.html" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
+        <li><a href="services.html#inspection-covers" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
         <li><a href="services.html#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
         <li><a href="services.html#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
         <li><a href="services.html#isnetworld" class="hover:text-brand-600">ISNetworld® Support</a></li>
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-2">
       <h3 class="text-sm font-semibold mb-3">Products</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="products.html" class="hover:text-brand-600">Pallet Rack Repair Kits</a></li>
@@ -1450,17 +1526,17 @@
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-3">
       <h3 class="text-sm font-semibold mb-3">Resources</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" data-future="rack-inspection-checklist.html" class="future-link hover:text-brand-600">Rack Inspection Checklist</a></li>
-        <li><a href="#" data-future="rack-repair-vs-replacement.html" class="future-link hover:text-brand-600">Repair vs. Replacement</a></li>
-        <li><a href="#" data-future="fbs-group.html" class="future-link hover:text-brand-600">FBS Group Support</a></li>
+        <li><a href="rack-inspection-checklist.html" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="rack-repair-vs-replacement.html" class="hover:text-brand-600">Repair vs. Replacement</a></li>
+        <li><a href="fbs-group.html" class="hover:text-brand-600">FBS Group Support</a></li>
         <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-4">
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
@@ -1479,6 +1555,32 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(function (el) {
+        el.classList.add("in-view");
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+
+    items.forEach(function (el) {
+      io.observe(el);
+    });
+  })();
+</script>
 
 <script>
   (function () {
@@ -1503,6 +1605,7 @@
 
     btn.addEventListener('click', function () {
       const isOpen = btn.classList.contains('menu-open');
+
       if (isOpen) {
         closeMenu();
       } else {
@@ -1512,9 +1615,7 @@
 
     menu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        if (!link.classList.contains('future-link')) {
-          closeMenu();
-        }
+        closeMenu();
       });
     });
 
@@ -1584,18 +1685,6 @@
         item.classList.remove('open');
         const trigger = item.querySelector('.nav-trigger');
         if (trigger) trigger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  })();
-</script>
-
-<script>
-  (function () {
-    document.querySelectorAll('.future-link').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        if (link.getAttribute('href') === '#') {
-          event.preventDefault();
-        }
       });
     });
   })();

@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://eliterackz.com/rack-repair-vs-replacement">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://eliterackz.com/assets/images/rack-repair-vs-replacement-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +57,45 @@
 
     body.mobile-menu-open {
       overflow: hidden;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+      transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 80ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 160ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 240ms;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 320ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
     }
 
     .site-header {
@@ -133,6 +173,10 @@
       background: rgb(15 23 42);
       color: white;
       box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+    }
+
+    #siteHeader {
+      z-index: 1000;
     }
 
     .nav-item {
@@ -219,6 +263,12 @@
       font-size: .78rem;
       color: #64748b;
       line-height: 1.35;
+    }
+
+    #mobileMenuBtn {
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto;
     }
 
     #mobileMenuBtn.menu-open {
@@ -436,10 +486,6 @@
       line-height: 1.65;
     }
 
-    .future-link {
-      cursor: default;
-    }
-
     .hero-mobile-pad {
       padding-top: 7.5rem;
     }
@@ -496,6 +542,14 @@
         },
         {
           "@type": "Question",
+          "name": "Will the rack hold the same load capacity after repair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elite Rackz repair kits are engineered to restore the frame to the original load capacity set by the frame manufacturer when the repair is correctly matched, documented, and installed for the qualifying rack condition."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Can repaired rack be protected from future forklift damage?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -517,12 +571,6 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Resources",
-          "item": "https://eliterackz.com/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
           "name": "Pallet Rack Repair vs. Replacement",
           "item": "https://eliterackz.com/rack-repair-vs-replacement"
         }
@@ -572,7 +620,7 @@
               <span>48-hour emergency repair path for qualifying critical rack damage.</span>
             </a>
 
-            <a href="services.html">
+            <a href="services.html#inspection-covers">
               <strong>Rack Inspection &amp; Compliance</strong>
               <span>Pallet rack inspection, rack safety audits, reports, and documentation.</span>
             </a>
@@ -649,9 +697,9 @@
           </button>
 
           <div class="dropdown-menu">
-            <a class="future-link" href="#" data-future="rack-inspection-checklist.html">
+            <a href="rack-inspection-checklist.html">
               <strong>Rack Inspection Checklist</strong>
-              <span>Warehouse rack inspection checklist for safety walkthroughs.</span>
+              <span>Warehouse rack inspection checklist for safety walkthroughs and documentation.</span>
             </a>
 
             <a href="rack-repair-vs-replacement.html">
@@ -659,7 +707,7 @@
               <span>Compare engineered rack repair kits with full pallet rack replacement.</span>
             </a>
 
-            <a class="future-link" href="#" data-future="fbs-group.html">
+            <a href="fbs-group.html">
               <strong>FBS Group Support</strong>
               <span>Service continuity and support for former FBS Group customers.</span>
             </a>
@@ -703,6 +751,11 @@
             <a href="index.html#industries">
               <strong>E-Commerce Fulfillment</strong>
               <span>Post-peak damage assessments and forklift impact protection.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Building Materials DCs</strong>
+              <span>Heavy-duty rack repair, custom kits, and warehouse guarding systems.</span>
             </a>
           </div>
         </div>
@@ -749,7 +802,7 @@
           <a href="services.html">All Services</a>
           <a href="services.html#pallet-rack-repair">Pallet Rack Repair</a>
           <a href="emergency-rack-repair.html">Emergency Rack Repair</a>
-          <a href="services.html">Rack Inspection &amp; Compliance</a>
+          <a href="services.html#inspection-covers">Rack Inspection &amp; Compliance</a>
           <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
           <a href="services.html#damage-assessment">Rack Damage Assessments</a>
           <a href="services.html#load-capacity">Load Capacity &amp; Labels</a>
@@ -772,9 +825,9 @@
       <details class="mobile-menu-section" open>
         <summary>Resources</summary>
         <div class="mobile-menu-links">
-          <a class="future-link" href="#" data-future="rack-inspection-checklist.html">Rack Inspection Checklist</a>
+          <a href="rack-inspection-checklist.html">Rack Inspection Checklist</a>
           <a href="rack-repair-vs-replacement.html">Repair vs. Replacement</a>
-          <a class="future-link" href="#" data-future="fbs-group.html">FBS Group Support</a>
+          <a href="fbs-group.html">FBS Group Support</a>
           <a href="blog/index.html">Blog</a>
         </div>
       </details>
@@ -825,22 +878,22 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pb-16 sm:pb-20 lg:pb-24">
       <div class="grid lg:grid-cols-[1.02fr_0.98fr] gap-10 items-center">
         <div>
-          <div class="dark-kicker">
+          <div class="dark-kicker reveal">
             Buyer guide • Repair kits vs. full replacement
           </div>
 
-          <h1 class="mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+          <h1 class="reveal reveal-delay-1 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
             Pallet Rack Repair
             <span class="block text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.035em] text-blue-100">
               vs. Replacement
             </span>
           </h1>
 
-          <p class="mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
+          <p class="reveal reveal-delay-2 mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
             Before replacing an entire pallet rack frame, compare engineered repair kits, downtime, documentation, load capacity requirements, and whether the damaged area can be protected from future forklift impact.
           </p>
 
-          <div class="mt-8 grid sm:grid-cols-2 gap-3 max-w-xl">
+          <div class="reveal reveal-delay-3 mt-8 grid sm:grid-cols-2 gap-3 max-w-xl">
             <a href="contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
               Request Repair Review
             </a>
@@ -850,7 +903,7 @@
             </a>
           </div>
 
-          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="reveal reveal-delay-4 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
               <div class="text-xs text-slate-500">Repair</div>
               <div class="font-extrabold tracking-tight">Less Disruption</div>
@@ -873,7 +926,7 @@
           </div>
         </div>
 
-        <aside class="rounded-3xl bg-white text-slate-900 p-5 md:p-6 shadow-contrast ring-1 ring-white">
+        <aside class="reveal reveal-delay-2 rounded-3xl bg-white text-slate-900 p-5 md:p-6 shadow-contrast ring-1 ring-white">
           <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
             Quick decision guide
           </p>
@@ -923,22 +976,22 @@
 
       <div class="mt-8 grid lg:grid-cols-[1fr_0.75fr] gap-10 items-start">
         <div>
-          <div class="section-kicker">Start with the damage, not the product</div>
+          <div class="section-kicker reveal">Start with the damage, not the product</div>
 
-          <h2 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             The right answer depends on the upright, the damage, and the documentation requirement.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600 max-w-3xl">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600 max-w-3xl">
             A bent pallet rack upright does not automatically mean the entire frame needs to be replaced. It also does not mean a generic patch is acceptable. The correct decision depends on the rack profile, footplate, beam elevations, damage location, load requirements, and whether the repair can be engineered and documented.
           </p>
 
-          <p class="mt-4 text-lg text-slate-600 max-w-3xl">
+          <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-3xl">
             Elite Rackz helps facilities compare engineered pallet rack repair kits, full replacement, emergency repair, and guarding so the final recommendation is practical, documented, and built around real warehouse conditions.
           </p>
         </div>
 
-        <div class="rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
+        <div class="reveal reveal-delay-2 rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
           <div class="text-xs text-white uppercase tracking-[0.16em] font-extrabold">What we review first</div>
 
           <div class="mt-5 grid gap-3">
@@ -957,9 +1010,9 @@
               <p class="mt-1 text-sm text-slate-600">Aisle shutdown, unloading, lift access, installation timing, and downtime.</p>
             </div>
 
-            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+            <div class="rounded-2xl bg-brand-600 text-white p-4">
               <p class="font-bold">Documentation need</p>
-              <p class="mt-1 text-sm text-slate-600">Stamped calculations, internal approvals, audit records, and load capacity concerns.</p>
+              <p class="mt-1 text-sm text-white/88">Stamped calculations, internal approvals, audit records, and load capacity concerns.</p>
             </div>
           </div>
         </div>
@@ -970,19 +1023,19 @@
   <section id="when-repair-makes-sense" class="py-16 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <div class="section-kicker">When repair makes sense</div>
+        <div class="section-kicker reveal">When repair makes sense</div>
 
-        <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           Engineered pallet rack repair kits can reduce disruption when the damage is repairable.
         </h2>
 
-        <p class="mt-4 text-lg text-slate-600">
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
           Pallet rack repair is often the stronger operational choice when the frame can be restored with a properly engineered kit and the repair path can be documented for safety, maintenance, and audit records.
         </p>
       </div>
 
       <div class="mt-10 grid gap-6 lg:grid-cols-3">
-        <div class="decision-card rounded-3xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="decision-card reveal rounded-3xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Good repair candidate</div>
           <h3 class="mt-3 text-2xl font-extrabold text-slate-900">Isolated upright damage</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -990,7 +1043,7 @@
           </p>
         </div>
 
-        <div class="decision-card rounded-3xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="decision-card reveal reveal-delay-1 rounded-3xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Good repair candidate</div>
           <h3 class="mt-3 text-2xl font-extrabold text-slate-900">Known rack profile</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -998,7 +1051,7 @@
           </p>
         </div>
 
-        <div class="decision-card rounded-3xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="decision-card reveal reveal-delay-2 rounded-3xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Good repair candidate</div>
           <h3 class="mt-3 text-2xl font-extrabold text-slate-900">Downtime matters</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1013,21 +1066,21 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
         <div>
-          <div class="section-kicker">Repair proof</div>
+          <div class="section-kicker reveal">Repair proof</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             What an engineered repair can look like.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
             The before-and-after photos belong here because they show the repair decision in action: damaged rack identified, repair strategy selected, and an engineered repair installed.
           </p>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600">
             A repair kit should not be treated like a cosmetic cover. It should be matched to the damage, rack profile, installation condition, and documentation requirements.
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-3">
+          <div class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-3">
             <a href="products.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
               View Repair Kits
             </a>
@@ -1039,7 +1092,7 @@
         </div>
 
         <div class="grid gap-5 sm:grid-cols-2">
-          <div class="proof-card rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-lift">
+          <div class="proof-card reveal rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-lift">
             <div class="relative">
               <img
                 src="assets/images/emergency-before.jpg"
@@ -1060,7 +1113,7 @@
             </div>
           </div>
 
-          <div class="proof-card rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-lift">
+          <div class="proof-card reveal reveal-delay-1 rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-lift">
             <div class="relative">
               <img
                 src="assets/images/emergency-after.jpg"
@@ -1083,7 +1136,7 @@
         </div>
       </div>
 
-      <div class="mt-10 rounded-3xl bg-slate-50 ring-1 ring-slate-200 p-6 md:p-8">
+      <div class="reveal reveal-delay-2 mt-10 rounded-3xl bg-slate-50 ring-1 ring-slate-200 p-6 md:p-8">
         <div class="grid md:grid-cols-3 gap-5">
           <div class="rounded-2xl bg-white ring-1 ring-slate-200 p-5">
             <h3 class="font-extrabold text-slate-900">Matched repair kit</h3>
@@ -1108,17 +1161,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
         <div>
-          <div class="section-kicker">When replacement makes sense</div>
+          <div class="section-kicker reveal">When replacement makes sense</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             Replacement can be the right answer when repair would create more risk than value.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
             A good repair company should tell you when not to repair. Replacement may be the better recommendation when damage is too severe, the rack is outdated, the configuration no longer supports the facility, or the condition cannot be properly documented.
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-3">
+          <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
             <a href="services.html#damage-assessment" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
               Request Damage Assessment
             </a>
@@ -1130,28 +1183,28 @@
         </div>
 
         <div class="grid gap-4">
-          <div class="decision-card rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="decision-card reveal rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Severe frame damage</h3>
             <p class="mt-2 text-sm text-slate-600">
               Replacement may be needed when the damage is not isolated or the frame has multiple compromised areas.
             </p>
           </div>
 
-          <div class="decision-card rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="decision-card reveal reveal-delay-1 rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Rack layout no longer fits the operation</h3>
             <p class="mt-2 text-sm text-slate-600">
               If the rack configuration needs to change anyway, replacement or redesign may be more practical than repairing an outdated layout.
             </p>
           </div>
 
-          <div class="decision-card rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="decision-card reveal reveal-delay-2 rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Unknown load capacity or undocumented changes</h3>
             <p class="mt-2 text-sm text-slate-600">
               Missing load data, altered configurations, or unclear rack history can require deeper review before a repair decision is made.
             </p>
           </div>
 
-          <div class="decision-card rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+          <div class="decision-card reveal reveal-delay-3 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
             <h3 class="font-extrabold">Not sure which side you are on?</h3>
             <p class="mt-2 text-sm text-slate-200">
               Send photos of the damage, upright, base plate, anchors, and surrounding bay. We can help determine the correct path.
@@ -1168,18 +1221,18 @@
   <section id="side-by-side" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <div class="section-kicker">Side-by-side comparison</div>
+        <div class="section-kicker reveal">Side-by-side comparison</div>
 
-        <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           Compare repair kits, replacement, and generic patchwork before choosing.
         </h2>
 
-        <p class="mt-4 text-lg text-slate-600">
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
           The cheapest-looking option is not always the lowest-risk option. The best pallet rack repair kit decision should consider downtime, engineering, documentation, and whether repeat impact protection is needed.
         </p>
       </div>
 
-      <div class="mt-10 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift">
+      <div class="reveal reveal-delay-3 mt-10 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift">
         <div class="overflow-x-auto">
           <table class="min-w-[880px] w-full text-left">
             <thead class="bg-slate-950 text-white">
@@ -1244,37 +1297,37 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
         <div>
-          <div class="section-kicker">Cost, downtime, and disruption</div>
+          <div class="section-kicker reveal">Cost, downtime, and disruption</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             The real cost is not just the part. It is the aisle, the labor, and the delay.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
             Pallet rack damage affects more than one upright. It can create blocked locations, internal approval delays, product movement, inspection concerns, and repeated maintenance headaches.
           </p>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600">
             An engineered repair kit comparison should include the full operating picture: how fast the repair can be reviewed, what documentation is available, whether product needs to move, and how the repaired area will be protected from the next impact.
           </p>
         </div>
 
         <div class="grid gap-5">
-          <div class="compare-card rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="compare-card reveal rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Replacement may require more coordination</h3>
             <p class="mt-2 text-sm text-slate-600">
               Full replacement can mean product movement, rack removal, rack procurement, installation scheduling, and longer operational disruption.
             </p>
           </div>
 
-          <div class="compare-card rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="compare-card reveal reveal-delay-1 rounded-2xl bg-white ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Repair may move faster when the damage qualifies</h3>
             <p class="mt-2 text-sm text-slate-600">
               If the damage fits an engineered repair path, a pallet rack repair kit can reduce disruption and restore the damaged area without unnecessary replacement.
             </p>
           </div>
 
-          <div class="compare-card rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+          <div class="compare-card reveal reveal-delay-2 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
             <h3 class="font-extrabold">Emergency damage?</h3>
             <p class="mt-2 text-sm text-slate-200">
               Use the emergency rack repair page if the damage is blocking an aisle, creating an active safety concern, or needs immediate triage.
@@ -1292,17 +1345,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
         <div>
-          <div class="dark-kicker">Engineered repair kits vs. generic patchwork</div>
+          <div class="dark-kicker reveal">Engineered repair kits vs. generic patchwork</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
             A repair kit should be more than a piece of steel bolted over damage.
           </h2>
 
-          <p class="mt-4 text-slate-200 text-lg">
+          <p class="reveal reveal-delay-2 mt-4 text-slate-200 text-lg">
             The difference is the strategy: rack profile review, fit, steel, anchors, engineering requirements, installation approach, and documentation. A repair without that process can leave your team with unanswered safety and audit questions.
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-3">
+          <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
             <a href="products.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
               View Repair Kits
             </a>
@@ -1314,7 +1367,7 @@
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+          <div class="reveal rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Fit</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Matched to the rack</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1322,7 +1375,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+          <div class="reveal reveal-delay-1 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Documentation</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Stamped calculations</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1330,7 +1383,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+          <div class="reveal reveal-delay-2 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Manufacturing</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Made in USA</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1338,7 +1391,7 @@
             </p>
           </div>
 
-          <div class="rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+          <div class="reveal reveal-delay-3 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
             <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Protection</div>
             <h3 class="mt-2 text-lg font-extrabold text-slate-900">Guard the repaired area</h3>
             <p class="mt-2 text-sm text-slate-600">
@@ -1354,35 +1407,35 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[1fr_0.85fr] gap-10 items-start">
         <div>
-          <div class="section-kicker">Stamped documentation and load capacity</div>
+          <div class="section-kicker reveal">Stamped documentation and load capacity</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
             A repair decision needs to hold up beyond the install.
           </h2>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
             Maintenance teams, EHS leaders, and operations managers need records that explain what was damaged, what was repaired, and how the repair was justified. That is why documentation matters as much as the kit itself.
           </p>
 
-          <p class="mt-4 text-lg text-slate-600">
+          <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600">
             Elite Rackz can help with rack damage assessment, stamped engineering calculations when applicable, repair documentation, load capacity review, and guidance on whether guarding should be added to the repaired location.
           </p>
         </div>
 
         <div class="grid gap-4">
-          <div class="proof-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="proof-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Photo documentation</h3>
             <p class="mt-2 text-sm text-slate-600">Document the damage, location, rack bay, upright, base plate, and surrounding conditions.</p>
           </div>
 
-          <div class="proof-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+          <div class="proof-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
             <h3 class="font-extrabold text-slate-900">Stamped engineering calculations</h3>
             <p class="mt-2 text-sm text-slate-600">Support the repair path with documentation when the project qualifies and requires it.</p>
           </div>
 
-          <div class="proof-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
-            <h3 class="font-extrabold text-slate-900">Load capacity and labels</h3>
-            <p class="mt-2 text-sm text-slate-600">Review whether the rack area needs updated load capacity documentation or labels.</p>
+          <div class="proof-card reveal reveal-delay-2 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+            <h3 class="font-extrabold">Load capacity and labels</h3>
+            <p class="mt-2 text-sm text-slate-200">Review whether the rack area needs updated load capacity documentation or labels.</p>
           </div>
         </div>
       </div>
@@ -1394,17 +1447,17 @@
       <div class="rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift p-6 md:p-10">
         <div class="grid lg:grid-cols-[1fr_1fr] gap-10 items-center">
           <div>
-            <div class="section-kicker">Repair plus guarding</div>
+            <div class="section-kicker reveal">Repair plus guarding</div>
 
-            <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
               Fix the damaged upright, then reduce the chance it happens again.
             </h2>
 
-            <p class="mt-4 text-lg text-slate-600">
+            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
               If the same aisle keeps getting hit, repair alone may not solve the problem. Facilities often combine pallet rack repair kits with column guards, end-of-aisle guards, and other warehouse rack guarding to reduce recurring damage.
             </p>
 
-            <div class="mt-8 flex flex-wrap gap-3">
+            <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
               <a href="column-guards.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
                 View Column Guards
               </a>
@@ -1416,7 +1469,7 @@
           </div>
 
           <div class="grid gap-5 sm:grid-cols-2">
-            <div class="guard-card rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-smooth">
+            <div class="guard-card reveal rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-smooth">
               <div class="h-[260px] bg-white flex items-center justify-center">
                 <img
                   src="assets/images/column-guard-shield.jpg"
@@ -1434,7 +1487,7 @@
               </div>
             </div>
 
-            <div class="guard-card rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-smooth">
+            <div class="guard-card reveal reveal-delay-1 rounded-3xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-smooth">
               <div class="h-[260px] bg-white flex items-center justify-center">
                 <img
                   src="assets/images/end-of-row-guard.jpg"
@@ -1454,7 +1507,7 @@
           </div>
         </div>
 
-        <div class="mt-8 grid md:grid-cols-3 gap-4">
+        <div class="reveal reveal-delay-2 mt-8 grid md:grid-cols-3 gap-4">
           <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
             <h3 class="font-extrabold text-slate-900">Damaged rack upright?</h3>
             <p class="mt-2 text-sm text-slate-600">Start with repair review before choosing a guard.</p>
@@ -1477,19 +1530,19 @@
   <section id="fit" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <div class="section-kicker">Who this page is for</div>
+        <div class="section-kicker reveal">Who this page is for</div>
 
-        <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           Built for teams comparing repair options before committing to replacement.
         </h2>
 
-        <p class="mt-4 text-lg text-slate-600">
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
           This comparison is for warehouse teams that need a practical, documented answer — not a one-size-fits-all recommendation.
         </p>
       </div>
 
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        <div class="compare-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="compare-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Operations</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">Warehouse operations</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1497,7 +1550,7 @@
           </p>
         </div>
 
-        <div class="compare-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="compare-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Safety</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">EHS and safety</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1505,7 +1558,7 @@
           </p>
         </div>
 
-        <div class="compare-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+        <div class="compare-card reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
           <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Maintenance</div>
           <h3 class="mt-2 text-xl font-extrabold text-slate-900">Facilities and maintenance</h3>
           <p class="mt-3 text-sm text-slate-600">
@@ -1513,10 +1566,10 @@
           </p>
         </div>
 
-        <div class="compare-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
-          <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Procurement</div>
-          <h3 class="mt-2 text-xl font-extrabold text-slate-900">Procurement</h3>
-          <p class="mt-3 text-sm text-slate-600">
+        <div class="compare-card reveal reveal-delay-3 rounded-2xl bg-slate-950 text-white p-6 shadow-smooth">
+          <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-white/70">Procurement</div>
+          <h3 class="mt-2 text-xl font-extrabold">Procurement</h3>
+          <p class="mt-3 text-sm text-slate-200">
             Buyers comparing engineered rack repair kits, replacement, documentation, and lifecycle value.
           </p>
         </div>
@@ -1527,18 +1580,18 @@
   <section id="faq" class="py-16 bg-slate-50 border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <div class="section-kicker">Frequently asked questions</div>
+        <div class="section-kicker reveal">Frequently asked questions</div>
 
-        <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
           Pallet rack repair vs. replacement questions.
         </h2>
 
-        <p class="mt-4 text-lg text-slate-600">
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
           Common questions about repair kits, replacement decisions, load capacity, documentation, and repeat damage prevention.
         </p>
       </div>
 
-      <div class="mt-10 grid gap-4">
+      <div class="reveal reveal-delay-3 mt-10 grid gap-4">
         <details class="faq-accordion">
           <summary>
             <h3 class="text-lg font-extrabold text-slate-900">
@@ -1583,7 +1636,7 @@
           </summary>
 
           <div class="faq-answer">
-            Our pallet rack repair kits are engineered to restore the frame to the original load capacity set by the frame manufacturer. 
+            Elite Rackz repair kits are engineered to restore the frame to the original load capacity set by the frame manufacturer when the repair is correctly matched, documented, and installed for the qualifying rack condition.
           </div>
         </details>
 
@@ -1618,18 +1671,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
         <div>
-          <div class="dark-kicker">Repair review</div>
+          <div class="dark-kicker reveal">Repair review</div>
 
-          <h2 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
             Need a real recommendation?
           </h2>
 
-          <p class="mt-4 text-lg text-slate-200 max-w-3xl">
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-200 max-w-3xl">
             Send photos of the damage and rack layout. Elite Rackz can help determine whether engineered repair, replacement, emergency support, or guarding is the right next step.
           </p>
         </div>
 
-        <div class="rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast">
+        <div class="reveal reveal-delay-3 rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast">
           <p class="text-sm font-semibold text-brand-700">Talk to Elite Rackz</p>
           <p class="mt-2 text-3xl font-extrabold tracking-tight">
             <a href="tel:+17089802936">(708) 980-2936</a>
@@ -1656,7 +1709,7 @@
 
 <footer class="mt-24 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-5">
-    <div>
+    <div class="reveal">
       <div class="flex items-center gap-3 mb-4">
         <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
         <span class="font-extrabold tracking-tight text-slate-900">
@@ -1669,20 +1722,20 @@
       </p>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-1">
       <h3 class="text-sm font-semibold mb-3">Services</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="services.html" class="hover:text-brand-600">All Services</a></li>
         <li><a href="services.html#pallet-rack-repair" class="hover:text-brand-600">Pallet Rack Repair</a></li>
         <li><a href="emergency-rack-repair.html" class="hover:text-brand-600">Emergency Rack Repair</a></li>
-        <li><a href="services.html" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
+        <li><a href="services.html#inspection-covers" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
         <li><a href="services.html#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
         <li><a href="services.html#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
         <li><a href="services.html#isnetworld" class="hover:text-brand-600">ISNetworld® Support</a></li>
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-2">
       <h3 class="text-sm font-semibold mb-3">Products</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="products.html" class="hover:text-brand-600">Pallet Rack Repair Kits</a></li>
@@ -1694,17 +1747,17 @@
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-3">
       <h3 class="text-sm font-semibold mb-3">Resources</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" data-future="rack-inspection-checklist.html" class="future-link hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="rack-inspection-checklist.html" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
         <li><a href="rack-repair-vs-replacement.html" class="hover:text-brand-600">Repair vs. Replacement</a></li>
-        <li><a href="#" data-future="fbs-group.html" class="future-link hover:text-brand-600">FBS Group Support</a></li>
+        <li><a href="fbs-group.html" class="hover:text-brand-600">FBS Group Support</a></li>
         <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-4">
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
@@ -1723,6 +1776,32 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(function (el) {
+        el.classList.add("in-view");
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+
+    items.forEach(function (el) {
+      io.observe(el);
+    });
+  })();
+</script>
 
 <script>
   (function () {
@@ -1747,6 +1826,7 @@
 
     btn.addEventListener('click', function () {
       const isOpen = btn.classList.contains('menu-open');
+
       if (isOpen) {
         closeMenu();
       } else {
@@ -1756,9 +1836,7 @@
 
     menu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        if (!link.classList.contains('future-link')) {
-          closeMenu();
-        }
+        closeMenu();
       });
     });
 
@@ -1828,18 +1906,6 @@
         item.classList.remove('open');
         const trigger = item.querySelector('.nav-trigger');
         if (trigger) trigger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  })();
-</script>
-
-<script>
-  (function () {
-    document.querySelectorAll('.future-link').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        if (link.getAttribute('href') === '#') {
-          event.preventDefault();
-        }
       });
     });
   })();

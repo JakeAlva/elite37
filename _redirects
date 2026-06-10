@@ -3,6 +3,7 @@
 /products.html /products 301!
 /services.html /services 301!
 /about.html /about 301!
+/app.html /app 301!
 /contact.html /contact 301!
 /emergency-rack-repair.html /emergency-rack-repair 301!
 /column-guards.html /column-guards 301!
@@ -14,6 +15,13 @@
 /ez-double-leg.html /ez-double-leg 301!
 /ez-single-leg.html /ez-single-leg 301!
 /ez-roll-form.html /ez-roll-form 301!
+/success.html /success 301!
+
+# Blog .html URLs to clean versions
+/blog/index.html /blog/ 301!
+/blog/rack-repair-vs-replacement.html /blog/rack-repair-vs-replacement 301!
+/blog/how-to-identify-rack-damage.html /blog/how-to-identify-rack-damage 301!
+/blog/forklift-damage-to-pallet-racks.html /blog/forklift-damage-to-pallet-racks 301!
 
 # FBS Group support aliases
 /fbs /fbs-group 301!
@@ -23,6 +31,7 @@
 /products /products.html 200
 /services /services.html 200
 /about /about.html 200
+/app /app.html 200
 /contact /contact.html 200
 /emergency-rack-repair /emergency-rack-repair.html 200
 /column-guards /column-guards.html 200
@@ -34,7 +43,14 @@
 /ez-double-leg /ez-double-leg.html 200
 /ez-single-leg /ez-single-leg.html 200
 /ez-roll-form /ez-roll-form.html 200
+/success /success.html 200
 
 # Blog — serve the folder index without redirecting
 /blog /blog/index.html 200
 /blog/ /blog/index.html 200
+/blog/rack-repair-vs-replacement /blog/rack-repair-vs-replacement.html 200
+/blog/how-to-identify-rack-damage /blog/how-to-identify-rack-damage.html 200
+/blog/forklift-damage-to-pallet-racks /blog/forklift-damage-to-pallet-racks.html 200
+
+# 404 fallback
+/* /404.html 404

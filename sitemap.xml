@@ -15,7 +15,61 @@
 
   <url>
     <loc>https://eliterackz.com/services</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/emergency-rack-repair</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/column-guards</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/end-of-aisle-guards</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/rack-inspection-checklist</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/rack-repair-vs-replacement</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/fbs-group</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/ez-double-leg</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/ez-single-leg</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://eliterackz.com/ez-roll-form</loc>
+    <priority>0.75</priority>
     <changefreq>monthly</changefreq>
   </url>
 
@@ -32,45 +86,9 @@
   </url>
 
   <url>
-    <loc>https://eliterackz.com/app</loc>
+    <loc>https://eliterackz.com/blog/</loc>
     <priority>0.6</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://eliterackz.com/column-guards</loc>
-    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://eliterackz.com/end-of-aisle-guards</loc>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://eliterackz.com/ez-double-leg</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://eliterackz.com/ez-single-leg</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://eliterackz.com/ez-roll-form</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://eliterackz.com/success</loc>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
   </url>
 
 </urlset>

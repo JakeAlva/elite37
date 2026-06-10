@@ -4,249 +4,596 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thanks — Elite Rackz</title>
-  <meta name="theme-color" content="#0f172a">
   <meta name="description" content="Thanks — we received your request. Elite Rackz will follow up shortly with next steps.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://eliterackz.com/success">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: { colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} } } } };
-  </script>
+  <meta property="og:title" content="Thanks — Elite Rackz">
+  <meta property="og:description" content="We received your request. Elite Rackz will follow up shortly with next steps.">
+  <meta property="og:url" content="https://eliterackz.com/success">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://eliterackz.com/assets/images/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="preload" as="image" href="assets/images/logo.png">
   <link rel="preload" as="image" href="assets/images/fair%20byte-logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter','ui-sans-serif','system-ui']
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              600: '#2e6ad6',
+              700: '#2554aa'
+            }
+          },
+          boxShadow: {
+            smooth: '0 10px 25px rgba(0,0,0,0.08)',
+            lift: '0 18px 48px rgba(15,23,42,0.14)',
+            contrast: '0 22px 55px rgba(2,6,23,0.28)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .page-fade {
+      animation: pageFade 620ms cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .card-rise {
+      animation: cardRise 720ms cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .check-pop {
+      animation: checkPop 560ms cubic-bezier(.22,1,.36,1) 160ms both;
+    }
+
+    .soft-pulse {
+      animation: softPulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pageFade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes cardRise {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(.985);
+        filter: blur(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes checkPop {
+      0% {
+        opacity: 0;
+        transform: scale(.78);
+      }
+
+      65% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes softPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16,185,129,.26);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(16,185,129,0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-fade,
+      .card-rise,
+      .check-pop,
+      .soft-pulse {
+        animation: none !important;
+      }
+    }
+
+    .glass-panel {
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .stat-card,
+    .next-card,
+    .info-card,
+    .white-panel-card {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .stat-card:hover,
+    .next-card:hover,
+    .info-card:hover,
+    .white-panel-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      border-color: rgba(46,106,214,.28);
+    }
+  </style>
 </head>
 
-<body class="min-h-screen flex flex-col bg-white text-slate-800 overflow-x-hidden">
-
-  <div class="flex-1 grid place-items-center px-4">
-    <main class="w-full max-w-xl mx-auto">
-
-      <section class="relative rounded-3xl border border-slate-200 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] p-8 sm:p-10
-                      opacity-0 translate-y-3 transition-all duration-500 ease-out"
-               id="successCard">
-
-        <div class="h-12 mb-5 flex items-center justify-center">
-          <img src="assets/images/logo.png?v=1" alt="Elite Rackz" class="h-12 w-auto" loading="eager" decoding="async">
-        </div>
-
-        <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 border border-emerald-200
-                    scale-95 opacity-0 transition-all duration-500 ease-out"
-             id="checkWrap">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/>
-          </svg>
-        </div>
-
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-center">
-          Thanks — we got your request.
-        </h1>
-        <p class="mt-3 text-slate-600 text-center">
-          We’ll follow up shortly. If you have photos, they can speed up quoting.
-        </p>
-
-        <div class="mt-6 grid gap-3 sm:grid-cols-3 text-center">
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
-            <div class="text-xs font-semibold text-slate-600">Typical response</div>
-            <div class="text-sm font-extrabold text-slate-900"><1 Day</div>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
-            <div class="text-xs font-semibold text-slate-600">Privacy</div>
-            <div class="text-sm font-extrabold text-slate-900">We don’t share data</div>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
-            <div class="text-xs font-semibold text-slate-600">Built for speed</div>
-            <div class="text-sm font-extrabold text-slate-900">Engineered quotes</div>
-          </div>
-        </div>
-
-        <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
-          <h2 class="text-sm font-extrabold text-slate-900 tracking-tight">What happens next</h2>
-          <ol class="mt-3 space-y-3 text-sm text-slate-700">
-            <li class="flex gap-3">
-              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-slate-50 font-extrabold">1</span>
-              <span>We review your details and confirm scope (if anything is unclear).</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-slate-50 font-extrabold">2</span>
-              <span>We recommend the right repair/guarding approach and timeline.</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-slate-50 font-extrabold">3</span>
-              <span>You receive a clear quote with scheduling options.</span>
-            </li>
-          </ol>
-        </div>
-
-        <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <h3 class="text-sm font-extrabold text-slate-900 tracking-tight">Want to speed things up?</h3>
-          <p class="mt-2 text-sm text-slate-600">
-            If you can, have these ready — it helps us quote faster:
-          </p>
-          <ul class="mt-3 space-y-2 text-sm text-slate-700">
-            <li>• Facility location (City/State)</li>
-            <li>• Rack type (teardrop / structural) and upright sizes if known</li>
-            <li>• Approximate quantity of damaged uprights / guarding needed</li>
-            <li>• Photos of damage areas (wide + close-up)</li>
-          </ul>
-
-          <div class="mt-4 flex flex-col sm:flex-row gap-3">
-            <!-- FIXED: number stays on one line -->
-            <a href="tel:+17089802936"
-               class="inline-flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-extrabold whitespace-nowrap"
-               data-track="phone_click"
-               aria-label="Call Elite Rackz now at (708) 980-2936">
-              <span>Call Now:</span>
-              <span class="tracking-tight tabular-nums">(708) 980-2936</span>
-              <svg xmlns="http://www.w3.org/2000/svg"
-                   class="h-5 w-5 flex-shrink-0"
-                   viewBox="0 0 24 24"
-                   fill="none"
-                   stroke="currentColor"
-                   stroke-width="2">
-                <path stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M22 16.92v3a2 2 0 0 1-2.18 2
-                         19.79 19.79 0 0 1-8.63-3.07
-                         19.5 19.5 0 0 1-6-6
-                         19.79 19.79 0 0 1-3.07-8.67
-                         A2 2 0 0 1 4.11 2h3
-                         a2 2 0 0 1 2 1.72
-                         c.12.86.31 1.7.57 2.5
-                         a2 2 0 0 1-.45 2.11
-                         L8.09 9.91a16 16 0 0 0 6 6
-                         l1.58-1.14a2 2 0 0 1 2.11-.45
-                         c.8.26 1.64.45 2.5.57
-                         A2 2 0 0 1 22 16.92z"/>
-              </svg>
-            </a>
-
-            <a href="mailto:David@eliterackz.com?subject=Photos%20for%20Quote%20%E2%80%94%20Elite%20Rackz&body=Hi%20Elite%20Rackz%2C%0A%0AHere%20are%20photos%20for%20my%20quote%20request.%20Facility%20location%3A%20_____%20(City%2C%20State)%0ARack%20type%3A%20_____ %0AApprox.%20damaged%20uprights%2Fguarding%3A%20_____%0A%0AThanks%2C%0A"
-               class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 font-semibold"
-               aria-label="Email photos for your quote request">
-              Email Photos (Optional)
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="m22 6-10 7L2 6"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="mt-6 text-center">
-          <a href="index.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700 font-extrabold shadow-smooth">
-            Back to Home
-          </a>
-        </div>
-
-        <p class="mt-5 text-center text-xs text-slate-500">
-          If you don’t hear back, check spam or call us directly — we’ll take care of it.
-        </p>
-      </section>
-
-    </main>
+<body class="min-h-screen bg-slate-950 text-slate-800 antialiased page-fade">
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(46,106,214,.30),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,.95),rgba(2,6,23,1)_50%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,.08)_0,transparent_28%,rgba(255,255,255,.04)_56%,transparent_100%)]"></div>
   </div>
 
-  <footer class="pb-6 text-center">
-    <p class="text-xs sm:text-sm text-slate-500 flex items-center justify-center gap-2">
-      <span>Powered By:</span>
-      <img src="assets/images/fair%20byte-logo.png?v=1" alt="Fairbyte" class="h-4 sm:h-5 w-auto opacity-80 align-[-2px]" loading="lazy" decoding="async">
-    </p>
+  <header class="relative z-10 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-3 min-w-0">
+          <span class="rounded-lg bg-white px-2 py-1 shadow-smooth">
+            <img
+              src="assets/images/logo.png"
+              alt="Elite Rackz"
+              class="h-8 w-auto"
+              loading="eager"
+              decoding="async"
+            >
+          </span>
+
+          <span class="hidden sm:block text-[11px] md:text-xs font-semibold leading-tight text-white">
+            SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
+          </span>
+        </a>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a
+            href="tel:+17089802936"
+            class="inline-flex items-center justify-center px-3 py-2 rounded-xl bg-white text-slate-900 hover:bg-slate-100 text-sm font-extrabold whitespace-nowrap"
+            data-track="phone_click"
+          >
+            (708) 980-2936
+          </a>
+
+          <a
+            href="/"
+            class="hidden sm:inline-flex items-center justify-center px-3 py-2 rounded-xl bg-brand-600 text-white hover:bg-brand-700 text-sm font-semibold shadow-smooth"
+          >
+            Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 flex-1">
+    <section class="py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-start">
+          <section class="card-rise glass-panel rounded-3xl border border-white/70 shadow-contrast overflow-hidden">
+            <div class="p-6 sm:p-8 lg:p-10">
+              <div class="flex justify-center">
+                <img
+                  src="assets/images/logo.png"
+                  alt="Elite Rackz"
+                  class="h-12 w-auto"
+                  loading="eager"
+                  decoding="async"
+                >
+              </div>
+
+              <div class="mt-7 flex justify-center">
+                <div class="check-pop soft-pulse mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 border border-emerald-200">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8 text-emerald-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="mt-6 text-center">
+                <p class="inline-flex items-center px-3 py-1.5 rounded-full bg-brand-50 text-brand-700 ring-1 ring-brand-600/20 text-xs font-extrabold tracking-[0.14em] uppercase">
+                  Request received
+                </p>
+
+                <h1 class="mt-4 text-4xl sm:text-5xl font-black tracking-tight text-slate-950">
+                  Thanks — we got your request.
+                </h1>
+
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                  Elite Rackz will review your details and follow up with the next step. Photos, rack details, and facility location can help us quote faster.
+                </p>
+              </div>
+
+              <div class="mt-8 grid gap-3 sm:grid-cols-3 text-center">
+                <div class="stat-card rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div class="text-xs font-semibold text-slate-600">Typical response</div>
+                  <div class="mt-1 text-sm font-extrabold text-slate-900">Same / next business day</div>
+                </div>
+
+                <div class="stat-card rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div class="text-xs font-semibold text-slate-600">Support path</div>
+                  <div class="mt-1 text-sm font-extrabold text-slate-900">Repair or guarding</div>
+                </div>
+
+                <div class="stat-card rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div class="text-xs font-semibold text-slate-600">Documentation</div>
+                  <div class="mt-1 text-sm font-extrabold text-slate-900">Engineering review</div>
+                </div>
+              </div>
+
+              <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+                <h2 class="text-xl font-extrabold tracking-tight text-slate-950">
+                  What happens next
+                </h2>
+
+                <ol class="mt-5 grid gap-4 text-sm text-slate-700">
+                  <li class="next-card flex gap-4 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-4">
+                    <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white font-extrabold">1</span>
+
+                    <span>
+                      <strong class="block text-slate-900">We review your request.</strong>
+                      We check your scope, facility details, product need, or rack damage notes.
+                    </span>
+                  </li>
+
+                  <li class="next-card flex gap-4 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-4">
+                    <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white font-extrabold">2</span>
+
+                    <span>
+                      <strong class="block text-slate-900">We confirm the right path.</strong>
+                      The next step may be repair kit review, guarding, inspection, emergency repair, or replacement guidance.
+                    </span>
+                  </li>
+
+                  <li class="next-card flex gap-4 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-4">
+                    <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white font-extrabold">3</span>
+
+                    <span>
+                      <strong class="block text-slate-900">You get clear next steps.</strong>
+                      We follow up with questions, quote details, photo requests, scheduling options, or emergency triage.
+                    </span>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
+                <h2 class="text-lg font-extrabold tracking-tight text-slate-950">
+                  Want to speed things up?
+                </h2>
+
+                <p class="mt-2 text-sm text-slate-600">
+                  Send photos if you have them. A few clear pictures can help us review the damage or guarding need faster.
+                </p>
+
+                <ul class="mt-4 grid gap-2 text-sm text-slate-700">
+                  <li>• Wide photo of the rack row or aisle</li>
+                  <li>• Close-up photo of damaged upright, base plate, anchors, or guard location</li>
+                  <li>• Facility city and state</li>
+                  <li>• Rack type, upright size, or quantity if known</li>
+                </ul>
+              </div>
+
+              <div class="mt-8 grid gap-3 sm:grid-cols-2">
+                <a
+                  href="tel:+17089802936"
+                  class="inline-flex items-center justify-center gap-3 px-5 py-4 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-extrabold whitespace-nowrap"
+                  data-track="phone_click"
+                  aria-label="Call Elite Rackz now at (708) 980-2936"
+                >
+                  <span>Call Now:</span>
+                  <span class="tracking-tight tabular-nums">(708) 980-2936</span>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 flex-shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67 A2 2 0 0 1 4.11 2h3 a2 2 0 0 1 2 1.72 c.12.86.31 1.7.57 2.5 a2 2 0 0 1-.45 2.11 L8.09 9.91a16 16 0 0 0 6 6 l1.58-1.14a2 2 0 0 1 2.11-.45 c.8.26 1.64.45 2.5.57 A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </a>
+
+                <a
+                  href="mailto:David@eliterackz.com?subject=Photos%20for%20Elite%20Rackz%20Request&body=Hi%20Elite%20Rackz%2C%0A%0AI%20submitted%20a%20request%20and%20wanted%20to%20send%20photos.%0A%0AFacility%20location%3A%20%0ARack%20type%3A%20%0AApprox.%20damaged%20uprights%20or%20guarding%20needed%3A%20%0A%0AThanks%2C%0A"
+                  class="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 font-semibold text-slate-900"
+                  aria-label="Email photos for your Elite Rackz quote request"
+                >
+                  Email Photos
+                  <span class="text-slate-400">(Optional)</span>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 flex-shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m22 6-10 7L2 6"></path>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+                <a href="/" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700 font-extrabold shadow-smooth">
+                  Back to Home
+                </a>
+
+                <a href="/products" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50 font-semibold">
+                  View Products
+                </a>
+
+                <a href="/services" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50 font-semibold">
+                  View Services
+                </a>
+              </div>
+
+              <p class="mt-6 text-center text-xs text-slate-500">
+                If you don’t hear back, check spam or call us directly — we’ll take care of it.
+              </p>
+            </div>
+          </section>
+
+          <aside class="card-rise rounded-3xl bg-slate-950 border border-white/10 shadow-contrast overflow-hidden">
+            <div class="p-6 sm:p-8 lg:p-10 text-white">
+              <p class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 ring-1 ring-white/20 text-white text-xs font-extrabold tracking-[0.14em] uppercase">
+                Helpful next steps
+              </p>
+
+              <h2 class="mt-4 text-3xl sm:text-4xl font-black tracking-tight text-white">
+                What your team can send us.
+              </h2>
+
+              <p class="mt-4 text-slate-200">
+                These details help us move faster and avoid back-and-forth while reviewing your repair, inspection, or guarding request.
+              </p>
+
+              <div class="mt-7 grid gap-4">
+                <div class="white-panel-card rounded-2xl bg-white p-5">
+                  <h3 class="font-extrabold text-slate-900">
+                    Wide aisle photo
+                  </h3>
+
+                  <p class="mt-2 text-sm text-slate-600">
+                    Show the rack row, aisle, surrounding bay, and traffic area.
+                  </p>
+                </div>
+
+                <div class="white-panel-card rounded-2xl bg-white p-5">
+                  <h3 class="font-extrabold text-slate-900">
+                    Close-up damage photo
+                  </h3>
+
+                  <p class="mt-2 text-sm text-slate-600">
+                    Show the bent upright, impact mark, base plate, anchors, or guard location.
+                  </p>
+                </div>
+
+                <div class="white-panel-card rounded-2xl bg-white p-5">
+                  <h3 class="font-extrabold text-slate-900">
+                    Rack details
+                  </h3>
+
+                  <p class="mt-2 text-sm text-slate-600">
+                    Include rack type, upright dimensions, beam elevations, and quantity when available.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl bg-brand-600 text-white p-5">
+                  <h3 class="font-extrabold text-white">
+                    Emergency rack damage?
+                  </h3>
+
+                  <p class="mt-2 text-sm text-white/90">
+                    If damage is blocking an aisle, creating an active safety concern, or needs immediate triage, call now.
+                  </p>
+
+                  <a
+                    href="tel:+17089802936"
+                    class="mt-4 inline-flex items-center justify-center w-full px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold"
+                    data-track="phone_click"
+                  >
+                    Call (708) 980-2936
+                  </a>
+                </div>
+              </div>
+
+              <div class="mt-8 rounded-2xl bg-white/10 ring-1 ring-white/20 p-5">
+                <p class="text-sm font-extrabold text-white">
+                  Common next steps
+                </p>
+
+                <ul class="mt-3 grid gap-2 text-sm text-white/85">
+                  <li>• Engineered pallet rack repair kit review</li>
+                  <li>• Column guard or end-of-aisle guard quote</li>
+                  <li>• Rack damage assessment or inspection support</li>
+                  <li>• Emergency rack repair triage</li>
+                  <li>• Load capacity and documentation review</li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/10 bg-slate-950/70 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/70">
+        <div class="flex items-center gap-3">
+          <span>© 2026 Elite Rackz. All rights reserved.</span>
+        </div>
+
+        <div class="flex items-center justify-center gap-2">
+          <span>Powered By:</span>
+
+          <span class="inline-flex items-center justify-center min-h-8 rounded-lg bg-white/95 px-2.5 py-1 ring-1 ring-white/20">
+            <img
+              src="assets/images/fair%20byte-logo.png?v=1"
+              alt="Fairbyte"
+              class="h-5 w-auto opacity-95"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+            >
+            <span class="hidden text-sm font-extrabold tracking-tight text-slate-900">
+              Fairbyte
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Entrance animation
-    const card = document.getElementById('successCard');
-    const check = document.getElementById('checkWrap');
-    requestAnimationFrame(() => {
-      card.classList.remove('opacity-0', 'translate-y-3');
-      card.classList.add('opacity-100', 'translate-y-0');
-      setTimeout(() => {
-        check.classList.remove('opacity-0', 'scale-95');
-        check.classList.add('opacity-100', 'scale-100');
-      }, 140);
-    });
+    (function confettiBurst() {
+      try {
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) return;
 
-    // Confetti burst (tasteful, short)
-    (function confettiBurst(){
-      const durationMs = 850;
-      const end = Date.now() + durationMs;
-      const colors = ['#2e6ad6', '#2554aa', '#10b981', '#ffffff'];
+        const durationMs = 900;
+        const end = Date.now() + durationMs;
+        const colors = ['#2e6ad6', '#2554aa', '#10b981', '#ffffff'];
 
-      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) return;
+        const canvas = document.createElement('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        canvas.style.position = 'fixed';
+        canvas.style.inset = '0';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '80';
+        document.body.appendChild(canvas);
 
-      const canvas = document.createElement('canvas');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      canvas.style.position = 'fixed';
-      canvas.style.inset = '0';
-      canvas.style.pointerEvents = 'none';
-      canvas.style.zIndex = '60';
-      document.body.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
 
-      const ctx = canvas.getContext('2d');
-      const pieces = Array.from({length: 120}).map(() => ({
-        x: canvas.width * 0.5,
-        y: canvas.height * 0.25,
-        vx: (Math.random() - 0.5) * 10,
-        vy: Math.random() * -8 - 6,
-        r: Math.random() * 6 + 3,
-        rot: Math.random() * Math.PI,
-        vr: (Math.random() - 0.5) * 0.2,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        alpha: 1
-      }));
+        if (!ctx) {
+          canvas.remove();
+          return;
+        }
 
-      function tick() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        pieces.forEach(p => {
-          p.vy += 0.32;
-          p.x += p.vx;
-          p.y += p.vy;
-          p.rot += p.vr;
-          p.alpha *= 0.985;
-
-          ctx.save();
-          ctx.globalAlpha = p.alpha;
-          ctx.translate(p.x, p.y);
-          ctx.rotate(p.rot);
-          ctx.fillStyle = p.color;
-          ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r);
-          ctx.restore();
+        const pieces = Array.from({ length: 96 }).map(function () {
+          return {
+            x: canvas.width * 0.5,
+            y: Math.min(canvas.height * 0.28, 240),
+            vx: (Math.random() - 0.5) * 9,
+            vy: Math.random() * -7 - 5,
+            r: Math.random() * 6 + 3,
+            rot: Math.random() * Math.PI,
+            vr: (Math.random() - 0.5) * 0.22,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            alpha: 1
+          };
         });
 
-        if (Date.now() < end) requestAnimationFrame(tick);
-        else canvas.remove();
-      }
-      tick();
+        function tick() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          pieces.forEach(function (p) {
+            p.vy += 0.32;
+            p.x += p.vx;
+            p.y += p.vy;
+            p.rot += p.vr;
+            p.alpha *= 0.985;
+
+            ctx.save();
+            ctx.globalAlpha = p.alpha;
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rot);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r);
+            ctx.restore();
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(tick);
+          } else {
+            canvas.remove();
+          }
+        }
+
+        tick();
+
+        window.addEventListener('resize', function () {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }, { once: true });
+      } catch (error) {}
     })();
   </script>
 
-  <!-- Optional: phone-click tracking hook (see instructions below) -->
   <script>
-    // This fires a tracking event whenever a "tel:" link with data-track="phone_click" is tapped.
-    document.addEventListener('click', function(e){
-      const a = e.target.closest && e.target.closest('a[data-track="phone_click"]');
-      if (!a) return;
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest && event.target.closest('a[data-track="phone_click"]');
 
-      // GA4 event (if gtag is installed on your site)
+      if (!link) return;
+
       if (typeof gtag === 'function') {
         gtag('event', 'phone_click', {
           event_category: 'engagement',
-          event_label: a.getAttribute('href') || '(tel)',
+          event_label: link.getAttribute('href') || '(tel)',
           value: 1
         });
       }
 
-      // If you use dataLayer / GTM, also push:
       if (window.dataLayer && typeof window.dataLayer.push === 'function') {
         window.dataLayer.push({
           event: 'phone_click',
-          phone: a.getAttribute('href') || ''
+          phone: link.getAttribute('href') || ''
         });
       }
     });
   </script>
-
 </body>
 </html>

@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>End-of-Aisle Guards — Elite Rackz</title>
-  <meta name="description" content="End-of-Aisle Guards by Elite Rackz including EZ End of Row Guard and EZ Pallet Rack Dock Door Guard. Heavy-duty protection solutions for impact-prone rack areas.">
+  <title>End-of-Aisle Rack Guards — Impact Protection | Elite Rackz</title>
+  <meta name="description" content="Heavy-duty end-of-aisle rack guards that help deflect forklift impact. Steel, floor-anchored, customizable pallet rack impact protection from Elite Rackz.">
   <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://eliterackz.com/end-of-aisle-guards">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
+
+  <meta property="og:title" content="End-of-Aisle Rack Guards — Impact Protection | Elite Rackz">
+  <meta property="og:description" content="Heavy-duty end-of-aisle rack guards that help deflect forklift impact. Steel, floor-anchored, customizable pallet rack impact protection.">
+  <meta property="og:url" content="https://eliterackz.com/end-of-aisle-guards">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://eliterackz.com/assets/images/end-of-aisle-guards-hero1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +25,20 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          colors: { brand: { 600: '#2e6ad6', 700: '#2554aa' } },
-          boxShadow: { smooth: '0 10px 25px rgba(0,0,0,0.08)' }
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              600: '#2e6ad6',
+              700: '#2554aa'
+            }
+          },
+          boxShadow: {
+            smooth: '0 10px 25px rgba(0,0,0,0.08)',
+            lift: '0 18px 48px rgba(15,23,42,0.14)',
+            contrast: '0 22px 55px rgba(2,6,23,0.28)'
+          }
         }
       }
     };
@@ -28,78 +47,961 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <style>
-    .reveal{
-      opacity:0;
-      transform:translateY(14px);
-      filter:blur(6px);
-      transition:opacity 650ms ease,transform 650ms ease,filter 650ms ease;
-      will-change:opacity,transform,filter
+    html {
+      scroll-behavior: smooth;
     }
-    .reveal.in-view{
-      opacity:1;
-      transform:translateY(0);
-      filter:blur(0)
-    }
-    .reveal-delay-1{transition-delay:80ms}
-    .reveal-delay-2{transition-delay:160ms}
-    .reveal-delay-3{transition-delay:240ms}
 
-    @media (prefers-reduced-motion: reduce){
-      .reveal{
-        opacity:1!important;
-        transform:none!important;
-        filter:none!important;
-        transition:none!important
+    body {
+      overflow-x: hidden;
+    }
+
+    body.mobile-menu-open {
+      overflow: hidden;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+      transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 80ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 160ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 240ms;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 320ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
+    }
+
+    .site-header {
+      transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        backdrop-filter .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .header-hero {
+      background: linear-gradient(to bottom, rgba(2,6,23,.96), rgba(2,6,23,.78), rgba(2,6,23,0));
+      border-bottom: none;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .header-scrolled {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(15,23,42,.04);
+    }
+
+    .header-hero #headerLogoWrap {
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    .header-hero #headerTagline {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .header-scrolled #headerLogoWrap {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .header-scrolled #headerTagline {
+      color: rgb(51 65 85);
+      text-shadow: none;
+    }
+
+    .header-hero .header-nav-link,
+    .header-hero .nav-trigger {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.30);
+    }
+
+    .header-hero .header-nav-link:hover,
+    .header-hero .nav-trigger:hover {
+      color: #dbeafe;
+    }
+
+    .header-scrolled .header-nav-link,
+    .header-scrolled .nav-trigger {
+      color: rgb(15 23 42);
+      text-shadow: none;
+    }
+
+    .header-phone-link {
+      transition: background-color .25s ease, color .25s ease, box-shadow .25s ease;
+    }
+
+    .header-hero .header-phone-link {
+      background: #ffffff;
+      color: rgb(15 23 42);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .header-scrolled .header-phone-link {
+      background: rgb(15 23 42);
+      color: white;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+    }
+
+    #siteHeader {
+      z-index: 1000;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .5rem .25rem;
+      font-size: .875rem;
+      font-weight: 600;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      transition: color .2s ease;
+    }
+
+    .nav-trigger svg {
+      transition: transform .2s ease;
+    }
+
+    .nav-item.open .nav-trigger svg,
+    .nav-item:hover .nav-trigger svg {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      width: 340px;
+      border: 1px solid rgba(226,232,240,.95);
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 10px;
+      box-shadow: 0 22px 60px rgba(15,23,42,.16);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -18px;
+      height: 18px;
+    }
+
+    .nav-item:hover .dropdown-menu,
+    .nav-item.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 12px;
+      border-radius: 16px;
+      transition: background .18s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background: #eff6ff;
+    }
+
+    .dropdown-menu strong {
+      display: block;
+      font-size: .9rem;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .dropdown-menu span {
+      display: block;
+      margin-top: .25rem;
+      font-size: .78rem;
+      color: #64748b;
+      line-height: 1.35;
+    }
+
+    #mobileMenuBtn {
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto;
+    }
+
+    #mobileMenuBtn.menu-open {
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      border-color: rgba(148,163,184,0.55);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(1) {
+      top: 8px;
+      transform: rotate(45deg);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(3) {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+
+    #mobileMenu {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        max-height 360ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 360ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 360ms;
+      will-change: max-height, opacity, transform;
+    }
+
+    #mobileMenu.menu-open {
+      max-height: calc(100vh - 64px);
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      pointer-events: auto;
+      overflow-y: auto;
+      transition:
+        max-height 420ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 420ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 0s;
+    }
+
+    #mobileMenu .mobile-menu-inner {
+      padding-top: 12px;
+      padding-bottom: 20px;
+    }
+
+    .mobile-menu-section {
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f8fafc;
+      margin-bottom: 10px;
+    }
+
+    .mobile-menu-section summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mobile-menu-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu-section summary::after {
+      content: "+";
+      color: #2e6ad6;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .mobile-menu-section[open] summary::after {
+      content: "–";
+    }
+
+    .mobile-menu-links {
+      display: grid;
+      gap: 6px;
+      padding: 0 10px 10px;
+    }
+
+    .mobile-menu-links a,
+    .mobile-direct-link {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: white;
+      border: 1px solid rgba(226,232,240,.9);
+      color: #334155;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .mobile-direct-link {
+      margin-top: 10px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #eff6ff;
+      color: #2554aa;
+      border: 1px solid rgba(46,106,214,.18);
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .dark-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #2554aa;
+      border: 1px solid #dbeafe;
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .product-card,
+    .spec-card,
+    .feature-card,
+    .installed-card,
+    .faq-accordion {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .product-card:hover,
+    .spec-card:hover,
+    .feature-card:hover,
+    .installed-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      border-color: rgba(46,106,214,.28);
+    }
+
+    .faq-accordion {
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .faq-accordion:hover {
+      border-color: rgba(46,106,214,.32);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      transform: translateY(-2px);
+    }
+
+    .faq-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .faq-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-accordion summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+      background: #eff6ff;
+      color: #2e6ad6;
+      font-weight: 900;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .faq-accordion[open] summary::after {
+      content: "–";
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      color: #64748b;
+      font-size: .95rem;
+      line-height: 1.65;
+    }
+
+    .hero-mobile-pad {
+      padding-top: 7.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-mobile-pad {
+        padding-top: 9rem;
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "End-of-Aisle Rack Guards",
+      "url": "https://eliterackz.com/end-of-aisle-guards",
+      "brand": {
+        "@type": "Brand",
+        "name": "Elite Rackz"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Elite Rackz",
+        "url": "https://eliterackz.com"
+      },
+      "category": "Pallet Rack Impact Protection",
+      "image": [
+        "https://eliterackz.com/assets/images/end-of-row-guard.jpg",
+        "https://eliterackz.com/assets/images/dock-door-guard.jpg",
+        "https://eliterackz.com/assets/images/completed-repairs/repair-06.jpg"
+      ],
+      "description": "Heavy-duty end-of-aisle rack guards, rack upright guards, dock door guards, and warehouse rack impact protection for forklift traffic areas.",
+      "hasVariant": [
+        {
+          "@type": "Product",
+          "name": "EZ End of Row Guard",
+          "description": "Heavy-duty steel end-of-row guard for pallet rack aisle ends, tunnel frames, and high-impact rack row locations."
+        },
+        {
+          "@type": "Product",
+          "name": "EZ Pallet Rack Dock Door Guard",
+          "description": "Steel dock door guard designed to protect rack frames near dock doors and heavily trafficked forklift impact zones."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between column guards and end-of-aisle guards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Column guards protect individual pallet rack uprights and posts. End-of-aisle guards protect the exposed ends of rack rows where forklift turning, pallet jack traffic, and row-end impact are common."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do end-of-aisle guards fit any rack brand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elite Rackz end-of-aisle guards can be customized for different rack layouts, frame sizes, footplates, and aisle conditions. The correct guard depends on the rack profile, row length, traffic pattern, and impact exposure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size end-of-aisle rack guard do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The correct size depends on rack row depth, footplate width, aisle clearance, forklift traffic, dock door layout, and whether the guard needs left-side, right-side, or double-sided protection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why choose steel end-of-aisle guards over plastic protectors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Steel end-of-aisle guards are built for heavy forklift impact and repeated warehouse traffic. Plastic protection may help with light contact but is not equivalent to floor-anchored steel impact guarding."
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://eliterackz.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://eliterackz.com/products"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "End-of-Aisle Guards",
+          "item": "https://eliterackz.com/end-of-aisle-guards"
+        }
+      ]
+    }
+  ]
+  </script>
 </head>
 
 <body class="bg-white text-slate-800 antialiased">
 
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+<header id="siteHeader" class="site-header header-hero fixed top-0 left-0 right-0 z-40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">
+      <a href="index.html" id="headerBrand" class="flex items-center gap-3 transition-all duration-300">
+        <span id="headerLogoWrap" class="rounded-lg px-2 py-1 transition-all duration-300">
+          <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        </span>
+
+        <span id="headerTagline" class="text-[11px] md:text-xs font-semibold leading-tight transition-colors duration-300">
           SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="products.html" class="text-brand-700">Products</a>
-        <a href="services.html" class="hover:text-brand-600">Services</a>
-        <a href="about.html" class="hover:text-brand-600">About</a>
-        <a href="app.html" class="hover:text-brand-600">App</a>
-        <a href="blog/index.html" class="hover:text-brand-600">Blog</a>
-        <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium" aria-label="Main navigation">
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Services
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="services.html">
+              <strong>All Services</strong>
+              <span>Pallet rack repair, rack inspections, safety audits, damage assessments, and documentation.</span>
+            </a>
+
+            <a href="services.html#pallet-rack-repair">
+              <strong>Pallet Rack Repair</strong>
+              <span>Engineered repair for damaged pallet rack uprights and forklift impact zones.</span>
+            </a>
+
+            <a href="emergency-rack-repair.html">
+              <strong>Emergency Rack Repair</strong>
+              <span>48-hour emergency repair path for qualifying critical rack damage.</span>
+            </a>
+
+            <a href="services.html#inspection-covers">
+              <strong>Rack Inspection &amp; Compliance</strong>
+              <span>Pallet rack inspection, rack safety audits, reports, and documentation.</span>
+            </a>
+
+            <a href="services.html#rack-safety-audits">
+              <strong>Rack Safety Audits</strong>
+              <span>Warehouse rack safety surveys for EHS and operations teams.</span>
+            </a>
+
+            <a href="services.html#damage-assessment">
+              <strong>Rack Damage Assessments</strong>
+              <span>Photo documentation and repair recommendations for damaged rack.</span>
+            </a>
+
+            <a href="services.html#load-capacity">
+              <strong>Load Capacity &amp; Labels</strong>
+              <span>Rack load capacity review, labels, and audit-ready documentation.</span>
+            </a>
+
+            <a href="services.html#isnetworld">
+              <strong>ISNetworld® Contractor Support</strong>
+              <span>Procurement-friendly support for safety-driven facilities and qualified workflows.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Products
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="products.html">
+              <strong>Pallet Rack Repair Kits</strong>
+              <span>Made in USA repair kits with stamped calculations and lifetime warranty.</span>
+            </a>
+
+            <a href="ez-double-leg.html">
+              <strong>EZ Double Leg Repair Kit</strong>
+              <span>Double-leg pallet rack repair kit for damaged upright sections.</span>
+            </a>
+
+            <a href="ez-single-leg.html">
+              <strong>EZ Single Leg Repair Kit</strong>
+              <span>Single-leg repair kit for targeted upright repair.</span>
+            </a>
+
+            <a href="ez-roll-form.html">
+              <strong>EZ Roll-Form Repair Kit</strong>
+              <span>Roll-form rack repair kit option for compatible systems.</span>
+            </a>
+
+            <a href="column-guards.html">
+              <strong>Column Guards</strong>
+              <span>Warehouse column protection and pallet rack post protectors.</span>
+            </a>
+
+            <a href="end-of-aisle-guards.html">
+              <strong>End-of-Aisle Guards</strong>
+              <span>End-of-aisle rack guards and forklift impact protection.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Resources
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="rack-inspection-checklist.html">
+              <strong>Rack Inspection Checklist</strong>
+              <span>Warehouse rack inspection checklist for safety walkthroughs and documentation.</span>
+            </a>
+
+            <a href="rack-repair-vs-replacement.html">
+              <strong>Repair vs. Replacement</strong>
+              <span>Compare engineered rack repair kits with full pallet rack replacement.</span>
+            </a>
+
+            <a href="fbs-group.html">
+              <strong>FBS Group Support</strong>
+              <span>Service continuity and support for former FBS Group customers.</span>
+            </a>
+
+            <a href="/blog/">
+              <strong>Blog</strong>
+              <span>Rack safety, repair, inspection, and warehouse compliance resources.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Industries
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="index.html#industries">
+              <strong>Cold Storage &amp; Food DCs</strong>
+              <span>Galvanized repair options, documentation, and emergency response support.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>3PL Warehousing</strong>
+              <span>Rack inspections and repair support for multi-client warehouse operations.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Food Manufacturing</strong>
+              <span>Stamped documentation and repair records for audit-ready facilities.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Automotive Parts DCs</strong>
+              <span>Fast pallet rack repair planning where downtime matters.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>E-Commerce Fulfillment</strong>
+              <span>Post-peak damage assessments and forklift impact protection.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Building Materials DCs</strong>
+              <span>Heavy-duty rack repair, custom kits, and warehouse guarding systems.</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="about.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">About</a>
+        <a href="contact.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Contact</a>
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl font-extrabold transition-all duration-300">
+          (708) 980-2936
+        </a>
       </nav>
 
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300">
+      <div class="hidden md:flex xl:hidden items-center gap-3">
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl text-sm font-extrabold transition-all duration-300">
+          Call
+        </a>
+
+        <a href="contact.html#contact" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm font-semibold">
+          Quote
+        </a>
+      </div>
+
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        class="xl:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white transition-all duration-300 hover:bg-slate-50 active:scale-95"
+      >
         <span class="sr-only">Open menu</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+        <span class="relative h-5 w-5">
+          <span class="menu-line absolute left-0 top-0 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-2 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-4 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+        </span>
       </button>
     </div>
   </div>
 
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
-    <div class="px-4 py-3 space-y-2 text-sm">
-      <a href="products.html" class="block font-semibold text-brand-700">Products</a>
-      <a href="services.html" class="block">Services</a>
-      <a href="about.html" class="block">About</a>
-      <a href="app.html" class="block">App</a>
-      <a href="blog/index.html" class="block">Blog</a>
-      <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
+  <div id="mobileMenu" class="xl:hidden border-t border-slate-200 bg-white">
+    <div class="mobile-menu-inner px-4 text-sm max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <details class="mobile-menu-section">
+        <summary>Services</summary>
+        <div class="mobile-menu-links">
+          <a href="services.html">All Services</a>
+          <a href="services.html#pallet-rack-repair">Pallet Rack Repair</a>
+          <a href="emergency-rack-repair.html">Emergency Rack Repair</a>
+          <a href="services.html#inspection-covers">Rack Inspection &amp; Compliance</a>
+          <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
+          <a href="services.html#damage-assessment">Rack Damage Assessments</a>
+          <a href="services.html#load-capacity">Load Capacity &amp; Labels</a>
+          <a href="services.html#isnetworld">ISNetworld® Contractor Support</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section" open>
+        <summary>Products</summary>
+        <div class="mobile-menu-links">
+          <a href="products.html">Pallet Rack Repair Kits</a>
+          <a href="ez-double-leg.html">EZ Double Leg Repair Kit</a>
+          <a href="ez-single-leg.html">EZ Single Leg Repair Kit</a>
+          <a href="ez-roll-form.html">EZ Roll-Form Repair Kit</a>
+          <a href="column-guards.html">Column Guards</a>
+          <a href="end-of-aisle-guards.html">End-of-Aisle Guards</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section">
+        <summary>Resources</summary>
+        <div class="mobile-menu-links">
+          <a href="rack-inspection-checklist.html">Rack Inspection Checklist</a>
+          <a href="rack-repair-vs-replacement.html">Repair vs. Replacement</a>
+          <a href="fbs-group.html">FBS Group Support</a>
+          <a href="/blog/">Blog</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section">
+        <summary>Industries</summary>
+        <div class="mobile-menu-links">
+          <a href="index.html#industries">Cold Storage &amp; Food DCs</a>
+          <a href="index.html#industries">3PL Warehousing</a>
+          <a href="index.html#industries">Food Manufacturing</a>
+          <a href="index.html#industries">Automotive Parts DCs</a>
+          <a href="index.html#industries">E-Commerce Fulfillment</a>
+          <a href="index.html#industries">Building Materials DCs</a>
+        </div>
+      </details>
+
+      <a href="about.html" class="mobile-direct-link">About</a>
+      <a href="contact.html" class="mobile-direct-link">Contact</a>
+
+      <div class="grid gap-3 mt-4">
+        <a href="tel:+17089802936" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white font-extrabold">
+          Call (708) 980-2936
+        </a>
+
+        <a href="contact.html#contact" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold">
+          Request a Quote
+        </a>
+      </div>
     </div>
   </div>
 </header>
 
-<section class="bg-slate-50 border-b border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    <div class="reveal flex items-center justify-between gap-6 flex-wrap">
+<main>
+  <section id="heroSection" class="relative overflow-hidden text-white bg-slate-950">
+    <div class="absolute inset-0">
+      <img
+        src="assets/images/end-of-aisle-guards-hero1.jpg"
+        alt="Warehouse aisle end with pallet rack guarding and forklift impact protection"
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+        onerror="this.style.display='none';"
+      >
+      <div class="absolute inset-0 bg-slate-950/68"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/96 via-slate-950/80 to-slate-950/46"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/94 via-slate-950/34 to-slate-950/56"></div>
+      <div class="absolute inset-0 shadow-[inset_0_0_170px_rgba(0,0,0,0.68)]"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pb-16 sm:pb-20 lg:pb-24">
+      <div class="grid lg:grid-cols-[0.96fr_1.04fr] gap-10 items-center">
+        <div>
+          <div class="dark-kicker reveal">
+            End-of-aisle rack guards • Forklift impact guarding
+          </div>
+
+          <h1 class="reveal reveal-delay-1 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+            End-of-Aisle Rack Guards
+          </h1>
+
+          <p class="reveal reveal-delay-2 mt-4 text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-[-0.035em] text-blue-100 drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+            Steel Impact Protection
+          </p>
+
+          <p class="reveal reveal-delay-3 mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
+            Protect exposed rack row ends, tunnel frames, dock door areas, and high-traffic forklift turning zones with heavy-duty steel pallet rack impact protection.
+          </p>
+
+          <div class="reveal reveal-delay-4 mt-8 grid sm:grid-cols-2 gap-3 max-w-xl">
+            <a href="contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+              Request a Quote
+            </a>
+
+            <a href="tel:+17089802936" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold">
+              Call (708) 980-2936
+            </a>
+          </div>
+
+          <div class="reveal reveal-delay-4 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Protection</div>
+              <div class="font-extrabold tracking-tight">Row Ends</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Material</div>
+              <div class="font-extrabold tracking-tight">Steel</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Traffic</div>
+              <div class="font-extrabold tracking-tight">Forklifts</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Finish</div>
+              <div class="font-extrabold tracking-tight">Safety Yellow</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="reveal reveal-delay-2 rounded-3xl bg-white text-slate-900 p-4 md:p-5 shadow-contrast ring-1 ring-white">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
+              <div class="h-[260px] sm:h-[300px] lg:h-[360px] bg-white flex items-center justify-center">
+                <img
+                  src="assets/images/end-of-row-guard.jpg"
+                  alt="EZ End of Row Guard for end-of-aisle rack protection"
+                  class="max-h-full max-w-full object-contain p-4"
+                  loading="eager"
+                >
+              </div>
+
+              <div class="p-4">
+                <p class="font-extrabold text-slate-900">EZ End of Row Guard</p>
+                <p class="mt-1 text-sm text-slate-600">
+                  Heavy-duty end-of-row rack protection for exposed aisle ends.
+                </p>
+              </div>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
+              <div class="h-[260px] sm:h-[300px] lg:h-[360px] bg-white flex items-center justify-center">
+                <img
+                  src="assets/images/dock-door-guard.jpg"
+                  alt="EZ Pallet Rack Dock Door Guard for forklift impact protection"
+                  class="max-h-full max-w-full object-contain p-4"
+                  loading="eager"
+                >
+              </div>
+
+              <div class="p-4">
+                <p class="font-extrabold text-slate-900">EZ Dock Door Guard</p>
+                <p class="mt-1 text-sm text-slate-600">
+                  Steel dock door frame protection for rack areas near dock traffic.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Built for exposed rack ends
+            </p>
+
+            <p class="mt-2 text-slate-600">
+              End-of-aisle guards help protect the rack locations most exposed to turning forklifts, pallets, and repeated traffic.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-sm text-slate-500">
         <a class="hover:text-slate-700" href="index.html">Home</a>
         <span class="mx-2">/</span>
@@ -108,227 +1010,559 @@
         <span class="text-slate-700 font-semibold">End-of-Aisle Guards</span>
       </div>
 
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-black/5">
-        <span class="text-[11px] font-extrabold tracking-wide text-slate-900">END-OF-AISLE PROTECTION</span>
-      </div>
-    </div>
+      <div class="mt-8 grid lg:grid-cols-[1fr_0.75fr] gap-10 items-start">
+        <div>
+          <div class="section-kicker reveal">Protect the most vulnerable part of your rack</div>
 
-    <div class="mt-6 grid lg:grid-cols-12 gap-10 items-center">
-      <div class="lg:col-span-5">
-        <div class="reveal reveal-delay-1 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-slate-200 text-slate-700 text-sm">
-          <span class="font-extrabold tracking-wide text-slate-900">GUARDING</span>
-          <span class="text-slate-400">•</span>
-          <span class="text-slate-600">Heavy-duty aisle-end protection</span>
+          <h2 class="reveal reveal-delay-1 mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            Rack row ends take some of the hardest forklift hits.
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600 max-w-3xl">
+            End-of-aisle rack guards protect exposed rack ends, tunnel frames, and dock-adjacent rack rows from forklift impact, pallet jack traffic, and repeated aisle-end contact.
+          </p>
+
+          <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-3xl">
+            Elite Rackz builds steel rack upright guards and pallet rack impact protection systems for high-traffic warehouse environments where damage prevention, uptime, and safety documentation matter.
+          </p>
         </div>
 
-        <h1 class="reveal reveal-delay-2 mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-          End-of-Aisle Guards
-        </h1>
+        <div class="reveal reveal-delay-2 rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
+          <div class="text-xs text-white uppercase tracking-[0.16em] font-extrabold">High-risk protection zones</div>
 
-        <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-xl">
-          Heavy-duty protection solutions built for end-of-row, tunnel frame, and dock door impact zones.
+          <div class="mt-5 grid gap-3">
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+              <p class="font-bold">End-of-row rack frames</p>
+              <p class="mt-1 text-sm text-slate-600">The exposed ends of rack rows near forklift turning areas.</p>
+            </div>
+
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+              <p class="font-bold">Tunnel frame locations</p>
+              <p class="mt-1 text-sm text-slate-600">Rack openings and pass-through areas with tight clearance.</p>
+            </div>
+
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+              <p class="font-bold">Dock door rack runs</p>
+              <p class="mt-1 text-sm text-slate-600">Rack locations exposed to inbound, outbound, and staging traffic.</p>
+            </div>
+
+            <div class="rounded-2xl bg-brand-600 text-white p-4">
+              <p class="font-bold">Previously damaged row ends</p>
+              <p class="mt-1 text-sm text-white/88">Protect repaired rack areas from repeat forklift impact.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="section-kicker reveal">End-of-aisle guard products</div>
+
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          Steel pallet rack guards for exposed row ends and dock door zones.
+        </h2>
+
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+          Elite Rackz offers heavy-duty rack guarding systems for end-of-row protection, dock door protection, and high-impact warehouse rack damage prevention.
         </p>
-
-        <div class="reveal reveal-delay-3 mt-7 flex flex-wrap gap-3">
-          <a href="contact.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-            Request Info
-          </a>
-          <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50">
-            Call (708) 980-2936
-          </a>
-        </div>
-
-        <div class="reveal reveal-delay-3 mt-8 grid grid-cols-2 gap-3">
-          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
-            <div class="text-xs text-slate-500">Category</div>
-            <div class="font-extrabold text-slate-900">Protection</div>
-          </div>
-          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
-            <div class="text-xs text-slate-500">Applications</div>
-            <div class="font-extrabold text-slate-900">End-of-Row / Dock</div>
-          </div>
-          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
-            <div class="text-xs text-slate-500">Customization</div>
-            <div class="font-extrabold text-slate-900">Available</div>
-          </div>
-          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
-            <div class="text-xs text-slate-500">Finish</div>
-            <div class="font-extrabold text-slate-900">Safety Yellow</div>
-          </div>
-        </div>
       </div>
 
-      <div class="lg:col-span-7">
-        <div class="reveal reveal-delay-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div class="rounded-xl bg-slate-50 ring-1 ring-black/5 p-4 flex items-center justify-center min-h-[220px]">
-              <img
-                src="assets/images/end-of-row-guard.jpg"
-                alt="EZ End of Row Guard — Elite Rackz"
-                class="max-w-full max-h-[200px] object-contain"
-              >
-            </div>
-            <div class="rounded-xl bg-slate-50 ring-1 ring-black/5 p-4 flex items-center justify-center min-h-[220px]">
-              <img
-                src="assets/images/dock-door-guard.jpg"
-                alt="EZ Pallet Rack Dock Door Guard — Elite Rackz"
-                class="max-w-full max-h-[220px] object-contain"
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EZ End of Row Guard -->
-<section class="py-12 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
-      <div class="lg:col-span-5">
-        <div class="reveal rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-smooth">
-          <div class="w-full h-80 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
+      <div class="mt-10 grid gap-8 lg:grid-cols-2">
+        <article class="product-card reveal rounded-3xl bg-white border border-slate-200 shadow-smooth overflow-hidden">
+          <div class="h-80 bg-white flex items-center justify-center ring-1 ring-slate-100">
             <img
               src="assets/images/end-of-row-guard.jpg"
-              alt="EZ End of Row Guard — Elite Rackz"
-              class="max-w-full max-h-full object-contain p-2"
+              alt="EZ End of Row Guard steel end-of-aisle rack guard"
+              class="max-h-full max-w-full object-contain p-4"
+              loading="lazy"
             >
           </div>
-        </div>
-      </div>
 
-      <div class="lg:col-span-7">
-        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
-          <h2 class="text-3xl font-extrabold text-slate-900">EZ End of Row Guard</h2>
-          <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
-            <p>
-              Elite Rackz', “Heavy Duty” end of aisle rack protectors, are the ultimate standard for end of a row and tunnel frame guarding.
+          <div class="p-6">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">End-of-row protection</div>
+
+            <h3 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">
+              EZ End of Row Guard
+            </h3>
+
+            <p class="mt-3 text-sm text-slate-600">
+              A heavy-duty end-of-aisle rack guard built for row-end and tunnel-frame protection. Designed to isolate the front frame post and help protect the side and rear post from impact exposure.
             </p>
-            <p>
-              Constructed with 12” tall, ½” thick round ends, to isolate the front frame post from impact damage, as well as 6” x 4” X 3/8″ angle that protects the frame’s side and rear post (highly customizable).
-            </p>
-            <p>
-              Guards are manufactured to the highest standards with full length inside and outside vertical welds attaching the thick round end to the heavy-duty angle.
-            </p>
-            <p>
-              The angle is punched 12″ on center for 3/4″ X 7″ anchors. Row end guards are available in left side, right side or double side in all lengths over 24″. (Additional punched angle is available to extend to desired overall length.) Notching available on round end and floor angle to accommodate custom applications.
-            </p>
+
+            <ul class="mt-5 grid gap-2 text-sm text-slate-700">
+              <li>• Heavy-duty steel construction</li>
+              <li>• Left-side, right-side, or double-sided options</li>
+              <li>• Standard 42″ and 48″ quick-ship options</li>
+              <li>• Custom lengths and notching available</li>
+            </ul>
+
+            <a href="contact.html#contact" class="mt-6 inline-flex w-full justify-center items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
+              Request End-of-Row Guard Quote
+            </a>
           </div>
+        </article>
 
-          <h3 class="mt-8 text-xl font-extrabold text-slate-900">Specifications</h3>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
-            <li><strong>CATEGORY:</strong> Protection</li>
-            <li><strong>SPECIFICATIONS:</strong> Standard guard accepts up to a 5 1/2″ wide frame footplate</li>
-            <li><strong>STEEL GAUGE:</strong> 10” schedule 60 pipe ½” thick; 6”x 4” ⅜” angle</li>
-            <li><strong>STYLE:</strong> Round row end guards are available in left, right or double sided</li>
-            <li><strong>PROTECTOR HEIGHT:</strong> 12” tall, ½” thick round ends protect front frame post, 6” x 4” X 3/8″ angle that protects the frame’s side and rear post</li>
-            <li><strong>ROW END GUARD:</strong> All lengths over 24” up to 60″ (Additional punched angle available to extend guard length)</li>
-            <li><strong>NUMBER OF ANCHOR HOLES:</strong> Varies, spaced less than 12” on center</li>
-            <li><strong>ANCHOR DIMS:</strong> ¾” x 7″ included (typically 3)</li>
-            <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
-            <li><strong>PROTECTOR TYPE:</strong> Round (standard 42″ and 48″ long guards are available for quick ship)</li>
-            <li><strong>CUSTOMIZABLE:</strong> Custom designed for your exact needs, notching and exact lengths to fit your specifications</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EZ Pallet Rack Dock Door Guard -->
-<section class="py-12 bg-slate-50 border-y border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
-      <div class="lg:col-span-5">
-        <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
-          <div class="w-full h-80 bg-white flex items-center justify-center overflow-hidden rounded-xl border border-slate-100">
+        <article class="product-card reveal reveal-delay-1 rounded-3xl bg-white border border-slate-200 shadow-smooth overflow-hidden">
+          <div class="h-80 bg-white flex items-center justify-center ring-1 ring-slate-100">
             <img
               src="assets/images/dock-door-guard.jpg"
-              alt="EZ Pallet Rack Dock Door Guard — Elite Rackz"
-              class="max-w-full max-h-full object-contain p-2"
+              alt="EZ Pallet Rack Dock Door Guard steel forklift rack protection"
+              class="max-h-full max-w-full object-contain p-4"
+              loading="lazy"
             >
           </div>
+
+          <div class="p-6">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Dock door protection</div>
+
+            <h3 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">
+              EZ Pallet Rack Dock Door Guard
+            </h3>
+
+            <p class="mt-3 text-sm text-slate-600">
+              A steel pallet rack dock door guard designed to protect rack frames near dock door walls, staging lanes, and high-traffic forklift movement areas.
+            </p>
+
+            <ul class="mt-5 grid gap-2 text-sm text-slate-700">
+              <li>• Floor-anchored for strength and rigidity</li>
+              <li>• 1/2″ steel plate and 3/8″ angle</li>
+              <li>• Standard safety yellow powder coat</li>
+              <li>• Custom exact lengths and notching available</li>
+            </ul>
+
+            <a href="contact.html#contact" class="mt-6 inline-flex w-full justify-center items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
+              Request Dock Door Guard Quote
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="installed-end-of-aisle-guard" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[0.92fr_1.08fr] gap-12 items-center">
+        <div>
+          <div class="section-kicker reveal">Installed protection example</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            Real end-of-row protection in a working warehouse aisle.
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+            This completed install shows how end-of-aisle protection can sit at the exposed end of a rack run to help defend the aisle-end frame from forklift traffic, pallet movement, and repeated turning contact.
+          </p>
+
+          <p class="reveal reveal-delay-3 mt-4 text-slate-600">
+            Guard size, orientation, notching, anchor layout, and final configuration depend on the rack row depth, footplate location, aisle clearance, traffic direction, and site conditions.
+          </p>
+
+          <div class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+              Request Guarding Review
+            </a>
+
+            <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-extrabold">
+              Call (708) 980-2936
+            </a>
+          </div>
+        </div>
+
+        <div class="installed-card reveal reveal-delay-2 rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift overflow-hidden">
+          <div class="relative bg-white">
+            <img
+              src="assets/images/completed-repairs/repair-06.jpg"
+              alt="Installed Elite Rackz end-of-aisle rack guard protecting an exposed row end"
+              class="w-full h-[340px] sm:h-[460px] lg:h-[560px] object-contain p-4 md:p-6"
+              loading="lazy"
+            >
+
+            <div class="absolute top-4 left-4 rounded-full bg-slate-950 text-white text-xs font-extrabold tracking-[0.12em] uppercase px-4 py-2 shadow-smooth">
+              Installed guard
+            </div>
+          </div>
+
+          <div class="border-t border-slate-200 bg-slate-50 p-5 md:p-6">
+            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Completed repair
+            </p>
+
+            <h3 class="mt-2 text-2xl font-black tracking-tight text-slate-950">
+              Aisle-end impact protection where traffic is most exposed.
+            </h3>
+
+            <p class="mt-2 text-sm text-slate-600">
+              Add this type of protection after repair, during rack safety upgrades, or anywhere rack ends are repeatedly exposed to forklift and pallet contact.
+            </p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="lg:col-span-7">
-        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
-          <h2 class="text-3xl font-extrabold text-slate-900">EZ Pallet Rack Dock Door Guard</h2>
-          <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
-            <p>
-              Dock Door Guards protect your valuable all too often abused pallet racking lining the dock door wall. These heavy gauge guards keep forklifts from damaging your racking resulting in expensive emergency repair bills.
-            </p>
-            <p>
-              The Elite Rackz' dock door guards anchor to the floor for maximum strength and rigidity. The bright yellow safety powder coat paint looks great and is highly visible.
+  <section id="specifications" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
+        <div>
+          <div class="section-kicker reveal">Product specifications</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            Built for aisle-end impact, not light-duty contact.
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+            The correct end-of-aisle guard depends on rack row layout, footplate width, row depth, forklift turning radius, dock door exposure, and whether the guard needs left-side, right-side, or double-sided protection.
+          </p>
+
+          <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+              Request Product Review
+            </a>
+
+            <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-extrabold">
+              Call (708) 980-2936
+            </a>
+          </div>
+        </div>
+
+        <div class="grid gap-5">
+          <div class="spec-card reveal rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+            <h3 class="text-xl font-extrabold text-slate-900">EZ End of Row Guard Specifications</h3>
+            <div class="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
+              <div><span class="text-slate-500">Category:</span> <span class="font-semibold text-slate-900">Protection</span></div>
+              <div><span class="text-slate-500">Style:</span> <span class="font-semibold text-slate-900">Left, right, or double sided</span></div>
+              <div><span class="text-slate-500">Steel:</span> <span class="font-semibold text-slate-900">10″ schedule 60 pipe, 1/2″ thick</span></div>
+              <div><span class="text-slate-500">Angle:</span> <span class="font-semibold text-slate-900">6″ × 4″ × 3/8″</span></div>
+              <div><span class="text-slate-500">Height:</span> <span class="font-semibold text-slate-900">12″ tall round ends</span></div>
+              <div><span class="text-slate-500">Anchors:</span> <span class="font-semibold text-slate-900">3/4″ × 7″ included</span></div>
+              <div><span class="text-slate-500">Lengths:</span> <span class="font-semibold text-slate-900">Over 24″ up to 60″</span></div>
+              <div><span class="text-slate-500">Finish:</span> <span class="font-semibold text-slate-900">Safety yellow powder coat</span></div>
+            </div>
+          </div>
+
+          <div class="spec-card reveal reveal-delay-1 rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+            <h3 class="text-xl font-extrabold text-slate-900">EZ Pallet Rack Dock Door Guard Specifications</h3>
+            <div class="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
+              <div><span class="text-slate-500">Category:</span> <span class="font-semibold text-slate-900">Protection</span></div>
+              <div><span class="text-slate-500">Style:</span> <span class="font-semibold text-slate-900">Welded</span></div>
+              <div><span class="text-slate-500">Steel:</span> <span class="font-semibold text-slate-900">1/2″ steel plate</span></div>
+              <div><span class="text-slate-500">Angle:</span> <span class="font-semibold text-slate-900">6″ × 4″ × 3/8″</span></div>
+              <div><span class="text-slate-500">Standard depth:</span> <span class="font-semibold text-slate-900">42″ standard</span></div>
+              <div><span class="text-slate-500">Anchors:</span> <span class="font-semibold text-slate-900">3/4″ × 7″ included</span></div>
+              <div><span class="text-slate-500">Protector type:</span> <span class="font-semibold text-slate-900">42″ and 48″ quick-ship options</span></div>
+              <div><span class="text-slate-500">Finish:</span> <span class="font-semibold text-slate-900">Safety yellow powder coat</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steel-vs-plastic" class="py-16 bg-slate-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+        <div>
+          <div class="dark-kicker reveal">Why steel over plastic</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+            End-of-aisle forklift impact guarding needs steel.
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-slate-200 text-lg">
+            Plastic guards and light-duty bumpers may help with minor contact, but rack row ends often take direct forklift hits and turning impacts. Steel end-of-aisle rack guards are built for repeated traffic exposure and floor-anchored protection.
+          </p>
+
+          <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+              Request Guarding Help
+            </a>
+
+            <a href="column-guards.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
+              View Column Guards
+            </a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="reveal rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Impact resistance</div>
+            <h3 class="mt-2 text-lg font-extrabold text-slate-900">Built for turning traffic</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Row ends are exposed to forklift turns, pallet loads, and repeated aisle-end contact.
             </p>
           </div>
 
-          <h3 class="mt-8 text-xl font-extrabold text-slate-900">Specifications</h3>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
-            <li><strong>CATEGORY:</strong> Protection</li>
-            <li><strong>SPECIFICATIONS:</strong> Standard guard accepts up to a 5 1/2″ wide frame footplate</li>
-            <li><strong>STEEL GAUGE:</strong> 1/2” thick steel plate, 6″x4″ 3/8″ angle</li>
-            <li><strong>STYLE:</strong> Welded</li>
-            <li><strong>PROTECTOR HEIGHT:</strong> 12” tall, ½” thick v-nose ends protect front frame post, 6” x 4” X 3/8″ angle that protects the frame’s side and rear post</li>
-            <li><strong>STANDARD DEPTH:</strong> 42” Standard</li>
-            <li><strong>NUMBER OF ANCHOR HOLES:</strong> Varies, spaced less than 12” on center</li>
-            <li><strong>ANCHOR DIMS:</strong> ¾” x 7″ included (typically 3)</li>
-            <li><strong>COLOR:</strong> Powder coat painted to standard safety yellow</li>
-            <li><strong>PROTECTOR TYPE:</strong> (Standard 42″ and 48″ long guards are available for quick ship)</li>
-            <li><strong>CUSTOMIZABLE:</strong> Custom designed for your exact needs notching and exact lengths to fit your specifications</li>
-          </ul>
+          <div class="reveal reveal-delay-1 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Anchoring</div>
+            <h3 class="mt-2 text-lg font-extrabold text-slate-900">Floor-anchored protection</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Anchored steel guarding helps manage impact instead of relying on light-duty wraparound protection.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-2 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Visibility</div>
+            <h3 class="mt-2 text-lg font-extrabold text-slate-900">Safety yellow finish</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Highly visible powder coat helps drivers see exposed rack ends and protection zones.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-3 rounded-2xl bg-white text-slate-900 p-5 shadow-contrast ring-1 ring-white">
+            <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Customizable</div>
+            <h3 class="mt-2 text-lg font-extrabold text-slate-900">Built around your row</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Custom lengths and notching help match the guard to your rack layout and facility conditions.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="py-16 bg-slate-950">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal rounded-3xl bg-white text-slate-900 p-8 md:p-10 shadow-smooth ring-1 ring-slate-200 text-center">
-      <div class="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase">Need Help Choosing?</div>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">
-        Let our team review your guarding needs
-      </h2>
-      <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-        Send us project details, rack information, or photos and we’ll help determine which end-of-aisle guard is the right fit for your facility.
-      </p>
-      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-        <a href="contact.html" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700">
-          Request Review
-        </a>
-        <a href="tel:+17089802936" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
-          Call (708) 980-2936
-        </a>
+  <section id="low-profile" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1fr_0.85fr] gap-10 items-start">
+        <div>
+          <div class="section-kicker reveal">Low-profile design</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            Protect the aisle end without wasting aisle space.
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+            End-of-aisle protection needs to be strong without creating a larger obstruction. Elite Rackz helps match guard length, side orientation, anchor pattern, and notching needs to your rack layout and traffic pattern.
+          </p>
+        </div>
+
+        <div class="grid gap-4">
+          <div class="feature-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+            <h3 class="font-extrabold text-slate-900">Left, right, or double-sided protection</h3>
+            <p class="mt-2 text-sm text-slate-600">Match the guard orientation to exposed row ends and traffic flow.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+            <h3 class="font-extrabold text-slate-900">Custom notching and exact lengths</h3>
+            <p class="mt-2 text-sm text-slate-600">Fit unusual footplates, row conditions, rack layouts, and existing floor constraints.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-2 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+            <h3 class="font-extrabold">Quick-ship standard options</h3>
+            <p class="mt-2 text-sm text-slate-200">Standard 42″ and 48″ guards are available for common protection needs.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="mt-10 border-t border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
-    <div>
+  <section id="pair-with-repair-kits" class="py-16 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift p-6 md:p-10">
+        <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+          <div>
+            <div class="section-kicker reveal">Pair with repair kits</div>
+
+            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+              Repair the damaged upright, then guard the row end.
+            </h2>
+
+            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+              If an aisle end already has damaged uprights or footplates, guarding alone may not be the right first step. Elite Rackz can help determine whether the rack needs an engineered repair kit, end-of-aisle guard, column guard, or combined repair-and-protection plan.
+            </p>
+
+            <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+              <a href="products.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+                View Repair Kits
+              </a>
+
+              <a href="services.html#damage-assessment" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100">
+                Request Damage Assessment
+              </a>
+            </div>
+          </div>
+
+          <div class="grid gap-4">
+            <div class="feature-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+              <h3 class="font-extrabold text-slate-900">Damaged aisle-end upright?</h3>
+              <p class="mt-2 text-sm text-slate-600">Start with repair review before choosing a guard.</p>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+              <h3 class="font-extrabold text-slate-900">Repeat forklift strikes?</h3>
+              <p class="mt-2 text-sm text-slate-600">Add end-of-aisle protection to help reduce recurring rack damage.</p>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-2 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+              <h3 class="font-extrabold">Not sure what you need?</h3>
+              <p class="mt-2 text-sm text-slate-200">Send rack photos, aisle measurements, and footplate details. We can recommend the right repair or guarding path.</p>
+              <a href="tel:+17089802936" class="mt-4 inline-flex items-center text-white font-extrabold hover:underline">(708) 980-2936</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="section-kicker reveal">Frequently asked questions</div>
+
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          End-of-aisle rack guard questions.
+        </h2>
+
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+          Common questions about end-of-aisle rack guards, rack upright guards, forklift rack protection, and pallet rack impact protection.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-3 mt-10 grid gap-4">
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              What is the difference between column guards and end-of-aisle guards?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            Column guards protect individual pallet rack uprights and posts. End-of-aisle guards protect exposed rack row ends where forklift turning, pallet jack traffic, and aisle impact are more common.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              Do end-of-aisle guards fit any rack brand?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            Elite Rackz end-of-aisle guards can be customized for different rack layouts, frame sizes, footplates, and aisle conditions. The correct guard depends on rack profile, row length, traffic pattern, and impact exposure.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              What size end-of-aisle rack guard do I need?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            The correct size depends on rack row depth, footplate width, aisle clearance, forklift turning radius, dock door layout, and whether the guard needs left-side, right-side, or double-sided protection.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              Why choose steel end-of-aisle guards over plastic protectors?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            Steel end-of-aisle guards are built for heavier forklift impact and repeated warehouse traffic. Plastic guards may help with light contact, but they are not the same as floor-anchored steel pallet rack impact protection.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+        <div>
+          <div class="dark-kicker reveal">Quote support</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+            Need help choosing end-of-aisle guards?
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-200 max-w-3xl">
+            Send rack photos, row-end measurements, footplate dimensions, dock door layout, and aisle traffic details. Elite Rackz can help determine whether your facility needs EZ End of Row Guards, Dock Door Guards, column guards, repair kits, or a combined plan.
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-3 rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast">
+          <p class="text-sm font-semibold text-brand-700">Talk to Elite Rackz</p>
+          <p class="mt-2 text-3xl font-extrabold tracking-tight">
+            <a href="tel:+17089802936">(708) 980-2936</a>
+          </p>
+
+          <p class="mt-3 text-sm text-slate-600">
+            Or request a quote and include rack or aisle photos when available.
+          </p>
+
+          <div class="mt-6 grid gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+              Request a Quote
+            </a>
+
+            <a href="mailto:David@eliterackz.com" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-semibold">
+              Email David@eliterackz.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mt-24 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-5">
+    <div class="reveal">
       <div class="flex items-center gap-3 mb-4">
         <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
         <span class="font-extrabold tracking-tight text-slate-900">
           Elite <span class="text-brand-600">Rackz</span>
         </span>
       </div>
-      <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
+
+      <p class="text-sm text-slate-600">
+        Made in USA pallet rack repair kits, rack inspections, emergency repair support, and warehouse guarding systems.
+      </p>
     </div>
-    <div>
-      <h3 class="text-sm font-semibold mb-3">Explore</h3>
+
+    <div class="reveal reveal-delay-1">
+      <h3 class="text-sm font-semibold mb-3">Services</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="products.html" class="hover:text-brand-600">Products</a></li>
-        <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
-        <li><a href="about.html" class="hover:text-brand-600">About</a></li>
-        <li><a href="app.html" class="hover:text-brand-600">App</a></li>
-        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
-        <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
+        <li><a href="services.html" class="hover:text-brand-600">All Services</a></li>
+        <li><a href="services.html#pallet-rack-repair" class="hover:text-brand-600">Pallet Rack Repair</a></li>
+        <li><a href="emergency-rack-repair.html" class="hover:text-brand-600">Emergency Rack Repair</a></li>
+        <li><a href="services.html#inspection-covers" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
+        <li><a href="services.html#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
+        <li><a href="services.html#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
+        <li><a href="services.html#isnetworld" class="hover:text-brand-600">ISNetworld® Support</a></li>
       </ul>
     </div>
-    <div>
+
+    <div class="reveal reveal-delay-2">
+      <h3 class="text-sm font-semibold mb-3">Products</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="products.html" class="hover:text-brand-600">Pallet Rack Repair Kits</a></li>
+        <li><a href="ez-double-leg.html" class="hover:text-brand-600">EZ Double Leg</a></li>
+        <li><a href="ez-single-leg.html" class="hover:text-brand-600">EZ Single Leg</a></li>
+        <li><a href="ez-roll-form.html" class="hover:text-brand-600">EZ Roll-Form</a></li>
+        <li><a href="column-guards.html" class="hover:text-brand-600">Column Guards</a></li>
+        <li><a href="end-of-aisle-guards.html" class="hover:text-brand-600">End-of-Aisle Guards</a></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-3">
+      <h3 class="text-sm font-semibold mb-3">Resources</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="rack-inspection-checklist.html" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="rack-repair-vs-replacement.html" class="hover:text-brand-600">Repair vs. Replacement</a></li>
+        <li><a href="fbs-group.html" class="hover:text-brand-600">FBS Group Support</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-4">
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
@@ -336,37 +1570,149 @@
         <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
       </ul>
     </div>
-    <div>
-      <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
-    </div>
   </div>
+
   <div class="border-t border-slate-200/70">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-center gap-3 text-sm text-slate-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-slate-600">
+      <span>© 2026 Elite Rackz. All rights reserved.</span>
+      <span class="hidden sm:inline">•</span>
       <span>This site was created by:</span>
       <img src="assets/images/creator-logo.png" alt="JA Web Services" class="h-6 w-auto opacity-90">
     </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
-
 <script>
   (function () {
     const items = document.querySelectorAll(".reveal");
+
     if (!("IntersectionObserver" in window) || !items.length) {
-      items.forEach(el => el.classList.add("in-view"));
+      items.forEach(function (el) {
+        el.classList.add("in-view");
+      });
       return;
     }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
           io.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
-    items.forEach(el => io.observe(el));
+
+    items.forEach(function (el) {
+      io.observe(el);
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    if (!btn || !menu) return;
+
+    function closeMenu() {
+      btn.classList.remove('menu-open');
+      menu.classList.remove('menu-open');
+      document.body.classList.remove('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+      btn.classList.add('menu-open');
+      menu.classList.add('menu-open');
+      document.body.classList.add('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    btn.addEventListener('click', function () {
+      const isOpen = btn.classList.contains('menu-open');
+
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const hero = document.getElementById('heroSection');
+    const header = document.getElementById('siteHeader');
+
+    if (!hero || !header) return;
+
+    function updateHeader() {
+      const passedHero = window.scrollY > 12;
+      header.classList.toggle('header-scrolled', passedHero);
+      header.classList.toggle('header-hero', !passedHero);
+    }
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('resize', updateHeader);
+  })();
+</script>
+
+<script>
+  (function () {
+    const dropdownItems = document.querySelectorAll('.nav-item');
+
+    dropdownItems.forEach(function (item) {
+      const trigger = item.querySelector('.nav-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', function (event) {
+        event.stopPropagation();
+
+        const wasOpen = item.classList.contains('open');
+
+        dropdownItems.forEach(function (other) {
+          other.classList.remove('open');
+          const otherTrigger = other.querySelector('.nav-trigger');
+          if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!wasOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', function () {
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.nav-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.nav-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
   })();
 </script>
 

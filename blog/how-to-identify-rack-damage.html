@@ -4,9 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How to Identify Pallet Rack Upright Damage | Elite Rackz Blog</title>
-  <meta name="description" content="How to identify pallet rack upright damage, what to document, and what to do next—plus a practical checklist for faster approvals.">
+  <meta name="description" content="Learn how to identify pallet rack upright damage, what to document, when to restrict access, and how to decide whether repair, replacement, or guarding is needed.">
   <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://eliterackz.com/blog/how-to-identify-rack-damage">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
+
+  <meta property="og:title" content="How to Identify Pallet Rack Upright Damage | Elite Rackz Blog">
+  <meta property="og:description" content="A practical rack safety guide for warehouse teams: upright damage patterns, photo documentation, triage, repair review, and next steps.">
+  <meta property="og:url" content="https://eliterackz.com/blog/how-to-identify-rack-damage">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://eliterackz.com/assets/images/emergency-before.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,300 +23,1623 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: { extend: {
-        fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] },
-        colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} },
-        boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'}
-      } }
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              600: '#2e6ad6',
+              700: '#2554aa'
+            }
+          },
+          boxShadow: {
+            smooth: '0 10px 25px rgba(0,0,0,0.08)',
+            lift: '0 18px 48px rgba(15,23,42,0.14)',
+            contrast: '0 22px 55px rgba(2,6,23,0.28)'
+          }
+        }
+      }
     };
   </script>
 
   <link rel="stylesheet" href="../assets/css/styles.css">
 
-  <!-- Article schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"How to Identify Pallet Rack Upright Damage (And What to Do Next)",
-    "author":[{"@type":"Organization","name":"Elite Rackz"}],
-    "publisher":{"@type":"Organization","name":"Elite Rackz","logo":{"@type":"ImageObject","url":"https://eliterackz.com/assets/images/logo.png"}},
-    "datePublished":"2026-03-03",
-    "dateModified":"2026-03-03",
-    "mainEntityOfPage":{"@type":"WebPage","@id":"https://eliterackz.com/blog/how-to-identify-rack-damage.html"}
-  }
-  </script>
-
   <style>
-    #progressBar { width: 0%; }
-    .prose-er h2 { scroll-margin-top: 96px; }
-    .prose-er a { text-decoration: none; }
-    .prose-er a:hover { text-decoration: underline; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    body.mobile-menu-open {
+      overflow: hidden;
+    }
+
+    #progressBar {
+      width: 0%;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+      transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 80ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 160ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 240ms;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 320ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
+    }
+
+    .site-header {
+      transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        backdrop-filter .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .header-hero {
+      background: linear-gradient(to bottom, rgba(2,6,23,.86), rgba(2,6,23,.58), rgba(2,6,23,0));
+      border-bottom: none;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .header-scrolled {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(15,23,42,.04);
+    }
+
+    .header-hero #headerLogoWrap {
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    .header-hero #headerTagline {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .header-scrolled #headerLogoWrap {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .header-scrolled #headerTagline {
+      color: rgb(51 65 85);
+      text-shadow: none;
+    }
+
+    .header-hero .header-nav-link,
+    .header-hero .nav-trigger {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.30);
+    }
+
+    .header-hero .header-nav-link:hover,
+    .header-hero .nav-trigger:hover {
+      color: #dbeafe;
+    }
+
+    .header-scrolled .header-nav-link,
+    .header-scrolled .nav-trigger {
+      color: rgb(15 23 42);
+      text-shadow: none;
+    }
+
+    .header-phone-link {
+      transition: background-color .25s ease, color .25s ease, box-shadow .25s ease;
+    }
+
+    .header-hero .header-phone-link {
+      background: #ffffff;
+      color: rgb(15 23 42);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .header-scrolled .header-phone-link {
+      background: rgb(15 23 42);
+      color: white;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+    }
+
+    #siteHeader {
+      z-index: 1000;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .5rem .25rem;
+      font-size: .875rem;
+      font-weight: 600;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      transition: color .2s ease;
+    }
+
+    .nav-trigger svg {
+      transition: transform .2s ease;
+    }
+
+    .nav-item.open .nav-trigger svg,
+    .nav-item:hover .nav-trigger svg {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      width: 340px;
+      border: 1px solid rgba(226,232,240,.95);
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 10px;
+      box-shadow: 0 22px 60px rgba(15,23,42,.16);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -18px;
+      height: 18px;
+    }
+
+    .nav-item:hover .dropdown-menu,
+    .nav-item.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 12px;
+      border-radius: 16px;
+      transition: background .18s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background: #eff6ff;
+    }
+
+    .dropdown-menu strong {
+      display: block;
+      font-size: .9rem;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .dropdown-menu span {
+      display: block;
+      margin-top: .25rem;
+      font-size: .78rem;
+      color: #64748b;
+      line-height: 1.35;
+    }
+
+    #mobileMenuBtn {
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto;
+    }
+
+    #mobileMenuBtn.menu-open {
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      border-color: rgba(148,163,184,0.55);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(1) {
+      top: 8px;
+      transform: rotate(45deg);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(3) {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+
+    #mobileMenu {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        max-height 360ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 360ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 360ms;
+      will-change: max-height, opacity, transform;
+    }
+
+    #mobileMenu.menu-open {
+      max-height: calc(100vh - 64px);
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      pointer-events: auto;
+      overflow-y: auto;
+      transition:
+        max-height 420ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 420ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 0s;
+    }
+
+    #mobileMenu .mobile-menu-inner {
+      padding-top: 12px;
+      padding-bottom: 20px;
+    }
+
+    .mobile-menu-section {
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f8fafc;
+      margin-bottom: 10px;
+    }
+
+    .mobile-menu-section summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mobile-menu-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu-section summary::after {
+      content: "+";
+      color: #2e6ad6;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .mobile-menu-section[open] summary::after {
+      content: "–";
+    }
+
+    .mobile-menu-links {
+      display: grid;
+      gap: 6px;
+      padding: 0 10px 10px;
+    }
+
+    .mobile-menu-links a,
+    .mobile-direct-link {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: white;
+      border: 1px solid rgba(226,232,240,.9);
+      color: #334155;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .mobile-direct-link {
+      margin-top: 10px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #eff6ff;
+      color: #2554aa;
+      border: 1px solid rgba(46,106,214,.18);
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .dark-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #2554aa;
+      border: 1px solid #dbeafe;
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .article-prose h2 {
+      scroll-margin-top: 96px;
+      font-size: 2rem;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-prose h3 {
+      font-size: 1.25rem;
+      line-height: 1.3;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 2rem;
+      margin-bottom: .75rem;
+    }
+
+    .article-prose p {
+      color: #475569;
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      margin-top: 1rem;
+    }
+
+    .article-prose ul {
+      margin-top: 1rem;
+      display: grid;
+      gap: .65rem;
+      color: #475569;
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+
+    .article-prose li {
+      padding-left: .15rem;
+    }
+
+    .article-prose blockquote {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #2e6ad6;
+      background: #eff6ff;
+      border-radius: 0 1rem 1rem 0;
+      padding: 1.25rem 1.5rem;
+      color: #0f172a;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    .on-black-label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: .4rem .75rem;
+      border-radius: 9999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.28);
+      color: #ffffff !important;
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0,0,0,.35);
+    }
+
+    .black-panel,
+    .black-panel h1,
+    .black-panel h2,
+    .black-panel h3,
+    .black-panel h4,
+    .black-panel p,
+    .black-panel ul,
+    .black-panel li,
+    .black-panel span,
+    .black-panel div {
+      color: #ffffff !important;
+    }
+
+    .article-prose .black-panel,
+    .article-prose .black-panel h1,
+    .article-prose .black-panel h2,
+    .article-prose .black-panel h3,
+    .article-prose .black-panel h4,
+    .article-prose .black-panel p,
+    .article-prose .black-panel ul,
+    .article-prose .black-panel li,
+    .article-prose .black-panel span,
+    .article-prose .black-panel div {
+      color: #ffffff !important;
+    }
+
+    .force-white,
+    .article-prose .force-white {
+      color: #ffffff !important;
+    }
+
+    .black-panel .white-card,
+    .black-panel .white-card h1,
+    .black-panel .white-card h2,
+    .black-panel .white-card h3,
+    .black-panel .white-card h4,
+    .black-panel .white-card p,
+    .black-panel .white-card li,
+    .black-panel .white-card span,
+    .black-panel .white-card div {
+      color: initial !important;
+    }
+
+    .black-panel .white-card .text-slate-900,
+    .black-panel .white-card .font-extrabold,
+    .black-panel .white-card .font-bold {
+      color: #0f172a !important;
+    }
+
+    .black-panel .white-card .text-slate-600,
+    .black-panel .white-card .text-slate-500 {
+      color: #475569 !important;
+    }
+
+    .article-card,
+    .sidebar-card,
+    .compare-card,
+    .damage-card,
+    .faq-accordion {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .article-card:hover,
+    .sidebar-card:hover,
+    .compare-card:hover,
+    .damage-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      border-color: rgba(46,106,214,.28);
+    }
+
+    .faq-accordion {
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .faq-accordion:hover {
+      border-color: rgba(46,106,214,.32);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      transform: translateY(-2px);
+    }
+
+    .faq-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .faq-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-accordion summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+      background: #eff6ff;
+      color: #2e6ad6;
+      font-weight: 900;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .faq-accordion[open] summary::after {
+      content: "–";
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      color: #64748b;
+      font-size: .95rem;
+      line-height: 1.65;
+    }
+
+    .hero-mobile-pad {
+      padding-top: 7.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-mobile-pad {
+        padding-top: 9rem;
+      }
+    }
   </style>
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Identify Pallet Rack Upright Damage",
+      "description": "A practical guide for identifying pallet rack upright damage, documenting conditions, and deciding when to request repair review, replacement review, or guarding.",
+      "author": {
+        "@type": "Organization",
+        "name": "Elite Rackz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Elite Rackz",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://eliterackz.com/assets/images/logo.png"
+        }
+      },
+      "datePublished": "2026-03-03",
+      "dateModified": "2026-03-03",
+      "image": "https://eliterackz.com/assets/images/emergency-before.jpg",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://eliterackz.com/blog/how-to-identify-rack-damage"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are common signs of pallet rack upright damage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common signs include bent uprights, twists, crushed sections, torn holes, damaged braces, displaced base plates, loose anchors, cracked concrete, and visible forklift impact marks near the lower upright."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I document when I find rack damage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Document wide aisle photos, close-up damage photos, aisle and bay references, upright profile, base plate and anchor conditions, beam elevations, load labels, and whether the rack is loaded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should damaged pallet rack be taken out of service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If damage appears structural or severe, restrict the area according to your internal safety process and request professional review before assuming the rack can remain in service."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can damaged pallet rack uprights be repaired?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many damaged pallet rack uprights can be repaired when the damage is localized, the rack profile can be verified, and an engineered repair path is available. Severe or widespread damage may require replacement."
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://eliterackz.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://eliterackz.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Identify Pallet Rack Upright Damage",
+          "item": "https://eliterackz.com/blog/how-to-identify-rack-damage"
+        }
+      ]
+    }
+  ]
+  </script>
 </head>
 
 <body class="bg-white text-slate-800 antialiased">
 
-<!-- Reading progress -->
-<div class="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-transparent">
+<div class="fixed top-0 left-0 right-0 z-[1200] h-[3px] bg-transparent">
   <div id="progressBar" class="h-full bg-brand-600"></div>
 </div>
 
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+<header id="siteHeader" class="site-header header-hero fixed top-0 left-0 right-0 z-40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="../index.html" class="flex items-center gap-3">
-        <img src="../assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">
+      <a href="../" id="headerBrand" class="flex items-center gap-3 transition-all duration-300">
+        <span id="headerLogoWrap" class="rounded-lg px-2 py-1 transition-all duration-300">
+          <img src="../assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        </span>
+
+        <span id="headerTagline" class="text-[11px] md:text-xs font-semibold leading-tight transition-colors duration-300">
           SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="../products.html" class="hover:text-brand-600">Products</a>
-        <a href="../services.html" class="hover:text-brand-600">Services</a>
-        <a href="../about.html" class="hover:text-brand-600">About</a>
-        <a href="../app.html" class="hover:text-brand-600">App</a>
-        <a href="./index.html" class="text-brand-700">Blog</a>
-        <a href="../contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium" aria-label="Main navigation">
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Services
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="../services">
+              <strong>All Services</strong>
+              <span>Pallet rack repair, rack inspections, safety audits, damage assessments, and documentation.</span>
+            </a>
+
+            <a href="../services#pallet-rack-repair">
+              <strong>Pallet Rack Repair</strong>
+              <span>Engineered repair for damaged pallet rack uprights and forklift impact zones.</span>
+            </a>
+
+            <a href="../emergency-rack-repair">
+              <strong>Emergency Rack Repair</strong>
+              <span>48-hour emergency repair path for qualifying critical rack damage.</span>
+            </a>
+
+            <a href="../services#inspection-covers">
+              <strong>Rack Inspection &amp; Compliance</strong>
+              <span>Pallet rack inspection, rack safety audits, reports, and documentation.</span>
+            </a>
+
+            <a href="../services#rack-safety-audits">
+              <strong>Rack Safety Audits</strong>
+              <span>Warehouse rack safety surveys for EHS and operations teams.</span>
+            </a>
+
+            <a href="../services#damage-assessment">
+              <strong>Rack Damage Assessments</strong>
+              <span>Photo documentation and repair recommendations for damaged rack.</span>
+            </a>
+
+            <a href="../services#load-capacity">
+              <strong>Load Capacity &amp; Labels</strong>
+              <span>Rack load capacity review, labels, and audit-ready documentation.</span>
+            </a>
+
+            <a href="../services#isnetworld">
+              <strong>ISNetworld® Contractor Support</strong>
+              <span>Procurement-friendly support for safety-driven facilities and qualified workflows.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Products
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="../products">
+              <strong>Pallet Rack Repair Kits</strong>
+              <span>Made in USA repair kits with stamped calculations and lifetime warranty.</span>
+            </a>
+
+            <a href="../ez-double-leg">
+              <strong>EZ Double Leg Repair Kit</strong>
+              <span>Double-leg pallet rack repair kit for damaged upright sections.</span>
+            </a>
+
+            <a href="../ez-single-leg">
+              <strong>EZ Single Leg Repair Kit</strong>
+              <span>Single-leg repair kit for targeted upright repair.</span>
+            </a>
+
+            <a href="../ez-roll-form">
+              <strong>EZ Roll-Form Repair Kit</strong>
+              <span>Roll-form rack repair kit option for compatible systems.</span>
+            </a>
+
+            <a href="../column-guards">
+              <strong>Column Guards</strong>
+              <span>Warehouse column protection and pallet rack post protectors.</span>
+            </a>
+
+            <a href="../end-of-aisle-guards">
+              <strong>End-of-Aisle Guards</strong>
+              <span>End-of-aisle rack guards and forklift impact protection.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Resources
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="../rack-inspection-checklist">
+              <strong>Rack Inspection Checklist</strong>
+              <span>Warehouse rack inspection checklist for safety walkthroughs and documentation.</span>
+            </a>
+
+            <a href="../rack-repair-vs-replacement">
+              <strong>Repair vs. Replacement</strong>
+              <span>Compare engineered rack repair kits with full pallet rack replacement.</span>
+            </a>
+
+            <a href="../fbs-group">
+              <strong>FBS Group Support</strong>
+              <span>Service continuity and support for former FBS Group customers.</span>
+            </a>
+
+            <a href="./">
+              <strong>Blog</strong>
+              <span>Rack safety, repair, inspection, and warehouse compliance resources.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Industries
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="../#industries">
+              <strong>Cold Storage &amp; Food DCs</strong>
+              <span>Galvanized repair options, documentation, and emergency response support.</span>
+            </a>
+
+            <a href="../#industries">
+              <strong>3PL Warehousing</strong>
+              <span>Rack inspections and repair support for multi-client warehouse operations.</span>
+            </a>
+
+            <a href="../#industries">
+              <strong>Food Manufacturing</strong>
+              <span>Stamped documentation and repair records for audit-ready facilities.</span>
+            </a>
+
+            <a href="../#industries">
+              <strong>Automotive Parts DCs</strong>
+              <span>Fast pallet rack repair planning where downtime matters.</span>
+            </a>
+
+            <a href="../#industries">
+              <strong>E-Commerce Fulfillment</strong>
+              <span>Post-peak damage assessments and forklift impact protection.</span>
+            </a>
+
+            <a href="../#industries">
+              <strong>Building Materials DCs</strong>
+              <span>Heavy-duty rack repair, custom kits, and warehouse guarding systems.</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="../about" class="header-nav-link hover:text-brand-600 transition-colors duration-300">About</a>
+        <a href="../contact" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Contact</a>
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl font-extrabold transition-all duration-300">
+          (708) 980-2936
+        </a>
       </nav>
 
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300">
+      <div class="hidden md:flex xl:hidden items-center gap-3">
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl text-sm font-extrabold transition-all duration-300">
+          Call
+        </a>
+
+        <a href="../contact#contact" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm font-semibold">
+          Quote
+        </a>
+      </div>
+
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        class="xl:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white transition-all duration-300 hover:bg-slate-50 active:scale-95"
+      >
         <span class="sr-only">Open menu</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+        <span class="relative h-5 w-5">
+          <span class="menu-line absolute left-0 top-0 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-2 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-4 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+        </span>
       </button>
     </div>
   </div>
 
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
-    <div class="px-4 py-3 space-y-2 text-sm">
-      <a href="../products.html" class="block">Products</a>
-      <a href="../services.html" class="block">Services</a>
-      <a href="../about.html" class="block">About</a>
-      <a href="../app.html" class="block">App</a>
-      <a href="./index.html" class="block font-semibold text-brand-700">Blog</a>
-      <a href="../contact.html" class="block font-semibold text-brand-700">Contact</a>
+  <div id="mobileMenu" class="xl:hidden border-t border-slate-200 bg-white">
+    <div class="mobile-menu-inner px-4 text-sm max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <details class="mobile-menu-section">
+        <summary>Services</summary>
+        <div class="mobile-menu-links">
+          <a href="../services">All Services</a>
+          <a href="../services#pallet-rack-repair">Pallet Rack Repair</a>
+          <a href="../emergency-rack-repair">Emergency Rack Repair</a>
+          <a href="../services#inspection-covers">Rack Inspection &amp; Compliance</a>
+          <a href="../services#rack-safety-audits">Rack Safety Audits</a>
+          <a href="../services#damage-assessment">Rack Damage Assessments</a>
+          <a href="../services#load-capacity">Load Capacity &amp; Labels</a>
+          <a href="../services#isnetworld">ISNetworld® Contractor Support</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section">
+        <summary>Products</summary>
+        <div class="mobile-menu-links">
+          <a href="../products">Pallet Rack Repair Kits</a>
+          <a href="../ez-double-leg">EZ Double Leg Repair Kit</a>
+          <a href="../ez-single-leg">EZ Single Leg Repair Kit</a>
+          <a href="../ez-roll-form">EZ Roll-Form Repair Kit</a>
+          <a href="../column-guards">Column Guards</a>
+          <a href="../end-of-aisle-guards">End-of-Aisle Guards</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section" open>
+        <summary>Resources</summary>
+        <div class="mobile-menu-links">
+          <a href="../rack-inspection-checklist">Rack Inspection Checklist</a>
+          <a href="../rack-repair-vs-replacement">Repair vs. Replacement</a>
+          <a href="../fbs-group">FBS Group Support</a>
+          <a href="./">Blog</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section">
+        <summary>Industries</summary>
+        <div class="mobile-menu-links">
+          <a href="../#industries">Cold Storage &amp; Food DCs</a>
+          <a href="../#industries">3PL Warehousing</a>
+          <a href="../#industries">Food Manufacturing</a>
+          <a href="../#industries">Automotive Parts DCs</a>
+          <a href="../#industries">E-Commerce Fulfillment</a>
+          <a href="../#industries">Building Materials DCs</a>
+        </div>
+      </details>
+
+      <a href="../about" class="mobile-direct-link">About</a>
+      <a href="../contact" class="mobile-direct-link">Contact</a>
+
+      <div class="grid gap-3 mt-4">
+        <a href="tel:+17089802936" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white font-extrabold">
+          Call (708) 980-2936
+        </a>
+
+        <a href="../contact#contact" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold">
+          Request a Quote
+        </a>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- Article hero -->
-<section class="border-b border-slate-200 bg-slate-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-    <div class="max-w-4xl">
-      <nav class="text-sm text-slate-500">
-        <a class="hover:text-slate-700" href="../index.html">Home</a>
-        <span class="mx-2">/</span>
-        <a class="hover:text-slate-700" href="./index.html">Blog</a>
-        <span class="mx-2">/</span>
-        <span class="text-slate-700 font-semibold">Upright Damage</span>
-      </nav>
+<main>
+  <section id="heroSection" class="relative overflow-hidden text-white bg-slate-950">
+    <div class="absolute inset-0">
+      <img
+        src="../assets/images/emergency-before.jpg"
+        alt="Damaged pallet rack upright before repair review"
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+        onerror="this.style.display='none';"
+      >
+      <div class="absolute inset-0 bg-slate-950/72"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/96 via-slate-950/80 to-slate-950/46"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/94 via-slate-950/36 to-slate-950/58"></div>
+      <div class="absolute inset-0 shadow-[inset_0_0_170px_rgba(0,0,0,0.68)]"></div>
+    </div>
 
-      <div class="mt-6 flex flex-wrap items-center gap-2">
-        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white text-slate-700 text-xs font-extrabold ring-1 ring-slate-200">
-          SAFETY
-        </span>
-        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white text-slate-700 text-xs font-extrabold ring-1 ring-slate-200">
-          OPERATIONS
-        </span>
-      </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pb-16 sm:pb-20 lg:pb-24">
+      <div class="max-w-4xl">
+        <div class="dark-kicker reveal">
+          Blog • Rack safety guide
+        </div>
 
-      <h1 class="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-        How to Identify Pallet Rack Upright Damage
-      </h1>
-      <p class="mt-4 text-lg text-slate-600">
-        A practical guide for warehouse and safety teams: what damage looks like, what to document, and what to do next—without overreacting or underreacting.
-      </p>
+        <h1 class="reveal reveal-delay-1 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+          How to Identify Pallet Rack Upright Damage
+        </h1>
 
-      <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
-        <span class="font-semibold text-slate-700">Elite Rackz</span>
-        <span>•</span>
-        <time datetime="2026-03-03">Mar 3, 2026</time>
-        <span>•</span>
-        <span>7 min read</span>
+        <p class="reveal reveal-delay-2 mt-5 text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-[-0.035em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+          What to look for, what to document, and what to do next.
+        </p>
+
+        <p class="reveal reveal-delay-3 mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
+          A practical guide for warehouse operations, safety teams, and maintenance leaders reviewing visible rack damage after forklift impact, pallet contact, or repeated aisle traffic.
+        </p>
+
+        <div class="reveal reveal-delay-4 mt-8 flex flex-wrap items-center gap-3 text-sm text-slate-100">
+          <span class="inline-flex items-center px-3 py-1.5 rounded-full bg-white text-slate-900 font-extrabold">Safety</span>
+          <span class="inline-flex items-center px-3 py-1.5 rounded-full bg-slate-950/55 ring-1 ring-white/20 backdrop-blur-sm text-white">Elite Rackz</span>
+          <time datetime="2026-03-03" class="inline-flex items-center px-3 py-1.5 rounded-full bg-slate-950/55 ring-1 ring-white/20 backdrop-blur-sm text-white">Mar 3, 2026</time>
+          <span class="inline-flex items-center px-3 py-1.5 rounded-full bg-slate-950/55 ring-1 ring-white/20 backdrop-blur-sm text-white">7 min read</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-  <div class="grid lg:grid-cols-12 gap-10 items-start">
-
-    <!-- Main article -->
-    <article class="lg:col-span-8">
-
-      <!-- Key takeaway (no “Request a Quote”) -->
-      <div class="rounded-2xl bg-white border border-slate-200 p-7 shadow-smooth">
-        <p class="text-xs font-extrabold tracking-wide text-slate-500">SUMMARY</p>
-        <p class="mt-2 text-lg font-semibold text-slate-900">
-          Uprights carry vertical loads. When an upright is bent, twisted, or torn, capacity can be reduced and risk increases.
-          The fastest way to move from “we noticed damage” to a compliant plan is <span class="font-extrabold">consistent documentation</span>.
-        </p>
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-sm text-slate-500">
+        <a class="hover:text-slate-700" href="../">Home</a>
+        <span class="mx-2">/</span>
+        <a class="hover:text-slate-700" href="./">Blog</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-700 font-semibold">How to Identify Pallet Rack Upright Damage</span>
       </div>
 
-      <!-- TOC -->
-      <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
-        <div class="flex items-center justify-between gap-4">
-          <h2 class="text-lg font-extrabold text-slate-900">In this guide</h2>
-          <span class="text-xs text-slate-500">Jump to section</span>
-        </div>
-        <div class="mt-4 grid sm:grid-cols-2 gap-2 text-sm">
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#why">Why upright damage matters</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#patterns">Common damage patterns</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#document">What to document</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#fast">How to move fast</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#framework">Repair vs replace framework</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#faq">FAQ</a>
-        </div>
-      </div>
-
-      <!-- Prose -->
-      <div class="prose-er mt-10 prose prose-slate max-w-none">
-        <h2 id="why">Why upright damage matters</h2>
-        <p>
-          Uprights carry vertical loads and help resist impacts and lateral forces. When an upright is bent, twisted, or torn, structural capacity can be reduced.
-          The point of an inspection isn’t to panic—it’s to identify issues early and document them clearly so a safe plan can be implemented with minimal disruption.
-        </p>
-
-        <h2 id="patterns">Common upright damage patterns</h2>
-        <p>Here are the most common types of damage teams see after forklift impacts and repeated contact:</p>
-
-        <div class="not-prose my-6 grid sm:grid-cols-2 gap-4">
-          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
-            <div class="font-extrabold text-slate-900">Local bends</div>
-            <p class="mt-2 text-sm text-slate-600">Kinks or bows near impact zones (often 6–24 inches above the floor).</p>
-          </div>
-          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
-            <div class="font-extrabold text-slate-900">Twist / rotation</div>
-            <p class="mt-2 text-sm text-slate-600">A “corkscrewed” look from repeated hits or awkward impacts.</p>
-          </div>
-          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
-            <div class="font-extrabold text-slate-900">Base plate / anchors</div>
-            <p class="mt-2 text-sm text-slate-600">Lifted base plates, cracked anchors, or shifting at the foot.</p>
-          </div>
-          <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-smooth p-6">
-            <div class="font-extrabold text-slate-900">Tearing at holes</div>
-            <p class="mt-2 text-sm text-slate-600">Elongated or torn holes around beams/diagonals.</p>
-          </div>
-        </div>
-
-        <h2 id="document">What to document (so decisions don’t stall)</h2>
-        <p>
-          Documentation is what makes approvals and planning move quickly. If you capture the following consistently, engineering review and quoting tend to accelerate:
-        </p>
-
-        <div class="not-prose my-6 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-6">
-          <div class="text-sm font-extrabold text-slate-900">Inspection checklist</div>
-          <ul class="mt-3 grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Wide + close photos</strong> of each damage location</li>
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Aisle / bay / column ID</strong> (simple map is fine)</li>
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Upright profile</strong> (brand/type if known)</li>
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Beam elevations</strong> impacted</li>
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Anchor condition</strong> at base plate</li>
-            <li class="rounded-xl bg-white ring-1 ring-black/5 p-4"><strong>Impact history</strong> (single vs repeated hits)</li>
-          </ul>
-        </div>
-
-        <h2 id="fast">How to move fast (without skipping steps)</h2>
-        <p>
-          The fastest workflow is usually: document → triage severity → select a compliant path. If you’re short on time, prioritize the checklist above.
-          It’s the information most teams need to avoid delays.
-        </p>
-
-        <h2 id="framework">Repair vs replace: the practical framework</h2>
-        <p>
-          Replacement can be disruptive when it requires tear-downs or extended downtime. Engineered repair can be the faster compliant path when it restores structural integrity and the documentation supports the decision.
-        </p>
-        <ul>
-          <li>If damage is localized and reinforcement can be installed without tear-down, <strong>engineered repair</strong> is often the fastest path.</li>
-          <li>If damage is severe across multiple members or the system is unsafe to work around, <strong>replacement</strong> may be required.</li>
-        </ul>
-
-        <h2 id="faq">FAQ</h2>
-        <div class="not-prose mt-6 space-y-3">
-          <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
-            <summary class="cursor-pointer font-semibold text-slate-900">Should we unload a damaged bay immediately?</summary>
-            <p class="mt-3 text-sm text-slate-600">
-              If you suspect structural compromise, reducing load is a prudent first step. Document the condition and restrict access as needed until a plan is in place.
+      <div class="mt-8 grid lg:grid-cols-[1fr_0.36fr] gap-10 items-start">
+        <article class="min-w-0">
+          <section class="article-card rounded-3xl bg-slate-50 ring-1 ring-slate-200 shadow-smooth p-6 md:p-8">
+            <p class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Summary
             </p>
-          </details>
 
-          <details class="rounded-2xl border border-slate-200 bg-white p-5 shadow-smooth">
-            <summary class="cursor-pointer font-semibold text-slate-900">What’s the fastest way to get an action plan?</summary>
-            <p class="mt-3 text-sm text-slate-600">
-              Photos + location + upright profile + beam elevations. That set of inputs removes most delays and clarifies scope.
+            <p class="mt-3 text-xl md:text-2xl font-extrabold tracking-tight text-slate-900">
+              Uprights carry vertical loads and help stabilize the rack frame. When an upright is bent, twisted, crushed, torn, or shifted at the base plate, the safest next step is clear documentation and review. Do not guess from one close-up photo — collect the full location, full bay, anchor condition, and surrounding rack details.
             </p>
-          </details>
-        </div>
+          </section>
+
+          <section class="mt-8 article-card rounded-3xl bg-white ring-1 ring-slate-200 shadow-smooth p-6 md:p-8">
+            <div class="flex items-center justify-between gap-4">
+              <h2 class="text-xl md:text-2xl font-extrabold text-slate-900">In this guide</h2>
+              <span class="text-xs text-slate-500">Jump to section</span>
+            </div>
+
+            <div class="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
+              <a class="rounded-xl px-4 py-3 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#why">Why upright damage matters</a>
+              <a class="rounded-xl px-4 py-3 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#patterns">Common damage patterns</a>
+              <a class="rounded-xl px-4 py-3 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#triage">Severity triage</a>
+              <a class="rounded-xl px-4 py-3 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#document">What to document</a>
+              <a class="rounded-xl px-4 py-3 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#photos">How to photograph damage</a>
+              <a class="rounded-xl px-4 py-3 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#next-steps">What to do next</a>
+              <a class="rounded-xl px-4 py-3 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#repair-replace">Repair vs. replacement</a>
+              <a class="rounded-xl px-4 py-3 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#faq">FAQ</a>
+            </div>
+          </section>
+
+          <div class="article-prose mt-10">
+            <h2 id="why">Why upright damage matters</h2>
+
+            <p>
+              Pallet rack uprights carry vertical loads and help keep the frame aligned. Lower upright damage is common because the bottom of the rack is exposed to forklifts, pallet jacks, pallets, and daily warehouse traffic.
+            </p>
+
+            <p>
+              The goal of a rack damage walkthrough is not to panic or shut everything down unnecessarily. The goal is to identify visible damage early, collect enough information for review, and decide whether the rack needs repair, replacement, guarding, or a deeper inspection.
+            </p>
+
+            <blockquote>
+              A bent upright is not just cosmetic. A small-looking bend, twist, or base plate shift can affect the way load is transferred through the rack frame.
+            </blockquote>
+
+            <h2 id="patterns">Common pallet rack upright damage patterns</h2>
+
+            <p>
+              The damage below is what warehouse teams usually notice first during a rack safety walkthrough. Some issues are obvious from a distance. Others only show up when you inspect the base plate, anchors, beam connection, or bracing around the damaged upright.
+            </p>
+
+            <div class="my-8 grid md:grid-cols-2 gap-4">
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-slate-200 shadow-smooth p-5">
+                <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">Local bends or kinks</h3>
+                <p class="mt-3 text-sm text-slate-600">
+                  A bend, kink, or bow near the lower upright is often caused by forklift or pallet impact. Check the front face, side face, and rear post before assuming the damage is isolated.
+                </p>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-slate-200 shadow-smooth p-5">
+                <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">Twist or rotation</h3>
+                <p class="mt-3 text-sm text-slate-600">
+                  A twisted upright may look like the post has rotated out of square. This can happen from angled impacts, repeated contact, or rack movement at the floor.
+                </p>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-slate-200 shadow-smooth p-5">
+                <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">Crushed lower sections</h3>
+                <p class="mt-3 text-sm text-slate-600">
+                  Crushed metal, buckling, or caved-in upright faces should be documented immediately. Include close-up photos and a full bay photo.
+                </p>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-slate-200 shadow-smooth p-5">
+                <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">Torn or elongated holes</h3>
+                <p class="mt-3 text-sm text-slate-600">
+                  Torn punch holes, elongated beam connection holes, or stretched metal around connectors can point to impact, overload, or rack movement.
+                </p>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-slate-200 shadow-smooth p-5">
+                <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">Base plate or anchor issues</h3>
+                <p class="mt-3 text-sm text-slate-600">
+                  Loose anchors, bent base plates, cracked concrete, or rack feet shifted out of position can change the urgency of the damage review.
+                </p>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-slate-200 shadow-smooth p-5">
+                <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">Damaged braces or welds</h3>
+                <p class="mt-3 text-sm text-slate-600">
+                  Do not stop at the upright. Check horizontal and diagonal bracing, welds, and nearby frame members for signs the impact traveled through the rack.
+                </p>
+              </div>
+            </div>
+
+            <section class="my-10 rounded-3xl bg-slate-50 ring-1 ring-slate-200 shadow-smooth overflow-hidden">
+              <div class="grid md:grid-cols-2 gap-0">
+                <div class="p-6 md:p-8">
+                  <p class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">
+                    Damage example
+                  </p>
+
+                  <h3 class="!mt-3 !mb-0 text-2xl md:text-3xl font-extrabold text-slate-900">
+                    Look at the full rack condition, not just the impact mark.
+                  </h3>
+
+                  <p class="mt-4 text-slate-600">
+                    A close-up may show the bend, but the full repair decision needs more context: aisle location, loaded condition, base plate, anchors, beam elevations, and whether the rear post or braces were also affected.
+                  </p>
+                </div>
+
+                <div class="bg-white flex items-center justify-center">
+                  <img
+                    src="../assets/images/emergency-before.jpg"
+                    alt="Damaged pallet rack upright before repair review"
+                    class="w-full h-[320px] md:h-full object-cover"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </section>
+
+            <h2 id="triage">Severity triage: what should get attention first?</h2>
+
+            <p>
+              A rack walkthrough should help the team prioritize. Some issues need immediate restriction and review. Others should be documented and scheduled into a repair or guarding plan.
+            </p>
+
+            <div class="my-8 grid md:grid-cols-3 gap-4">
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-red-200 shadow-smooth p-5">
+                <p class="text-xs font-extrabold tracking-[0.14em] uppercase text-red-700">Urgent</p>
+                <h3 class="!mt-2 !mb-0 text-lg font-extrabold text-slate-900">Restrict and review</h3>
+                <ul class="mt-3 text-sm text-slate-600">
+                  <li>• Severe bend or crushed upright</li>
+                  <li>• Shifted frame or damaged anchors</li>
+                  <li>• Damaged loaded bay</li>
+                  <li>• Visible instability or leaning</li>
+                </ul>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-amber-200 shadow-smooth p-5">
+                <p class="text-xs font-extrabold tracking-[0.14em] uppercase text-amber-700">Monitor</p>
+                <h3 class="!mt-2 !mb-0 text-lg font-extrabold text-slate-900">Document and plan</h3>
+                <ul class="mt-3 text-sm text-slate-600">
+                  <li>• Light visible impact marks</li>
+                  <li>• Minor dent with no obvious shift</li>
+                  <li>• Missing or damaged accessories</li>
+                  <li>• Guarding needed in repeat-hit area</li>
+                </ul>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-white ring-1 ring-emerald-200 shadow-smooth p-5">
+                <p class="text-xs font-extrabold tracking-[0.14em] uppercase text-emerald-700">Prevent</p>
+                <h3 class="!mt-2 !mb-0 text-lg font-extrabold text-slate-900">Protect before damage</h3>
+                <ul class="mt-3 text-sm text-slate-600">
+                  <li>• Row ends near turning traffic</li>
+                  <li>• Exposed front uprights</li>
+                  <li>• Dock-adjacent rack runs</li>
+                  <li>• Repaired areas needing protection</li>
+                </ul>
+              </div>
+            </div>
+
+            <section class="my-10 black-panel rounded-3xl bg-slate-950 text-white shadow-lift p-6 md:p-8">
+              <p class="on-black-label">Do not ignore</p>
+
+              <h3 class="force-white !mt-4 !mb-0 text-2xl md:text-3xl font-extrabold">
+                Damage at the floor can matter more than damage halfway up the frame.
+              </h3>
+
+              <p class="mt-4">
+                Lower upright damage, base plate movement, loose anchors, and cracked concrete can affect how the rack transfers load into the floor. If the rack foot has moved, lifted, or twisted, treat that as more than a surface issue.
+              </p>
+
+              <div class="mt-6 grid md:grid-cols-3 gap-4">
+                <div class="white-card rounded-2xl bg-white p-5">
+                  <h4 class="font-extrabold text-slate-900">Base plates</h4>
+                  <p class="mt-2 text-sm text-slate-600">Check for bending, lifting, twisting, or displaced footplates.</p>
+                </div>
+
+                <div class="white-card rounded-2xl bg-white p-5">
+                  <h4 class="font-extrabold text-slate-900">Anchors</h4>
+                  <p class="mt-2 text-sm text-slate-600">Look for missing, loose, broken, or pulled anchors.</p>
+                </div>
+
+                <div class="white-card rounded-2xl bg-white p-5">
+                  <h4 class="font-extrabold text-slate-900">Concrete</h4>
+                  <p class="mt-2 text-sm text-slate-600">Photograph cracks, spalling, or movement around the rack foot.</p>
+                </div>
+              </div>
+            </section>
+
+            <h2 id="document">What to document when you find rack damage</h2>
+
+            <p>
+              Good documentation speeds up the repair review. Poor documentation creates delays because the reviewer has to keep asking for basic details. The fastest path is to document the damage the same way every time.
+            </p>
+
+            <ul>
+              <li><strong>Wide aisle photo:</strong> show the full row, aisle, and surrounding traffic condition.</li>
+              <li><strong>Full bay photo:</strong> show the damaged upright, beams, load levels, and neighboring uprights.</li>
+              <li><strong>Close-up damage photo:</strong> show the bend, twist, crack, dent, tear, or impact mark clearly.</li>
+              <li><strong>Base plate and anchor photo:</strong> show the footplate, anchors, floor condition, and concrete.</li>
+              <li><strong>Rack profile photo:</strong> show the upright face, side profile, punch pattern, and any manufacturer tag if available.</li>
+              <li><strong>Location reference:</strong> include aisle number, bay number, row, column, or a simple map reference.</li>
+              <li><strong>Loaded condition:</strong> note whether product is still on the rack and which beam levels are loaded.</li>
+            </ul>
+
+            <div class="my-8 rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift overflow-hidden">
+              <div class="black-panel bg-slate-950 text-white px-6 py-4">
+                <h3 class="force-white !mt-0 !mb-0 text-xl font-extrabold">Fast documentation checklist</h3>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                <div class="p-6">
+                  <ul class="!mt-0 text-sm text-slate-600">
+                    <li>• Aisle and bay reference</li>
+                    <li>• Wide photo from the aisle</li>
+                    <li>• Full upright photo</li>
+                    <li>• Close-up of damage</li>
+                    <li>• Base plate and anchors</li>
+                  </ul>
+                </div>
+
+                <div class="p-6">
+                  <ul class="!mt-0 text-sm text-slate-600">
+                    <li>• Beam elevations</li>
+                    <li>• Load condition</li>
+                    <li>• Rear post condition</li>
+                    <li>• Bracing condition</li>
+                    <li>• Traffic or impact history</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="photos">How to photograph rack damage for faster review</h2>
+
+            <p>
+              Do not send only one close-up photo. A close-up shows the damage, but it does not show the full rack condition. Use a three-photo method for each damaged location.
+            </p>
+
+            <div class="my-8 grid md:grid-cols-3 gap-4">
+              <div class="damage-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">1</div>
+                <h3 class="!mt-4 !mb-0 text-lg font-extrabold text-slate-900">Wide photo</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  Stand back and capture the full row, aisle, and nearby traffic path.
+                </p>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">2</div>
+                <h3 class="!mt-4 !mb-0 text-lg font-extrabold text-slate-900">Full upright photo</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  Show the complete upright from floor to beam connection, including braces.
+                </p>
+              </div>
+
+              <div class="damage-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">3</div>
+                <h3 class="!mt-4 !mb-0 text-lg font-extrabold text-slate-900">Close-up photo</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  Capture the impact area, base plate, anchors, and any torn or crushed metal.
+                </p>
+              </div>
+            </div>
+
+            <h2 id="next-steps">What to do after damage is found</h2>
+
+            <p>
+              Your next step depends on severity. Light cosmetic marks may be documented and monitored. Visible structural damage should move into a repair review or inspection workflow. Severe damage should be restricted according to your internal safety process.
+            </p>
+
+            <div class="my-8 grid md:grid-cols-2 gap-5">
+              <div class="compare-card rounded-3xl bg-white ring-1 ring-slate-200 shadow-smooth p-6">
+                <p class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">If damage appears minor</p>
+                <h3 class="!mt-2 !mb-0 text-2xl font-extrabold text-slate-900">Document and monitor.</h3>
+                <ul class="mt-4 text-sm text-slate-600">
+                  <li>• Add the location to your rack inspection notes</li>
+                  <li>• Take consistent photos</li>
+                  <li>• Watch for repeat impact in the same area</li>
+                  <li>• Consider column guards or end-of-aisle guards</li>
+                </ul>
+              </div>
+
+              <div class="compare-card black-panel rounded-3xl bg-slate-950 text-white shadow-smooth p-6">
+                <p class="on-black-label">If damage appears structural</p>
+                <h3 class="force-white !mt-4 !mb-0 text-2xl font-extrabold">Restrict and request review.</h3>
+                <ul class="mt-4 text-sm">
+                  <li>• Follow your internal safety process</li>
+                  <li>• Document the damaged location</li>
+                  <li>• Reduce risk before moving product nearby</li>
+                  <li>• Request repair, replacement, or inspection review</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 id="repair-replace">Repair vs. replacement: how to think about it</h2>
+
+            <p>
+              Finding damage does not automatically mean the entire rack frame must be replaced. It also does not mean a repair kit is always the right answer. The decision depends on damage location, damage severity, rack profile, base plate condition, rear post condition, load requirements, and documentation needs.
+            </p>
+
+            <div class="my-8 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift">
+              <div class="overflow-x-auto">
+                <table class="min-w-[820px] w-full text-left">
+                  <thead class="black-panel bg-slate-950 text-white">
+                    <tr>
+                      <th class="px-5 py-4 text-sm font-extrabold">Question</th>
+                      <th class="px-5 py-4 text-sm font-extrabold">Repair may fit when</th>
+                      <th class="px-5 py-4 text-sm font-extrabold">Replacement may fit when</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="divide-y divide-slate-200">
+                    <tr>
+                      <td class="px-5 py-4 font-semibold text-slate-900">Is damage localized?</td>
+                      <td class="px-5 py-4 text-sm text-slate-600">Damage is concentrated at one upright or lower frame area.</td>
+                      <td class="px-5 py-4 text-sm text-slate-600">Damage affects multiple components or a larger frame section.</td>
+                    </tr>
+
+                    <tr>
+                      <td class="px-5 py-4 font-semibold text-slate-900">Is the rack profile known?</td>
+                      <td class="px-5 py-4 text-sm text-slate-600">The upright profile and measurements can be verified.</td>
+                      <td class="px-5 py-4 text-sm text-slate-600">Rack data is missing, altered, or not practical to document.</td>
+                    </tr>
+
+                    <tr>
+                      <td class="px-5 py-4 font-semibold text-slate-900">Does the layout still work?</td>
+                      <td class="px-5 py-4 text-sm text-slate-600">The existing rack layout still supports operations.</td>
+                      <td class="px-5 py-4 text-sm text-slate-600">A redesign, re-slotting, or new load requirement is already planned.</td>
+                    </tr>
+
+                    <tr>
+                      <td class="px-5 py-4 font-semibold text-slate-900">Is repeat impact likely?</td>
+                      <td class="px-5 py-4 text-sm text-slate-600">Repair can be paired with guarding to reduce future damage.</td>
+                      <td class="px-5 py-4 text-sm text-slate-600">Replacement alone will not solve the issue if the traffic pattern remains.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <h2 id="guarding">Do not forget guarding after the repair</h2>
+
+            <p>
+              If the same upright or aisle end keeps getting hit, repair alone may not solve the problem. Guarding can help reduce repeat damage after the rack is repaired or after a replacement frame is installed.
+            </p>
+
+            <div class="my-8 grid md:grid-cols-2 gap-5">
+              <a href="../column-guards" class="compare-card rounded-3xl bg-white ring-1 ring-slate-200 shadow-smooth overflow-hidden block">
+                <div class="h-[260px] bg-white flex items-center justify-center">
+                  <img
+                    src="../assets/images/column-guard-shield.jpg"
+                    alt="Steel column guard for pallet rack upright protection"
+                    class="max-h-full max-w-full object-contain p-4"
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="border-t border-slate-200 bg-slate-50 p-5">
+                  <h3 class="!mt-0 !mb-0 text-xl font-extrabold text-slate-900">Column Guards</h3>
+                  <p class="mt-2 text-sm text-slate-600">Protect individual uprights and lower impact zones after repair.</p>
+                </div>
+              </a>
+
+              <a href="../end-of-aisle-guards" class="compare-card rounded-3xl bg-white ring-1 ring-slate-200 shadow-smooth overflow-hidden block">
+                <div class="h-[260px] bg-white flex items-center justify-center">
+                  <img
+                    src="../assets/images/end-of-row-guard.jpg"
+                    alt="End-of-aisle rack guard for forklift impact protection"
+                    class="max-h-full max-w-full object-contain p-4"
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="border-t border-slate-200 bg-slate-50 p-5">
+                  <h3 class="!mt-0 !mb-0 text-xl font-extrabold text-slate-900">End-of-Aisle Guards</h3>
+                  <p class="mt-2 text-sm text-slate-600">Protect exposed rack row ends from turning traffic and repeat forklift impact.</p>
+                </div>
+              </a>
+            </div>
+
+            <h2 id="faq">FAQ</h2>
+
+            <div class="mt-6 grid gap-4">
+              <details class="faq-accordion">
+                <summary>
+                  <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">
+                    What are common signs of pallet rack upright damage?
+                  </h3>
+                </summary>
+
+                <div class="faq-answer">
+                  Common signs include bent uprights, twists, crushed sections, torn holes, damaged braces, displaced base plates, loose anchors, cracked concrete, and visible forklift impact marks near the lower upright.
+                </div>
+              </details>
+
+              <details class="faq-accordion">
+                <summary>
+                  <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">
+                    What should I document when I find rack damage?
+                  </h3>
+                </summary>
+
+                <div class="faq-answer">
+                  Document wide aisle photos, close-up damage photos, aisle and bay references, upright profile, base plate and anchor conditions, beam elevations, load labels, and whether the rack is loaded.
+                </div>
+              </details>
+
+              <details class="faq-accordion">
+                <summary>
+                  <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">
+                    Should damaged pallet rack be taken out of service?
+                  </h3>
+                </summary>
+
+                <div class="faq-answer">
+                  If damage appears structural or severe, restrict the area according to your internal safety process and request professional review before assuming the rack can remain in service.
+                </div>
+              </details>
+
+              <details class="faq-accordion">
+                <summary>
+                  <h3 class="!mt-0 !mb-0 text-lg font-extrabold text-slate-900">
+                    Can damaged pallet rack uprights be repaired?
+                  </h3>
+                </summary>
+
+                <div class="faq-answer">
+                  Many damaged pallet rack uprights can be repaired when the damage is localized, the rack profile can be verified, and an engineered repair path is available. Severe or widespread damage may require replacement.
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <section class="mt-14 black-panel rounded-3xl bg-slate-950 text-white shadow-lift p-6 md:p-8">
+            <div class="grid md:grid-cols-[1fr_auto] gap-6 items-center">
+              <div>
+                <p class="on-black-label">
+                  Found rack damage?
+                </p>
+
+                <h2 class="mt-4 text-3xl font-black tracking-tight force-white">
+                  Send photos before the decision stalls.
+                </h2>
+
+                <p class="mt-3">
+                  Elite Rackz can review the damaged upright, base plate, anchors, rack profile, and surrounding bay to help determine whether the next step is engineered repair, replacement, emergency support, or guarding.
+                </p>
+              </div>
+
+              <div class="grid gap-3 md:w-[260px]">
+                <a href="../contact#contact" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+                  Request Review
+                </a>
+
+                <a href="tel:+17089802936" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold">
+                  Call (708) 980-2936
+                </a>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <aside class="lg:sticky lg:top-24 grid gap-5">
+          <div class="sidebar-card rounded-3xl bg-white ring-1 ring-slate-200 shadow-smooth p-6">
+            <p class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Quick links
+            </p>
+
+            <div class="mt-4 grid gap-2 text-sm">
+              <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#why">Why upright damage matters</a>
+              <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#patterns">Common damage patterns</a>
+              <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#triage">Severity triage</a>
+              <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#document">What to document</a>
+              <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#photos">How to photograph damage</a>
+              <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#next-steps">What to do next</a>
+              <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#repair-replace">Repair vs. replacement</a>
+              <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-slate-200 font-semibold text-slate-700" href="#faq">FAQ</a>
+            </div>
+          </div>
+
+          <div class="sidebar-card black-panel rounded-3xl bg-slate-950 text-white shadow-smooth p-6">
+            <p class="on-black-label">
+              Related pages
+            </p>
+
+            <div class="mt-4 grid gap-3 text-sm">
+              <a class="white-card rounded-xl bg-white text-slate-900 p-4 block hover:bg-slate-100" href="../rack-inspection-checklist">
+                <span class="font-extrabold text-slate-900">Rack Inspection Checklist</span>
+                <span class="block mt-1 text-slate-600">Use the checklist to organize rack walkthrough notes.</span>
+              </a>
+
+              <a class="white-card rounded-xl bg-white text-slate-900 p-4 block hover:bg-slate-100" href="../services#damage-assessment">
+                <span class="font-extrabold text-slate-900">Rack Damage Assessment</span>
+                <span class="block mt-1 text-slate-600">Photo documentation and repair recommendations.</span>
+              </a>
+
+              <a class="white-card rounded-xl bg-white text-slate-900 p-4 block hover:bg-slate-100" href="../emergency-rack-repair">
+                <span class="font-extrabold text-slate-900">Emergency Rack Repair</span>
+                <span class="block mt-1 text-slate-600">48-hour path for qualifying critical damage.</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="sidebar-card rounded-3xl bg-white ring-1 ring-slate-200 shadow-smooth p-6">
+            <p class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              More from the blog
+            </p>
+
+            <div class="mt-4 grid gap-3 text-sm">
+              <a class="rounded-xl bg-slate-50 p-4 block hover:bg-slate-100 ring-1 ring-slate-200" href="./rack-repair-vs-replacement">
+                <span class="font-extrabold text-slate-900">Rack Repair vs. Replacement</span>
+                <span class="block mt-1 text-slate-600">Downtime, risk, and repair decision framework.</span>
+              </a>
+
+              <a class="rounded-xl bg-slate-50 p-4 block hover:bg-slate-100 ring-1 ring-slate-200" href="./forklift-damage-to-pallet-racks">
+                <span class="font-extrabold text-slate-900">Forklift Damage to Pallet Racks</span>
+                <span class="block mt-1 text-slate-600">Immediate response steps after impact.</span>
+              </a>
+
+              <a class="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold" href="./">
+                Back to Blog
+              </a>
+            </div>
+          </div>
+        </aside>
       </div>
-
-      <!-- ONE contact link (bottom only, not pushy) -->
-      <section class="mt-14 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-7">
-        <h2 class="text-xl font-extrabold text-slate-900">Want a second set of eyes?</h2>
-        <p class="mt-2 text-sm text-slate-600">
-          If you want a quick perspective, send photos and scope and we’ll point you in the right direction.
-        </p>
-        <a href="../contact.html#contact" class="mt-5 inline-flex items-center gap-2 text-brand-700 font-extrabold hover:underline">
-          Send photos for a quick review →
-        </a>
-      </section>
-    </article>
-
-    <!-- Sidebar (no extra contact CTAs) -->
-    <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
-        <div class="text-xs font-extrabold tracking-wide text-slate-500">QUICK LINKS</div>
-        <div class="mt-3 grid gap-2 text-sm">
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#why">Why upright damage matters</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#patterns">Common damage patterns</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#document">What to document</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#fast">How to move fast</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#framework">Repair vs replace</a>
-          <a class="rounded-xl px-3 py-2 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="#faq">FAQ</a>
-        </div>
-      </div>
-
-      <!-- Related (ONLY link to what exists right now) -->
-      <div class="rounded-2xl bg-white border border-slate-200 p-6 shadow-smooth">
-        <div class="text-xs font-extrabold tracking-wide text-slate-500">RELATED</div>
-        <a class="mt-4 block rounded-xl p-4 bg-slate-50 hover:bg-slate-100 ring-1 ring-black/5" href="./rack-repair-vs-replacement.html">
-          <div class="text-xs text-slate-500 font-extrabold">ENGINEERING</div>
-          <div class="mt-1 font-extrabold text-slate-900">Rack Repair vs Rack Replacement</div>
-          <div class="mt-1 text-sm text-slate-600">Downtime, risk, and decision framework.</div>
-        </a>
-
-        <a class="mt-3 inline-flex items-center gap-2 text-brand-700 font-extrabold hover:underline" href="./index.html">
-          Back to Blog →
-        </a>
-      </div>
-    </aside>
-
-  </div>
+    </div>
+  </section>
 </main>
 
 <footer class="mt-24 border-t border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
-    <div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-5">
+    <div class="reveal">
       <div class="flex items-center gap-3 mb-4">
         <img src="../assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="font-extrabold tracking-tight text-slate-900">Elite <span class="text-brand-600">Rackz</span></span>
+        <span class="font-extrabold tracking-tight text-slate-900">
+          Elite <span class="text-brand-600">Rackz</span>
+        </span>
       </div>
-      <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
+
+      <p class="text-sm text-slate-600">
+        Made in USA pallet rack repair kits, rack inspections, emergency repair support, and warehouse guarding systems.
+      </p>
     </div>
-    <div>
-      <h3 class="text-sm font-semibold mb-3">Explore</h3>
+
+    <div class="reveal reveal-delay-1">
+      <h3 class="text-sm font-semibold mb-3">Services</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="../products.html" class="hover:text-brand-600">Products</a></li>
-        <li><a href="../services.html" class="hover:text-brand-600">Services</a></li>
-        <li><a href="../about.html" class="hover:text-brand-600">About</a></li>
-        <li><a href="../app.html" class="hover:text-brand-600">App</a></li>
-        <li><a href="./index.html" class="hover:text-brand-600">Blog</a></li>
-        <li><a href="../contact.html" class="hover:text-brand-600">Contact</a></li>
+        <li><a href="../services" class="hover:text-brand-600">All Services</a></li>
+        <li><a href="../services#pallet-rack-repair" class="hover:text-brand-600">Pallet Rack Repair</a></li>
+        <li><a href="../emergency-rack-repair" class="hover:text-brand-600">Emergency Rack Repair</a></li>
+        <li><a href="../services#inspection-covers" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
+        <li><a href="../services#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
+        <li><a href="../services#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
+        <li><a href="../services#isnetworld" class="hover:text-brand-600">ISNetworld® Support</a></li>
       </ul>
     </div>
-    <div>
+
+    <div class="reveal reveal-delay-2">
+      <h3 class="text-sm font-semibold mb-3">Products</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="../products" class="hover:text-brand-600">Pallet Rack Repair Kits</a></li>
+        <li><a href="../ez-double-leg" class="hover:text-brand-600">EZ Double Leg</a></li>
+        <li><a href="../ez-single-leg" class="hover:text-brand-600">EZ Single Leg</a></li>
+        <li><a href="../ez-roll-form" class="hover:text-brand-600">EZ Roll-Form</a></li>
+        <li><a href="../column-guards" class="hover:text-brand-600">Column Guards</a></li>
+        <li><a href="../end-of-aisle-guards" class="hover:text-brand-600">End-of-Aisle Guards</a></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-3">
+      <h3 class="text-sm font-semibold mb-3">Resources</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="../rack-inspection-checklist" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="../rack-repair-vs-replacement" class="hover:text-brand-600">Repair vs. Replacement</a></li>
+        <li><a href="../fbs-group" class="hover:text-brand-600">FBS Group Support</a></li>
+        <li><a href="./" class="hover:text-brand-600">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-4">
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
@@ -316,19 +1647,24 @@
         <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
       </ul>
     </div>
-    <div>
-      <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2025 Elite Rackz. All rights reserved.</p>
+  </div>
+
+  <div class="border-t border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-slate-600">
+      <span>© 2026 Elite Rackz. All rights reserved.</span>
+      <span class="hidden sm:inline">•</span>
+      <span>This site was created by:</span>
+      <img src="../assets/images/creator-logo.png" alt="JA Web Services" class="h-6 w-auto opacity-90">
     </div>
   </div>
 </footer>
 
-<script src="../assets/js/main.js"></script>
-
 <script>
-  // reading progress bar
   (function () {
     const bar = document.getElementById("progressBar");
+
+    if (!bar) return;
+
     function onScroll() {
       const doc = document.documentElement;
       const scrollTop = doc.scrollTop || document.body.scrollTop;
@@ -336,8 +1672,144 @@
       const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
       bar.style.width = pct + "%";
     }
+
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     onScroll();
+  })();
+</script>
+
+<script>
+  (function () {
+    const items = document.querySelectorAll(".reveal");
+
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(function (el) {
+        el.classList.add("in-view");
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+
+    items.forEach(function (el) {
+      io.observe(el);
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    if (!btn || !menu) return;
+
+    function closeMenu() {
+      btn.classList.remove('menu-open');
+      menu.classList.remove('menu-open');
+      document.body.classList.remove('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+      btn.classList.add('menu-open');
+      menu.classList.add('menu-open');
+      document.body.classList.add('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    btn.addEventListener('click', function () {
+      const isOpen = btn.classList.contains('menu-open');
+
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const hero = document.getElementById('heroSection');
+    const header = document.getElementById('siteHeader');
+
+    if (!hero || !header) return;
+
+    function updateHeader() {
+      const passedHero = window.scrollY > 12;
+      header.classList.toggle('header-scrolled', passedHero);
+      header.classList.toggle('header-hero', !passedHero);
+    }
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('resize', updateHeader);
+  })();
+</script>
+
+<script>
+  (function () {
+    const dropdownItems = document.querySelectorAll('.nav-item');
+
+    dropdownItems.forEach(function (item) {
+      const trigger = item.querySelector('.nav-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', function (event) {
+        event.stopPropagation();
+
+        const wasOpen = item.classList.contains('open');
+
+        dropdownItems.forEach(function (other) {
+          other.classList.remove('open');
+          const otherTrigger = other.querySelector('.nav-trigger');
+          if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!wasOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', function () {
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.nav-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.nav-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
   })();
 </script>
 

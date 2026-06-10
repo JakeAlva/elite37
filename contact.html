@@ -3,10 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact — Elite Rackz</title>
-  <meta name="description" content="Contact Elite Rackz for rack repair, guarding, engineering support, project questions, and general inquiries.">
+  <title>Contact Elite Rackz | Pallet Rack Repair Quote</title>
+  <meta name="description" content="Contact Elite Rackz for pallet rack repair, rack inspections, emergency rack repair, guarding, stamped documentation, and Made in USA repair kits.">
   <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://eliterackz.com/contact">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
+
+  <meta property="og:title" content="Contact Elite Rackz | Pallet Rack Repair Quote">
+  <meta property="og:description" content="Request a quote for pallet rack repair, emergency rack repair, rack inspections, guarding, and stamped documentation.">
+  <meta property="og:url" content="https://eliterackz.com/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://eliterackz.com/assets/images/og-image.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +24,20 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] },
-          colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} },
-          boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'}
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              600: '#2e6ad6',
+              700: '#2554aa'
+            }
+          },
+          boxShadow: {
+            smooth: '0 10px 25px rgba(0,0,0,0.08)',
+            lift: '0 18px 48px rgba(15,23,42,0.14)',
+            contrast: '0 22px 55px rgba(2,6,23,0.28)'
+          }
         }
       }
     };
@@ -28,33 +46,58 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <style>
-    .reveal{
-      opacity:0;
-      transform:translateY(18px);
-      filter:blur(6px);
-      transition:opacity 700ms ease,transform 700ms ease,filter 700ms ease;
-      will-change:opacity,transform,filter;
+    html {
+      scroll-behavior: smooth;
     }
-    .reveal.in-view{
-      opacity:1;
-      transform:translateY(0);
-      filter:blur(0);
-    }
-    .reveal-delay-1{transition-delay:80ms}
-    .reveal-delay-2{transition-delay:160ms}
-    .reveal-delay-3{transition-delay:240ms}
-    .reveal-delay-4{transition-delay:320ms}
 
-    @media (prefers-reduced-motion: reduce){
-      .reveal{
-        opacity:1!important;
-        transform:none!important;
-        filter:none!important;
-        transition:none!important;
+    body {
+      overflow-x: hidden;
+    }
+
+    body.mobile-menu-open {
+      overflow: hidden;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+      transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 80ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 160ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 240ms;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 320ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
       }
     }
 
-    .site-header{
+    .site-header {
       transition:
         background-color .25s ease,
         border-color .25s ease,
@@ -62,114 +105,220 @@
         box-shadow .25s ease;
     }
 
-    .header-hero{
-      background:linear-gradient(to bottom,rgba(2,6,23,.72),rgba(2,6,23,.34),rgba(2,6,23,0));
-      border-bottom:none;
-      box-shadow:none;
-      backdrop-filter:none;
-      -webkit-backdrop-filter:none;
+    .header-hero {
+      background: linear-gradient(to bottom, rgba(2,6,23,.78), rgba(2,6,23,.38), rgba(2,6,23,0));
+      border-bottom: none;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
-    .header-scrolled{
-      background:white;
-      border-bottom:1px solid #e2e8f0;
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      box-shadow:0 1px 0 rgba(15,23,42,.04);
+    .header-scrolled {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(15,23,42,.04);
     }
 
-    .header-hero #headerLogoWrap{
-      background:rgba(255,255,255,0.94);
-      box-shadow:0 8px 24px rgba(0,0,0,0.18);
-      backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px);
+    .header-hero #headerLogoWrap {
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
     }
 
-    .header-hero #headerTagline{
-      color:white;
-      text-shadow:0 2px 10px rgba(0,0,0,0.35);
+    .header-hero #headerTagline {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
     }
 
-    .header-scrolled #headerLogoWrap{
-      background:transparent;
-      box-shadow:none;
-      backdrop-filter:none;
-      -webkit-backdrop-filter:none;
+    .header-scrolled #headerLogoWrap {
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
-    .header-scrolled #headerTagline{
-      color:rgb(51 65 85);
-      text-shadow:none;
+    .header-scrolled #headerTagline {
+      color: rgb(51 65 85);
+      text-shadow: none;
     }
 
-    .header-hero .header-nav-link{
-      color:white;
-      text-shadow:0 2px 10px rgba(0,0,0,0.30);
+    .header-hero .header-nav-link,
+    .header-hero .nav-trigger {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.30);
     }
 
-    .header-hero .header-nav-link:hover{
-      color:rgba(255,255,255,0.82);
+    .header-hero .header-nav-link:hover,
+    .header-hero .nav-trigger:hover {
+      color: rgba(255,255,255,0.82);
     }
 
-    .header-scrolled .header-nav-link{
-      color:rgb(15 23 42);
-      text-shadow:none;
+    .header-scrolled .header-nav-link,
+    .header-scrolled .nav-trigger {
+      color: rgb(15 23 42);
+      text-shadow: none;
     }
 
-    #siteHeader{
-      z-index:1000;
+    .header-phone-link {
+      transition: background-color .25s ease, color .25s ease, box-shadow .25s ease;
     }
 
-    #mobileMenuBtn{
-      position:relative;
-      z-index:1001;
-      pointer-events:auto;
+    .header-hero .header-phone-link {
+      background: rgba(255,255,255,0.94);
+      color: rgb(15 23 42);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
     }
 
-    #mobileMenu{
-      position:relative;
-      z-index:1000;
-      overflow:hidden;
-      max-height:0;
-      opacity:0;
-      transform:translateY(-8px);
-      visibility:hidden;
-      pointer-events:none;
+    .header-scrolled .header-phone-link {
+      background: rgb(15 23 42);
+      color: white;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+    }
+
+    #siteHeader {
+      z-index: 1000;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .5rem .25rem;
+      font-size: .875rem;
+      font-weight: 600;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      transition: color .2s ease;
+    }
+
+    .nav-trigger svg {
+      transition: transform .2s ease;
+    }
+
+    .nav-item.open .nav-trigger svg,
+    .nav-item:hover .nav-trigger svg {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      width: 340px;
+      border: 1px solid rgba(226,232,240,.95);
+      background: rgba(255,255,255,.98);
+      border-radius: 22px;
+      padding: 10px;
+      box-shadow: 0 22px 60px rgba(15,23,42,.16);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -18px;
+      height: 18px;
+    }
+
+    .nav-item:hover .dropdown-menu,
+    .nav-item.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 12px;
+      border-radius: 16px;
+      transition: background .18s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background: #eff6ff;
+    }
+
+    .dropdown-menu strong {
+      display: block;
+      font-size: .9rem;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .dropdown-menu span {
+      display: block;
+      margin-top: .25rem;
+      font-size: .78rem;
+      color: #64748b;
+      line-height: 1.35;
+    }
+
+    #mobileMenuBtn {
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto;
+    }
+
+    #mobileMenuBtn.menu-open {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      border-color: rgba(148,163,184,0.55);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(1) {
+      top: 8px;
+      transform: rotate(45deg);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(3) {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+
+    #mobileMenu {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+      visibility: hidden;
+      pointer-events: none;
       transition:
         max-height 360ms cubic-bezier(.22,1,.36,1),
         opacity 260ms ease,
         transform 360ms cubic-bezier(.22,1,.36,1),
         visibility 0s linear 360ms;
-      will-change:max-height,opacity,transform;
+      will-change: max-height, opacity, transform;
     }
 
-    #mobileMenuBtn.menu-open{
-      background:rgba(255,255,255,0.98);
-      box-shadow:0 10px 24px rgba(0,0,0,0.12);
-      border-color:rgba(148,163,184,0.55);
-    }
-
-    #mobileMenuBtn.menu-open .menu-line:nth-child(1){
-      top:8px;
-      transform:rotate(45deg);
-    }
-
-    #mobileMenuBtn.menu-open .menu-line:nth-child(2){
-      opacity:0;
-      transform:scaleX(0);
-    }
-
-    #mobileMenuBtn.menu-open .menu-line:nth-child(3){
-      top:8px;
-      transform:rotate(-45deg);
-    }
-
-    #mobileMenu.menu-open{
-      max-height:420px;
-      opacity:1;
-      transform:translateY(0);
-      visibility:visible;
-      pointer-events:auto;
+    #mobileMenu.menu-open {
+      max-height: calc(100vh - 64px);
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      pointer-events: auto;
+      overflow-y: auto;
       transition:
         max-height 420ms cubic-bezier(.22,1,.36,1),
         opacity 260ms ease,
@@ -177,18 +326,180 @@
         visibility 0s linear 0s;
     }
 
-    #mobileMenu .mobile-link{
-      display:block;
-      padding:10px 0;
-      transition:color .2s ease,transform .2s ease;
+    #mobileMenu .mobile-menu-inner {
+      padding-top: 12px;
+      padding-bottom: 20px;
     }
 
-    #mobileMenu .mobile-link:hover{
-      color:#2e6ad6;
-      transform:translateX(2px);
+    .mobile-menu-section {
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f8fafc;
+      margin-bottom: 10px;
+    }
+
+    .mobile-menu-section summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mobile-menu-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu-section summary::after {
+      content: "+";
+      color: #2e6ad6;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .mobile-menu-section[open] summary::after {
+      content: "–";
+    }
+
+    .mobile-menu-links {
+      display: grid;
+      gap: 6px;
+      padding: 0 10px 10px;
+    }
+
+    .mobile-menu-links a,
+    .mobile-direct-link {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: white;
+      border: 1px solid rgba(226,232,240,.9);
+      color: #334155;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .mobile-direct-link {
+      margin-top: 10px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #eff6ff;
+      color: #2554aa;
+      border: 1px solid rgba(46,106,214,.18);
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .dark-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #2554aa;
+      border: 1px solid #dbeafe;
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid rgb(226 232 240);
+      border-radius: .875rem;
+      min-height: 48px;
+      padding: .75rem .875rem;
+      outline: none;
+      background: white;
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: #2e6ad6;
+      box-shadow: 0 0 0 4px rgba(46,106,214,.12);
+    }
+
+    .support-card,
+    .next-card,
+    .trust-card {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .support-card:hover,
+    .next-card:hover,
+    .trust-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      border-color: rgba(46,106,214,.28);
+    }
+
+    .hero-mobile-pad {
+      padding-top: 7.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-mobile-pad {
+        padding-top: 9rem;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Elite Rackz",
+      "url": "https://eliterackz.com/contact",
+      "description": "Contact Elite Rackz for pallet rack repair, inspections, guarding, emergency rack repair, and stamped documentation."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Elite Rackz",
+      "url": "https://eliterackz.com",
+      "logo": "https://eliterackz.com/assets/images/logo.png",
+      "telephone": "+17089802936",
+      "email": "David@eliterackz.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "47 East 34th Street",
+        "addressLocality": "South Chicago Heights",
+        "addressRegion": "IL",
+        "postalCode": "60411",
+        "addressCountry": "US"
+      },
+      "areaServed": "US"
+    }
+  ]
+  </script>
 </head>
+
 <body class="bg-white text-slate-800 antialiased">
 
 <header id="siteHeader" class="site-header header-hero fixed top-0 left-0 right-0 z-40">
@@ -204,23 +515,194 @@
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="products.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Products</a>
-        <a href="services.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Services</a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium" aria-label="Main navigation">
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Services
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="services.html">
+              <strong>All Services</strong>
+              <span>Pallet rack repair, rack inspections, safety audits, damage assessments, and documentation.</span>
+            </a>
+
+            <a href="services.html#pallet-rack-repair">
+              <strong>Pallet Rack Repair</strong>
+              <span>Engineered repair for damaged pallet rack uprights and forklift impact zones.</span>
+            </a>
+
+            <a href="emergency-rack-repair.html">
+              <strong>Emergency Rack Repair</strong>
+              <span>48-hour emergency repair path for qualifying critical rack damage.</span>
+            </a>
+
+            <a href="services.html">
+              <strong>Rack Inspection &amp; Compliance</strong>
+              <span>Pallet rack inspection, rack safety audits, reports, and documentation.</span>
+            </a>
+
+            <a href="services.html#rack-safety-audits">
+              <strong>Rack Safety Audits</strong>
+              <span>Warehouse rack safety surveys for EHS and operations teams.</span>
+            </a>
+
+            <a href="services.html#damage-assessment">
+              <strong>Rack Damage Assessments</strong>
+              <span>Photo documentation and repair recommendations for damaged rack.</span>
+            </a>
+
+            <a href="services.html#load-capacity">
+              <strong>Load Capacity &amp; Labels</strong>
+              <span>Rack load capacity review, labels, and audit-ready documentation.</span>
+            </a>
+
+            <a href="services.html#isnetworld">
+              <strong>ISNetworld® Contractor Support</strong>
+              <span>Procurement-friendly support for safety-driven facilities and qualified workflows.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Products
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="products.html">
+              <strong>Pallet Rack Repair Kits</strong>
+              <span>Made in USA repair kits with stamped calculations and lifetime warranty.</span>
+            </a>
+
+            <a href="ez-double-leg.html">
+              <strong>EZ Double Leg Repair Kit</strong>
+              <span>Double-leg pallet rack repair kit for damaged upright sections.</span>
+            </a>
+
+            <a href="ez-single-leg.html">
+              <strong>EZ Single Leg Repair Kit</strong>
+              <span>Single-leg repair kit for targeted upright repair.</span>
+            </a>
+
+            <a href="ez-roll-form.html">
+              <strong>EZ Roll-Form Repair Kit</strong>
+              <span>Roll-form rack repair kit option for compatible systems.</span>
+            </a>
+
+            <a href="column-guards.html">
+              <strong>Column Guards</strong>
+              <span>Warehouse column protection and pallet rack post protectors.</span>
+            </a>
+
+            <a href="end-of-aisle-guards.html">
+              <strong>End-of-Aisle Guards</strong>
+              <span>End-of-aisle rack guards and forklift impact protection.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Resources
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="rack-inspection-checklist.html">
+              <strong>Rack Inspection Checklist</strong>
+              <span>Warehouse rack inspection checklist for safety walkthroughs and documentation.</span>
+            </a>
+
+            <a href="rack-repair-vs-replacement.html">
+              <strong>Repair vs. Replacement</strong>
+              <span>Compare engineered rack repair kits with full pallet rack replacement.</span>
+            </a>
+
+            <a href="fbs-group.html">
+              <strong>FBS Group Support</strong>
+              <span>Service continuity and support for former FBS Group customers.</span>
+            </a>
+
+            <a href="blog/index.html">
+              <strong>Blog</strong>
+              <span>Rack safety, repair, inspection, and warehouse compliance resources.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Industries
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="index.html#industries">
+              <strong>Cold Storage &amp; Food DCs</strong>
+              <span>Galvanized repair options, documentation, and emergency response support.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>3PL Warehousing</strong>
+              <span>Rack inspections and repair support for multi-client warehouse operations.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Food Manufacturing</strong>
+              <span>Stamped documentation and repair records for audit-ready facilities.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Automotive Parts DCs</strong>
+              <span>Fast pallet rack repair planning where downtime matters.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>E-Commerce Fulfillment</strong>
+              <span>Post-peak damage assessments and forklift impact protection.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Building Materials DCs</strong>
+              <span>Heavy-duty rack repair, custom kits, and warehouse guarding systems.</span>
+            </a>
+          </div>
+        </div>
+
         <a href="about.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">About</a>
-        <a href="app.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">App</a>
-        <a href="blog/index.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Blog</a>
-        <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-          Contact
+        <a href="contact.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Contact</a>
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl font-extrabold transition-all duration-300">
+          (708) 980-2936
         </a>
       </nav>
+
+      <div class="hidden md:flex xl:hidden items-center gap-3">
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl text-sm font-extrabold transition-all duration-300">
+          Call
+        </a>
+
+        <a href="#contact" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm font-semibold">
+          Quote
+        </a>
+      </div>
 
       <button
         id="mobileMenuBtn"
         type="button"
         aria-expanded="false"
         aria-controls="mobileMenu"
-        class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white/70 transition-all duration-300 hover:bg-white/85 active:scale-95"
+        class="xl:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white/70 transition-all duration-300 hover:bg-white/85 active:scale-95"
       >
         <span class="sr-only">Open menu</span>
         <span class="relative h-5 w-5">
@@ -232,245 +714,528 @@
     </div>
   </div>
 
-  <div id="mobileMenu" class="md:hidden border-t border-slate-200 bg-white/95">
-    <div class="px-4 py-3 text-sm">
-      <a href="products.html" class="mobile-link">Products</a>
-      <a href="services.html" class="mobile-link">Services</a>
-      <a href="about.html" class="mobile-link">About</a>
-      <a href="app.html" class="mobile-link">App</a>
-      <a href="blog/index.html" class="mobile-link font-semibold text-slate-900">Blog</a>
-      <a href="contact.html" class="mobile-link font-semibold text-brand-700">Contact</a>
+  <div id="mobileMenu" class="xl:hidden border-t border-slate-200 bg-white/95">
+    <div class="mobile-menu-inner px-4 text-sm max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <details class="mobile-menu-section">
+        <summary>Services</summary>
+        <div class="mobile-menu-links">
+          <a href="services.html">All Services</a>
+          <a href="services.html#pallet-rack-repair">Pallet Rack Repair</a>
+          <a href="emergency-rack-repair.html">Emergency Rack Repair</a>
+          <a href="services.html">Rack Inspection &amp; Compliance</a>
+          <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
+          <a href="services.html#damage-assessment">Rack Damage Assessments</a>
+          <a href="services.html#load-capacity">Load Capacity &amp; Labels</a>
+          <a href="services.html#isnetworld">ISNetworld® Contractor Support</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section">
+        <summary>Products</summary>
+        <div class="mobile-menu-links">
+          <a href="products.html">Pallet Rack Repair Kits</a>
+          <a href="ez-double-leg.html">EZ Double Leg Repair Kit</a>
+          <a href="ez-single-leg.html">EZ Single Leg Repair Kit</a>
+          <a href="ez-roll-form.html">EZ Roll-Form Repair Kit</a>
+          <a href="column-guards.html">Column Guards</a>
+          <a href="end-of-aisle-guards.html">End-of-Aisle Guards</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section" open>
+        <summary>Resources</summary>
+        <div class="mobile-menu-links">
+          <a href="rack-inspection-checklist.html">Rack Inspection Checklist</a>
+          <a href="rack-repair-vs-replacement.html">Repair vs. Replacement</a>
+          <a href="fbs-group.html">FBS Group Support</a>
+          <a href="blog/index.html">Blog</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section">
+        <summary>Industries</summary>
+        <div class="mobile-menu-links">
+          <a href="index.html#industries">Cold Storage &amp; Food DCs</a>
+          <a href="index.html#industries">3PL Warehousing</a>
+          <a href="index.html#industries">Food Manufacturing</a>
+          <a href="index.html#industries">Automotive Parts DCs</a>
+          <a href="index.html#industries">E-Commerce Fulfillment</a>
+          <a href="index.html#industries">Building Materials DCs</a>
+        </div>
+      </details>
+
+      <a href="about.html" class="mobile-direct-link">About</a>
+      <a href="contact.html" class="mobile-direct-link">Contact</a>
+
+      <div class="grid gap-3 mt-4">
+        <a href="tel:+17089802936" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white font-extrabold">
+          Call (708) 980-2936
+        </a>
+
+        <a href="#contact" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold">
+          Request a Quote
+        </a>
+      </div>
     </div>
   </div>
 </header>
 
-<section id="heroSection" class="relative overflow-hidden">
-  <div class="absolute inset-0">
-    <img
-      src="assets/images/contact-hero.jpg"
-      alt="Elite Rackz contact hero"
-      class="w-full h-full object-cover object-[center_35%] sm:object-[center_32%] md:object-[center_30%]"
-      loading="eager"
-    >
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-slate-950/20"></div>
-    <div class="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.50)]"></div>
-  </div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-28">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950/55 text-white text-sm ring-1 ring-white/20 backdrop-blur">
-        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
-        Contact Elite Rackz
-      </div>
-
-      <h1 class="reveal reveal-delay-1 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.03em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
-        Let’s Talk About
-        <br>
-        Your Facility
-      </h1>
-
-      <p class="reveal reveal-delay-2 mt-5 text-base sm:text-lg md:text-xl text-slate-100/95 drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] max-w-3xl mx-auto">
-        Reach out with rack damage, guarding questions, engineering needs, project planning,
-        or general support. We’ll point you in the right direction.
-      </p>
-
-      <div class="reveal reveal-delay-3 mt-9 flex flex-wrap justify-center gap-2">
-        <span class="px-3 py-2 rounded-xl bg-slate-950/55 ring-1 ring-white/15 text-sm font-semibold text-white backdrop-blur">Rack Repair</span>
-        <span class="px-3 py-2 rounded-xl bg-slate-950/55 ring-1 ring-white/15 text-sm font-semibold text-white backdrop-blur">Guarding</span>
-        <span class="px-3 py-2 rounded-xl bg-slate-950/55 ring-1 ring-white/15 text-sm font-semibold text-white backdrop-blur">Engineering Support</span>
-        <span class="px-3 py-2 rounded-xl bg-slate-950/55 ring-1 ring-white/15 text-sm font-semibold text-white backdrop-blur">Nationwide Installs</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
-
-<section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-  <div class="grid lg:grid-cols-5 gap-8 items-start">
-
-    <div class="lg:col-span-3 rounded-3xl border border-slate-200 bg-white shadow-smooth p-6 md:p-8 reveal">
-      <div class="flex items-start justify-between gap-6">
-        <div>
-          <h2 class="text-2xl font-extrabold tracking-tight">Tell us what you’re dealing with</h2>
-          <p class="mt-2 text-slate-600">
-            Share the situation, ask a question, or send over project details. The more context you give us,
-            the faster we can help.
-          </p>
-        </div>
-
-        <div class="hidden md:flex items-center gap-3 text-sm text-slate-600 whitespace-nowrap">
-          <span>Or call</span>
-          <span class="h-4 w-px bg-slate-300"></span>
-          <a href="tel:+17089802936" class="font-extrabold text-slate-900 hover:text-brand-700">
-            (708) 980-2936
-          </a>
-        </div>
-      </div>
-
-      <form
-        name="contact"
-        method="POST"
-        action="/success.html"
-        data-netlify="true"
-        netlify
-        netlify-honeypot="bot-field"
-        enctype="application/x-www-form-urlencoded"
-        class="mt-8 grid gap-6"
+<main>
+  <section id="heroSection" class="relative overflow-hidden text-white bg-slate-950">
+    <div class="absolute inset-0">
+      <img
+        src="assets/images/contact-hero.jpg"
+        alt="Elite Rackz pallet rack repair quote and contact support"
+        class="w-full h-full object-cover object-[center_35%]"
+        loading="eager"
       >
-        <input type="hidden" name="form-name" value="contact">
-        <input type="hidden" name="subject" value="New contact form submission — Elite Rackz">
-
-        <p class="hidden" aria-hidden="true">
-          <label>Don’t fill this out: <input name="bot-field"></label>
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="grid gap-2">
-            <label class="text-sm font-semibold text-slate-700">Name</label>
-            <input
-              class="w-full appearance-none rounded-xl border border-slate-300 px-3 py-2 placeholder-slate-400 outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30"
-              type="text" name="name" placeholder="Your name" autocomplete="name" required>
-          </div>
-
-          <div class="grid gap-2">
-            <label class="text-sm font-semibold text-slate-700">Email</label>
-            <input
-              class="w-full appearance-none rounded-xl border border-slate-300 px-3 py-2 placeholder-slate-400 outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30"
-              type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="grid gap-2">
-            <label class="text-sm font-semibold text-slate-700">Phone</label>
-            <input
-              class="w-full appearance-none rounded-xl border border-slate-300 px-3 py-2 placeholder-slate-400 outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30"
-              type="tel" name="phone" placeholder="(###) ###-####" autocomplete="tel">
-          </div>
-
-          <div class="grid gap-2">
-            <label class="text-sm font-semibold text-slate-700">Company</label>
-            <input
-              class="w-full appearance-none rounded-xl border border-slate-300 px-3 py-2 placeholder-slate-400 outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30"
-              type="text" name="company" placeholder="Company name" autocomplete="organization">
-          </div>
-        </div>
-
-        <div class="grid gap-2">
-          <label class="text-sm font-semibold text-slate-700">How can we help?</label>
-          <textarea
-            class="w-full appearance-none rounded-xl border border-slate-300 px-3 py-2 placeholder-slate-400 outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30"
-            name="message" rows="6"
-            placeholder="Example: We have damaged uprights in our warehouse, need guarding recommendations, have engineering questions, want to discuss timeline, or just need help figuring out next steps."></textarea>
-          <p class="text-xs text-slate-500">
-            Tip: Include your city/state and a rough idea of what you’re seeing. Photos are always helpful.
-          </p>
-        </div>
-
-        <button
-          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-brand-600 text-white hover:bg-brand-700 font-extrabold tracking-tight shadow-smooth"
-          type="submit"
-        >
-          Contact Us
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M21 12H3"/>
-          </svg>
-        </button>
-
-        <div class="text-xs text-slate-500">
-          By submitting, you agree to be contacted about this request. We do not sell your information.
-        </div>
-
-        <noscript>
-          <p class="text-xs text-slate-500 mt-2">JavaScript is disabled — submission still works via standard POST.</p>
-        </noscript>
-      </form>
+      <div class="absolute inset-0 bg-slate-950/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/96 via-slate-950/78 to-slate-950/42"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/92 via-slate-950/34 to-slate-950/54"></div>
+      <div class="absolute inset-0 shadow-[inset_0_0_170px_rgba(0,0,0,0.68)]"></div>
     </div>
 
-    <aside class="lg:col-span-2 space-y-6">
-      <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-smooth reveal reveal-delay-1">
-        <h3 class="text-lg font-extrabold">How we can help</h3>
-        <ul class="mt-4 space-y-3 text-sm text-slate-700">
-          <li class="flex gap-3">
-            <span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span>
-            <span>Questions about damaged pallet rack or impact protection</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span>
-            <span>Project planning, scheduling, and installation coordination</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span>
-            <span>Stamped engineering and documentation needs</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span>
-            <span>General product, guarding, or service questions</span>
-          </li>
-        </ul>
-      </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pb-16 sm:pb-20 lg:pb-24">
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+        <div>
+          <div class="dark-kicker reveal">
+            Contact Elite Rackz
+          </div>
 
-      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-smooth reveal reveal-delay-2">
-        <h3 class="text-lg font-extrabold">What happens next</h3>
-        <ol class="mt-4 space-y-3 text-sm text-slate-700">
-          <li class="flex gap-3">
-            <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-50 border border-slate-200 font-extrabold">1</span>
-            <span>We review your message and determine the best next step.</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-50 border border-slate-200 font-extrabold">2</span>
-            <span>We follow up with answers, questions, or recommended options.</span>
-          </li>
-          <li class="flex gap-3">
-            <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-50 border border-slate-200 font-extrabold">3</span>
-            <span>If needed, we move into a quote, engineering review, or scheduling conversation.</span>
-          </li>
-        </ol>
-      </div>
+          <h1 class="reveal reveal-delay-1 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+            Request a Pallet Rack Repair Quote
+          </h1>
 
-      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-smooth reveal reveal-delay-3">
-        <h3 class="text-lg font-extrabold">Prefer to talk now?</h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Give us a call and we’ll get you pointed in the right direction.
+          <p class="reveal reveal-delay-2 mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
+            Tell us about damaged rack, inspection needs, emergency repair, guarding, or documentation. Elite Rackz will help route you to the right repair, inspection, or protection path.
+          </p>
+
+          <div class="reveal reveal-delay-3 mt-8 grid sm:grid-cols-2 gap-3 max-w-xl">
+            <a href="tel:+17089802936" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold">
+              Call (708) 980-2936
+            </a>
+
+            <a href="#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+              Request a Quote
+            </a>
+          </div>
+
+          <div class="reveal reveal-delay-4 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Emergency</div>
+              <div class="font-extrabold tracking-tight">48-Hour Path</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Repair</div>
+              <div class="font-extrabold tracking-tight">Made in USA</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Docs</div>
+              <div class="font-extrabold tracking-tight">Stamped Calcs</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Support</div>
+              <div class="font-extrabold tracking-tight">Nationwide</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="reveal reveal-delay-2 rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast ring-1 ring-white">
+          <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
+            Need urgent help?
+          </p>
+
+          <h2 class="mt-3 text-3xl md:text-4xl font-black tracking-tight text-slate-950">
+            Critical rack damage should not wait.
+          </h2>
+
+          <p class="mt-4 text-slate-600 text-lg">
+            If an aisle is blocked, an upright is bent, anchors are damaged, or product safety is at risk, call now and send photos after submitting the form.
+          </p>
+
+          <div class="mt-6 grid gap-3">
+            <a href="tel:+17089802936" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-extrabold">
+              Call Emergency Line
+            </a>
+
+            <a href="emergency-rack-repair.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+              Emergency Repair Page
+            </a>
+
+            <a href="mailto:David@eliterackz.com" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-semibold">
+              Email Photos
+            </a>
+          </div>
+
+          <p class="mt-4 text-xs text-slate-500">
+            For emergency damage, include “48HR Emergency” in your form message or email subject.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 bg-white scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1.08fr_0.92fr] gap-10 items-start">
+        <div class="reveal rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift p-6 md:p-8">
+          <div class="section-kicker">Request a quote</div>
+
+          <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+            Tell us what you need help with.
+          </h2>
+
+          <p class="mt-3 text-slate-600 text-lg">
+            We typically respond within 2 business hours during normal business hours. For urgent rack damage, call after submitting.
+          </p>
+
+          <form
+            class="contact-form mt-8"
+            name="contact"
+            method="POST"
+            action="/success.html"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="subject" value="New contact form submission — Elite Rackz">
+
+            <p class="hidden" aria-hidden="true" style="display:none;">
+              <label>
+                Don’t fill this out if you’re human:
+                <input name="bot-field">
+              </label>
+            </p>
+
+            <div class="grid gap-4">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Name</label>
+                  <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Work email</label>
+                  <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Phone</label>
+                  <input type="tel" name="phone" placeholder="(###) ###-####" autocomplete="tel" required>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Company</label>
+                  <input type="text" name="company" placeholder="Company name" autocomplete="organization" required>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">Facility city/state</label>
+                  <input type="text" name="facility_location" placeholder="Example: Chicago, IL">
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 mb-2">What do you need?</label>
+                  <select name="request_type" required>
+                    <option value="">Choose one</option>
+                    <option>Pallet rack repair quote</option>
+                    <option>Emergency rack repair</option>
+                    <option>Rack inspection or safety audit</option>
+                    <option>Rack damage assessment</option>
+                    <option>Column guards or end-of-aisle guards</option>
+                    <option>Repair kit or product question</option>
+                    <option>FBS Group support</option>
+                    <option>Product catalog request</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">Urgency</label>
+                <select name="urgency">
+                  <option value="">Choose one</option>
+                  <option>48HR Emergency — critical rack damage</option>
+                  <option>Need quote as soon as possible</option>
+                  <option>Upcoming audit or customer review</option>
+                  <option>Planning future repair or guarding project</option>
+                  <option>General question</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">Message</label>
+                <textarea
+                  name="message"
+                  rows="6"
+                  placeholder="Tell us what happened, what rack damage you’re seeing, what you need quoted, or what questions you have. If this is urgent, include “48HR Emergency.”"
+                ></textarea>
+
+                <p class="mt-2 text-xs text-slate-500">
+                  Helpful details: photos, aisle/bay location, upright damage, base plate/anchor condition, rack type, beam elevations, and deadline.
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-brand-600 text-white hover:bg-brand-700 font-extrabold tracking-tight shadow-smooth"
+              >
+                Request a Quote
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M21 12H3"></path>
+                </svg>
+              </button>
+
+              <p class="text-xs text-slate-500">
+                By submitting, you agree to be contacted about this request. We do not sell your information.
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <aside class="space-y-5">
+          <div class="reveal reveal-delay-1 rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
+            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-600">
+              Call direct
+            </p>
+
+            <p class="mt-3 text-4xl font-black tracking-tight">
+              <a href="tel:+17089802936">(708) 980-2936</a>
+            </p>
+
+            <p class="mt-4 text-slate-200">
+              Best for urgent rack damage, emergency repair, or questions that need a fast answer.
+            </p>
+
+            <div class="mt-6 grid gap-3">
+              <a href="tel:+17089802936" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold">
+                Call Now
+              </a>
+
+              <a href="mailto:David@eliterackz.com" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700 font-semibold">
+                Email David@eliterackz.com
+              </a>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-2 rounded-3xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+            <h3 class="text-xl font-extrabold text-slate-900">What happens next?</h3>
+
+            <div class="mt-5 grid gap-4">
+              <div class="flex gap-4">
+                <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">1</div>
+                <div>
+                  <p class="font-bold text-slate-900">We review your request</p>
+                  <p class="mt-1 text-sm text-slate-600">We look at your service need, urgency, and available rack details.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">2</div>
+                <div>
+                  <p class="font-bold text-slate-900">We ask for photos if needed</p>
+                  <p class="mt-1 text-sm text-slate-600">Damage photos help us recommend the right repair, inspection, or guarding path.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="h-9 w-9 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">3</div>
+                <div>
+                  <p class="font-bold text-slate-900">We move toward quote or review</p>
+                  <p class="mt-1 text-sm text-slate-600">Depending on the project, we route you to repair, inspection, emergency support, or product selection.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-3 rounded-3xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+            <h3 class="text-xl font-extrabold text-slate-900">Headquarters</h3>
+
+            <p class="mt-3 text-slate-600">
+              47 East 34th Street<br>
+              South Chicago Heights, IL 60411
+            </p>
+
+            <p class="mt-4 text-sm text-slate-500">
+              Made in USA repair kits and guarding systems manufactured in Illinois.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="section-kicker">How we can help</div>
+
+        <h2 class="reveal mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          Contact us for repair, inspection, guarding, and documentation support.
+        </h2>
+
+        <p class="reveal reveal-delay-1 mt-4 text-lg text-slate-600">
+          Elite Rackz supports warehouse operations, EHS teams, facilities, maintenance, and procurement with a clear path from rack damage to documented repair or protection.
         </p>
+      </div>
 
-        <a href="tel:+17089802936" class="mt-4 inline-flex items-center justify-center w-full px-4 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
-          (708) 980-2936
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <a href="emergency-rack-repair.html" class="reveal support-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth block">
+          <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Urgent help</div>
+          <h3 class="mt-2 text-xl font-extrabold text-slate-900">Emergency Rack Repair</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Use this path for critical rack damage, forklift impact, aisle shutdowns, and urgent safety concerns.
+          </p>
         </a>
 
-        <div class="mt-3 text-xs text-slate-500 text-center">
-          Mon–Fri • 7:00am-4:30pm CST
+        <a href="services.html" class="reveal reveal-delay-1 support-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth block">
+          <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Inspection</div>
+          <h3 class="mt-2 text-xl font-extrabold text-slate-900">Rack Inspection &amp; Compliance</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Pallet rack inspections, safety audits, damage reports, and documentation support.
+          </p>
+        </a>
+
+        <a href="products.html" class="reveal reveal-delay-2 support-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth block">
+          <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Repair kits</div>
+          <h3 class="mt-2 text-xl font-extrabold text-slate-900">Pallet Rack Repair Kits</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Made in USA repair kit options for damaged uprights and impact-prone warehouse rack areas.
+          </p>
+        </a>
+
+        <a href="column-guards.html" class="reveal support-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth block">
+          <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Protection</div>
+          <h3 class="mt-2 text-xl font-extrabold text-slate-900">Column Guards</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Protect repaired uprights and lower impact areas from repeat forklift damage.
+          </p>
+        </a>
+
+        <a href="end-of-aisle-guards.html" class="reveal reveal-delay-1 support-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth block">
+          <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Aisle protection</div>
+          <h3 class="mt-2 text-xl font-extrabold text-slate-900">End-of-Aisle Guards</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Heavy-duty guarding for exposed rack row ends, dock zones, and forklift traffic areas.
+          </p>
+        </a>
+
+        <a href="fbs-group.html" class="reveal reveal-delay-2 support-card rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth block">
+          <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Continuity</div>
+          <h3 class="mt-2 text-xl font-extrabold text-slate-900">FBS Group Support</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Former FBS Group customers can contact Elite Rackz for service continuity and support.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-slate-950 text-white p-6 md:p-10 shadow-lift">
+        <div class="grid lg:grid-cols-[1fr_0.95fr] gap-10 items-center">
+          <div>
+            <div class="dark-kicker reveal">What makes Elite Rackz different</div>
+
+            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+              Made in USA repair kits. Stamped documentation. Emergency repair support.
+            </h2>
+
+            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-200">
+              Contact Elite Rackz when you need a repair path that goes beyond generic patchwork: engineered rack repair kits, inspection support, guarding, and documentation built for warehouse realities.
+            </p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="reveal trust-card rounded-2xl bg-white text-slate-900 p-5 shadow-smooth">
+              <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Manufacturing</div>
+              <h3 class="mt-2 font-extrabold text-slate-900">Made in USA</h3>
+              <p class="mt-2 text-sm text-slate-600">Manufactured in South Chicago Heights, Illinois.</p>
+            </div>
+
+            <div class="reveal reveal-delay-1 trust-card rounded-2xl bg-white text-slate-900 p-5 shadow-smooth">
+              <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Emergency</div>
+              <h3 class="mt-2 font-extrabold text-slate-900">48-hour path</h3>
+              <p class="mt-2 text-sm text-slate-600">Emergency repair support for qualifying critical rack damage.</p>
+            </div>
+
+            <div class="reveal reveal-delay-2 trust-card rounded-2xl bg-white text-slate-900 p-5 shadow-smooth">
+              <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-brand-700">Engineering</div>
+              <h3 class="mt-2 font-extrabold text-slate-900">Stamped calcs</h3>
+              <p class="mt-2 text-sm text-slate-600">Stamped calculations and documentation available for qualifying projects.</p>
+            </div>
+
+            <div class="reveal reveal-delay-3 trust-card rounded-2xl bg-brand-600 text-white p-5 shadow-smooth">
+              <div class="text-xs font-extrabold tracking-[0.14em] uppercase text-white/80">Contractor support</div>
+              <h3 class="mt-2 font-extrabold">ISNetworld®</h3>
+              <p class="mt-2 text-sm text-white/88">Procurement-friendly support for safety-driven facilities.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </aside>
-
-  </div>
-</section>
+    </div>
+  </section>
+</main>
 
 <footer class="mt-24 border-t border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
-    <div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-5">
+    <div class="reveal">
       <div class="flex items-center gap-3 mb-4">
         <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="font-extrabold tracking-tight text-slate-900">Elite <span class="text-brand-600">Rackz</span></span>
+        <span class="font-extrabold tracking-tight text-slate-900">
+          Elite <span class="text-brand-600">Rackz</span>
+        </span>
       </div>
-      <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
+
+      <p class="text-sm text-slate-600">
+        Made in USA pallet rack repair kits, rack inspections, emergency repair support, and warehouse guarding systems.
+      </p>
     </div>
 
-    <div>
-      <h3 class="text-sm font-semibold mb-3">Explore</h3>
+    <div class="reveal reveal-delay-1">
+      <h3 class="text-sm font-semibold mb-3">Services</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="products.html" class="hover:text-brand-600">Products</a></li>
-        <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
-        <li><a href="about.html" class="hover:text-brand-600">About</a></li>
-        <li><a href="app.html" class="hover:text-brand-600">App</a></li>
-        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
-        <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
+        <li><a href="services.html" class="hover:text-brand-600">All Services</a></li>
+        <li><a href="services.html#pallet-rack-repair" class="hover:text-brand-600">Pallet Rack Repair</a></li>
+        <li><a href="emergency-rack-repair.html" class="hover:text-brand-600">Emergency Rack Repair</a></li>
+        <li><a href="services.html" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
+        <li><a href="services.html#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
+        <li><a href="services.html#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
+        <li><a href="services.html#isnetworld" class="hover:text-brand-600">ISNetworld® Support</a></li>
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-2">
+      <h3 class="text-sm font-semibold mb-3">Products</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="products.html" class="hover:text-brand-600">Pallet Rack Repair Kits</a></li>
+        <li><a href="ez-double-leg.html" class="hover:text-brand-600">EZ Double Leg</a></li>
+        <li><a href="ez-single-leg.html" class="hover:text-brand-600">EZ Single Leg</a></li>
+        <li><a href="ez-roll-form.html" class="hover:text-brand-600">EZ Roll-Form</a></li>
+        <li><a href="column-guards.html" class="hover:text-brand-600">Column Guards</a></li>
+        <li><a href="end-of-aisle-guards.html" class="hover:text-brand-600">End-of-Aisle Guards</a></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-3">
+      <h3 class="text-sm font-semibold mb-3">Resources</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="rack-inspection-checklist.html" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="rack-repair-vs-replacement.html" class="hover:text-brand-600">Repair vs. Replacement</a></li>
+        <li><a href="fbs-group.html" class="hover:text-brand-600">FBS Group Support</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-4">
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
@@ -478,15 +1243,12 @@
         <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
       </ul>
     </div>
-
-    <div>
-      <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
-    </div>
   </div>
 
   <div class="border-t border-slate-200/70">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-center gap-3 text-sm text-slate-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-slate-600">
+      <span>© 2026 Elite Rackz. All rights reserved.</span>
+      <span class="hidden sm:inline">•</span>
       <span>This site was created by:</span>
       <img src="assets/images/creator-logo.png" alt="JA Web Services" class="h-6 w-auto opacity-90">
     </div>
@@ -495,22 +1257,27 @@
 
 <script>
   (function () {
-    const items = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window) || !items.length) {
-      items.forEach(el => el.classList.add('in-view'));
+    const items = document.querySelectorAll(".reveal");
+
+    if (!("IntersectionObserver" in window) || !items.length) {
+      items.forEach(function (el) {
+        el.classList.add("in-view");
+      });
       return;
     }
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
+          entry.target.classList.add("in-view");
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
 
-    items.forEach(el => io.observe(el));
+    items.forEach(function (el) {
+      io.observe(el);
+    });
   })();
 </script>
 
@@ -518,24 +1285,41 @@
   (function () {
     const btn = document.getElementById('mobileMenuBtn');
     const menu = document.getElementById('mobileMenu');
+
     if (!btn || !menu) return;
 
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+    function closeMenu() {
+      btn.classList.remove('menu-open');
+      menu.classList.remove('menu-open');
+      document.body.classList.remove('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
 
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!isOpen));
-      btn.classList.toggle('menu-open', !isOpen);
-      menu.classList.toggle('menu-open', !isOpen);
+    function openMenu() {
+      btn.classList.add('menu-open');
+      menu.classList.add('menu-open');
+      document.body.classList.add('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    btn.addEventListener('click', function () {
+      const isOpen = btn.classList.contains('menu-open');
+
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        btn.setAttribute('aria-expanded', 'false');
-        btn.classList.remove('menu-open');
-        menu.classList.remove('menu-open');
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMenu();
       });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
     });
   })();
 </script>
@@ -544,6 +1328,7 @@
   (function () {
     const hero = document.getElementById('heroSection');
     const header = document.getElementById('siteHeader');
+
     if (!hero || !header) return;
 
     function updateHeader() {
@@ -552,9 +1337,55 @@
       header.classList.toggle('header-hero', !passedHero);
     }
 
+    updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
     window.addEventListener('resize', updateHeader);
-    updateHeader();
+  })();
+</script>
+
+<script>
+  (function () {
+    const dropdownItems = document.querySelectorAll('.nav-item');
+
+    dropdownItems.forEach(function (item) {
+      const trigger = item.querySelector('.nav-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', function (event) {
+        event.stopPropagation();
+
+        const wasOpen = item.classList.contains('open');
+
+        dropdownItems.forEach(function (other) {
+          other.classList.remove('open');
+          const otherTrigger = other.querySelector('.nav-trigger');
+          if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!wasOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', function () {
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.nav-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.nav-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
   })();
 </script>
 

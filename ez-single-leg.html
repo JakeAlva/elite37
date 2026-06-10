@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EZ Single Leg Repair Kits — Elite Rackz</title>
-  <meta name="description" content="EZ Single Leg Repair Kits by Elite Rackz. Engineered pallet rack repair kits for damaged front posts with high impact resistance, lifetime warranty, and customization options.">
+  <title>EZ Single Leg Repair Kit — Made in USA | Lifetime Warranty | Elite Rackz</title>
+  <meta name="description" content="Made in USA EZ Single Leg pallet rack repair kit for damaged front uprights. Engineered bolt-on repair, stamped calculations available, and lifetime impact warranty coverage.">
   <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://eliterackz.com/ez-single-leg">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
+
+  <meta property="og:title" content="EZ Single Leg Repair Kit — Made in USA | Lifetime Warranty | Elite Rackz">
+  <meta property="og:description" content="Made in USA single leg pallet rack repair kit for damaged front uprights with stamped calculations available and lifetime impact warranty coverage.">
+  <meta property="og:url" content="https://eliterackz.com/ez-single-leg">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://eliterackz.com/assets/images/repairB/slide-01.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +25,20 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily:{ sans:['Inter','ui-sans-serif','system-ui'] },
-          colors:{ brand:{600:'#2e6ad6',700:'#2554aa'} },
-          boxShadow:{ smooth:'0 10px 25px rgba(0,0,0,0.08)'}
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              600: '#2e6ad6',
+              700: '#2554aa'
+            }
+          },
+          boxShadow: {
+            smooth: '0 10px 25px rgba(0,0,0,0.08)',
+            lift: '0 18px 48px rgba(15,23,42,0.14)',
+            contrast: '0 22px 55px rgba(2,6,23,0.28)'
+          }
         }
       }
     };
@@ -28,383 +47,1692 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <style>
-    .reveal{
-      opacity:0;
-      transform:translateY(14px);
-      filter:blur(6px);
-      transition:opacity 650ms ease,transform 650ms ease,filter 650ms ease;
-      will-change:opacity,transform,filter
+    html {
+      scroll-behavior: smooth;
     }
-    .reveal.in-view{
-      opacity:1;
-      transform:translateY(0);
-      filter:blur(0)
-    }
-    .reveal-delay-1{transition-delay:80ms}
-    .reveal-delay-2{transition-delay:160ms}
-    .reveal-delay-3{transition-delay:240ms}
 
-    @media (prefers-reduced-motion: reduce){
-      .reveal{
-        opacity:1!important;
-        transform:none!important;
-        filter:none!important;
-        transition:none!important
+    body {
+      overflow-x: hidden;
+    }
+
+    body.mobile-menu-open {
+      overflow: hidden;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+      transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 80ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 160ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 240ms;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 320ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
       }
     }
 
-    .product-fade{
-      transition:opacity 700ms ease-in-out;
-      will-change:opacity;
-      backface-visibility:hidden;
-      transform:translateZ(0)
+    .product-fade {
+      transition: opacity 700ms ease-in-out;
+      will-change: opacity;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    .site-header {
+      transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        backdrop-filter .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .header-hero {
+      background: linear-gradient(to bottom, rgba(2,6,23,.78), rgba(2,6,23,.38), rgba(2,6,23,0));
+      border-bottom: none;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .header-scrolled {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(15,23,42,.04);
+    }
+
+    .header-hero #headerLogoWrap {
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .header-hero #headerTagline {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .header-scrolled #headerLogoWrap {
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .header-scrolled #headerTagline {
+      color: rgb(51 65 85);
+      text-shadow: none;
+    }
+
+    .header-hero .header-nav-link,
+    .header-hero .nav-trigger {
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.30);
+    }
+
+    .header-hero .header-nav-link:hover,
+    .header-hero .nav-trigger:hover {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .header-scrolled .header-nav-link,
+    .header-scrolled .nav-trigger {
+      color: rgb(15 23 42);
+      text-shadow: none;
+    }
+
+    .header-phone-link {
+      transition: background-color .25s ease, color .25s ease, box-shadow .25s ease;
+    }
+
+    .header-hero .header-phone-link {
+      background: rgba(255,255,255,0.94);
+      color: rgb(15 23 42);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .header-scrolled .header-phone-link {
+      background: rgb(15 23 42);
+      color: white;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+    }
+
+    #siteHeader {
+      z-index: 1000;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .5rem .25rem;
+      font-size: .875rem;
+      font-weight: 600;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      transition: color .2s ease;
+    }
+
+    .nav-trigger svg {
+      transition: transform .2s ease;
+    }
+
+    .nav-item.open .nav-trigger svg,
+    .nav-item:hover .nav-trigger svg {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      width: 340px;
+      border: 1px solid rgba(226,232,240,.95);
+      background: rgba(255,255,255,.98);
+      border-radius: 22px;
+      padding: 10px;
+      box-shadow: 0 22px 60px rgba(15,23,42,.16);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -18px;
+      height: 18px;
+    }
+
+    .nav-item:hover .dropdown-menu,
+    .nav-item.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 12px;
+      border-radius: 16px;
+      transition: background .18s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background: #eff6ff;
+    }
+
+    .dropdown-menu strong {
+      display: block;
+      font-size: .9rem;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .dropdown-menu span {
+      display: block;
+      margin-top: .25rem;
+      font-size: .78rem;
+      color: #64748b;
+      line-height: 1.35;
+    }
+
+    #mobileMenuBtn {
+      position: relative;
+      z-index: 1001;
+      pointer-events: auto;
+    }
+
+    #mobileMenuBtn.menu-open {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      border-color: rgba(148,163,184,0.55);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(1) {
+      top: 8px;
+      transform: rotate(45deg);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    #mobileMenuBtn.menu-open .menu-line:nth-child(3) {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+
+    #mobileMenu {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        max-height 360ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 360ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 360ms;
+      will-change: max-height, opacity, transform;
+    }
+
+    #mobileMenu.menu-open {
+      max-height: calc(100vh - 64px);
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      pointer-events: auto;
+      overflow-y: auto;
+      transition:
+        max-height 420ms cubic-bezier(.22,1,.36,1),
+        opacity 260ms ease,
+        transform 420ms cubic-bezier(.22,1,.36,1),
+        visibility 0s linear 0s;
+    }
+
+    #mobileMenu .mobile-menu-inner {
+      padding-top: 12px;
+      padding-bottom: 20px;
+    }
+
+    .mobile-menu-section {
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f8fafc;
+      margin-bottom: 10px;
+    }
+
+    .mobile-menu-section summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mobile-menu-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu-section summary::after {
+      content: "+";
+      color: #2e6ad6;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .mobile-menu-section[open] summary::after {
+      content: "–";
+    }
+
+    .mobile-menu-links {
+      display: grid;
+      gap: 6px;
+      padding: 0 10px 10px;
+    }
+
+    .mobile-menu-links a,
+    .mobile-direct-link {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: white;
+      border: 1px solid rgba(226,232,240,.9);
+      color: #334155;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .mobile-direct-link {
+      margin-top: 10px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #eff6ff;
+      color: #2554aa;
+      border: 1px solid rgba(46,106,214,.18);
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .dark-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .375rem .75rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #2554aa;
+      border: 1px solid #dbeafe;
+      font-size: .75rem;
+      line-height: 1rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .product-card,
+    .spec-card,
+    .feature-card,
+    .warranty-card,
+    .badge-card,
+    .faq-accordion {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .product-card:hover,
+    .spec-card:hover,
+    .feature-card:hover,
+    .warranty-card:hover,
+    .badge-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      border-color: rgba(46,106,214,.28);
+    }
+
+    .faq-accordion {
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .faq-accordion:hover {
+      border-color: rgba(46,106,214,.32);
+      box-shadow: 0 16px 35px rgba(15,23,42,.10);
+      transform: translateY(-2px);
+    }
+
+    .faq-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .faq-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-accordion summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+      background: #eff6ff;
+      color: #2e6ad6;
+      font-weight: 900;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .faq-accordion[open] summary::after {
+      content: "–";
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      color: #64748b;
+      font-size: .95rem;
+      line-height: 1.65;
+    }
+
+    .hero-mobile-pad {
+      padding-top: 7.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-mobile-pad {
+        padding-top: 9rem;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "EZ Single Leg Pallet Rack Repair Kit",
+      "brand": {
+        "@type": "Brand",
+        "name": "Elite Rackz"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Elite Rackz",
+        "url": "https://eliterackz.com",
+        "telephone": "+17089802936"
+      },
+      "category": "Pallet Rack Repair Kit",
+      "image": "https://eliterackz.com/assets/images/repairB/slide-01.jpg",
+      "description": "Made in USA engineered bolt-on pallet rack repair kit for damaged front upright posts with stamped calculations available and lifetime impact warranty coverage.",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Manufacturing",
+          "value": "Made in USA"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Warranty",
+          "value": "Lifetime impact warranty"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Repair Type",
+          "value": "Single leg front upright repair"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the EZ Single Leg Repair Kit used for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The EZ Single Leg Repair Kit is used when the front pallet rack upright is damaged and the rear post remains suitable for the repair path. It is designed to repair and reinforce the damaged front vertical frame post."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the EZ Single Leg Repair Kit made in the USA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The EZ Single Leg Repair Kit is made in the USA by Elite Rackz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the EZ Single Leg Repair Kit have a lifetime impact warranty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The EZ Single Leg Repair Kit includes lifetime impact warranty coverage for damage that compromises the structure of the kit, subject to project-specific warranty terms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do EZ Single Leg Repair Kits include stamped calculations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stamped engineering calculations are available for qualifying EZ Single Leg Repair Kit projects and repair documentation needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the rack hold the same load capacity after repair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The repair path depends on rack configuration, upright profile, damage condition, installation, and engineering review. Elite Rackz can support documentation and load capacity review for qualifying projects."
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://eliterackz.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://eliterackz.com/products"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EZ Single Leg Repair Kit",
+          "item": "https://eliterackz.com/ez-single-leg"
+        }
+      ]
+    }
+  ]
+  </script>
 </head>
 
 <body class="bg-white text-slate-800 antialiased">
 
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+<header id="siteHeader" class="site-header header-hero fixed top-0 left-0 right-0 z-40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="text-[11px] md:text-xs font-semibold text-slate-700 leading-tight">
+      <a href="index.html" id="headerBrand" class="flex items-center gap-3 transition-all duration-300">
+        <span id="headerLogoWrap" class="rounded-lg px-2 py-1 transition-all duration-300">
+          <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
+        </span>
+
+        <span id="headerTagline" class="text-[11px] md:text-xs font-semibold leading-tight transition-colors duration-300">
           SMART STORAGE. NO COMPROMISE. ELITE RACKZ.
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="products.html" class="text-brand-700">Products</a>
-        <a href="services.html" class="hover:text-brand-600">Services</a>
-        <a href="about.html" class="hover:text-brand-600">About</a>
-        <a href="app.html" class="hover:text-brand-600">App</a>
-        <a href="blog/index.html" class="hover:text-brand-600">Blog</a>
-        <a href="contact.html" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">Contact</a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium" aria-label="Main navigation">
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Services
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="services.html">
+              <strong>All Services</strong>
+              <span>Pallet rack repair, rack inspections, safety audits, damage assessments, and documentation.</span>
+            </a>
+
+            <a href="services.html#pallet-rack-repair">
+              <strong>Pallet Rack Repair</strong>
+              <span>Engineered repair for damaged pallet rack uprights and forklift impact zones.</span>
+            </a>
+
+            <a href="emergency-rack-repair.html">
+              <strong>Emergency Rack Repair</strong>
+              <span>48-hour emergency repair path for qualifying critical rack damage.</span>
+            </a>
+
+            <a href="services.html#inspection-covers">
+              <strong>Rack Inspection &amp; Compliance</strong>
+              <span>Pallet rack inspection, rack safety audits, reports, and documentation.</span>
+            </a>
+
+            <a href="services.html#rack-safety-audits">
+              <strong>Rack Safety Audits</strong>
+              <span>Warehouse rack safety surveys for EHS and operations teams.</span>
+            </a>
+
+            <a href="services.html#damage-assessment">
+              <strong>Rack Damage Assessments</strong>
+              <span>Photo documentation and repair recommendations for damaged rack.</span>
+            </a>
+
+            <a href="services.html#load-capacity">
+              <strong>Load Capacity &amp; Labels</strong>
+              <span>Rack load capacity review, labels, and audit-ready documentation.</span>
+            </a>
+
+            <a href="services.html#isnetworld">
+              <strong>ISNetworld® Contractor Support</strong>
+              <span>Procurement-friendly support for safety-driven facilities and qualified workflows.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Products
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="products.html">
+              <strong>Pallet Rack Repair Kits</strong>
+              <span>Made in USA repair kits with stamped calculations and lifetime warranty.</span>
+            </a>
+
+            <a href="ez-double-leg.html">
+              <strong>EZ Double Leg Repair Kit</strong>
+              <span>Double-leg pallet rack repair kit for damaged upright sections.</span>
+            </a>
+
+            <a href="ez-single-leg.html">
+              <strong>EZ Single Leg Repair Kit</strong>
+              <span>Single-leg repair kit for targeted front upright repair.</span>
+            </a>
+
+            <a href="ez-roll-form.html">
+              <strong>EZ Roll-Form Repair Kit</strong>
+              <span>Roll-form rack repair kit option for compatible systems.</span>
+            </a>
+
+            <a href="column-guards.html">
+              <strong>Column Guards</strong>
+              <span>Warehouse column protection and pallet rack post protectors.</span>
+            </a>
+
+            <a href="end-of-aisle-guards.html">
+              <strong>End-of-Aisle Guards</strong>
+              <span>End-of-aisle rack guards and forklift impact protection.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Resources
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="rack-inspection-checklist.html">
+              <strong>Rack Inspection Checklist</strong>
+              <span>Warehouse rack inspection checklist for safety walkthroughs and documentation.</span>
+            </a>
+
+            <a href="rack-repair-vs-replacement.html">
+              <strong>Repair vs. Replacement</strong>
+              <span>Compare engineered rack repair kits with full pallet rack replacement.</span>
+            </a>
+
+            <a href="fbs-group.html">
+              <strong>FBS Group Support</strong>
+              <span>Service continuity and support for former FBS Group customers.</span>
+            </a>
+
+            <a href="blog/index.html">
+              <strong>Blog</strong>
+              <span>Rack safety, repair, inspection, and warehouse compliance resources.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false">
+            Industries
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="index.html#industries">
+              <strong>Cold Storage &amp; Food DCs</strong>
+              <span>Galvanized repair options, documentation, and emergency response support.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>3PL Warehousing</strong>
+              <span>Rack inspections and repair support for multi-client warehouse operations.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Food Manufacturing</strong>
+              <span>Stamped documentation and repair records for audit-ready facilities.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Automotive Parts DCs</strong>
+              <span>Fast pallet rack repair planning where downtime matters.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>E-Commerce Fulfillment</strong>
+              <span>Post-peak damage assessments and forklift impact protection.</span>
+            </a>
+
+            <a href="index.html#industries">
+              <strong>Building Materials DCs</strong>
+              <span>Heavy-duty rack repair, custom kits, and warehouse guarding systems.</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="about.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">About</a>
+        <a href="contact.html" class="header-nav-link hover:text-brand-600 transition-colors duration-300">Contact</a>
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl font-extrabold transition-all duration-300">
+          (708) 980-2936
+        </a>
       </nav>
 
-      <button id="mobileMenuBtn" class="md:hidden inline-flex items-center p-2 rounded-lg border border-slate-300">
+      <div class="hidden md:flex xl:hidden items-center gap-3">
+        <a href="tel:+17089802936" class="header-phone-link inline-flex items-center px-3 py-2 rounded-xl text-sm font-extrabold transition-all duration-300">
+          Call
+        </a>
+
+        <a href="contact.html#contact" class="inline-flex items-center px-3 py-2 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 text-sm font-semibold">
+          Quote
+        </a>
+      </div>
+
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        class="xl:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-300 bg-white/70 transition-all duration-300 hover:bg-white/85 active:scale-95"
+      >
         <span class="sr-only">Open menu</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+        <span class="relative h-5 w-5">
+          <span class="menu-line absolute left-0 top-0 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-2 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+          <span class="menu-line absolute left-0 top-4 h-0.5 w-5 rounded-full bg-slate-900 transition-all duration-300"></span>
+        </span>
       </button>
     </div>
   </div>
 
-  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
-    <div class="px-4 py-3 space-y-2 text-sm">
-      <a href="products.html" class="block font-semibold text-brand-700">Products</a>
-      <a href="services.html" class="block">Services</a>
-      <a href="about.html" class="block">About</a>
-      <a href="app.html" class="block">App</a>
-      <a href="blog/index.html" class="block">Blog</a>
-      <a href="contact.html" class="block font-semibold text-brand-700">Contact</a>
+  <div id="mobileMenu" class="xl:hidden border-t border-slate-200 bg-white/95">
+    <div class="mobile-menu-inner px-4 text-sm max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <details class="mobile-menu-section">
+        <summary>Services</summary>
+        <div class="mobile-menu-links">
+          <a href="services.html">All Services</a>
+          <a href="services.html#pallet-rack-repair">Pallet Rack Repair</a>
+          <a href="emergency-rack-repair.html">Emergency Rack Repair</a>
+          <a href="services.html#inspection-covers">Rack Inspection &amp; Compliance</a>
+          <a href="services.html#rack-safety-audits">Rack Safety Audits</a>
+          <a href="services.html#damage-assessment">Rack Damage Assessments</a>
+          <a href="services.html#load-capacity">Load Capacity &amp; Labels</a>
+          <a href="services.html#isnetworld">ISNetworld® Contractor Support</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section" open>
+        <summary>Products</summary>
+        <div class="mobile-menu-links">
+          <a href="products.html">Pallet Rack Repair Kits</a>
+          <a href="ez-double-leg.html">EZ Double Leg Repair Kit</a>
+          <a href="ez-single-leg.html">EZ Single Leg Repair Kit</a>
+          <a href="ez-roll-form.html">EZ Roll-Form Repair Kit</a>
+          <a href="column-guards.html">Column Guards</a>
+          <a href="end-of-aisle-guards.html">End-of-Aisle Guards</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section">
+        <summary>Resources</summary>
+        <div class="mobile-menu-links">
+          <a href="rack-inspection-checklist.html">Rack Inspection Checklist</a>
+          <a href="rack-repair-vs-replacement.html">Repair vs. Replacement</a>
+          <a href="fbs-group.html">FBS Group Support</a>
+          <a href="blog/index.html">Blog</a>
+        </div>
+      </details>
+
+      <details class="mobile-menu-section">
+        <summary>Industries</summary>
+        <div class="mobile-menu-links">
+          <a href="index.html#industries">Cold Storage &amp; Food DCs</a>
+          <a href="index.html#industries">3PL Warehousing</a>
+          <a href="index.html#industries">Food Manufacturing</a>
+          <a href="index.html#industries">Automotive Parts DCs</a>
+          <a href="index.html#industries">E-Commerce Fulfillment</a>
+          <a href="index.html#industries">Building Materials DCs</a>
+        </div>
+      </details>
+
+      <a href="about.html" class="mobile-direct-link">About</a>
+      <a href="contact.html" class="mobile-direct-link">Contact</a>
+
+      <div class="grid gap-3 mt-4">
+        <a href="tel:+17089802936" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-slate-900 text-white font-extrabold">
+          Call (708) 980-2936
+        </a>
+
+        <a href="contact.html#contact" class="inline-flex w-full justify-center items-center px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold">
+          Request a Quote
+        </a>
+      </div>
     </div>
   </div>
 </header>
 
-<section class="bg-slate-50 border-b border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    <div class="reveal flex items-center justify-between gap-6 flex-wrap">
+<main>
+  <section id="heroSection" class="relative overflow-hidden text-white bg-slate-950">
+    <div class="absolute inset-0">
+      <img
+        src="assets/images/ez-single-leg-hero.jpg"
+        alt="Elite Rackz EZ Single Leg pallet rack repair kit made in USA"
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+        onerror="this.style.display='none';"
+      >
+      <div class="absolute inset-0 bg-slate-950/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/96 via-slate-950/76 to-slate-950/42"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/92 via-slate-950/34 to-slate-950/54"></div>
+      <div class="absolute inset-0 shadow-[inset_0_0_170px_rgba(0,0,0,0.68)]"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-mobile-pad pb-16 sm:pb-20 lg:pb-24">
+      <div class="grid lg:grid-cols-[1.02fr_0.98fr] gap-10 items-center">
+        <div>
+          <div class="reveal flex flex-wrap items-center gap-4 mb-5">
+            <img
+              src="assets/images/made-in-usa-badge.png"
+              alt="Made in the USA"
+              class="h-20 md:h-24 w-auto drop-shadow-[0_14px_30px_rgba(0,0,0,0.48)]"
+              loading="eager"
+            >
+
+            <img
+              src="assets/images/lifetime-warranty-badge.png"
+              alt="Lifetime impact warranty"
+              class="h-20 md:h-24 w-auto drop-shadow-[0_14px_30px_rgba(0,0,0,0.48)]"
+              loading="eager"
+            >
+          </div>
+
+          <div class="dark-kicker reveal reveal-delay-1">
+            Made in USA • Lifetime impact warranty
+          </div>
+
+          <h1 class="reveal reveal-delay-2 mt-6 text-5xl sm:text-6xl md:text-7xl font-black leading-[1.02] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+            EZ Single Leg
+            <span class="block text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.035em] text-blue-100">
+              Repair Kit
+            </span>
+          </h1>
+
+          <p class="reveal reveal-delay-3 mt-6 text-lg md:text-xl text-slate-100 max-w-3xl drop-shadow-[0_3px_18px_rgba(0,0,0,0.75)]">
+            Made in USA engineered bolt-on pallet rack repair for damaged front uprights when the rear post remains suitable for the repair path. Built for harsh warehouse environments with stamped calculations available and lifetime impact warranty coverage.
+          </p>
+
+          <div class="reveal reveal-delay-4 mt-8 grid sm:grid-cols-3 gap-3 max-w-2xl">
+            <a href="contact.html#contact" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+              Request Repair Review
+            </a>
+
+            <a href="tel:+17089802936" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold">
+              Call Now
+            </a>
+
+            <a href="#specifications" class="inline-flex justify-center items-center px-5 py-3 rounded-xl bg-slate-950/55 text-white ring-1 ring-white/20 hover:bg-slate-950/75 font-semibold backdrop-blur-sm">
+              View Specs
+            </a>
+          </div>
+
+          <div class="reveal reveal-delay-4 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Repair Type</div>
+              <div class="font-extrabold tracking-tight">Front Upright</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Manufacturing</div>
+              <div class="font-extrabold tracking-tight">Made in USA</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Engineering</div>
+              <div class="font-extrabold tracking-tight">Stamped Calcs</div>
+            </div>
+
+            <div class="rounded-xl bg-white text-slate-900 px-4 py-3 shadow-smooth">
+              <div class="text-xs text-slate-500">Warranty</div>
+              <div class="font-extrabold tracking-tight">Lifetime Impact</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="reveal reveal-delay-3 rounded-3xl bg-white text-slate-900 p-4 md:p-5 shadow-contrast ring-1 ring-white">
+          <div id="singleLegCarousel" class="relative rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
+            <div class="relative h-[340px] sm:h-[430px] lg:h-[540px] bg-white">
+              <img
+                id="singleLegSlideA"
+                src="assets/images/repairB/slide-01.jpg"
+                alt="EZ Single Leg Repair Kit product image 1"
+                class="product-fade absolute inset-0 w-full h-full object-contain p-4 md:p-6 opacity-100"
+              >
+
+              <img
+                id="singleLegSlideB"
+                src="assets/images/repairB/slide-01.jpg"
+                alt="EZ Single Leg Repair Kit product image 1"
+                class="product-fade absolute inset-0 w-full h-full object-contain p-4 md:p-6 opacity-0"
+              >
+            </div>
+
+            <button type="button" aria-label="Previous EZ Single Leg product image" class="single-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 hover:bg-white p-2 shadow text-2xl leading-none">‹</button>
+            <button type="button" aria-label="Next EZ Single Leg product image" class="single-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 hover:bg-white p-2 shadow text-2xl leading-none">›</button>
+
+            <div class="absolute top-3 right-3 rounded-full bg-slate-900 text-white text-xs font-semibold px-3 py-1" id="singleLegCount">1 / 3</div>
+            <div id="singleLegDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
+          </div>
+
+          <div class="mt-5 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5">
+            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              Product focus
+            </p>
+
+            <h2 class="mt-2 text-2xl md:text-3xl font-black tracking-tight text-slate-950">
+              Front upright repair without unnecessary full frame replacement.
+            </h2>
+
+            <p class="mt-2 text-slate-600">
+              The EZ Single Leg Repair Kit is designed for targeted repair when the damaged condition is concentrated at the front vertical frame post.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-sm text-slate-500">
         <a class="hover:text-slate-700" href="index.html">Home</a>
         <span class="mx-2">/</span>
         <a class="hover:text-slate-700" href="products.html">Products</a>
         <span class="mx-2">/</span>
-        <span class="text-slate-700 font-semibold">EZ Single Leg Repair Kits</span>
+        <span class="text-slate-700 font-semibold">EZ Single Leg Repair Kit</span>
       </div>
 
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-black/5">
-        <span class="text-[11px] font-extrabold tracking-wide text-slate-900">ENGINEERED REPAIR</span>
+      <div class="mt-8 grid lg:grid-cols-[1fr_0.75fr] gap-10 items-start">
+        <div>
+          <div class="section-kicker reveal">Targeted upright repair</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            Built for damaged front posts when the rear post is still usable.
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600 max-w-3xl">
+            The EZ Vertical, Cantilever, and Slant Single Leg Pallet Rack Repair Kits are built for demanding warehouse environments where a damaged front vertical frame post needs an engineered repair path.
+          </p>
+
+          <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-3xl">
+            Fully bolted and engineered for high-impact environments, the kit repairs and reinforces the damaged front post while working with the undamaged rear post. The goal is to restore the damaged section without unnecessary full frame replacement.
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-2 rounded-3xl bg-slate-950 text-white p-6 md:p-8 shadow-lift">
+          <div class="text-xs text-white uppercase tracking-[0.16em] font-extrabold">Best fit conditions</div>
+
+          <div class="mt-5 grid gap-3">
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+              <p class="font-bold">Damaged front upright</p>
+              <p class="mt-1 text-sm text-slate-600">Designed for front vertical post repair when damage is concentrated at the front leg.</p>
+            </div>
+
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+              <p class="font-bold">Rear post remains suitable</p>
+              <p class="mt-1 text-sm text-slate-600">The single leg path is reviewed when the rear post does not require full double-leg repair.</p>
+            </div>
+
+            <div class="rounded-2xl bg-white text-slate-900 ring-1 ring-white p-4">
+              <p class="font-bold">Made in USA manufacturing</p>
+              <p class="mt-1 text-sm text-slate-600">Built by Elite Rackz to support engineered repair, consistent quality, and documentation-ready projects.</p>
+            </div>
+
+            <div class="rounded-2xl bg-brand-600 text-white p-4">
+              <p class="font-bold">Lifetime impact warranty</p>
+              <p class="mt-1 text-sm text-white/88">Damage that compromises the structure of the kit is covered under the lifetime impact warranty.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-4">
+        <div class="feature-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+          <h3 class="text-xl font-extrabold text-slate-900">Repairs the damaged front leg</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Designed to reinforce the damaged front vertical frame post while retaining the undamaged rear post when the project qualifies.
+          </p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+          <h3 class="text-xl font-extrabold text-slate-900">High impact resistance</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Fully bolted design exceeds 50,000 lbs. of impact resistance up to 12 inches high.
+          </p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-6 shadow-smooth">
+          <h3 class="text-xl font-extrabold text-slate-900">Made in USA</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Manufactured in the USA by Elite Rackz for facilities that need reliable repair support and accountability.
+          </p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-3 rounded-2xl bg-slate-950 text-white p-6 shadow-smooth">
+          <h3 class="text-xl font-extrabold">Lifetime impact warranty</h3>
+          <p class="mt-3 text-sm text-slate-200">
+            Damage that compromises the structure of the kit is covered under the lifetime impact warranty.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="mt-6 grid lg:grid-cols-12 gap-10 items-center">
-      <div class="lg:col-span-5">
-        <div class="reveal reveal-delay-1 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white ring-1 ring-slate-200 text-slate-700 text-sm">
-          <span class="font-extrabold tracking-wide text-slate-900">SINGLE LEG KIT</span>
-          <span class="text-slate-400">•</span>
-          <span class="text-slate-600">Front post repair</span>
-        </div>
+  <section id="installed-single-leg-repairs" class="py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[0.92fr_1.08fr] gap-12 items-center">
+        <div>
+          <div class="section-kicker reveal">Installed EZ Single Leg repairs</div>
 
-        <h1 class="reveal reveal-delay-2 mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-          EZ Single Leg Repair Kits
-        </h1>
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            See actual installed single leg repairs.
+          </h2>
 
-        <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-600 max-w-xl">
-          Engineered for harsh environments where the front frame post is damaged and a stronger long-term repair solution is needed, backed by a lifetime warranty.
-        </p>
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+            These completed repair photos show installed EZ Single Leg style repairs in real warehouse conditions. Use them to understand how the repair sits against the existing rack frame after installation.
+          </p>
 
-        <div class="reveal reveal-delay-3 mt-7 flex flex-wrap gap-3">
-          <a href="contact.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-            Request Spec Sheet
-          </a>
-          <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50">
-            Call (708) 980-2936
-          </a>
-        </div>
+          <p class="reveal reveal-delay-3 mt-4 text-slate-600">
+            Final configuration depends on upright profile, rack geometry, damage location, footplate conditions, beam elevations, and engineering requirements.
+          </p>
 
-        <div class="reveal reveal-delay-3 mt-8 grid grid-cols-2 gap-3">
-          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
-            <div class="text-xs text-slate-500">Rack Systems</div>
-            <div class="font-extrabold text-slate-900">All</div>
-          </div>
-          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
-            <div class="text-xs text-slate-500">Style</div>
-            <div class="font-extrabold text-slate-900">Bolt-On</div>
-          </div>
-          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
-            <div class="text-xs text-slate-500">Roll-Form / Structural</div>
-            <div class="font-extrabold text-slate-900">Both</div>
-          </div>
-          <div class="rounded-xl bg-white ring-1 ring-slate-200 p-4">
-            <div class="text-xs text-slate-500">Warranty</div>
-            <div class="font-extrabold text-slate-900">Lifetime</div>
+          <div class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+              Request Repair Review
+            </a>
+
+            <a href="products.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100">
+              View All Repair Kits
+            </a>
           </div>
         </div>
-      </div>
 
-      <div class="lg:col-span-7">
-        <div id="singleLegCarousel" class="reveal reveal-delay-2 relative rounded-2xl shadow-smooth overflow-hidden bg-white ring-1 ring-black/5">
-          <div id="singleLegWrap" class="relative h-[340px] sm:h-[420px] lg:h-[560px] bg-white">
+        <div id="installedSingleLegCarousel" class="reveal reveal-delay-2 relative rounded-3xl shadow-lift overflow-hidden bg-white ring-1 ring-slate-200">
+          <div class="relative h-[340px] sm:h-[430px] lg:h-[560px] bg-white">
             <img
-              id="singleLegSlideA"
-              src="assets/images/repairB/slide-01.jpg"
-              alt="EZ Single Leg Repair Kit image 1"
+              id="installedSingleLegSlideA"
+              src="assets/images/completed-repairs/repair-04.jpg"
+              alt="Installed EZ Single Leg repair kit image 1"
               class="product-fade absolute inset-0 w-full h-full object-contain p-4 md:p-6 opacity-100"
             >
+
             <img
-              id="singleLegSlideB"
-              src="assets/images/repairB/slide-01.jpg"
-              alt="EZ Single Leg Repair Kit image 1"
+              id="installedSingleLegSlideB"
+              src="assets/images/completed-repairs/repair-04.jpg"
+              alt="Installed EZ Single Leg repair kit image 1"
               class="product-fade absolute inset-0 w-full h-full object-contain p-4 md:p-6 opacity-0"
             >
           </div>
 
-          <button type="button" aria-label="Previous" class="single-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/85 hover:bg-white p-2 shadow">‹</button>
-          <button type="button" aria-label="Next" class="single-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/85 hover:bg-white p-2 shadow">›</button>
+          <button type="button" aria-label="Previous installed EZ Single Leg repair image" class="installed-single-prev absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 hover:bg-white p-2 shadow text-2xl leading-none">‹</button>
+          <button type="button" aria-label="Next installed EZ Single Leg repair image" class="installed-single-next absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 hover:bg-white p-2 shadow text-2xl leading-none">›</button>
 
-          <div class="absolute top-3 right-3 rounded-full bg-slate-900/80 text-white text-xs font-semibold px-3 py-1" id="singleLegCount">1 / 3</div>
-          <div id="singleLegDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
+          <div class="absolute top-3 right-3 rounded-full bg-slate-900 text-white text-xs font-semibold px-3 py-1" id="installedSingleLegCount">1 / 2</div>
+          <div id="installedSingleLegDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="py-12 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
-      <div class="lg:col-span-7">
-        <div class="reveal rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
-          <h2 class="text-2xl font-extrabold text-slate-900">Overview</h2>
-          <p class="mt-4 text-slate-700 leading-relaxed">
-            The EZ Vertical, Cantilever, and Slant Single Leg Pallet Rack Repair Kits are built for demanding environments. These kits are designed to repair and reinforce a damaged front vertical frame post while working with an undamaged rear post, all while maintaining the original rack design profile.
+  <section id="usa-warranty" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift p-6 md:p-10">
+        <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
+          <div>
+            <div class="section-kicker reveal">Made in USA + lifetime warranty</div>
+
+            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+              A repair kit your team can stand behind after the install.
+            </h2>
+
+            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+              The EZ Single Leg Repair Kit combines Made in USA manufacturing with lifetime impact warranty coverage, giving warehouse teams a stronger long-term repair option than a temporary patch.
+            </p>
+
+            <p class="reveal reveal-delay-3 mt-4 text-slate-600">
+              For operations, maintenance, EHS, and procurement teams, this matters because rack repair is not just a part purchase. It is a safety, uptime, documentation, and accountability decision.
+            </p>
+
+            <div class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-3">
+              <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+                Request Warranty Details
+              </a>
+
+              <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-extrabold">
+                Call (708) 980-2936
+              </a>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="badge-card rounded-3xl bg-slate-50 ring-1 ring-slate-200 p-6 text-center shadow-smooth">
+              <img
+                src="assets/images/made-in-usa-badge.png"
+                alt="Made in the USA"
+                class="h-32 w-auto mx-auto object-contain"
+                loading="lazy"
+              >
+              <h3 class="mt-5 text-2xl font-extrabold text-slate-900">Made in USA</h3>
+              <p class="mt-3 text-sm text-slate-600">
+                Built by Elite Rackz to support quality, accountability, lead time control, and documentation-ready repairs.
+              </p>
+            </div>
+
+            <div class="badge-card rounded-3xl bg-slate-950 text-white p-6 text-center shadow-smooth">
+              <img
+                src="assets/images/lifetime-warranty-badge.png"
+                alt="Lifetime impact warranty"
+                class="h-32 w-auto mx-auto object-contain"
+                loading="lazy"
+              >
+              <h3 class="mt-5 text-2xl font-extrabold">Lifetime Impact Warranty</h3>
+              <p class="mt-3 text-sm text-slate-200">
+                Damage that compromises the structure of the installed kit is covered by the lifetime impact warranty.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="warranty" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-slate-950 text-white shadow-lift overflow-hidden">
+        <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-0">
+          <div class="p-6 md:p-10">
+            <div class="dark-kicker reveal">Lifetime impact warranty</div>
+
+            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+              Built to be more than a temporary patch.
+            </h2>
+
+            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-200">
+              The EZ Single Leg Repair Kit is backed by lifetime impact warranty coverage. That means damage that compromises the structure of the kit is covered under the impact warranty, giving facilities long-term confidence after the repair is installed.
+            </p>
+
+            <p class="reveal reveal-delay-3 mt-4 text-slate-300">
+              This warranty matters because lower front uprights are one of the most common impact zones in a warehouse. The repair should not only restore the damaged section — it should give your team confidence that the solution was built for real operating conditions.
+            </p>
+
+            <div class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-3">
+              <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+                Ask About Warranty Coverage
+              </a>
+
+              <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold">
+                Call (708) 980-2936
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white text-slate-900 p-6 md:p-10">
+            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              What the warranty means
+            </p>
+
+            <div class="mt-6 grid gap-4">
+              <div class="warranty-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <h3 class="font-extrabold text-slate-900">Covers structural-compromising kit damage</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  If the installed kit is damaged in a way that compromises its structure, the impact warranty is designed to cover it.
+                </p>
+              </div>
+
+              <div class="warranty-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <h3 class="font-extrabold text-slate-900">Designed for repeat impact environments</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  The repair is built for facilities where forklift impact, pallet contact, and lower-upright damage are real operating concerns.
+                </p>
+              </div>
+
+              <div class="warranty-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <h3 class="font-extrabold text-slate-900">Better long-term value than temporary fixes</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  The warranty supports a long-term repair decision instead of treating rack damage as a short-term patch.
+                </p>
+              </div>
+
+              <div class="rounded-2xl bg-brand-600 text-white p-5">
+                <h3 class="font-extrabold">Final terms are confirmed with your quote</h3>
+                <p class="mt-2 text-sm text-white/88">
+                  Warranty details are reviewed with the repair configuration, site conditions, and project documentation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="specifications" class="py-16 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
+        <div>
+          <div class="section-kicker reveal">Specifications</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            Grouped product specs for review and quoting.
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+            The right repair kit depends on rack system, upright profile, damage location, footplate dimensions, anchor requirements, and site conditions. These grouped specs give your team a starting point for internal review.
+          </p>
+
+          <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+              Request Project Review
+            </a>
+
+            <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-extrabold">
+              Call (708) 980-2936
+            </a>
+          </div>
+        </div>
+
+        <div class="grid gap-5">
+          <div class="spec-card reveal rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+            <h3 class="text-xl font-extrabold text-slate-900">Core Specs</h3>
+            <div class="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
+              <div><span class="text-slate-500">Rack system:</span> <span class="font-semibold text-slate-900">All</span></div>
+              <div><span class="text-slate-500">Category:</span> <span class="font-semibold text-slate-900">Repair and protection</span></div>
+              <div><span class="text-slate-500">Roll-form / structural:</span> <span class="font-semibold text-slate-900">Both</span></div>
+              <div><span class="text-slate-500">Style:</span> <span class="font-semibold text-slate-900">Bolt-on</span></div>
+              <div><span class="text-slate-500">Customizable:</span> <span class="font-semibold text-slate-900">Yes</span></div>
+              <div><span class="text-slate-500">Manufacturing:</span> <span class="font-semibold text-slate-900">Made in USA</span></div>
+              <div><span class="text-slate-500">Warranty:</span> <span class="font-semibold text-slate-900">Lifetime impact warranty</span></div>
+            </div>
+          </div>
+
+          <div class="spec-card reveal reveal-delay-1 rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+            <h3 class="text-xl font-extrabold text-slate-900">Anchors &amp; Footplates</h3>
+            <div class="mt-5 grid gap-3 text-sm">
+              <div><span class="text-slate-500">Number of anchors:</span> <span class="font-semibold text-slate-900">Three, 3/4″ × 7″ standard wedge anchors</span></div>
+              <div><span class="text-slate-500">Anchor dimensions:</span> <span class="font-semibold text-slate-900">3/4″ × 7″ for high impact resistance and minimal twisting</span></div>
+              <div><span class="text-slate-500">Footplate dimensions:</span> <span class="font-semibold text-slate-900">Front standard 3/8″ × 4″ × 12″, rear standard 3/8″ × 4″ × 5″ or 6″</span></div>
+            </div>
+          </div>
+
+          <div class="spec-card reveal reveal-delay-2 rounded-2xl bg-white ring-1 ring-slate-200 p-6 shadow-smooth">
+            <h3 class="text-xl font-extrabold text-slate-900">Material &amp; Protection</h3>
+            <div class="mt-5 grid gap-3 text-sm">
+              <div><span class="text-slate-500">Steel gauge:</span> <span class="font-semibold text-slate-900">3/16″ structural tubing on standard duty roll form rack, 1/4″ structural tubing on structural rack</span></div>
+              <div><span class="text-slate-500">Protector type:</span> <span class="font-semibold text-slate-900">12″ high, 1/4″ V-nose deflector or 3/8″ impact plate standard</span></div>
+              <div><span class="text-slate-500">Punch:</span> <span class="font-semibold text-slate-900">Non-punched structural tubing, works with all punch styles</span></div>
+            </div>
+          </div>
+
+          <div class="spec-card reveal reveal-delay-3 rounded-2xl bg-slate-950 text-white p-6 shadow-smooth">
+            <h3 class="text-xl font-extrabold">Sizing, Finish &amp; Options</h3>
+            <div class="mt-5 grid gap-3 text-sm">
+              <div><span class="text-slate-300">Size options:</span> <span class="font-semibold text-white">Available in all depths and heights over 2′-0″</span></div>
+              <div><span class="text-slate-300">Color:</span> <span class="font-semibold text-white">All color options available</span></div>
+              <div><span class="text-slate-300">Custom options:</span> <span class="font-semibold text-white">Custom deflector options and heights available</span></div>
+              <div><span class="text-slate-300">Note:</span> <span class="font-semibold text-white">Available powder coat paint colors are common industry-standard colors. Exact match is not guaranteed.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="details" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-start">
+        <div>
+          <div class="section-kicker reveal">Full product details</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            Engineered strength without cutting beam end plates.
+          </h2>
+
+          <div class="reveal reveal-delay-2 mt-5 space-y-4 text-lg text-slate-600 leading-relaxed">
+            <p>
+              The EZ Vertical, Cantilever, and Slant Single Leg Pallet Rack Repair Kits are made for demanding environments where a damaged front vertical frame post needs a durable engineered repair.
+            </p>
+
+            <p>
+              Fully bolted, this kit exceeds 50,000 lbs. of impact resistance up to 12 inches high. It is designed to repair and reinforce a damaged front vertical frame post while working with an undamaged rear post.
+            </p>
+
+            <p>
+              Proprietary beam reattachment hardware allows for easy beam adjustment for either roll form or structural beams using original end connectors.
+            </p>
+
+            <p>
+              The kit does not require cutting off beam end plates, which can reduce beam capacity and compromise seismic structural integrity.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-4">
+          <div class="feature-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+            <h3 class="font-extrabold text-slate-900">Maintains original rack design profile</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              The repair is designed to reinforce the damaged post while respecting the original rack design profile.
+            </p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+            <h3 class="font-extrabold text-slate-900">Works with roll-form or structural beams</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Beam reattachment hardware supports roll form or structural beams using original end connectors.
+            </p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+            <h3 class="font-extrabold text-slate-900">Made in USA repair support</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Manufactured in the USA with support for engineered repair, documentation, and project review.
+            </p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-3 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+            <h3 class="font-extrabold">Need help confirming the fit?</h3>
+            <p class="mt-2 text-sm text-slate-200">
+              Send photos of the damaged upright, base plate, anchors, and surrounding bay so Elite Rackz can review the correct repair path.
+            </p>
+            <a href="contact.html#contact" class="mt-4 inline-flex text-white font-extrabold hover:underline">
+              Request Review →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="repair-path" class="py-16 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift p-6 md:p-10">
+        <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+          <div>
+            <div class="section-kicker reveal">Repair path</div>
+
+            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+              From rack damage photos to the right repair kit.
+            </h2>
+
+            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+              A single leg repair should be chosen after reviewing the damage, rack profile, anchor conditions, beam elevations, and whether the rear post remains suitable for the repair plan.
+            </p>
+
+            <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+              <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
+                Start Repair Review
+              </a>
+
+              <a href="rack-repair-vs-replacement.html" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100">
+                Repair vs. Replacement
+              </a>
+            </div>
+          </div>
+
+          <div class="grid gap-4">
+            <div class="feature-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+              <div class="flex gap-4">
+                <div class="h-10 w-10 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">1</div>
+                <div>
+                  <h3 class="font-extrabold text-slate-900">Send photos and rack details</h3>
+                  <p class="mt-2 text-sm text-slate-600">Include the damaged upright, full bay, base plate, anchors, and beam elevations.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+              <div class="flex gap-4">
+                <div class="h-10 w-10 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center font-extrabold">2</div>
+                <div>
+                  <h3 class="font-extrabold text-slate-900">Confirm single leg fit</h3>
+                  <p class="mt-2 text-sm text-slate-600">We review whether the front upright qualifies for a single leg repair path.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-2 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+              <div class="flex gap-4">
+                <div class="h-10 w-10 shrink-0 rounded-full bg-white text-slate-950 flex items-center justify-center font-extrabold">3</div>
+                <div>
+                  <h3 class="font-extrabold">Quote, engineer, and schedule</h3>
+                  <p class="mt-2 text-sm text-slate-200">Elite Rackz supports the repair strategy, documentation path, and installation planning.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-3 rounded-2xl bg-brand-600 text-white p-5 shadow-smooth">
+              <div class="flex gap-4">
+                <div class="h-10 w-10 shrink-0 rounded-full bg-white text-brand-700 flex items-center justify-center font-extrabold">4</div>
+                <div>
+                  <h3 class="font-extrabold">Install with confidence</h3>
+                  <p class="mt-2 text-sm text-white/88">Made in USA construction and lifetime impact warranty coverage help support the long-term repair decision.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="section-kicker reveal">Frequently asked questions</div>
+
+        <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          EZ Single Leg Repair Kit questions.
+        </h2>
+
+        <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-600">
+          Common questions about single leg pallet rack repair, front upright repair, Made in USA manufacturing, impact warranty coverage, stamped calculations, and installation review.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-3 mt-10 grid gap-4">
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              What is the EZ Single Leg Repair Kit used for?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            The EZ Single Leg Repair Kit is used when the front pallet rack upright is damaged and the rear post remains suitable for the repair path. It is designed to repair and reinforce the damaged front vertical frame post.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              Is the EZ Single Leg Repair Kit made in the USA?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            Yes. The EZ Single Leg Repair Kit is made in the USA by Elite Rackz and is built for engineered pallet rack repair projects that need strong product support, documentation, and accountability.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              Does the EZ Single Leg Repair Kit have a lifetime impact warranty?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            Yes. The EZ Single Leg Repair Kit includes lifetime impact warranty coverage for damage that compromises the structure of the kit, subject to project-specific warranty terms.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              What damage is covered by the impact warranty?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            The impact warranty is focused on damage that compromises the structure of the installed kit. Warranty details are reviewed with the repair configuration, site conditions, and project documentation.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              Do EZ Single Leg Repair Kits include stamped calculations?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            Stamped engineering calculations are available for qualifying EZ Single Leg Repair Kit projects and repair documentation needs. This can support internal approvals, EHS records, and audit preparation.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              How do I know if I need single leg or double leg repair?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            Single leg repair may fit when the damage is concentrated at the front upright and the rear post remains suitable. Double leg repair may be needed when both frame legs require reinforcement. Send photos and rack details so Elite Rackz can review the right path.
+          </div>
+        </details>
+
+        <details class="faq-accordion">
+          <summary>
+            <h3 class="text-lg font-extrabold text-slate-900">
+              Will the rack hold the same load capacity after repair?
+            </h3>
+          </summary>
+
+          <div class="faq-answer">
+            The repair path depends on rack configuration, upright profile, damage condition, installation, and engineering review. Elite Rackz can support documentation and load capacity review for qualifying projects.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+        <div>
+          <div class="dark-kicker reveal">Quote support</div>
+
+          <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+            Need help choosing the right repair kit?
+          </h2>
+
+          <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-200 max-w-3xl">
+            Send photos of the damaged upright, rack profile, base plate, anchors, beam elevations, and affected aisle. Elite Rackz can help determine whether you need an EZ Single Leg Repair Kit, EZ Double Leg Repair Kit, replacement, emergency support, or guarding.
           </p>
         </div>
-      </div>
 
-      <div class="lg:col-span-5">
-        <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-6 shadow-smooth bg-slate-50">
-          <h3 class="text-lg font-extrabold text-slate-900">Best For</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-700">
-            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span><span>Damaged front frame posts with intact rear posts</span></li>
-            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span><span>High-impact warehouse environments</span></li>
-            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span><span>Facilities needing stronger engineered repair options</span></li>
-            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-brand-600"></span><span>Customers who value lifetime warranty protection</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+        <div class="reveal reveal-delay-3 rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-contrast">
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-4 flex items-center justify-center">
+              <img
+                src="assets/images/made-in-usa-badge.png"
+                alt="Made in the USA"
+                class="h-20 w-auto object-contain"
+                loading="lazy"
+              >
+            </div>
 
-    <div class="mt-8 grid md:grid-cols-3 gap-4">
-      <div class="reveal rounded-2xl bg-slate-50 ring-1 ring-black/5 p-5">
-        <div class="font-semibold text-slate-900">Repairs the damaged front leg</div>
-        <p class="mt-1 text-sm text-slate-600">Designed to reinforce the front vertical frame post while retaining the undamaged rear post.</p>
-      </div>
+            <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-4 flex items-center justify-center">
+              <img
+                src="assets/images/lifetime-warranty-badge.png"
+                alt="Lifetime impact warranty"
+                class="h-20 w-auto object-contain"
+                loading="lazy"
+              >
+            </div>
+          </div>
 
-      <div class="reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-5">
-        <div class="font-semibold text-slate-900">High impact resistance</div>
-        <p class="mt-1 text-sm text-slate-600">Exceeds 50,000 lbs. of impact resistance up to 12” high.</p>
-      </div>
+          <p class="text-sm font-semibold text-brand-700">Talk to Elite Rackz</p>
 
-      <div class="reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-black/5 p-5">
-        <div class="font-semibold text-slate-900">Lifetime warranty</div>
-        <p class="mt-1 text-sm text-slate-600">A major long-term advantage for facilities investing in engineered repair instead of temporary fixes.</p>
-      </div>
-    </div>
-  </div>
-</section>
+          <p class="mt-2 text-3xl font-extrabold tracking-tight">
+            <a href="tel:+17089802936">(708) 980-2936</a>
+          </p>
 
-<section class="py-12 bg-slate-50 border-y border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal flex items-end justify-between gap-4 flex-wrap">
-      <div>
-        <div class="text-sm font-semibold tracking-[0.18em] text-slate-500 uppercase">Specifications</div>
-        <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">Grouped Product Specs</h2>
-      </div>
+          <p class="mt-3 text-sm text-slate-600">
+            Or request a repair review and include rack damage photos when available.
+          </p>
 
-      <a href="contact.html" class="inline-flex items-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
-        Request Project Review
-      </a>
-    </div>
+          <div class="mt-6 grid gap-3">
+            <a href="contact.html#contact" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700 font-semibold">
+              Request Repair Review
+            </a>
 
-    <div class="mt-8 grid lg:grid-cols-2 gap-6">
-      <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
-        <h3 class="text-xl font-extrabold text-slate-900">Core Specs</h3>
-        <div class="mt-5 space-y-4 text-sm">
-          <div>
-            <div class="text-xs text-slate-500">RACK SYSTEM</div>
-            <div class="font-semibold text-slate-900">All</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">CATEGORY</div>
-            <div class="font-semibold text-slate-900">Repair and Protection</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">ROLL-FORM / STRUCTURAL</div>
-            <div class="font-semibold text-slate-900">Both</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">STYLE</div>
-            <div class="font-semibold text-slate-900">Bolt-On</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">CUSTOMIZABLE</div>
-            <div class="font-semibold text-slate-900">Yes</div>
-          </div>
-        </div>
-      </div>
+            <a href="mailto:David@eliterackz.com" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 font-semibold">
+              Email David@eliterackz.com
+            </a>
 
-      <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
-        <h3 class="text-xl font-extrabold text-slate-900">Anchors & Footplates</h3>
-        <div class="mt-5 space-y-4 text-sm">
-          <div>
-            <div class="text-xs text-slate-500">NUMBER OF ANCHORS</div>
-            <div class="font-semibold text-slate-900">Three, 3/4” x 7” standard wedge anchors</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">ANCHOR DIMS</div>
-            <div class="font-semibold text-slate-900">3/4” x 7” for high impact resistance and minimal twisting</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">FOOTPLATE DIMS</div>
-            <div class="font-semibold text-slate-900">Front standard ⅜” x 4” x 12”, rear standard ⅜” x 4” x 5” or 6”</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
-        <h3 class="text-xl font-extrabold text-slate-900">Material & Protection</h3>
-        <div class="mt-5 space-y-4 text-sm">
-          <div>
-            <div class="text-xs text-slate-500">STEEL GAUGE</div>
-            <div class="font-semibold text-slate-900">3/16” structural tubing on standard duty roll form rack, ¼” structural tubing on structural rack</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">PROTECTOR TYPE</div>
-            <div class="font-semibold text-slate-900">12″ high, ¼” V-nose deflector or ⅜” impact plate are standard (custom deflector options and heights are always available)</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">PUNCH</div>
-            <div class="font-semibold text-slate-900">Non-punched structural tubing, works with all punch styles</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-smooth">
-        <h3 class="text-xl font-extrabold text-slate-900">Sizing, Finish & Warranty</h3>
-        <div class="mt-5 space-y-4 text-sm">
-          <div>
-            <div class="text-xs text-slate-500">SIZE OPTIONS</div>
-            <div class="font-semibold text-slate-900">Available in all depths and heights over 2′-0″</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">COLOR</div>
-            <div class="font-semibold text-slate-900">All color options available*</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">WARRANTY</div>
-            <div class="font-semibold text-slate-900">Lifetime warranty</div>
-          </div>
-          <div>
-            <div class="text-xs text-slate-500">NOTE</div>
-            <div class="font-semibold text-slate-900">* Available powder coat paint colors are common industry-standard colors. Exact match is not guaranteed.</div>
+            <a href="emergency-rack-repair.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 font-semibold">
+              Emergency Rack Repair
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<section class="py-12 bg-white">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal rounded-2xl border border-slate-200 p-7 shadow-smooth bg-white">
-      <h2 class="text-2xl font-extrabold text-slate-900">Full Product Details</h2>
-      <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
-        <p>
-          The EZ Vertical, Cantilever, &amp; Slant Single Leg Pallet Rack Repair Kits are for the most demanding and harshest environment. It has the industry’s highest impact resistance in a vertical leg repair kit while maintaining the original rack design profile.
-        </p>
-        <p>
-          Fully bolted, this kit exceeds 50,000 lbs. of impact resistance up to 12” high. Designed to repair and reinforce a damaged front vertical frame post and undamaged rear post. Proprietary beam reattachment hardware allows for easy beam adjustment for either roll form or structural beams using original end connectors.
-        </p>
-        <p>
-          It does not require cutting off beam end plates which reduce beam capacity and can compromise seismic structural integrity.
-        </p>
-        <p>
-          In addition to its engineered strength, this kit is backed by a lifetime warranty, giving facilities added confidence that they are investing in a long-term repair solution rather than a temporary patch.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-16 bg-slate-50">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal rounded-3xl bg-slate-950 text-white p-8 md:p-10 shadow-smooth ring-1 ring-white/10 text-center">
-      <div class="text-xs font-semibold tracking-[0.18em] text-white/60 uppercase">Need Help Choosing?</div>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">
-        Let our team review your rack damage
-      </h2>
-      <p class="mt-4 text-white/75 max-w-2xl mx-auto">
-        Send us project details, rack information, or photos and we’ll help determine whether the EZ Single Leg Repair Kit is the right fit. Every recommendation is backed by engineered support and the confidence of a lifetime warranty.
-      </p>
-      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-        <a href="contact.html" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700">
-          Request Review
-        </a>
-        <a href="tel:+17089802936" class="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100">
-          Call (708) 980-2936
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="mt-10 border-t border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-4">
-    <div>
+<footer class="mt-24 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-5">
+    <div class="reveal">
       <div class="flex items-center gap-3 mb-4">
         <img src="assets/images/logo.png" alt="Elite Rackz" class="h-8 w-auto">
-        <span class="font-extrabold tracking-tight text-slate-900">Elite <span class="text-brand-600">Rackz</span></span>
+        <span class="font-extrabold tracking-tight text-slate-900">
+          Elite <span class="text-brand-600">Rackz</span>
+        </span>
       </div>
-      <p class="text-sm text-slate-600">Engineered pallet rack repair and guarding with lifetime warranty.</p>
+
+      <p class="text-sm text-slate-600">
+        Made in USA pallet rack repair kits, rack inspections, emergency repair support, and warehouse guarding systems.
+      </p>
     </div>
 
-    <div>
-      <h3 class="text-sm font-semibold mb-3">Explore</h3>
+    <div class="reveal reveal-delay-1">
+      <h3 class="text-sm font-semibold mb-3">Services</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="products.html" class="hover:text-brand-600">Products</a></li>
-        <li><a href="services.html" class="hover:text-brand-600">Services</a></li>
-        <li><a href="about.html" class="hover:text-brand-600">About</a></li>
-        <li><a href="app.html" class="hover:text-brand-600">App</a></li>
-        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
-        <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
+        <li><a href="services.html" class="hover:text-brand-600">All Services</a></li>
+        <li><a href="services.html#pallet-rack-repair" class="hover:text-brand-600">Pallet Rack Repair</a></li>
+        <li><a href="emergency-rack-repair.html" class="hover:text-brand-600">Emergency Rack Repair</a></li>
+        <li><a href="services.html#inspection-covers" class="hover:text-brand-600">Rack Inspection &amp; Compliance</a></li>
+        <li><a href="services.html#rack-safety-audits" class="hover:text-brand-600">Rack Safety Audits</a></li>
+        <li><a href="services.html#damage-assessment" class="hover:text-brand-600">Rack Damage Assessments</a></li>
+        <li><a href="services.html#isnetworld" class="hover:text-brand-600">ISNetworld® Support</a></li>
       </ul>
     </div>
 
-    <div>
+    <div class="reveal reveal-delay-2">
+      <h3 class="text-sm font-semibold mb-3">Products</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="products.html" class="hover:text-brand-600">Pallet Rack Repair Kits</a></li>
+        <li><a href="ez-double-leg.html" class="hover:text-brand-600">EZ Double Leg</a></li>
+        <li><a href="ez-single-leg.html" class="hover:text-brand-600">EZ Single Leg</a></li>
+        <li><a href="ez-roll-form.html" class="hover:text-brand-600">EZ Roll-Form</a></li>
+        <li><a href="column-guards.html" class="hover:text-brand-600">Column Guards</a></li>
+        <li><a href="end-of-aisle-guards.html" class="hover:text-brand-600">End-of-Aisle Guards</a></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-3">
+      <h3 class="text-sm font-semibold mb-3">Resources</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="rack-inspection-checklist.html" class="hover:text-brand-600">Rack Inspection Checklist</a></li>
+        <li><a href="rack-repair-vs-replacement.html" class="hover:text-brand-600">Repair vs. Replacement</a></li>
+        <li><a href="fbs-group.html" class="hover:text-brand-600">FBS Group Support</a></li>
+        <li><a href="blog/index.html" class="hover:text-brand-600">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-4">
       <h3 class="text-sm font-semibold mb-3">Contact</h3>
       <ul class="space-y-2 text-sm">
         <li>Sales: <a href="mailto:David@eliterackz.com" class="text-brand-700">David@eliterackz.com</a></li>
@@ -412,93 +1740,217 @@
         <li>HQ: 47 East 34th Street<br> South Chicago Heights, IL 60411</li>
       </ul>
     </div>
-
-    <div>
-      <h3 class="text-sm font-semibold mb-3">Legal</h3>
-      <p class="text-xs text-slate-500">© 2026 Elite Rackz. All rights reserved.</p>
-    </div>
   </div>
 
   <div class="border-t border-slate-200/70">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-center gap-3 text-sm text-slate-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-slate-600">
+      <span>© 2026 Elite Rackz. All rights reserved.</span>
+      <span class="hidden sm:inline">•</span>
       <span>This site was created by:</span>
       <img src="assets/images/creator-logo.png" alt="JA Web Services" class="h-6 w-auto opacity-90">
     </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
-
 <script>
   (function () {
     const items = document.querySelectorAll(".reveal");
+
     if (!("IntersectionObserver" in window) || !items.length) {
-      items.forEach(el => el.classList.add("in-view"));
+      items.forEach(function (el) {
+        el.classList.add("in-view");
+      });
       return;
     }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
           io.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
-    items.forEach(el => io.observe(el));
+
+    items.forEach(function (el) {
+      io.observe(el);
+    });
   })();
 </script>
 
 <script>
   (function () {
-    const carousel = document.getElementById('singleLegCarousel');
-    if (!carousel) return;
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
 
-    const prevBtn = carousel.querySelector('.single-prev');
-    const nextBtn = carousel.querySelector('.single-next');
-    const dotsWrap = document.getElementById('singleLegDots');
-    const countWrap = document.getElementById('singleLegCount');
-    const slideA = document.getElementById('singleLegSlideA');
-    const slideB = document.getElementById('singleLegSlideB');
+    if (!btn || !menu) return;
 
-    const images = [
-      'assets/images/repairB/slide-01.jpg',
-      'assets/images/repairB/slide-02.jpg',
-      'assets/images/repairB/slide-03.jpg'
-    ];
+    function closeMenu() {
+      btn.classList.remove('menu-open');
+      menu.classList.remove('menu-open');
+      document.body.classList.remove('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+      btn.classList.add('menu-open');
+      menu.classList.add('menu-open');
+      document.body.classList.add('mobile-menu-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    btn.addEventListener('click', function () {
+      const isOpen = btn.classList.contains('menu-open');
+
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const hero = document.getElementById('heroSection');
+    const header = document.getElementById('siteHeader');
+
+    if (!hero || !header) return;
+
+    function updateHeader() {
+      const passedHero = window.scrollY > 12;
+      header.classList.toggle('header-scrolled', passedHero);
+      header.classList.toggle('header-hero', !passedHero);
+    }
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('resize', updateHeader);
+  })();
+</script>
+
+<script>
+  (function () {
+    const dropdownItems = document.querySelectorAll('.nav-item');
+
+    dropdownItems.forEach(function (item) {
+      const trigger = item.querySelector('.nav-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', function (event) {
+        event.stopPropagation();
+
+        const wasOpen = item.classList.contains('open');
+
+        dropdownItems.forEach(function (other) {
+          other.classList.remove('open');
+          const otherTrigger = other.querySelector('.nav-trigger');
+          if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!wasOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', function () {
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.nav-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+
+      dropdownItems.forEach(function (item) {
+        item.classList.remove('open');
+        const trigger = item.querySelector('.nav-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+<script>
+  function setupCrossfadeCarousel(config) {
+    const carousel = document.getElementById(config.carouselId);
+    const slideA = document.getElementById(config.slideAId);
+    const slideB = document.getElementById(config.slideBId);
+    const dotsWrap = document.getElementById(config.dotsId);
+    const countWrap = document.getElementById(config.countId);
+
+    if (!carousel || !slideA || !slideB || !dotsWrap || !countWrap) return;
+
+    const prevBtn = carousel.querySelector(config.prevSelector);
+    const nextBtn = carousel.querySelector(config.nextSelector);
+    const images = config.images || [];
+
+    if (!prevBtn || !nextBtn || !images.length) return;
 
     let current = 0;
     let activeIsA = true;
     let autoPlay = null;
     let isTransitioning = false;
 
+    images.forEach(function (item) {
+      const img = new Image();
+      img.src = item.src;
+    });
+
+    slideA.src = images[0].src;
+    slideA.alt = images[0].alt;
+    slideB.src = images[0].src;
+    slideB.alt = images[0].alt;
+
     function renderDots() {
       dotsWrap.innerHTML = '';
-      images.forEach((_, idx) => {
+
+      images.forEach(function (_, idx) {
         const dot = document.createElement('button');
         dot.type = 'button';
-        dot.className = 'h-2 w-2 rounded-full transition ' + (idx === current ? 'bg-slate-800' : 'bg-slate-400/70');
-        dot.setAttribute('aria-label', 'Go to slide ' + (idx + 1));
-        dot.addEventListener('click', () => {
+        dot.className = 'h-2 w-2 rounded-full transition ' + (idx === current ? 'bg-brand-600 w-5' : 'bg-slate-300');
+        dot.setAttribute('aria-label', 'Go to ' + config.label + ' image ' + (idx + 1));
+
+        dot.addEventListener('click', function () {
           goTo(idx);
           startAutoPlay();
         });
+
         dotsWrap.appendChild(dot);
       });
-      if (countWrap) countWrap.textContent = (current + 1) + ' / ' + images.length;
+
+      countWrap.textContent = (current + 1) + ' / ' + images.length;
     }
 
     function goTo(index) {
-      if (isTransitioning) return;
+      const nextIndex = (index + images.length) % images.length;
+
+      if (isTransitioning || nextIndex === current) return;
+
       isTransitioning = true;
 
-      const nextIndex = (index + images.length) % images.length;
       const active = activeIsA ? slideA : slideB;
       const incoming = activeIsA ? slideB : slideA;
 
-      incoming.src = images[nextIndex];
-      incoming.alt = 'EZ Single Leg Repair Kit image ' + (nextIndex + 1);
+      incoming.src = images[nextIndex].src;
+      incoming.alt = images[nextIndex].alt;
 
-      requestAnimationFrame(() => {
+      requestAnimationFrame(function () {
         incoming.classList.remove('opacity-0');
         incoming.classList.add('opacity-100');
         active.classList.remove('opacity-100');
@@ -509,17 +1961,24 @@
       activeIsA = !activeIsA;
       renderDots();
 
-      setTimeout(() => {
+      setTimeout(function () {
         isTransitioning = false;
       }, 720);
     }
 
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
+    function next() {
+      goTo(current + 1);
+    }
+
+    function prev() {
+      goTo(current - 1);
+    }
 
     function startAutoPlay() {
       stopAutoPlay();
-      autoPlay = setInterval(() => { next(); }, 4500);
+      autoPlay = setInterval(function () {
+        next();
+      }, config.interval || 4500);
     }
 
     function stopAutoPlay() {
@@ -527,12 +1986,12 @@
       autoPlay = null;
     }
 
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', function () {
       prev();
       startAutoPlay();
     });
 
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', function () {
       next();
       startAutoPlay();
     });
@@ -542,7 +2001,55 @@
 
     renderDots();
     startAutoPlay();
-  })();
+  }
+
+  setupCrossfadeCarousel({
+    carouselId: 'singleLegCarousel',
+    slideAId: 'singleLegSlideA',
+    slideBId: 'singleLegSlideB',
+    dotsId: 'singleLegDots',
+    countId: 'singleLegCount',
+    prevSelector: '.single-prev',
+    nextSelector: '.single-next',
+    label: 'EZ Single Leg product',
+    interval: 4500,
+    images: [
+      {
+        src: 'assets/images/repairB/slide-01.jpg',
+        alt: 'EZ Single Leg Repair Kit product image 1'
+      },
+      {
+        src: 'assets/images/repairB/slide-02.jpg',
+        alt: 'EZ Single Leg Repair Kit product image 2'
+      },
+      {
+        src: 'assets/images/repairB/slide-03.jpg',
+        alt: 'EZ Single Leg Repair Kit product image 3'
+      }
+    ]
+  });
+
+  setupCrossfadeCarousel({
+    carouselId: 'installedSingleLegCarousel',
+    slideAId: 'installedSingleLegSlideA',
+    slideBId: 'installedSingleLegSlideB',
+    dotsId: 'installedSingleLegDots',
+    countId: 'installedSingleLegCount',
+    prevSelector: '.installed-single-prev',
+    nextSelector: '.installed-single-next',
+    label: 'installed EZ Single Leg repair',
+    interval: 4500,
+    images: [
+      {
+        src: 'assets/images/completed-repairs/repair-04.jpg',
+        alt: 'Installed EZ Single Leg repair kit image 1'
+      },
+      {
+        src: 'assets/images/completed-repairs/repair-08.jpg',
+        alt: 'Installed EZ Single Leg repair kit image 2'
+      }
+    ]
+  });
 </script>
 
 </body>

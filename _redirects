@@ -35,6 +35,6 @@
 /ez-single-leg /ez-single-leg.html 200
 /ez-roll-form /ez-roll-form.html 200
 
-# Blog clean-up
-/blog /blog/ 301!
-/blog/index.html /blog/ 301!
+# Blog — serve the folder index without redirecting
+/blog /blog/index.html 200
+/blog/ /blog/index.html 200

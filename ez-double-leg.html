@@ -432,6 +432,7 @@
     .spec-card,
     .feature-card,
     .warranty-card,
+    .proof-card,
     .faq-accordion {
       transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
@@ -439,7 +440,8 @@
     .product-card:hover,
     .spec-card:hover,
     .feature-card:hover,
-    .warranty-card:hover {
+    .warranty-card:hover,
+    .proof-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 16px 35px rgba(15,23,42,.10);
       border-color: rgba(46,106,214,.28);
@@ -1085,7 +1087,89 @@
     </div>
   </section>
 
-  <section id="installed-double-leg-repairs" class="py-16 bg-slate-50 border-b border-slate-200">
+  <section id="made-in-usa-warranty" class="py-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-white ring-1 ring-slate-200 shadow-lift overflow-hidden">
+        <div class="grid lg:grid-cols-[0.92fr_1.08fr] gap-0">
+          <div class="bg-slate-950 text-white p-6 md:p-10">
+            <div class="reveal flex flex-wrap items-center gap-4">
+              <img
+                src="assets/images/made-in-usa-badge.png"
+                alt="Made in the USA"
+                class="h-24 md:h-28 w-auto drop-shadow-[0_14px_30px_rgba(0,0,0,0.40)]"
+                loading="lazy"
+              >
+
+              <img
+                src="assets/images/lifetime-warranty-badge.png"
+                alt="Lifetime impact warranty"
+                class="h-24 md:h-28 w-auto drop-shadow-[0_14px_30px_rgba(0,0,0,0.40)]"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="dark-kicker reveal reveal-delay-1 mt-8">
+              Made in USA + lifetime impact warranty
+            </div>
+
+            <h2 class="reveal reveal-delay-2 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+              Every EZ Double Leg kit is built in the USA and backed by impact warranty coverage.
+            </h2>
+
+            <p class="reveal reveal-delay-3 mt-4 text-lg text-slate-200">
+              EZ Double Leg Repair Kits are manufactured in the USA and built for facilities that need more than a temporary patch. Every kit carries lifetime impact warranty coverage for damage that compromises the structure of the installed kit.
+            </p>
+
+            <p class="reveal reveal-delay-4 mt-4 text-slate-300">
+              That combination matters on high-impact rack rows where both the front and rear posts need a durable repair strategy, clear documentation, and long-term confidence after installation.
+            </p>
+          </div>
+
+          <div class="p-6 md:p-10">
+            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
+              What this means for your facility
+            </p>
+
+            <div class="mt-6 grid gap-4">
+              <div class="proof-card reveal rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <h3 class="font-extrabold text-slate-900">Made in USA manufacturing</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  Built by Elite Rackz with USA-based manufacturing support, giving your team a domestic repair kit option for critical rack damage.
+                </p>
+              </div>
+
+              <div class="proof-card reveal reveal-delay-1 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <h3 class="font-extrabold text-slate-900">Lifetime impact warranty on every EZ Double Leg kit</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  If impact damage compromises the structure of the installed kit, the lifetime impact warranty is designed to cover it.
+                </p>
+              </div>
+
+              <div class="proof-card reveal reveal-delay-2 rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
+                <h3 class="font-extrabold text-slate-900">Better long-term value than patchwork</h3>
+                <p class="mt-2 text-sm text-slate-600">
+                  The kit is engineered as a durable repair path for damaged front and rear posts, not a cosmetic cover or short-term fix.
+                </p>
+              </div>
+
+              <div class="proof-card reveal reveal-delay-3 rounded-2xl bg-slate-950 text-white p-5 shadow-smooth">
+                <h3 class="font-extrabold">Documentation support available</h3>
+                <p class="mt-2 text-sm text-slate-200">
+                  Stamped engineering calculations and repair documentation are available for qualifying projects that need internal approval, EHS records, or audit-ready closeout.
+                </p>
+
+                <a href="contact.html#contact" class="mt-4 inline-flex text-white font-extrabold hover:underline">
+                  Request warranty and documentation review →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="installed-double-leg-repairs" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-[0.92fr_1.08fr] gap-12 items-center">
         <div>
@@ -1136,76 +1220,6 @@
 
           <div class="absolute top-3 right-3 rounded-full bg-slate-900 text-white text-xs font-semibold px-3 py-1" id="installedDoubleLegCount">1 / 4</div>
           <div id="installedDoubleLegDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="warranty" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-slate-950 text-white shadow-lift overflow-hidden">
-        <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-0">
-          <div class="p-6 md:p-10">
-            <div class="dark-kicker reveal">Lifetime impact warranty</div>
-
-            <h2 class="reveal reveal-delay-1 mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
-              Every EZ Double Leg kit is backed by lifetime impact warranty coverage.
-            </h2>
-
-            <p class="reveal reveal-delay-2 mt-4 text-lg text-slate-200">
-              The EZ Double Leg Repair Kit is backed by lifetime impact warranty coverage. That means damage that compromises the structure of the kit is covered under the impact warranty, giving facilities long-term confidence after the repair is installed.
-            </p>
-
-            <p class="reveal reveal-delay-3 mt-4 text-slate-300">
-              This warranty matters because front and rear rack legs can be exposed to repeated warehouse impact. The repair should not only restore the damaged section — it should give your team confidence that the solution was built for real operating conditions.
-            </p>
-
-            <div class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-3">
-              <a href="contact.html#contact" class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 text-white shadow-smooth hover:bg-brand-700">
-                Ask About Warranty Coverage
-              </a>
-
-              <a href="tel:+17089802936" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100 font-extrabold">
-                Call (708) 980-2936
-              </a>
-            </div>
-          </div>
-
-          <div class="bg-white text-slate-900 p-6 md:p-10">
-            <p class="text-sm font-extrabold tracking-[0.14em] uppercase text-brand-700">
-              What the warranty means
-            </p>
-
-            <div class="mt-6 grid gap-4">
-              <div class="warranty-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
-                <h3 class="font-extrabold text-slate-900">Covers structural-compromising kit damage</h3>
-                <p class="mt-2 text-sm text-slate-600">
-                  If the installed kit is damaged in a way that compromises its structure, the impact warranty is designed to cover it.
-                </p>
-              </div>
-
-              <div class="warranty-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
-                <h3 class="font-extrabold text-slate-900">Applies to every EZ Double Leg kit</h3>
-                <p class="mt-2 text-sm text-slate-600">
-                  Every EZ Double Leg Repair Kit carries lifetime impact warranty coverage, subject to project-specific warranty terms.
-                </p>
-              </div>
-
-              <div class="warranty-card rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-5 shadow-smooth">
-                <h3 class="font-extrabold text-slate-900">Better long-term value than temporary fixes</h3>
-                <p class="mt-2 text-sm text-slate-600">
-                  The warranty supports a long-term repair decision instead of treating rack damage as a short-term patch.
-                </p>
-              </div>
-
-              <div class="rounded-2xl bg-brand-600 text-white p-5">
-                <h3 class="font-extrabold">Final terms are confirmed with your quote</h3>
-                <p class="mt-2 text-sm text-white/88">
-                  Warranty details are reviewed with the repair configuration, site conditions, and project documentation.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -13,9 +13,14 @@
 /rack-repair-vs-replacement.html /rack-repair-vs-replacement 301!
 /fbs-group.html /fbs-group 301!
 /ez-double-leg.html /ez-double-leg 301!
+/ez-double-leg-setback.html /ez-double-leg-setback 301!
 /ez-single-leg.html /ez-single-leg 301!
 /ez-roll-form.html /ez-roll-form 301!
 /success.html /success 301!
+
+/ez-double-leg-vertical.html /ez-double-leg-vertical 301!
+
+/ez-double-leg-slant.html /ez-double-leg-slant 301!
 
 # Blog .html URLs to clean versions
 /blog/index.html /blog/ 301!
@@ -41,9 +46,14 @@
 /rack-repair-vs-replacement /rack-repair-vs-replacement.html 200
 /fbs-group /fbs-group.html 200
 /ez-double-leg /ez-double-leg.html 200
+/ez-double-leg-setback /ez-double-leg-setback.html 200
 /ez-single-leg /ez-single-leg.html 200
 /ez-roll-form /ez-roll-form.html 200
 /success /success.html 200
+
+/ez-double-leg-vertical /ez-double-leg-vertical.html 200
+
+/ez-double-leg-slant /ez-double-leg-slant.html 200
 
 # Blog — serve the folder index without redirecting
 /blog /blog/index.html 200

@@ -1,0 +1,72 @@
+/* Local placement review: preserve the site's existing type, spacing and blue. */
+.er-product-media { min-width: 0; }
+.er-teaser { display: grid; grid-template-columns: 112px 1fr; margin-top: 20px; overflow: hidden; border: 1px solid #e2e8f0; border-radius: 16px; background: #0f172a; color: #fff; text-decoration: none; }
+.er-teaser > img { width: 112px; height: 100%; min-height: 196px; object-fit: contain; background: white; padding: 12px; }
+.er-teaser__copy { padding: 22px 24px; }
+.er-kicker { color: #2563eb; font-size: .8125rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 10px; }
+.er-teaser .er-kicker { display: block; color: #bfdbfe; font-size: .75rem; }
+.er-teaser h3 { margin: 0 0 8px; font-size: 1.375rem; font-weight: 800; letter-spacing: -.03em; line-height: 1.2; }
+.er-teaser p { color: #cbd5e1; font-size: .9375rem; line-height: 1.5; margin: 0 0 16px; }
+.er-teaser__link { display: inline-flex; align-items: center; gap: 14px; font-weight: 700; font-size: .875rem; color: #fff; }
+.er-teaser:hover { background: #172541; }
+.er-teaser:hover .er-teaser__link { color: #bfdbfe; }
+.er-listing-link { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 8px; font-size: .875rem; color: #2563eb; font-weight: 700; }
+.er-listing-link:hover { color: #1d4ed8; }
+.er-hero-link { display: inline-flex; align-items: center; gap: 14px; color: #dbeafe; font-size: .9375rem; margin-top: 24px; border-bottom: 1px solid #ffffff50; padding-bottom: 4px; }
+.er-experience { padding: 60px 0 32px; background: #fff; color: #0f172a; scroll-margin-top: 88px; }
+.er-intro { max-width: 1280px; padding: 0 32px 30px; margin: 0 auto; display: flex; gap: 24px; justify-content: space-between; align-items: center; }
+.er-intro h2 { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.12; font-weight: 800; letter-spacing: -.035em; margin: 0 0 14px; }
+.er-intro > div > p:last-child { margin: 0; color: #475569; font-size: 1rem; line-height: 1.65; max-width: 560px; }
+.er-button { display: inline-flex; justify-content: center; align-items: center; gap: 16px; flex-shrink: 0; padding: 14px 20px; border-radius: 12px; background: #2563eb; color: #fff; font-size: .875rem; font-weight: 600; text-decoration: none; }
+.er-button:hover { background: #1d4ed8; }
+.er-track { position: relative; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+.er-experience--motion .er-track { height: 620svh; }
+.er-stage { position: sticky; top: 80px; height: calc(100svh - 104px); min-height: 520px; max-height: 840px; border: 1px solid #25324b; border-radius: 24px; overflow: hidden; isolation: isolate; color: #fff; background: radial-gradient(ellipse at 52% 44%, #263347, #141e30 50%, #0f172a 83%); }
+.er-stage__top, .er-stage__bottom { position: absolute; z-index: 2; left: 28px; right: 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; pointer-events: none; }
+.er-stage__top { top: 25px; font-size: .8125rem; font-weight: 600; color: #cbd5e1; }
+.er-detail-label { opacity: 0; transition: opacity .25s; padding: 7px 12px; background: #ffffff0c; border: 1px solid #ffffff20; border-radius: 20px; color: #dbeafe; font-size: .75rem; }
+.er-experience--detail .er-detail-label { opacity: 1; }
+.er-visual { position: absolute; inset: 42px 8px 66px; margin: 0; }
+.er-visual canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .4s; }
+.er-fallback { position: absolute; left: 25%; width: 50%; height: 90%; top: 5%; object-fit: contain; border-radius: 10px; }
+.er-experience--ready .er-visual canvas { opacity: 1; }
+.er-experience--ready .er-fallback { display: none; }
+.er-stage__bottom { bottom: 20px; }
+.er-hint { color: #cbd5e1; font-size: .8125rem; white-space: nowrap; }
+.er-controls { display: flex; align-items: center; justify-content: flex-end; gap: 8px; pointer-events: auto; }
+.er-controls button, .er-controls a { font: inherit; font-size: .8125rem; line-height: 1.3; min-height: 44px; display: inline-flex; align-items: center; color: #cbd5e1; border: 1px solid transparent; padding: 10px 12px; border-radius: 9px; background: transparent; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.er-controls .er-replay { background: #2563eb; border-color: #4a7deb; color: white; font-weight: 600; }
+.er-controls .er-replay:hover { background: #1d4ed8; }
+.er-controls button:hover, .er-controls a:hover { color: white; border-color: #ffffff30; }
+.er-controls [hidden] { display: none; }
+.er-note { max-width: 1280px; margin: 14px auto 0; padding: 0 36px; color: #64748b; font-size: .75rem; line-height: 1.5; }
+.er-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.er-experience :focus-visible, .er-teaser:focus-visible, .er-listing-link:focus-visible, .er-hero-link:focus-visible { outline: 3px solid #60a5fa; outline-offset: 4px; }
+@media (max-width: 760px) {
+  .er-experience { padding-top: 40px; }
+  .er-intro { display: block; padding: 0 20px 24px; }
+  .er-intro h2 { font-size: 2rem; }
+  .er-intro .er-button { margin-top: 18px; }
+  .er-track { padding: 0 12px; }
+  .er-stage { top: 76px; min-height: 440px; height: calc(100svh - 96px); border-radius: 18px; }
+  .er-stage__top { top: 18px; left: 18px; right: 18px; }
+  .er-stage__bottom { bottom: 13px; left: 12px; right: 12px; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .er-hint { text-align: center; width: 100%; font-size: .75rem; }
+  .er-controls { justify-content: center; gap: 4px; }
+  .er-controls button, .er-controls a { font-size: .75rem; padding: 10px; }
+  .er-visual { inset: 50px 0 92px; }
+  .er-note { padding: 0 20px; }
+  .er-teaser { grid-template-columns: 96px 1fr; }
+  .er-teaser > img { width: 96px; }
+  .er-teaser__copy { padding: 20px 18px; }
+}
+@media (max-height: 620px) and (min-width: 761px) {
+  .er-stage { min-height: 390px; }
+}
+@media (max-width: 380px) {
+  .er-controls { gap: 2px; }
+  .er-controls button, .er-controls a { padding-left: 6px; padding-right: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .er-visual canvas, .er-detail-label { transition: none; }
+}
